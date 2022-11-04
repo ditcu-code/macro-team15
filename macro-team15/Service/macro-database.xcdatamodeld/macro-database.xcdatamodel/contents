@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21279" systemVersion="21G115" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Baby" representedClassName="Baby" syncable="YES" codeGenerationType="class">
+        <attribute name="avatar" optional="YES" attributeType="String"/>
+        <attribute name="dob" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="gender" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="babyBadge" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BabyBadge" inverseName="baby" inverseEntity="BabyBadge"/>
+        <relationship name="babyMilestone" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BabyMilestone" inverseName="baby" inverseEntity="BabyMilestone"/>
+        <relationship name="babyStimulus" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BabyStimulus" inverseName="baby" inverseEntity="BabyStimulus"/>
+    </entity>
+    <entity name="BabyBadge" representedClassName="BabyBadge" syncable="YES" codeGenerationType="class">
+        <relationship name="baby" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Baby" inverseName="babyBadge" inverseEntity="Baby"/>
+        <relationship name="badge" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Badge" inverseName="babyBadge" inverseEntity="Badge"/>
+    </entity>
+    <entity name="BabyMilestone" representedClassName="BabyMilestone" syncable="YES" codeGenerationType="class">
+        <attribute name="note" optional="YES" attributeType="String"/>
+        <relationship name="baby" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Baby" inverseName="babyMilestone" inverseEntity="Baby"/>
+        <relationship name="milestone" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Milestone" inverseName="babyMilestone" inverseEntity="Milestone"/>
+    </entity>
+    <entity name="BabyStimulus" representedClassName="BabyStimulus" syncable="YES" codeGenerationType="class">
+        <relationship name="baby" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Baby" inverseName="babyStimulus" inverseEntity="Baby"/>
+        <relationship name="stimulus" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Stimulus" inverseName="babyStimulus" inverseEntity="Stimulus"/>
+    </entity>
+    <entity name="Badge" representedClassName="Badge" syncable="YES" codeGenerationType="class">
+        <attribute name="desc" optional="YES" attributeType="String"/>
+        <attribute name="image" optional="YES" attributeType="URI"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="babyBadge" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BabyBadge" inverseName="badge" inverseEntity="BabyBadge"/>
+    </entity>
+    <entity name="Milestone" representedClassName="Milestone" syncable="YES" codeGenerationType="class">
+        <attribute name="category" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="babyMilestone" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BabyMilestone" inverseName="milestone" inverseEntity="BabyMilestone"/>
+        <relationship name="period" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Period" inverseName="milestone" inverseEntity="Period"/>
+        <relationship name="stimulus" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Stimulus" inverseName="milestone" inverseEntity="Stimulus"/>
+    </entity>
+    <entity name="Period" representedClassName="Period" syncable="YES" codeGenerationType="class">
+        <attribute name="desc" optional="YES" attributeType="String"/>
+        <attribute name="endMonth" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="startMonth" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="milestone" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Milestone" inverseName="period" inverseEntity="Milestone"/>
+    </entity>
+    <entity name="Stimulus" representedClassName="Stimulus" syncable="YES" codeGenerationType="class">
+        <attribute name="source" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="babyStimulus" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BabyStimulus" inverseName="stimulus" inverseEntity="BabyStimulus"/>
+        <relationship name="milestone" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Milestone" inverseName="stimulus" inverseEntity="Milestone"/>
+        <relationship name="steps" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="StimulusStep" inverseName="steps" inverseEntity="StimulusStep"/>
+    </entity>
+    <entity name="StimulusStep" representedClassName="StimulusStep" syncable="YES" codeGenerationType="class">
+        <attribute name="desc" optional="YES" attributeType="String"/>
+        <relationship name="steps" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Stimulus" inverseName="steps" inverseEntity="Stimulus"/>
+    </entity>
+</model>
