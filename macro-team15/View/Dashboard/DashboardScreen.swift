@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DashboardScreen: View {
     var body: some View {
-        Text("Dashboard")
+        StackCircularProgress(values: [40, 100, 20, 100, 30, 100])
     }
 }
 
