@@ -19,9 +19,9 @@
 		0E7456F629069B4E00D792E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E7456F529069B4E00D792E6 /* Assets.xcassets */; };
 		0E7456F929069B4E00D792E6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E7456F829069B4E00D792E6 /* Preview Assets.xcassets */; };
 		0EDCE4332906A1A50092F759 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDCE4302906A1A50092F759 /* Persistence.swift */; };
-		0EDCE4342906A1A50092F759 /* macro-team15.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0EDCE4312906A1A50092F759 /* macro-team15.xcdatamodeld */; };
 		FA13CD6C2914FCDA00616699 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA13CD6B2914FCDA00616699 /* Color.swift */; };
-		FA706AD32913C49400AD30A4 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA706AD22913C49400AD30A4 /* CardView.swift */; };/* End PBXBuildFile section */
+		FA706AD32913C49400AD30A4 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA706AD22913C49400AD30A4 /* CardView.swift */; };
+/* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0E576EEB290A7AF900341C88 /* CloudKitService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitService.swift; sourceTree = "<group>"; };
@@ -38,7 +38,6 @@
 		0E7456F529069B4E00D792E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E7456F829069B4E00D792E6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0EDCE4302906A1A50092F759 /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		0EDCE4322906A1A50092F759 /* xxx.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = xxx.xcdatamodel; sourceTree = "<group>"; };
 		FA13CD6B2914FCDA00616699 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		FA706AD22913C49400AD30A4 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -391,7 +390,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -422,7 +421,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
