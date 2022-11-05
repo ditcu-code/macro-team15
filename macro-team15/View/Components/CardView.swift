@@ -56,7 +56,6 @@ struct CardView: View {
                            endPoint: .trailing)
         )
         .cornerRadius(24)
-        .padding()
     }
     
 }
@@ -79,7 +78,7 @@ struct CardVerticalCapsuleView: View {
     
     var body: some View {
         Capsule()
-            .frame(width: 10, height: 25)
+            .frame(width: 10, height: 35)
             .foregroundColor(color)
     }
     

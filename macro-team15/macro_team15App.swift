@@ -13,8 +13,10 @@ struct macro_team15App: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, dataController.container.viewContext)
+            NavigationView {
+                ContentView()
+                    .environment(\.managedObjectContext, dataController.container.viewContext)
+            }
         }
     }
 }
