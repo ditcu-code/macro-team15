@@ -9,25 +9,52 @@ import SwiftUI
 
 struct CardView: View {
     
-    let text = "Bisa memungut benda sebesar kacang dengan cara meraup"
-    let backgroundColors: [Color]
-    let verticalCapsuleColor: Color
+    let text: String
+    let primaryColor: Color
+    let secondaryColor: Color
     let isChecked: Bool
+    let colorScheme: ColorScheme
+    
     
     var body: some View {
-        HStack {
-            CardVerticalCapsuleView(color: verticalCapsuleColor)
+        ZStack(alignment: .trailing) {
+            HStack {
+                CardVerticalCapsuleView(color: primaryColor)
+                    .frame(width: 20)
+                
+                CardContentView(text: text, colorScheme: colorScheme)
+                
+                CardCheckboxView(isChecked: isChecked)
+                    .frame(width: 30)
+            }
+            .padding()
             
-            CardContentView(text: text)
+            Image(systemName: "star.fill")
+                .foregroundColor(secondaryColor)
+                .shadow(radius: 10)
+                .offset(CGSize(width: -35, height: -26))
             
-            CardCheckboxView(isChecked: isChecked)
+            Image(systemName: "star.fill")
+                .resizable()
+                .frame(width: 30, height: 30)
+                .foregroundColor(secondaryColor)
+                .shadow(radius: 10)
+                .offset(CGSize(width: 5, height: 28))
+            
+            Image(systemName: "star.fill")
+                .resizable()
+                .frame(width: 15, height: 15)
+                .foregroundColor(secondaryColor)
+                .shadow(radius: 10)
+                .offset(CGSize(width: -75, height: 26))
+            
         }
         .frame(maxWidth: .infinity)
-        .background {
-            LinearGradient(colors: backgroundColors,
+        .background(
+            LinearGradient(colors: [secondaryColor, primaryColor],
                            startPoint: .leading,
                            endPoint: .trailing)
-        }
+        )
         .cornerRadius(24)
         .padding()
     }
@@ -37,9 +64,11 @@ struct CardView: View {
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
         CardView(
-            backgroundColors: [Color(hex: "#ADE9FA"), Color(hex: "#E26F2A")],
-            verticalCapsuleColor: Color.blue,
-            isChecked: false
+            text: "Bisa mengangkat kepala mandiri hingga setinggi 45 derajat",
+            primaryColor: Color.ui.socialPrimary,
+            secondaryColor: Color.ui.socialSecondary,
+            isChecked: false,
+            colorScheme: .light
         )
     }
 }
@@ -52,7 +81,6 @@ struct CardVerticalCapsuleView: View {
         Capsule()
             .frame(width: 10, height: 25)
             .foregroundColor(color)
-            .padding(.leading)
     }
     
 }
@@ -64,8 +92,8 @@ struct CardCheckboxView: View {
     var body: some View {
         Image(systemName: isChecked ? "checkmark.circle.fill" : "checkmark.circle")
             .resizable()
+            .foregroundColor(.white)
             .frame(width: 25, height: 25)
-            .padding(.trailing)
     }
     
 }
@@ -73,11 +101,13 @@ struct CardCheckboxView: View {
 struct CardContentView: View {
     
     let text: String
+    let colorScheme: ColorScheme
     
     var body: some View {
         Text(text)
             .font(.headline)
-            .padding()
+            .foregroundColor(Color.ui.text)
+            .colorScheme(colorScheme)
     }
     
 }
