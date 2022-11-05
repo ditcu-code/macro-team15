@@ -8,13 +8,28 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var selectedTab: Tabs = .home
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        
+        TabView(selection: $selectedTab) {
+            DashboardScreen(name: "Ceroy Carlo", age: 23)
+                .tabItem {
+                    Label("Home", systemImage: "house")
+                }
+                .tag(Tabs.home)
+            MilestoneScreen()
+                .tabItem {
+                    Label("Milestone", systemImage: "figure.walk")
+                }
+                .tag(Tabs.milestone)
+            ReportScreen()
+                .tabItem {
+                    Label("Report", systemImage: "newspaper")
+                }
+                .tag(Tabs.milestone)
         }
+        
         .padding()
     }
 }
