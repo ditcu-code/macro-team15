@@ -23,6 +23,7 @@ struct DashboardScreen: View {
                 DashboardHeaderView(name: name)
                 
                 MilestoneProgressFullView(title: "Milestone Progress", age: age, withColor: true)
+                    .padding()
                 
                 DashboardMilestoneView(selectedMilestoneCategory: $selectedMilestoneCategory)
             }
