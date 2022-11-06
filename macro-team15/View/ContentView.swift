@@ -18,11 +18,13 @@ struct ContentView: View {
                     Label("Home", systemImage: "house")
                 }
                 .tag(Tabs.home)
+            
             MilestoneScreen()
                 .tabItem {
                     Label("Milestone", systemImage: "figure.walk")
                 }
                 .tag(Tabs.milestone)
+            
             ReportScreen()
                 .tabItem {
                     Label("Report", systemImage: "newspaper")
@@ -30,7 +32,6 @@ struct ContentView: View {
                 .tag(Tabs.milestone)
         }
         
-        .padding()
     }
 }
 

@@ -22,7 +22,7 @@ struct DashboardScreen: View {
             ScrollView {
                 DashboardHeaderView(name: name)
                 
-                MilestoneProgressFullView(title: "Milestone Progress", age: age)
+                MilestoneProgressFullView(title: "Milestone Progress", age: age, withColor: true)
                 
                 DashboardMilestoneView(selectedMilestoneCategory: $selectedMilestoneCategory)
             }
