@@ -22,77 +22,44 @@ struct DashboardScreen: View {
             ScrollView {
                 DashboardHeaderView(name: name)
                 
-                DashboardMilestoneSummaryView(age: age)
+                MilestoneProgressFullView(title: "Milestone Progress", age: age, withColor: true)
+                    .padding()
                 
                 DashboardMilestoneView(selectedMilestoneCategory: $selectedMilestoneCategory)
             }
         }
-        
     }
     
-    struct DashboardScreen_Previews: PreviewProvider {
-        static var previews: some View {
-            DashboardScreen(name: "Ceroy Carlo", age: 23)
+}
+
+struct DashboardScreen_Previews: PreviewProvider {
+    static var previews: some View {
+        DashboardScreen(name: "Ceroy Carlo", age: 23)
+    }
+}
+
+struct DashboardHeaderView: View {
+    
+    let name: String
+    
+    var body: some View {
+        HStack(alignment: .bottom) {
+            Text("Hi, \(name)!")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .foregroundColor(Color.ui.text)
+            
+            Spacer()
+            
+            Image(systemName: "person.circle.fill")
+                .resizable()
+                .frame(width: 50, height: 50)
         }
+        .padding(.top, 32)
+        .padding([.bottom, .horizontal])
+        .background(Color.white)
     }
     
-    struct DashboardHeaderView: View {
-        
-        let name: String
-        
-        var body: some View {
-            HStack(alignment: .bottom) {
-                Text("Hi, \(name)!")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .foregroundColor(Color.ui.text)
-                
-                Spacer()
-                
-                Image(systemName: "person.circle.fill")
-                    .resizable()
-                    .frame(width: 50, height: 50)
-            }
-            .padding(.top, 32)
-            .padding([.bottom, .horizontal])
-            .background(Color.white)
-        }
-        
-    }
-    
-    struct DashboardMilestoneSummaryView: View {
-        
-        let age: Int
-        
-        var body: some View {
-            VStack {
-                HStack {
-                    Text("milestone progress".capitalized)
-                        .font(.title3)
-                        .fontWeight(.bold)
-                        .foregroundColor(Color.ui.text)
-                    
-                    Spacer()
-                    
-                    HStack {
-                        Image(systemName: "star.fill")
-                            .foregroundColor(.yellow)
-                        
-                        Text("\(age) hari")
-                            .foregroundColor(Color.ui.text)
-                    }
-                }
-                
-                Text("circular progress placeholder")
-                    .padding(.vertical, 60)
-            }
-            .padding()
-            .background(Color.white)
-            .cornerRadius(20)
-            .padding()
-        }
-        
-    }
 }
 
 struct DashboardMilestoneView: View {

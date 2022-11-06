@@ -21,6 +21,8 @@
 		0EDCE4332906A1A50092F759 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDCE4302906A1A50092F759 /* Persistence.swift */; };
 		FA13CD6C2914FCDA00616699 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA13CD6B2914FCDA00616699 /* Color.swift */; };
 		FA706AD32913C49400AD30A4 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA706AD22913C49400AD30A4 /* CardView.swift */; };
+		FA7B02B92917DABA00552541 /* MilestoneProgressFullView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7B02B82917DABA00552541 /* MilestoneProgressFullView.swift */; };
+		FA7B02BB2917F60100552541 /* MilestoneProgressCompactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7B02BA2917F60100552541 /* MilestoneProgressCompactView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		0EDCE4302906A1A50092F759 /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		FA13CD6B2914FCDA00616699 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		FA706AD22913C49400AD30A4 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		FA7B02B82917DABA00552541 /* MilestoneProgressFullView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneProgressFullView.swift; sourceTree = "<group>"; };
+		FA7B02BA2917F60100552541 /* MilestoneProgressCompactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneProgressCompactView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +171,8 @@
 			isa = PBXGroup;
 			children = (
 				FA706AD22913C49400AD30A4 /* CardView.swift */,
+				FA7B02B82917DABA00552541 /* MilestoneProgressFullView.swift */,
+				FA7B02BA2917F60100552541 /* MilestoneProgressCompactView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -241,6 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA7B02BB2917F60100552541 /* MilestoneProgressCompactView.swift in Sources */,
 				0E6F61F9290FD283005C5415 /* ViewModel.swift in Sources */,
 				0E6F61F7290FC790005C5415 /* ReportScreen.swift in Sources */,
 				0E6F61F4290FC75B005C5415 /* MilestoneScreen.swift in Sources */,
@@ -251,6 +258,7 @@
 				FA706AD32913C49400AD30A4 /* CardView.swift in Sources */,
 				0E7456F229069B4D00D792E6 /* macro_team15App.swift in Sources */,
 				0E6F61F1290FC40B005C5415 /* Enum.swift in Sources */,
+				FA7B02B92917DABA00552541 /* MilestoneProgressFullView.swift in Sources */,
 				0E6F61EF290FC348005C5415 /* DashboardScreen.swift in Sources */,
 				0E576EF0290A925B00341C88 /* macro-database.xcdatamodeld in Sources */,
 			);
