@@ -72,28 +72,28 @@ struct MilestoneProgressFullContentView: View {
     var body: some View {
         HStack(alignment: .top) {
             VStack {
-                MilestoneProgressBarView(color: !withColor ? Color.ui.disabledText : Color.ui.motorPrimary)
+                MilestoneProgressBarView(finished: 3, all: 4, foregroundColor: !withColor ? Color.ui.disabledText : Color.ui.motorPrimary, backgroundColor: !withColor ? Color.ui.disabledText : Color.ui.motorSecondary)
                 MilestoneProgressFinishedView(finished: 3, all: 4, color: !withColor ? Color.ui.disabledText : Color.ui.motorPrimary)
                 MilestoneProgressCategoryView(category: "Motorik", color: !withColor ? Color.ui.disabledText : Color.ui.motorPrimary)
             }
             .padding(.trailing, 12)
             
             VStack {
-                MilestoneProgressBarView(color: !withColor ? Color.ui.disabledText : Color.ui.cognitivePrimary)
+                MilestoneProgressBarView(finished: 3, all: 4, foregroundColor: !withColor ? Color.ui.disabledText : Color.ui.cognitivePrimary, backgroundColor: !withColor ? Color.ui.disabledText : Color.ui.cognitiveSecondary)
                 MilestoneProgressFinishedView(finished: 3, all: 4, color: !withColor ? Color.ui.disabledText : Color.ui.cognitivePrimary)
                 MilestoneProgressCategoryView(category: "Kognitif", color: !withColor ? Color.ui.disabledText : Color.ui.cognitivePrimary)
             }
             .padding(.horizontal, 12)
             
             VStack {
-                MilestoneProgressBarView(color: !withColor ? Color.ui.disabledText : Color.ui.languagePrimary)
+                MilestoneProgressBarView(finished: 3, all: 4, foregroundColor: !withColor ? Color.ui.disabledText : Color.ui.languagePrimary, backgroundColor: !withColor ? Color.ui.disabledText : Color.ui.languageSecondary)
                 MilestoneProgressFinishedView(finished: 3, all: 4, color: !withColor ? Color.ui.disabledText : Color.ui.languagePrimary)
                 MilestoneProgressCategoryView(category: "Bahasa", color: !withColor ? Color.ui.disabledText : Color.ui.languagePrimary)
             }
             .padding(.horizontal, 12)
             
             VStack {
-                MilestoneProgressBarView(color: !withColor ? Color.ui.disabledText : Color.ui.socialPrimary)
+                MilestoneProgressBarView(finished: 3, all: 4, foregroundColor: !withColor ? Color.ui.disabledText : Color.ui.socialPrimary, backgroundColor: !withColor ? Color.ui.disabledText : Color.ui.socialSecondary)
                 MilestoneProgressFinishedView(finished: 3, all: 4, color: !withColor ? Color.ui.disabledText : Color.ui.socialPrimary)
                 MilestoneProgressCategoryView(category: "Sosial & Emosional", color: !withColor ? Color.ui.disabledText : Color.ui.socialPrimary)
             }
@@ -104,13 +104,26 @@ struct MilestoneProgressFullContentView: View {
 
 struct MilestoneProgressBarView: View {
     
-    let color: Color
+    let progressWidth: CGFloat = 20
+    let progressHeight: CGFloat = 100
+    
+    let finished: CGFloat
+    let all: CGFloat
+    let foregroundColor: Color
+    let backgroundColor: Color
     
     var body: some View {
-        Image(systemName: "lanyardcard.fill")
-            .resizable()
-            .frame(width: 25, height: 75)
-            .foregroundColor(color)
+        ZStack(alignment: .bottom) {
+            if finished / all < 1 {
+                RoundedRectangle(cornerRadius: 10)
+                    .fill(backgroundColor)
+                    .frame(width: progressWidth, height: progressHeight)
+            }
+            
+            RoundedRectangle(cornerRadius: 10)
+                .fill(foregroundColor)
+                .frame(width: progressWidth, height: progressHeight * (finished/all))
+        }
     }
     
 }
