@@ -104,6 +104,7 @@ struct CardContentView: View {
     
     var body: some View {
         Text(text)
+            .multilineTextAlignment(.leading)
             .font(.headline)
             .foregroundColor(Color.ui.text)
             .colorScheme(colorScheme)

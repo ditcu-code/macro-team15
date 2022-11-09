@@ -13,6 +13,8 @@ extension Color {
     
     struct UI {
         let background = Color("BackgroundColor")
+        
+        let disabledText = Color("TextDisabledColor")
         let text = Color("TextColor")
         
         let cognitivePrimary = Color("CognitivePrimaryColor")

@@ -15,84 +15,53 @@ struct DashboardScreen: View {
     @State private var selectedMilestoneCategory = 1
     
     var body: some View {
-        ZStack {
-            Color("BackgroundColor")
-                .edgesIgnoringSafeArea([.bottom, .horizontal])
-            
-            ScrollView {
-                DashboardHeaderView(name: name)
+        NavigationView {
+            ZStack {
+                Color("BackgroundColor")
+                    .edgesIgnoringSafeArea([.bottom, .horizontal])
                 
-                DashboardMilestoneSummaryView(age: age)
-                
-                DashboardMilestoneView(selectedMilestoneCategory: $selectedMilestoneCategory)
-            }
-        }
-        
-    }
-    
-    struct DashboardScreen_Previews: PreviewProvider {
-        static var previews: some View {
-            DashboardScreen(name: "Ceroy Carlo", age: 23)
-        }
-    }
-    
-    struct DashboardHeaderView: View {
-        
-        let name: String
-        
-        var body: some View {
-            HStack(alignment: .bottom) {
-                Text("Hi, \(name)!")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .foregroundColor(Color.ui.text)
-                
-                Spacer()
-                
-                Image(systemName: "person.circle.fill")
-                    .resizable()
-                    .frame(width: 50, height: 50)
-            }
-            .padding(.top, 32)
-            .padding([.bottom, .horizontal])
-            .background(Color.white)
-        }
-        
-    }
-    
-    struct DashboardMilestoneSummaryView: View {
-        
-        let age: Int
-        
-        var body: some View {
-            VStack {
-                HStack {
-                    Text("milestone progress".capitalized)
-                        .font(.title3)
-                        .fontWeight(.bold)
-                        .foregroundColor(Color.ui.text)
+                ScrollView {
+                    DashboardHeaderView(name: name)
                     
-                    Spacer()
+                    MilestoneProgressFullView(title: "Milestone Progress", age: age, withColor: true)
+                        .padding()
                     
-                    HStack {
-                        Image(systemName: "star.fill")
-                            .foregroundColor(.yellow)
-                        
-                        Text("\(age) hari")
-                            .foregroundColor(Color.ui.text)
-                    }
+                    DashboardMilestoneView(selectedMilestoneCategory: $selectedMilestoneCategory)
                 }
-                
-                Text("circular progress placeholder")
-                    .padding(.vertical, 60)
             }
-            .padding()
-            .background(Color.white)
-            .cornerRadius(20)
-            .padding()
         }
-        
     }
+    
+}
+
+struct DashboardScreen_Previews: PreviewProvider {
+    static var previews: some View {
+        DashboardScreen(name: "Ceroy Carlo", age: 23)
+    }
+}
+
+struct DashboardHeaderView: View {
+    
+    let name: String
+    
+    var body: some View {
+        HStack(alignment: .bottom) {
+            Text("Hi, \(name)!")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .foregroundColor(Color.ui.text)
+            
+            Spacer()
+            
+            Image(systemName: "person.circle.fill")
+                .resizable()
+                .frame(width: 50, height: 50)
+        }
+        .padding(.top, 32)
+        .padding([.bottom, .horizontal])
+        .background(Color.white)
+    }
+    
 }
 
 struct DashboardMilestoneView: View {
@@ -122,9 +91,13 @@ struct DashboardMilestoneView: View {
             
             if selectedMilestoneCategory == 1 {
                 ForEach(0 ..< 5) { item in
-                    CardView(text: "Bisa mengangkat kepala mandiri hingga setinggi 45 derajat", primaryColor: Color.ui.motorPrimary, secondaryColor: Color.ui.motorSecondary, isChecked: false, colorScheme: .dark)
-                        .padding(.horizontal)
-                        .padding(.bottom, 12)
+                    NavigationLink {
+                        MilestoneDetailView()
+                    } label: {
+                        CardView(text: "Bisa mengangkat kepala mandiri hingga setinggi 45 derajat", primaryColor: Color.ui.motorPrimary, secondaryColor: Color.ui.motorSecondary, isChecked: false, colorScheme: .dark)
+                            .padding(.horizontal)
+                            .padding(.bottom, 12)
+                    }
                 }
             } else {
                 ForEach(0 ..< 5) { item in
