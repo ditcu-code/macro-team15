@@ -15,17 +15,19 @@ struct DashboardScreen: View {
     @State private var selectedMilestoneCategory = 1
     
     var body: some View {
-        ZStack {
-            Color("BackgroundColor")
-                .edgesIgnoringSafeArea([.bottom, .horizontal])
-            
-            ScrollView {
-                DashboardHeaderView(name: name)
+        NavigationView {
+            ZStack {
+                Color("BackgroundColor")
+                    .edgesIgnoringSafeArea([.bottom, .horizontal])
                 
-                MilestoneProgressFullView(title: "Milestone Progress", age: age, withColor: true)
-                    .padding()
-                
-                DashboardMilestoneView(selectedMilestoneCategory: $selectedMilestoneCategory)
+                ScrollView {
+                    DashboardHeaderView(name: name)
+                    
+                    MilestoneProgressFullView(title: "Milestone Progress", age: age, withColor: true)
+                        .padding()
+                    
+                    DashboardMilestoneView(selectedMilestoneCategory: $selectedMilestoneCategory)
+                }
             }
         }
     }
@@ -89,9 +91,13 @@ struct DashboardMilestoneView: View {
             
             if selectedMilestoneCategory == 1 {
                 ForEach(0 ..< 5) { item in
-                    CardView(text: "Bisa mengangkat kepala mandiri hingga setinggi 45 derajat", primaryColor: Color.ui.motorPrimary, secondaryColor: Color.ui.motorSecondary, isChecked: false, colorScheme: .dark)
-                        .padding(.horizontal)
-                        .padding(.bottom, 12)
+                    NavigationLink {
+                        MilestoneDetailView()
+                    } label: {
+                        CardView(text: "Bisa mengangkat kepala mandiri hingga setinggi 45 derajat", primaryColor: Color.ui.motorPrimary, secondaryColor: Color.ui.motorSecondary, isChecked: false, colorScheme: .dark)
+                            .padding(.horizontal)
+                            .padding(.bottom, 12)
+                    }
                 }
             } else {
                 ForEach(0 ..< 5) { item in
