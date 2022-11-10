@@ -22,7 +22,7 @@ struct ReportScreen: View {
                         ProfileWeeklyStreakView()
                             .padding(.bottom)
                         
-                        ProfileBadgesListCompactView()
+                        BadgesContainer(title: "Badges Terakhir", showSeeAll: true)
                     }
                 }
             }
@@ -151,50 +151,5 @@ struct ProfileWeeklyStreakView: View {
                 .stroke(Color.ui.background, lineWidth: 4)
                 .padding(.horizontal)
         )
-    }
-}
-
-struct ProfileBadgesListCompactView: View {
-    var body: some View {
-        VStack {
-            // Header
-            HStack {
-                Text("Badges Terakhir")
-                    .font(.title3)
-                    .fontWeight(.bold)
-                
-                Spacer()
-                
-                Text("Lihat semua")
-                    .font(.subheadline)
-                    .foregroundColor(.blue)
-            }
-            .padding(.horizontal)
-            
-            HStack {
-                ForEach(0 ..< 3) { item in
-                    VStack {
-                        Hexagon()
-                            .frame(width: 100, height: 100)
-                            .foregroundColor(Color.ui.background)
-                            .padding(.leading, 4)
-                            .rotationEffect(Angle(degrees: 90))
-                        
-                        Text("Reward #\(item+1)")
-                            .font(.subheadline)
-                            .bold()
-                        
-                        Text(Date().dmYFormat())
-                            .font(.subheadline)
-                    }
-                }
-                .padding(.trailing, 4)
-            }
-            .frame(maxWidth: .infinity)
-            .padding(.vertical, 40)
-            .background(RoundedRectangle(cornerRadius: 20)
-                .stroke(Color.ui.background, lineWidth: 4)
-                .padding(.horizontal))
-        }
     }
 }

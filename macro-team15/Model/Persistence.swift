@@ -11,7 +11,7 @@ class PersistenceController: ObservableObject {
     let container: NSPersistentContainer
 
     init(inMemory: Bool = false) {
-        container = NSPersistentContainer(name: "macro-team15")
+        container = NSPersistentContainer(name: "macro-database")
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         }
