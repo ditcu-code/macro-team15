@@ -18,6 +18,8 @@
 		0E7456F429069B4D00D792E6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7456F329069B4D00D792E6 /* ContentView.swift */; };
 		0E7456F629069B4E00D792E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E7456F529069B4E00D792E6 /* Assets.xcassets */; };
 		0E7456F929069B4E00D792E6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E7456F829069B4E00D792E6 /* Preview Assets.xcassets */; };
+		0E7764FC291A4ABD005792FF /* BadgesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7764FB291A4ABD005792FF /* BadgesScreen.swift */; };
+		0E7764FE291BBC86005792FF /* BadgesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7764FD291BBC86005792FF /* BadgesContainer.swift */; };
 		0EDCE4332906A1A50092F759 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDCE4302906A1A50092F759 /* Persistence.swift */; };
 		FA13CD6C2914FCDA00616699 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA13CD6B2914FCDA00616699 /* Color.swift */; };
 		FA706AD32913C49400AD30A4 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA706AD22913C49400AD30A4 /* CardView.swift */; };
@@ -41,6 +43,8 @@
 		0E7456F329069B4D00D792E6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0E7456F529069B4E00D792E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E7456F829069B4E00D792E6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0E7764FB291A4ABD005792FF /* BadgesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesScreen.swift; sourceTree = "<group>"; };
+		0E7764FD291BBC86005792FF /* BadgesContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesContainer.swift; sourceTree = "<group>"; };
 		0EDCE4302906A1A50092F759 /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		FA13CD6B2914FCDA00616699 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		FA706AD22913C49400AD30A4 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -142,6 +146,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		0E7764FA291A4A62005792FF /* Badges */ = {
+			isa = PBXGroup;
+			children = (
+				0E7764FB291A4ABD005792FF /* BadgesScreen.swift */,
+			);
+			path = Badges;
+			sourceTree = "<group>";
+		};
 		0EDCE4352906A3140092F759 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,9 +168,10 @@
 			isa = PBXGroup;
 			children = (
 				FA706AD12913C46D00AD30A4 /* Components */,
-				0E6F61F5290FC77E005C5415 /* Report */,
-				0E6F61F2290FC74B005C5415 /* Milestone */,
 				0E6F61ED290FC338005C5415 /* Dashboard */,
+				0E6F61F2290FC74B005C5415 /* Milestone */,
+				0E6F61F5290FC77E005C5415 /* Report */,
+				0E7764FA291A4A62005792FF /* Badges */,
 				0E7456F329069B4D00D792E6 /* ContentView.swift */,
 			);
 			path = View;
@@ -176,6 +189,7 @@
 		FA706AD12913C46D00AD30A4 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				0E7764FD291BBC86005792FF /* BadgesContainer.swift */,
 				FA706AD22913C49400AD30A4 /* CardView.swift */,
 				FA7B02B82917DABA00552541 /* MilestoneProgressFullView.swift */,
 				FA7B02BA2917F60100552541 /* MilestoneProgressCompactView.swift */,
@@ -257,8 +271,10 @@
 				0E6F61F9290FD283005C5415 /* ViewModel.swift in Sources */,
 				FAB8F3E5291A0227008F7C59 /* Shapes.swift in Sources */,
 				FAB8F3E7291A0570008F7C59 /* Date.swift in Sources */,
+				0E7764FC291A4ABD005792FF /* BadgesScreen.swift in Sources */,
 				0E6F61F7290FC790005C5415 /* ReportScreen.swift in Sources */,
 				0E6F61F4290FC75B005C5415 /* MilestoneScreen.swift in Sources */,
+				0E7764FE291BBC86005792FF /* BadgesContainer.swift in Sources */,
 				0EDCE4332906A1A50092F759 /* Persistence.swift in Sources */,
 				FA13CD6C2914FCDA00616699 /* Color.swift in Sources */,
 				0E7456F429069B4D00D792E6 /* ContentView.swift in Sources */,
