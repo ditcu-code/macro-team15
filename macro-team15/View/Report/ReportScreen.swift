@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ReportScreen: View {
+    
+    @State var isSheetPresented = false
+    
     var body: some View {
         NavigationView {
             ScrollView {
@@ -28,6 +31,9 @@ struct ReportScreen: View {
             }
             
             .navigationTitle("Profile")
+            .sheet(isPresented: $isSheetPresented) {
+                BadgeDetailView(title: "Reward #1", subtitle: "Reward", acquiredDate: Date())
+            }
         }
     }
 }
