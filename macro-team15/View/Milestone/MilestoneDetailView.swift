@@ -34,6 +34,11 @@ struct MilestoneDetailView: View {
         }
         
         .navigationTitle(Text("Milestone"))
+        .toolbar {
+            ToolbarItem {
+                Image(systemName: "person")
+            }
+        }
     }
 }
 
@@ -81,6 +86,8 @@ struct MilestoneDetailNotesView: View {
                     .foregroundColor(.white)
             )
             .padding([.bottom, .horizontal])
+            
+            .navigationBarTitleDisplayMode(.large)
         }
     }
     

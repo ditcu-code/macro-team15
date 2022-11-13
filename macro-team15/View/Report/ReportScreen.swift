@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ReportScreen: View {
+    
+    @State var isSheetPresented = false
+    
     var body: some View {
         NavigationView {
             ScrollView {
@@ -22,12 +25,15 @@ struct ReportScreen: View {
                         ProfileWeeklyStreakView()
                             .padding(.bottom)
                         
-                        ProfileBadgesListCompactView()
+                        ProfileBadgesListCompactView(isSheetPresented: $isSheetPresented)
                     }
                 }
             }
             
             .navigationTitle("Profile")
+            .sheet(isPresented: $isSheetPresented) {
+                BadgeDetailView(title: "Reward #1", subtitle: "Reward", acquiredDate: Date())
+            }
         }
     }
 }
@@ -155,6 +161,9 @@ struct ProfileWeeklyStreakView: View {
 }
 
 struct ProfileBadgesListCompactView: View {
+    
+    @Binding var isSheetPresented: Bool
+    
     var body: some View {
         VStack {
             // Header
@@ -173,19 +182,20 @@ struct ProfileBadgesListCompactView: View {
             
             HStack {
                 ForEach(0 ..< 3) { item in
-                    VStack {
-                        Hexagon()
-                            .frame(width: 100, height: 100)
-                            .foregroundColor(Color.ui.background)
-                            .padding(.leading, 4)
-                            .rotationEffect(Angle(degrees: 90))
-                        
-                        Text("Reward #\(item+1)")
-                            .font(.subheadline)
-                            .bold()
-                        
-                        Text(Date().dmYFormat())
-                            .font(.subheadline)
+                    Button {
+                        isSheetPresented.toggle()
+                    } label: {
+                        VStack {
+                            BadgeView()
+                                .frame(width: 100, height: 100)
+                            
+                            Text("Reward #\(item+1)")
+                                .font(.subheadline)
+                                .bold()
+                            
+                            Text(Date().dmYFormat())
+                                .font(.subheadline)
+                        }
                     }
                 }
                 .padding(.trailing, 4)
@@ -196,5 +206,14 @@ struct ProfileBadgesListCompactView: View {
                 .stroke(Color.ui.background, lineWidth: 4)
                 .padding(.horizontal))
         }
+    }
+}
+
+struct BadgeView: View {
+    var body: some View {
+        Hexagon()
+            .foregroundColor(Color.ui.socialPrimary)
+            .padding(.leading, 4)
+            .rotationEffect(Angle(degrees: 90))
     }
 }

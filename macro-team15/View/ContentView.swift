@@ -29,7 +29,7 @@ struct ContentView: View {
                 .tabItem {
                     Label("Report", systemImage: "newspaper")
                 }
-                .tag(Tabs.milestone)
+                .tag(Tabs.report)
         }
         
     }
