@@ -22,8 +22,11 @@ struct BadgeDetailView: View {
                     .ignoresSafeArea()
                 
                 VStack {
-                    BadgeView()
+                    Hexagon()
                         .frame(width: 300, height: 300)
+                        .foregroundColor(Color.ui.background)
+                        .padding(.leading, 4)
+                        .rotationEffect(Angle(degrees: 90))
                     
                     VStack {
                         Text(title)
