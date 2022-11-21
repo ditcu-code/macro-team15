@@ -17,7 +17,7 @@ struct DashboardScreen: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color("BackgroundColor")
+                BackgroundView()
                     .edgesIgnoringSafeArea([.bottom, .horizontal])
                 
                 ScrollView {

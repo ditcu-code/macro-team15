@@ -16,7 +16,7 @@ struct ReportScreen: View {
             ScrollView {
                 ZStack(alignment: .top) {
                     
-                    Color.ui.background
+                    BackgroundView()
                         .frame(height: 225)
                     
                     VStack {
