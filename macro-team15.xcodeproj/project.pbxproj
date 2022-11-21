@@ -24,6 +24,8 @@
 		FA13CD6C2914FCDA00616699 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA13CD6B2914FCDA00616699 /* Color.swift */; };
 		FA34BD4D291A3FE8009DF42B /* MilestoneDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34BD4C291A3FE8009DF42B /* MilestoneDetailView.swift */; };
 		FA34BD4F291A5DAC009DF42B /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34BD4E291A5DAC009DF42B /* View.swift */; };
+		FA4513C9292BDD17002ADD1A /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4513C8292BDD17002ADD1A /* BackgroundView.swift */; };
+		FA4513CB292BE047002ADD1A /* DashboardHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4513CA292BE047002ADD1A /* DashboardHeaderView.swift */; };
 		FA706AD32913C49400AD30A4 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA706AD22913C49400AD30A4 /* CardView.swift */; };
 		FA7B02B92917DABA00552541 /* MilestoneProgressFullView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7B02B82917DABA00552541 /* MilestoneProgressFullView.swift */; };
 		FA7B02BB2917F60100552541 /* MilestoneProgressCompactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7B02BA2917F60100552541 /* MilestoneProgressCompactView.swift */; };
@@ -52,6 +54,8 @@
 		FA13CD6B2914FCDA00616699 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		FA34BD4C291A3FE8009DF42B /* MilestoneDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneDetailView.swift; sourceTree = "<group>"; };
 		FA34BD4E291A5DAC009DF42B /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		FA4513C8292BDD17002ADD1A /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		FA4513CA292BE047002ADD1A /* DashboardHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardHeaderView.swift; sourceTree = "<group>"; };
 		FA706AD22913C49400AD30A4 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		FA7B02B82917DABA00552541 /* MilestoneProgressFullView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneProgressFullView.swift; sourceTree = "<group>"; };
 		FA7B02BA2917F60100552541 /* MilestoneProgressCompactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneProgressCompactView.swift; sourceTree = "<group>"; };
@@ -92,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				0E6F61EE290FC348005C5415 /* DashboardScreen.swift */,
+				FA4513CA292BE047002ADD1A /* DashboardHeaderView.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -202,6 +207,7 @@
 				FA706AD22913C49400AD30A4 /* CardView.swift */,
 				FA7B02B82917DABA00552541 /* MilestoneProgressFullView.swift */,
 				FA7B02BA2917F60100552541 /* MilestoneProgressCompactView.swift */,
+				FA4513C8292BDD17002ADD1A /* BackgroundView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -286,6 +292,7 @@
 			files = (
 				FA7B02BB2917F60100552541 /* MilestoneProgressCompactView.swift in Sources */,
 				0E6F61F9290FD283005C5415 /* ViewModel.swift in Sources */,
+				FA4513C9292BDD17002ADD1A /* BackgroundView.swift in Sources */,
 				FAB8F3E5291A0227008F7C59 /* Shapes.swift in Sources */,
 				FAB8F3E7291A0570008F7C59 /* Date.swift in Sources */,
 				0E7764FC291A4ABD005792FF /* BadgesScreen.swift in Sources */,
@@ -303,6 +310,7 @@
 				FA34BD4D291A3FE8009DF42B /* MilestoneDetailView.swift in Sources */,
 				FA34BD4F291A5DAC009DF42B /* View.swift in Sources */,
 				FA7B02B92917DABA00552541 /* MilestoneProgressFullView.swift in Sources */,
+				FA4513CB292BE047002ADD1A /* DashboardHeaderView.swift in Sources */,
 				0E6F61EF290FC348005C5415 /* DashboardScreen.swift in Sources */,
 				0E576EF0290A925B00341C88 /* macro-database.xcdatamodeld in Sources */,
 			);

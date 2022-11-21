@@ -10,7 +10,6 @@ import SwiftUI
 struct DashboardScreen: View {
     
     let name: String
-    let age: Int
     
     @State private var selectedMilestoneCategory = 1
     
@@ -18,13 +17,10 @@ struct DashboardScreen: View {
         NavigationView {
             ZStack {
                 BackgroundView()
-                    .edgesIgnoringSafeArea([.bottom, .horizontal])
+                    .edgesIgnoringSafeArea(.all)
                 
                 ScrollView {
                     DashboardHeaderView(name: name)
-                    
-                    MilestoneProgressFullView(title: "Milestone Progress", age: age, withColor: true)
-                        .padding()
                     
                     DashboardMilestoneView(selectedMilestoneCategory: $selectedMilestoneCategory)
                 }
@@ -36,32 +32,8 @@ struct DashboardScreen: View {
 
 struct DashboardScreen_Previews: PreviewProvider {
     static var previews: some View {
-        DashboardScreen(name: "Ceroy Carlo", age: 23)
+        DashboardScreen(name: "Ceroy")
     }
-}
-
-struct DashboardHeaderView: View {
-    
-    let name: String
-    
-    var body: some View {
-        HStack(alignment: .bottom) {
-            Text("Hi, \(name)!")
-                .font(.largeTitle)
-                .fontWeight(.bold)
-                .foregroundColor(Color.ui.text)
-            
-            Spacer()
-            
-            Image(systemName: "person.circle.fill")
-                .resizable()
-                .frame(width: 50, height: 50)
-        }
-        .padding(.top, 32)
-        .padding([.bottom, .horizontal])
-        .background(Color.white)
-    }
-    
 }
 
 struct DashboardMilestoneView: View {
