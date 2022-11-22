@@ -24,6 +24,8 @@ struct DashboardScreen: View {
                     
                     HighlightedStimulusView()
                     
+                    ContentHeaderView(title: "Aktivitas", subtitle: "Dirancang untuk mendukung pencapaian Ceroy", navigationLink: nil)
+                    
 //  DashboardMilestoneView(selectedMilestoneCategory: $selectedMilestoneCategory)
                 }
             }

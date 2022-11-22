@@ -27,6 +27,7 @@
 		FA4513C9292BDD17002ADD1A /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4513C8292BDD17002ADD1A /* BackgroundView.swift */; };
 		FA4513CB292BE047002ADD1A /* DashboardHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4513CA292BE047002ADD1A /* DashboardHeaderView.swift */; };
 		FA4513CD292BE44D002ADD1A /* HighlightedStimulusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4513CC292BE44D002ADD1A /* HighlightedStimulusView.swift */; };
+		FA48EFBA292CC746009ED62B /* ContentHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA48EFB9292CC746009ED62B /* ContentHeaderView.swift */; };
 		FA706AD32913C49400AD30A4 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA706AD22913C49400AD30A4 /* CardView.swift */; };
 		FA7B02B92917DABA00552541 /* MilestoneProgressFullView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7B02B82917DABA00552541 /* MilestoneProgressFullView.swift */; };
 		FA7B02BB2917F60100552541 /* MilestoneProgressCompactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7B02BA2917F60100552541 /* MilestoneProgressCompactView.swift */; };
@@ -58,6 +59,7 @@
 		FA4513C8292BDD17002ADD1A /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		FA4513CA292BE047002ADD1A /* DashboardHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardHeaderView.swift; sourceTree = "<group>"; };
 		FA4513CC292BE44D002ADD1A /* HighlightedStimulusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightedStimulusView.swift; sourceTree = "<group>"; };
+		FA48EFB9292CC746009ED62B /* ContentHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentHeaderView.swift; sourceTree = "<group>"; };
 		FA706AD22913C49400AD30A4 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		FA7B02B82917DABA00552541 /* MilestoneProgressFullView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneProgressFullView.swift; sourceTree = "<group>"; };
 		FA7B02BA2917F60100552541 /* MilestoneProgressCompactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneProgressCompactView.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 				FA7B02B82917DABA00552541 /* MilestoneProgressFullView.swift */,
 				FA7B02BA2917F60100552541 /* MilestoneProgressCompactView.swift */,
 				FA4513C8292BDD17002ADD1A /* BackgroundView.swift */,
+				FA48EFB9292CC746009ED62B /* ContentHeaderView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				0E6F61F1290FC40B005C5415 /* Enum.swift in Sources */,
 				FA34BD4D291A3FE8009DF42B /* MilestoneDetailView.swift in Sources */,
 				FA34BD4F291A5DAC009DF42B /* View.swift in Sources */,
+				FA48EFBA292CC746009ED62B /* ContentHeaderView.swift in Sources */,
 				FA7B02B92917DABA00552541 /* MilestoneProgressFullView.swift in Sources */,
 				FA4513CB292BE047002ADD1A /* DashboardHeaderView.swift in Sources */,
 				0E6F61EF290FC348005C5415 /* DashboardScreen.swift in Sources */,
