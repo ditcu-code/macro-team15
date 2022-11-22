@@ -29,6 +29,7 @@
 		FA4513CD292BE44D002ADD1A /* HighlightedStimulusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4513CC292BE44D002ADD1A /* HighlightedStimulusView.swift */; };
 		FA48EFBA292CC746009ED62B /* ContentHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA48EFB9292CC746009ED62B /* ContentHeaderView.swift */; };
 		FA48EFBC292CD5D0009ED62B /* ActivityCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA48EFBB292CD5D0009ED62B /* ActivityCardView.swift */; };
+		FA48EFBE292D3BF7009ED62B /* MilestoneCategoryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA48EFBD292D3BF7009ED62B /* MilestoneCategoryCardView.swift */; };
 		FA706AD32913C49400AD30A4 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA706AD22913C49400AD30A4 /* CardView.swift */; };
 		FA7B02B92917DABA00552541 /* MilestoneProgressFullView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7B02B82917DABA00552541 /* MilestoneProgressFullView.swift */; };
 		FA7B02BB2917F60100552541 /* MilestoneProgressCompactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7B02BA2917F60100552541 /* MilestoneProgressCompactView.swift */; };
@@ -62,6 +63,7 @@
 		FA4513CC292BE44D002ADD1A /* HighlightedStimulusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightedStimulusView.swift; sourceTree = "<group>"; };
 		FA48EFB9292CC746009ED62B /* ContentHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentHeaderView.swift; sourceTree = "<group>"; };
 		FA48EFBB292CD5D0009ED62B /* ActivityCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCardView.swift; sourceTree = "<group>"; };
+		FA48EFBD292D3BF7009ED62B /* MilestoneCategoryCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneCategoryCardView.swift; sourceTree = "<group>"; };
 		FA706AD22913C49400AD30A4 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		FA7B02B82917DABA00552541 /* MilestoneProgressFullView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneProgressFullView.swift; sourceTree = "<group>"; };
 		FA7B02BA2917F60100552541 /* MilestoneProgressCompactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneProgressCompactView.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				0E6F61EE290FC348005C5415 /* DashboardScreen.swift */,
 				FA4513CC292BE44D002ADD1A /* HighlightedStimulusView.swift */,
 				FA4513CA292BE047002ADD1A /* DashboardHeaderView.swift */,
+				FA48EFBD292D3BF7009ED62B /* MilestoneCategoryCardView.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				0E7456F429069B4D00D792E6 /* ContentView.swift in Sources */,
 				0E576EEC290A7AF900341C88 /* CloudKitService.swift in Sources */,
 				FA48EFBC292CD5D0009ED62B /* ActivityCardView.swift in Sources */,
+				FA48EFBE292D3BF7009ED62B /* MilestoneCategoryCardView.swift in Sources */,
 				FA706AD32913C49400AD30A4 /* CardView.swift in Sources */,
 				0E7456F229069B4D00D792E6 /* macro_team15App.swift in Sources */,
 				0E6F61F1290FC40B005C5415 /* Enum.swift in Sources */,

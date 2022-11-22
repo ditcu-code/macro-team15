@@ -24,18 +24,36 @@ struct DashboardScreen: View {
 
                     HighlightedStimulusView()
 
-                    ContentHeaderView(title: "Aktivitas", subtitle: "Dirancang untuk mendukung pencapaian Ceroy", navigationLink: nil)
-                    
+                    ContentHeaderView(title: "Aktivitas", subtitle: "Dirancang untuk mendukung pencapaian Ceroy", navigationLink: AnyView(Text("Detail")))
+
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
                             Spacer()
                                 .padding(.leading, 8)
-                            
+
                             ForEach(0 ..< 5) { item in
                                 ActivityCardView(title: "Tummy Time", subtitle: "Aktivitas ini dapat mendukung pencapaian motorik dan kognitif!", navigationLink: AnyView(Text("Detail")))
                             }
                         }
                     }
+
+                    ContentHeaderView(title: "Milestone", subtitle: "Dirancang untuk mendukung pencapaian Ceroy", navigationLink: nil)
+                        .padding(.top)
+                    
+                    VStack {
+                        // Motor
+                        MilestoneCategoryCardView(categoryTitle: "Motorik", missionTitle: "Bisa mengangkat dagu sehingga berbalik ke posisi tengkurap", primaryColor: Color.ui.motorPrimary, secondaryColor: Color.ui.motorSecondary, navigationLink: AnyView(Text("Detail")))
+                        
+                        Divider()
+                        
+                        // Cognitive
+                        MilestoneCategoryCardView(categoryTitle: "Kognitif", missionTitle: "Bisa mengangkat dagu sehingga berbalik ke posisi tengkurap", primaryColor: Color.ui.cognitivePrimary, secondaryColor: Color.ui.cognitiveSecondary, navigationLink: AnyView(Text("Detail")))
+                    }
+                    .background(
+                        RoundedRectangle(cornerRadius: 20)
+                            .foregroundColor(.white)
+                    )
+                    .padding(.horizontal)
                     
 //  DashboardMilestoneView(selectedMilestoneCategory: $selectedMilestoneCategory)
                 }
