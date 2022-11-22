@@ -22,7 +22,9 @@ struct DashboardScreen: View {
                 ScrollView {
                     DashboardHeaderView(name: name)
                     
-                    DashboardMilestoneView(selectedMilestoneCategory: $selectedMilestoneCategory)
+                    HighlightedStimulusView()
+                    
+//  DashboardMilestoneView(selectedMilestoneCategory: $selectedMilestoneCategory)
                 }
             }
         }
