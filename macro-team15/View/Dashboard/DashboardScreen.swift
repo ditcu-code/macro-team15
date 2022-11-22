@@ -37,7 +37,7 @@ struct DashboardScreen: View {
                         }
                     }
 
-                    ContentHeaderView(title: "Milestone", subtitle: "Dirancang untuk mendukung pencapaian Ceroy", navigationLink: nil)
+                    ContentHeaderView(title: "Milestone", subtitle: "Perkembangan Ceroy di bulan ini", navigationLink: nil)
                         .padding(.top)
                     
                     VStack {
@@ -55,7 +55,11 @@ struct DashboardScreen: View {
                     )
                     .padding(.horizontal)
                     
-//  DashboardMilestoneView(selectedMilestoneCategory: $selectedMilestoneCategory)
+                    ContentHeaderView(title: "Catatan", subtitle: "Hal-hal penting mengenai perkembangan Ceroy", navigationLink: AnyView(Text("Detail")))
+                        .padding(.top)
+                    
+                    Text("Tidak ada catatan penting")
+                        .padding(.vertical, 80)
                 }
             }
         }
@@ -66,51 +70,5 @@ struct DashboardScreen: View {
 struct DashboardScreen_Previews: PreviewProvider {
     static var previews: some View {
         DashboardScreen(name: "Ceroy")
-    }
-}
-
-struct DashboardMilestoneView: View {
-    
-    @Binding var selectedMilestoneCategory: Int
-    
-    var body: some View {
-        Group {
-            HStack {
-                Text("Milestone")
-                    .font(.title3)
-                    .fontWeight(.bold)
-                
-                Spacer()
-            }
-            .padding(.horizontal, 32)
-            
-            Picker("Milestone", selection: $selectedMilestoneCategory) {
-                Text("Sedang berlangsung")
-                    .tag(1)
-                
-                Text("Telah tercapai")
-                    .tag(2)
-            }
-            .pickerStyle(.segmented)
-            .padding([.horizontal, .bottom])
-            
-            if selectedMilestoneCategory == 1 {
-                ForEach(0 ..< 5) { item in
-                    NavigationLink {
-                        MilestoneDetailView()
-                    } label: {
-                        CardView(text: "Bisa mengangkat kepala mandiri hingga setinggi 45 derajat", primaryColor: Color.ui.motorPrimary, secondaryColor: Color.ui.motorSecondary, isChecked: false, colorScheme: .dark)
-                            .padding(.horizontal)
-                            .padding(.bottom, 12)
-                    }
-                }
-            } else {
-                ForEach(0 ..< 5) { item in
-                    CardView(text: "Bersuara tanpa arti, mamama, bababa, dadada, tatata", primaryColor: Color.ui.cognitivePrimary, secondaryColor: Color.ui.cognitiveSecondary, isChecked: true, colorScheme: .light)
-                        .padding(.horizontal)
-                        .padding(.bottom, 12)
-                }
-            }
-        }
     }
 }
