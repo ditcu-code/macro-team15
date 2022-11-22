@@ -21,10 +21,21 @@ struct DashboardScreen: View {
                 
                 ScrollView {
                     DashboardHeaderView(name: name)
-                    
+
                     HighlightedStimulusView()
-                    
+
                     ContentHeaderView(title: "Aktivitas", subtitle: "Dirancang untuk mendukung pencapaian Ceroy", navigationLink: nil)
+                    
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack {
+                            Spacer()
+                                .padding(.leading, 8)
+                            
+                            ForEach(0 ..< 5) { item in
+                                ActivityCardView(title: "Tummy Time", subtitle: "Aktivitas ini dapat mendukung pencapaian motorik dan kognitif!", navigationLink: AnyView(Text("Detail")))
+                            }
+                        }
+                    }
                     
 //  DashboardMilestoneView(selectedMilestoneCategory: $selectedMilestoneCategory)
                 }
