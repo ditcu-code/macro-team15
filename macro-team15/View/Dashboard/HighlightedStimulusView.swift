@@ -17,21 +17,18 @@ struct HighlightedStimulusView: View {
                 Text("Aktivitas")
                     .font(.callout)
                     .fontWeight(.bold)
+                    .foregroundColor(Color.ui.secondary)
+                
+                Divider()
                 
                 Text("Tummy Time")
                     .font(.largeTitle)
-                    .fontWeight(.bold)
                     .padding(.vertical, 4)
+                    .foregroundColor(Color.ui.primary)
                 
                 Text("Aktivitas ini dapat mendukung pencapaian motorik dan kognitif!")
                     .multilineTextAlignment(.center)
             }
-            .padding()
-            .background(
-                RoundedRectangle(cornerRadius: 20)
-                    .foregroundColor(.white)
-                    .shadow(radius: 4)
-            )
             .padding()
             .offset(CGSize(width: 0, height: -80))
             .padding(.bottom, -100)
@@ -50,6 +47,8 @@ struct HighlightedStimulusView: View {
                     )
                     .padding()
             }
+            
+            Divider()
         }
     }
 }
