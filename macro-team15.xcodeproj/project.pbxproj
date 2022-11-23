@@ -20,6 +20,7 @@
 		0E7456F929069B4E00D792E6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E7456F829069B4E00D792E6 /* Preview Assets.xcassets */; };
 		0E7764FC291A4ABD005792FF /* BadgesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7764FB291A4ABD005792FF /* BadgesScreen.swift */; };
 		0E7764FE291BBC86005792FF /* BadgesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7764FD291BBC86005792FF /* BadgesContainer.swift */; };
+		0EA7D733292CBF720024DECC /* RadarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA7D732292CBF720024DECC /* RadarChart.swift */; };
 		0EDCE4332906A1A50092F759 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDCE4302906A1A50092F759 /* Persistence.swift */; };
 		FA13CD6C2914FCDA00616699 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA13CD6B2914FCDA00616699 /* Color.swift */; };
 		FA34BD4D291A3FE8009DF42B /* MilestoneDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34BD4C291A3FE8009DF42B /* MilestoneDetailView.swift */; };
@@ -54,6 +55,7 @@
 		0E7456F829069B4E00D792E6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0E7764FB291A4ABD005792FF /* BadgesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesScreen.swift; sourceTree = "<group>"; };
 		0E7764FD291BBC86005792FF /* BadgesContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesContainer.swift; sourceTree = "<group>"; };
+		0EA7D732292CBF720024DECC /* RadarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadarChart.swift; sourceTree = "<group>"; };
 		0EDCE4302906A1A50092F759 /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		FA13CD6B2914FCDA00616699 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		FA34BD4C291A3FE8009DF42B /* MilestoneDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneDetailView.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				0E6F61F6290FC790005C5415 /* ReportScreen.swift */,
+				0EA7D732292CBF720024DECC /* RadarChart.swift */,
 			);
 			path = Report;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA7B02BB2917F60100552541 /* MilestoneProgressCompactView.swift in Sources */,
+				0EA7D733292CBF720024DECC /* RadarChart.swift in Sources */,
 				0E6F61F9290FD283005C5415 /* ViewModel.swift in Sources */,
 				FA4513C9292BDD17002ADD1A /* BackgroundView.swift in Sources */,
 				FAB8F3E5291A0227008F7C59 /* Shapes.swift in Sources */,
@@ -385,7 +389,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -439,7 +443,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
