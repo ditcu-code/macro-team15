@@ -10,23 +10,56 @@ import SwiftUI
 struct DashboardScreen: View {
     
     let name: String
-    let age: Int
     
     @State private var selectedMilestoneCategory = 1
     
     var body: some View {
         NavigationView {
             ZStack {
-                Color("BackgroundColor")
-                    .edgesIgnoringSafeArea([.bottom, .horizontal])
+                BackgroundView()
+                    .edgesIgnoringSafeArea(.all)
                 
                 ScrollView {
                     DashboardHeaderView(name: name)
+
+                    HighlightedStimulusView()
+
+                    ContentHeaderView(title: "Aktivitas", subtitle: "Dirancang untuk mendukung pencapaian Ceroy", navigationLink: AnyView(Text("Detail")))
+
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack {
+                            Spacer()
+                                .padding(.leading, 8)
+
+                            ForEach(0 ..< 5) { item in
+                                ActivityCardView(title: "Tummy Time", subtitle: "Aktivitas ini dapat mendukung pencapaian motorik dan kognitif!", navigationLink: AnyView(Text("Detail")))
+                            }
+                        }
+                    }
+
+                    ContentHeaderView(title: "Milestone", subtitle: "Perkembangan Ceroy di bulan ini", navigationLink: nil)
+                        .padding(.top)
                     
-                    MilestoneProgressFullView(title: "Milestone Progress", age: age, withColor: true)
-                        .padding()
+                    VStack {
+                        // Motor
+                        MilestoneCategoryCardView(categoryTitle: "Motorik", missionTitle: "Bisa mengangkat dagu sehingga berbalik ke posisi tengkurap", primaryColor: Color.ui.motorPrimary, secondaryColor: Color.ui.motorSecondary, navigationLink: AnyView(Text("Detail")))
+                        
+                        Divider()
+                        
+                        // Cognitive
+                        MilestoneCategoryCardView(categoryTitle: "Kognitif", missionTitle: "Bisa mengangkat dagu sehingga berbalik ke posisi tengkurap", primaryColor: Color.ui.cognitivePrimary, secondaryColor: Color.ui.cognitiveSecondary, navigationLink: AnyView(Text("Detail")))
+                    }
+                    .background(
+                        RoundedRectangle(cornerRadius: 20)
+                            .foregroundColor(.white)
+                    )
+                    .padding(.horizontal)
                     
-                    DashboardMilestoneView(selectedMilestoneCategory: $selectedMilestoneCategory)
+                    ContentHeaderView(title: "Catatan", subtitle: "Hal-hal penting mengenai perkembangan Ceroy", navigationLink: AnyView(Text("Detail")))
+                        .padding(.top)
+                    
+                    Text("Tidak ada catatan penting")
+                        .padding(.vertical, 80)
                 }
             }
         }
@@ -36,76 +69,6 @@ struct DashboardScreen: View {
 
 struct DashboardScreen_Previews: PreviewProvider {
     static var previews: some View {
-        DashboardScreen(name: "Ceroy Carlo", age: 23)
-    }
-}
-
-struct DashboardHeaderView: View {
-    
-    let name: String
-    
-    var body: some View {
-        HStack(alignment: .bottom) {
-            Text("Hi, \(name)!")
-                .font(.largeTitle)
-                .fontWeight(.bold)
-                .foregroundColor(Color.ui.text)
-            
-            Spacer()
-            
-            Image(systemName: "person.circle.fill")
-                .resizable()
-                .frame(width: 50, height: 50)
-        }
-        .padding(.top, 32)
-        .padding([.bottom, .horizontal])
-        .background(Color.white)
-    }
-    
-}
-
-struct DashboardMilestoneView: View {
-    
-    @Binding var selectedMilestoneCategory: Int
-    
-    var body: some View {
-        Group {
-            HStack {
-                Text("Milestone")
-                    .font(.title3)
-                    .fontWeight(.bold)
-                
-                Spacer()
-            }
-            .padding(.horizontal, 32)
-            
-            Picker("Milestone", selection: $selectedMilestoneCategory) {
-                Text("Sedang berlangsung")
-                    .tag(1)
-                
-                Text("Telah tercapai")
-                    .tag(2)
-            }
-            .pickerStyle(.segmented)
-            .padding([.horizontal, .bottom])
-            
-            if selectedMilestoneCategory == 1 {
-                ForEach(0 ..< 5) { item in
-                    NavigationLink {
-                        MilestoneDetailView()
-                    } label: {
-                        CardView(text: "Bisa mengangkat kepala mandiri hingga setinggi 45 derajat", primaryColor: Color.ui.motorPrimary, secondaryColor: Color.ui.motorSecondary, isChecked: false, colorScheme: .dark)
-                            .padding(.horizontal)
-                            .padding(.bottom, 12)
-                    }
-                }
-            } else {
-                ForEach(0 ..< 5) { item in
-                    CardView(text: "Bersuara tanpa arti, mamama, bababa, dadada, tatata", primaryColor: Color.ui.cognitivePrimary, secondaryColor: Color.ui.cognitiveSecondary, isChecked: true, colorScheme: .light)
-                        .padding(.horizontal)
-                        .padding(.bottom, 12)
-                }
-            }
-        }
+        DashboardScreen(name: "Ceroy")
     }
 }

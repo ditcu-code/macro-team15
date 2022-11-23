@@ -18,21 +18,21 @@ struct BadgeDetailView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color.ui.background
+                BackgroundView()
                     .ignoresSafeArea()
                 
                 VStack {
-                    BadgeView()
-                        .frame(width: 300, height: 300)
-                    
-                    VStack {
-                        Text(title)
-                            .font(.title)
-                        
-                        Text(subtitle)
-                            .font(.callout)
-                    }
-                    .padding(.top)
+//                    BadgeView()
+//                        .frame(width: 300, height: 300)
+//
+//                    VStack {
+//                        Text(title)
+//                            .font(.title)
+//
+//                        Text(subtitle)
+//                            .font(.callout)
+//                    }
+//                    .padding(.top)
                     
                     Text("Didapatkan pada \(acquiredDate.dmYFormat())")
                         .font(.callout)
