@@ -19,6 +19,7 @@ struct ContentHeaderView: View {
                 Text(title)
                     .font(.title2)
                     .bold()
+                    .foregroundColor(Color.ui.primary)
                 
                 Spacer()
                 
@@ -26,11 +27,13 @@ struct ContentHeaderView: View {
                     NavigationLink("Lihat semua") {
                         link
                     }
+                    .foregroundColor(Color.ui.primary)
                 }
             }
             
             Text(subtitle)
                 .font(.subheadline)
+                .foregroundColor(Color.ui.secondary)
         }
         .padding(.horizontal)
     }

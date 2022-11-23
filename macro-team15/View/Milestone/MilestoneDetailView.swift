@@ -19,6 +19,10 @@ struct MilestoneDetailView: View {
             
             ScrollView {
                 MissionView()
+                
+                Divider()
+                
+                ContentHeaderView(title: "Aktivitas", subtitle: "Dirancang untuk mendukung pencapaian Ceroy", navigationLink: AnyView(Text("Abc")))
             }
         }
         
