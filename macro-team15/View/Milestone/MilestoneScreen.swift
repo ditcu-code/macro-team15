@@ -11,7 +11,7 @@ struct MilestoneScreen: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color.ui.background
+                BackgroundView()
                     .edgesIgnoringSafeArea(.all)
                 
                 ScrollView {

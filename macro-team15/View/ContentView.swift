@@ -13,7 +13,7 @@ struct ContentView: View {
     var body: some View {
         
         TabView(selection: $selectedTab) {
-            DashboardScreen(name: "Ceroy Carlo", age: 23)
+            DashboardScreen(name: "Ceroy")
                 .tabItem {
                     Label("Home", systemImage: "house")
                 }
