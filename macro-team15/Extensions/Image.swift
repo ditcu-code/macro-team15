@@ -13,6 +13,7 @@ extension Image {
 
     struct UI {
         let placeholder = Image("PlaceholderImage")
+        let defaultPP = Image("DefaultProfilePicture")
     }
 
 }

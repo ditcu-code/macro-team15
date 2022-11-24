@@ -17,24 +17,24 @@ struct OnboardingScreen: View {
         NavigationView {
             ZStack {
                 Color.green.opacity(0.1)
-                switch step {
-                case 0:
-                    GreetingOnboarding(step: $step)
-                    
-                case 1:
-                    NameOnboarding(name: $name, step: $step)
-                    
-                case 2:
-                    DateOnboarding(name: $name, date: $date, step: $step)
-                    
-                case 3:
-                    DateOnboarding(name: $name, date: $date, step: $step)
-                    
-                    
-                default:
-                    GreetingOnboarding(step: $step)
-                }
-                
+//                switch step {
+//                case 0:
+//                    GreetingOnboarding(step: $step)
+//
+//                case 1:
+//                    NameOnboarding(name: $name, step: $step)
+//
+//                case 2:
+//                    DateOnboarding(name: $name, date: $date, step: $step)
+//
+//                case 3:
+//                    ProfilePictureOnboarding(name: $name, step: $step)
+//
+//
+//                default:
+//                    GreetingOnboarding(step: $step)
+//                }
+                ProfilePictureOnboarding(name: $name, step: $step)
                 
             }.animation(.linear, value: step)
         }.navigationTitle("Profil Anak")
@@ -57,6 +57,16 @@ struct OvalTextFieldStyle: TextFieldStyle {
     }
 }
 
+struct GreenButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .padding(10)
+            .background(Color.UI().primary)
+            .cornerRadius(16)
+            .shadow(color: .gray.opacity(0.5), radius: 2, x: 0, y: 1)
+    }
+}
+
 struct OvalWhiteButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
@@ -73,7 +83,14 @@ struct ProfilePictureOnboarding: View {
     
     var body: some View {
         VStack {
-            Image(systemName: "")
+            
+            VStack {
+                Image("DefaultProfilePicture").clipShape(Circle())
+                Button("+ tambah foto") {
+                    
+                }.buttonStyle(GreenButtonStyle()).offset(y: -20)
+            }
+
             Text("Wah, Tuntun jadi penasaran Ceroy seperti apa?")
                 .font(.title2)
                 .bold()
@@ -83,7 +100,7 @@ struct ProfilePictureOnboarding: View {
             }
             .textFieldStyle(OvalTextFieldStyle())
             Button("Selanjutnya") {
-                step == 1 ? step += 1 : nil
+                step == 3 ? step += 1 : nil
             }.disabled(name.count < 1)
         }.padding()
     }
