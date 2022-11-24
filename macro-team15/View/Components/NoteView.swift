@@ -12,9 +12,11 @@ struct NoteView: View {
     let title: String
     let description: String
     let date: Date
+    let navigationLink: AnyView
     
     var body: some View {
         NavigationLink {
+            navigationLink
         } label: {
             HStack(alignment: .top) {
                 VStack(alignment: .leading) {
@@ -48,6 +50,6 @@ struct NoteView: View {
 
 struct NoteView_Previews: PreviewProvider {
     static var previews: some View {
-        NoteView(title: "Judul Catatan", description: "Isi catatan", date: Date())
+        NoteView(title: "Judul Catatan", description: "Isi catatan", date: Date(), navigationLink: AnyView(NoteDetailView(note: "Isi catatan")))
     }
 }
