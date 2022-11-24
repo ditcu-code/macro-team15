@@ -18,19 +18,26 @@ struct ContentHeaderView: View {
             HStack {
                 Text(title)
                     .font(.title2)
-                    .bold()
+                    .foregroundColor(Color.ui.primary)
                 
                 Spacer()
                 
                 if let link = navigationLink {
-                    NavigationLink("Lihat semua") {
+                    NavigationLink {
                         link
+                    } label: {
+                        Text("Lihat semua")
+                            .foregroundColor(Color.ui.primary)
+                            .bold()
                     }
+
                 }
             }
+            .padding(.bottom, 4)
             
             Text(subtitle)
                 .font(.subheadline)
+                .foregroundColor(Color.ui.secondary)
         }
         .padding(.horizontal)
     }

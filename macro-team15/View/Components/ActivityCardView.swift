@@ -18,62 +18,22 @@ struct ActivityCardView: View {
             navigationLink
         } label: {
             VStack {
-                ZStack(alignment: .topTrailing) {
-                    Image("PlaceholderImage")
-                        .resizable().aspectRatio(contentMode: .fill)
-                        .frame(width: 200, height: 200)
-                    
-                    HStack {
-                        Image(systemName: "gearshape.fill")
-                            .foregroundColor(Color.ui.motorPrimary)
-                            .padding(4)
-                            .background(
-                                Circle()
-                                    .foregroundColor(.white)
-                            )
-                            .padding(.trailing, -8)
-                        
-                        Image(systemName: "puzzlepiece.fill")
-                            .foregroundColor(Color.ui.cognitivePrimary)
-                            .padding(4)
-                            .background(
-                                Circle()
-                                    .foregroundColor(.white)
-                            )
-                            .padding(.trailing, -8)
-                        
-                        Image(systemName: "heart.fill")
-                            .foregroundColor(Color.ui.socialPrimary)
-                            .padding(4)
-                            .background(
-                                Circle()
-                                    .foregroundColor(.white)
-                            )
-                            .padding(.trailing, -8)
-                        
-                        Image(systemName: "character.bubble.fill")
-                            .foregroundColor(Color.ui.languagePrimary)
-                            .padding(4)
-                            .background(
-                                Circle()
-                                    .foregroundColor(.white)
-                            )
-                            .padding(.trailing, -8)
-                    }
-                    .padding(.top, 8)
-                    .padding(.trailing)
-                }
+                Image("PlaceholderImage")
+                    .resizable().aspectRatio(contentMode: .fill)
+                    .frame(width: 200, height: 200)
                 
                 VStack(alignment: .leading) {
                     Text(title)
                         .font(.callout)
                         .bold()
                         .padding(.bottom, 4)
-                        .foregroundColor(Color.ui.text)
+                        .foregroundColor(Color.ui.primary)
                     
                     Text(subtitle)
+                        .fixedSize(horizontal: false, vertical: true)
                         .font(.caption)
                         .foregroundColor(Color.ui.text)
+                        .multilineTextAlignment(.leading)
                 }
                 .padding([.bottom, .horizontal], 12)
             }

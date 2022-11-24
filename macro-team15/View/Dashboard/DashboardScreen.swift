@@ -15,51 +15,83 @@ struct DashboardScreen: View {
     
     var body: some View {
         NavigationView {
-            ZStack {
-                BackgroundView()
-                    .edgesIgnoringSafeArea(.all)
-                
-                ScrollView {
-                    DashboardHeaderView(name: name)
+            GeometryReader { geo in
+                ZStack {
+                    BackgroundView()
+                        .edgesIgnoringSafeArea(.all)
+                    
+                    ScrollView {
+                        HighlightedStimulusView()
 
-                    HighlightedStimulusView()
+                        ContentHeaderView(title: "Aktivitas", subtitle: "Dirancang untuk mendukung pencapaian Ceroy", navigationLink: AnyView(Text("Detail")))
 
-                    ContentHeaderView(title: "Aktivitas", subtitle: "Dirancang untuk mendukung pencapaian Ceroy", navigationLink: AnyView(Text("Detail")))
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack {
+                                Spacer()
+                                    .padding(.leading, 8)
 
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack {
-                            Spacer()
-                                .padding(.leading, 8)
-
-                            ForEach(0 ..< 5) { item in
-                                ActivityCardView(title: "Tummy Time", subtitle: "Aktivitas ini dapat mendukung pencapaian motorik dan kognitif!", navigationLink: AnyView(Text("Detail")))
+                                ForEach(0 ..< 5) { item in
+                                    ActivityCardView(title: "Tummy Time", subtitle: "Aktivitas ini dapat mendukung pencapaian motorik dan kognitif!", navigationLink: AnyView(Text("Detail")))
+                                }
                             }
                         }
-                    }
 
-                    ContentHeaderView(title: "Milestone", subtitle: "Perkembangan Ceroy di bulan ini", navigationLink: nil)
-                        .padding(.top)
-                    
-                    VStack {
-                        // Motor
-                        MilestoneCategoryCardView(categoryTitle: "Motorik", missionTitle: "Bisa mengangkat dagu sehingga berbalik ke posisi tengkurap", primaryColor: Color.ui.motorPrimary, secondaryColor: Color.ui.motorSecondary, navigationLink: AnyView(Text("Detail")))
+                        ContentHeaderView(title: "Milestone", subtitle: "Perkembangan Ceroy di bulan ini", navigationLink: nil)
+                            .padding(.top)
                         
-                        Divider()
+                        VStack {
+                            
+                            
+                            // Motor
+                            MilestoneCategoryCardView(categoryTitle: "Motorik", missionTitle: "Bisa mengangkat dagu sehingga berbalik ke posisi tengkurap", primaryColor: Color.ui.motorPrimary, secondaryColor: Color.ui.motorSecondary, navigationLink: AnyView(Text("Detail")))
+                            
+                            Divider()
+                            
+                            // Cognitive
+                            MilestoneCategoryCardView(categoryTitle: "Kognitif", missionTitle: "Bisa mengangkat dagu sehingga berbalik ke posisi tengkurap", primaryColor: Color.ui.cognitivePrimary, secondaryColor: Color.ui.cognitiveSecondary, navigationLink: AnyView(Text("Detail")))
+                        }
+                        .background(
+                            RoundedRectangle(cornerRadius: 20)
+                                .foregroundColor(.white)
+                        )
+                        .padding(.horizontal)
                         
-                        // Cognitive
-                        MilestoneCategoryCardView(categoryTitle: "Kognitif", missionTitle: "Bisa mengangkat dagu sehingga berbalik ke posisi tengkurap", primaryColor: Color.ui.cognitivePrimary, secondaryColor: Color.ui.cognitiveSecondary, navigationLink: AnyView(Text("Detail")))
+                        ContentHeaderView(title: "Catatan", subtitle: "Hal-hal penting mengenai perkembangan Ceroy", navigationLink: AnyView(Text("Detail")))
+                            .padding(.top)
+                        
+                        Text("Tidak ada catatan penting")
+                            .padding(.vertical, 80)
                     }
-                    .background(
-                        RoundedRectangle(cornerRadius: 20)
-                            .foregroundColor(.white)
-                    )
-                    .padding(.horizontal)
+                }
+                
+                .navigationTitle("\(geo.frame(in: .global).minY < 100 ? "Beranda" : "Hi, Ceroy!")")
+                .toolbar {
+                    // Milestone dropdown
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        HStack(alignment: .bottom) {
+                            Button {
+                                
+                            } label: {
+                                Text("Bulan ke-1")
+                                
+                                Image(systemName: "chevron.down")
+                                    .padding(.leading, -4)
+                            }
+                            .font(.headline)
+                            .foregroundColor(Color.ui.text)
+                        }
+                    }
                     
-                    ContentHeaderView(title: "Catatan", subtitle: "Hal-hal penting mengenai perkembangan Ceroy", navigationLink: AnyView(Text("Detail")))
-                        .padding(.top)
-                    
-                    Text("Tidak ada catatan penting")
-                        .padding(.vertical, 80)
+                    // Profile image
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button {
+                            
+                        } label: {
+                            Image(systemName: "person.circle.fill")
+                                .resizable()
+                                .frame(minWidth: 35, minHeight: 35)
+                        }
+                    }
                 }
             }
         }

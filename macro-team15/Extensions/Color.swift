@@ -15,6 +15,7 @@ extension Color {
         let background = Color("BackgroundColor")
         
         let primary = Color("PrimaryColor")
+        let secondary = Color("SecondaryColor")
         
         let disabledText = Color("TextDisabledColor")
         let text = Color("TextColor")
