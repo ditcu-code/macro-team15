@@ -10,7 +10,6 @@ import SwiftUI
 struct MilestoneDetailView: View {
     
     @Environment(\.presentationMode) var presentationMode
-    let notes = ["Abcalscjkdskvjdfknvdfjkvndfkjnv", "Def", "Ghi"]
 
     var body: some View {
         ZStack {
@@ -19,10 +18,30 @@ struct MilestoneDetailView: View {
             
             ScrollView {
                 MissionView()
-                
+
                 Divider()
-                
+
                 ContentHeaderView(title: "Aktivitas", subtitle: "Dirancang untuk mendukung pencapaian Ceroy", navigationLink: AnyView(Text("Abc")))
+
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack {
+                        Spacer()
+                            .padding(.leading, 8)
+
+                        ForEach(0 ..< 5) { item in
+                            ActivityCardView(title: "Tummy Time", subtitle: "Aktivitas ini dapat mendukung pencapaian motorik dan kognitif!", navigationLink: AnyView(Text("Detail")))
+                        }
+                    }
+                }
+
+                Divider()
+                    .padding(.top)
+
+                ContentHeaderView(title: "Catatan", subtitle: "Hal-hal penting mengenai perkembangan Ceroy", navigationLink: nil)
+                
+                ScrollView {
+                    NoteView(title: "Judul catatan", description: "Isi catatan", date: Date())
+                }
             }
         }
         
@@ -30,7 +49,7 @@ struct MilestoneDetailView: View {
         .toolbar {
             ToolbarItem {
                 Image(systemName: "checkmark.circle.fill")
-                    .foregroundColor(.green)
+                    .foregroundColor(Color.ui.primary)
             }
         }
     }
