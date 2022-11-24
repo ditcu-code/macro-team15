@@ -33,20 +33,11 @@ struct HighlightedStimulusView: View {
             .offset(CGSize(width: 0, height: -80))
             .padding(.bottom, -100)
             
-            Button {
+            Button("Lakukan") {
                 
-            } label: {
-                Text("Lakukan")
-                    .bold()
-                    .foregroundColor(.white)
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical)
-                    .background(
-                        RoundedRectangle(cornerRadius: 20)
-                            .foregroundColor(Color.ui.primary)
-                    )
-                    .padding()
             }
+            .buttonStyle(PrimaryButtonStyle())
+            .padding()
             
             Divider()
         }
