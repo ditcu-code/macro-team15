@@ -9,8 +9,9 @@ import SwiftUI
 
 struct NoteDetailView: View {
     
-    @State var note: String
     @FocusState private var noteIsFocused: Bool
+    @State var note: String
+    @State private var isPresented = false
     
     var body: some View {
         ZStack {
@@ -38,6 +39,20 @@ struct NoteDetailView: View {
                     }
                 }
             }
+            .alert(
+                "Apakah Anda ingin menghapus catatan ini?",
+                isPresented: $isPresented
+            ) {
+                Button("Hapus", role: .destructive) {
+                    isPresented.toggle()
+                }
+                Button("Batal", role: .cancel) {
+                    isPresented.toggle()
+                }
+            } message: {
+                Text("Tindakan ini tidak bisa dibatalkan")
+            }
+
         }
         
         .navigationTitle("Catatan")
@@ -65,7 +80,7 @@ struct NoteDetailView: View {
                         }
                         
                         Button(role: .destructive) {
-                            
+                            isPresented.toggle()
                         } label: {
                             Label("Hapus", systemImage: "trash.fill")
                         }
