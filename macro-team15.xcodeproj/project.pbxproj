@@ -40,6 +40,7 @@
 		FAB8F3E5291A0227008F7C59 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB8F3E4291A0227008F7C59 /* Shapes.swift */; };
 		FAB8F3E7291A0570008F7C59 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB8F3E6291A0570008F7C59 /* Date.swift */; };
 		FACDC5DB292F5DE4007B51A4 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACDC5DA292F5DE4007B51A4 /* NoteView.swift */; };
+		FACDC5DD292F5ED3007B51A4 /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACDC5DC292F5ED3007B51A4 /* ButtonStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		FAB8F3E4291A0227008F7C59 /* Shapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
 		FAB8F3E6291A0570008F7C59 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		FACDC5DA292F5DE4007B51A4 /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
+		FACDC5DC292F5ED3007B51A4 /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +218,7 @@
 				FA996A16292E23D400DF570E /* Image.swift */,
 				FAB8F3E6291A0570008F7C59 /* Date.swift */,
 				FA34BD4E291A5DAC009DF42B /* View.swift */,
+				FACDC5DC292F5ED3007B51A4 /* ButtonStyle.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				0E6F61F9290FD283005C5415 /* ViewModel.swift in Sources */,
 				FA4513C9292BDD17002ADD1A /* BackgroundView.swift in Sources */,
 				FA996A17292E23D400DF570E /* Image.swift in Sources */,
+				FACDC5DD292F5ED3007B51A4 /* ButtonStyle.swift in Sources */,
 				FAB8F3E5291A0227008F7C59 /* Shapes.swift in Sources */,
 				FAB8F3E7291A0570008F7C59 /* Date.swift in Sources */,
 				FA4513CD292BE44D002ADD1A /* HighlightedStimulusView.swift in Sources */,
