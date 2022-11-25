@@ -23,7 +23,9 @@ struct NoteDetailView: View {
                 .ignoresSafeArea()
             
             ScrollView {
-                MissionView(missionTitle: "Bisa menggerakkan kepala dari kiri/kanan ke tengah")
+                if !titleOnFocus && !noteOnFocus {
+                    MissionView(missionTitle: "Bisa menggerakkan kepala dari kiri/kanan ke tengah")
+                }
                
                 ZStack(alignment: .topLeading) {
                     RoundedRectangle(cornerRadius: 20)
@@ -64,10 +66,7 @@ struct NoteDetailView: View {
             } message: {
                 Text("Tindakan ini tidak bisa dibatalkan")
             }
-            .onAppear {
-                titleOnFocus = true
-            }
-
+            .animation(.spring(), value: titleOnFocus || noteOnFocus)
         }
         
         .navigationTitle("Catatan")
