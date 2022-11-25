@@ -17,7 +17,7 @@ struct MilestoneDetailView: View {
                 .edgesIgnoringSafeArea(.all)
             
             ScrollView {
-                MissionView()
+                MissionView(missionTitle: "Bisa menggerakkan kepala dari kiri/kanan ke tengah")
 
                 Divider()
 
@@ -40,12 +40,13 @@ struct MilestoneDetailView: View {
                 ContentHeaderView(title: "Catatan", subtitle: "Hal-hal penting mengenai perkembangan Ceroy", navigationLink: nil)
                 
                 ScrollView {
-                    NoteView(title: "Judul catatan", description: "Isi catatan", date: Date())
+                    NoteView(title: "Judul catatan", description: "Isi catatan", date: Date(), navigationLink: AnyView(NoteDetailView(note: "")))
                 }
             }
         }
         
         .navigationTitle(Text("Detail Misi"))
+        .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem {
                 Image(systemName: "checkmark.circle.fill")
