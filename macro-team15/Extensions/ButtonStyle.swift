@@ -8,16 +8,21 @@
 import SwiftUI
 
 struct PrimaryButtonStyle: ButtonStyle {
+    @Environment(\.isEnabled) var isEnabled
+    
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
             .font(.body.bold())
             .foregroundColor(.white)
-            .padding()
-            .frame(maxWidth: .infinity)
+            .frame(maxWidth: .infinity, minHeight: 60)
             .background(
                 RoundedRectangle(cornerRadius: 20)
-                    .foregroundColor(Color.ui.primary)
+                    .foregroundColor(isEnabled ? Color.ui.primary : Color.ui.primary.opacity(0.2))
             )
             .scaleEffect(configuration.isPressed ? 0.95: 1)
+            .shadow(
+                color: .gray.opacity(isEnabled ? 0.5 : 0),
+                radius: 2, x: 0, y: 1
+            )
     }
 }
