@@ -9,8 +9,12 @@ import SwiftUI
 
 struct NoteDetailView: View {
     
-    @FocusState private var noteIsFocused: Bool
+    @State var title: String
     @State var note: String
+    
+    @FocusState private var titleOnFocus: Bool
+    @FocusState private var noteOnFocus: Bool
+    
     @State private var isPresented = false
     
     var body: some View {
@@ -18,25 +22,33 @@ struct NoteDetailView: View {
             BackgroundView()
                 .ignoresSafeArea()
             
-            VStack {
+            ScrollView {
                 MissionView(missionTitle: "Bisa menggerakkan kepala dari kiri/kanan ke tengah")
                
                 ZStack(alignment: .topLeading) {
-                    TextEditor(text: $note)
-                        .focused($noteIsFocused)
+                    RoundedRectangle(cornerRadius: 20)
+                        .foregroundColor(.white)
                         .padding()
-                        .background(
-                            RoundedRectangle(cornerRadius: 20)
-                                .foregroundColor(.white)
-                                .shadow(radius: 1)
-                        )
-                        .padding()
+                        .shadow(radius: 1)
                     
-                    if note.isEmpty {
-                        TextField("Tulis catatan", text: $note)
-                            .disabled(true)
-                            .padding(40)
+                    VStack {
+                        TextField("", text: $title)
+                            .focused($titleOnFocus)
+                            .font(.title)
+                            .bold()
+                            .onSubmit {
+                                titleOnFocus = false
+                                noteOnFocus = true
+                            }
+                        
+                        ZStack(alignment: .topLeading) {
+                            TextEditor(text: $note)
+                                .focused($noteOnFocus)
+                                .frame(minHeight: 100)
+                        }
+                        .padding(.horizontal, -4)
                     }
+                    .padding(32)
                 }
             }
             .alert(
@@ -52,15 +64,22 @@ struct NoteDetailView: View {
             } message: {
                 Text("Tindakan ini tidak bisa dibatalkan")
             }
+            .onAppear {
+                titleOnFocus = true
+            }
 
         }
         
         .navigationTitle("Catatan")
         .toolbar {
             ToolbarItem {
-                if noteIsFocused {
+                if titleOnFocus || noteOnFocus {
                     Button {
-                        noteIsFocused = false
+                        titleOnFocus = false
+                        noteOnFocus = false
+                        
+                        // Add save action below
+                        
                     } label: {
                         Text("Done")
                             .foregroundColor(Color.ui.primary)
@@ -98,7 +117,7 @@ struct NoteDetailView: View {
 struct NoteDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            NoteDetailView(note: "")
+            NoteDetailView(title: "", note: "")
             
             .navigationBarTitleDisplayMode(.inline)
         }
