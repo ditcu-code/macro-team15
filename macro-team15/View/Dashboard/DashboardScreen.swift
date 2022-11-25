@@ -10,7 +10,9 @@ import SwiftUI
 struct DashboardScreen: View {
     
     let name: String
-    
+//    @FetchRequest(sortDescriptors: [])
+//    private var babyList: FetchedResults<Baby>
+//
     @State private var selectedMilestoneCategory = 1
     
     var body: some View {
@@ -21,6 +23,9 @@ struct DashboardScreen: View {
                         .edgesIgnoringSafeArea(.all)
                     
                     ScrollView {
+//                        List(babyList) { baby in
+//                            Text(baby.name ?? "")
+//                        }
                         HighlightedStimulusView()
 
                         ContentHeaderView(title: "Aktivitas", subtitle: "Dirancang untuk mendukung pencapaian Ceroy", navigationLink: AnyView(Text("Detail")))

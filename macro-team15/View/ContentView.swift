@@ -11,9 +11,8 @@ struct ContentView: View {
     @State private var selectedTab: Tabs = .home
     
     var body: some View {
-        
         TabView(selection: $selectedTab) {
-            DashboardScreen(name: "Ceroy")
+            OnboardingScreen()
                 .tabItem {
                     Label("Home", systemImage: "house")
                 }
