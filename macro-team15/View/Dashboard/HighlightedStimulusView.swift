@@ -45,9 +45,6 @@ struct HighlightedStimulusView: View {
                 .buttonStyle(PrimaryButtonStyle())
                 .padding([.top, .horizontal])
             }
-            
-            Divider()
-                .padding(.vertical)
         }
     }
 }
