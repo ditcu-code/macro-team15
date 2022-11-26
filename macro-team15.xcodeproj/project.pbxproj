@@ -41,6 +41,7 @@
 		FAB8F3E7291A0570008F7C59 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB8F3E6291A0570008F7C59 /* Date.swift */; };
 		FACDC5DB292F5DE4007B51A4 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACDC5DA292F5DE4007B51A4 /* NoteView.swift */; };
 		FACDC5DD292F5ED3007B51A4 /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACDC5DC292F5ED3007B51A4 /* ButtonStyle.swift */; };
+		FAE1733A293202110076ABFA /* StimulusDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE17339293202110076ABFA /* StimulusDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		FAB8F3E6291A0570008F7C59 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		FACDC5DA292F5DE4007B51A4 /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
 		FACDC5DC292F5ED3007B51A4 /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
+		FAE17339293202110076ABFA /* StimulusDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StimulusDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 		0EDCE4362906A4D60092F759 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FAE17338293201F40076ABFA /* Stimulus */,
 				FAB270C0291BBC7600C3E99A /* Badge */,
 				FA706AD12913C46D00AD30A4 /* Components */,
 				0E6F61ED290FC338005C5415 /* Dashboard */,
@@ -245,6 +248,14 @@
 				FAB270C1291BBC8B00C3E99A /* BadgeDetailView.swift */,
 			);
 			path = Badge;
+			sourceTree = "<group>";
+		};
+		FAE17338293201F40076ABFA /* Stimulus */ = {
+			isa = PBXGroup;
+			children = (
+				FAE17339293202110076ABFA /* StimulusDetailView.swift */,
+			);
+			path = Stimulus;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,6 +343,7 @@
 				FAB270C2291BBC8B00C3E99A /* BadgeDetailView.swift in Sources */,
 				0E7764FE291BBC86005792FF /* BadgesContainer.swift in Sources */,
 				0EDCE4332906A1A50092F759 /* Persistence.swift in Sources */,
+				FAE1733A293202110076ABFA /* StimulusDetailView.swift in Sources */,
 				FA13CD6C2914FCDA00616699 /* Color.swift in Sources */,
 				FACDC5DB292F5DE4007B51A4 /* NoteView.swift in Sources */,
 				0E7456F429069B4D00D792E6 /* ContentView.swift in Sources */,

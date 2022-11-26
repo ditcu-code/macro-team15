@@ -21,7 +21,7 @@ struct DashboardScreen: View {
                         .edgesIgnoringSafeArea(.all)
                     
                     ScrollView {
-                        HighlightedStimulusView()
+                        HighlightedStimulusView(withCTA: true)
 
                         ContentHeaderView(title: "Aktivitas", subtitle: "Dirancang untuk mendukung pencapaian Ceroy", navigationLink: AnyView(Text("Detail")))
 
