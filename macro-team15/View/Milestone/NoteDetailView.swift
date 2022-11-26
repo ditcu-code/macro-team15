@@ -22,7 +22,7 @@ struct NoteDetailView: View {
             BackgroundView()
                 .ignoresSafeArea()
             
-            ScrollView {
+            VStack {
                 if !titleOnFocus && !noteOnFocus {
                     MissionView(missionTitle: "Bisa menggerakkan kepala dari kiri/kanan ke tengah")
                 }
