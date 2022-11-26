@@ -43,6 +43,7 @@
 		FACDC5DD292F5ED3007B51A4 /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACDC5DC292F5ED3007B51A4 /* ButtonStyle.swift */; };
 		FAE1733A293202110076ABFA /* StimulusDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE17339293202110076ABFA /* StimulusDetailView.swift */; };
 		FAE1733C29320A7E0076ABFA /* StimulusMaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE1733B29320A7E0076ABFA /* StimulusMaterialView.swift */; };
+		FAE1733E2932140F0076ABFA /* StimulusStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE1733D2932140F0076ABFA /* StimulusStepView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +85,7 @@
 		FACDC5DC292F5ED3007B51A4 /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 		FAE17339293202110076ABFA /* StimulusDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StimulusDetailView.swift; sourceTree = "<group>"; };
 		FAE1733B29320A7E0076ABFA /* StimulusMaterialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StimulusMaterialView.swift; sourceTree = "<group>"; };
+		FAE1733D2932140F0076ABFA /* StimulusStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StimulusStepView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				FAE17339293202110076ABFA /* StimulusDetailView.swift */,
+				FAE1733D2932140F0076ABFA /* StimulusStepView.swift */,
 				FAE1733B29320A7E0076ABFA /* StimulusMaterialView.swift */,
 			);
 			path = Stimulus;
@@ -358,6 +361,7 @@
 				0E6F61F1290FC40B005C5415 /* Enum.swift in Sources */,
 				FA34BD4D291A3FE8009DF42B /* MilestoneDetailView.swift in Sources */,
 				FA34BD4F291A5DAC009DF42B /* View.swift in Sources */,
+				FAE1733E2932140F0076ABFA /* StimulusStepView.swift in Sources */,
 				FA48EFBA292CC746009ED62B /* ContentHeaderView.swift in Sources */,
 				FA7B02B92917DABA00552541 /* MilestoneProgressFullView.swift in Sources */,
 				FA4513CB292BE047002ADD1A /* DashboardHeaderView.swift in Sources */,
@@ -502,7 +506,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -533,7 +537,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

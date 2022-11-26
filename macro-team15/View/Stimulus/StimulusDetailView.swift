@@ -11,18 +11,18 @@ struct StimulusDetailView: View {
     var body: some View {
         ScrollView {
             HighlightedStimulusView(withCTA: false)
-            
+
             Divider()
                 .padding(.top)
                 .padding(.bottom, 8)
-            
-            ContentHeaderView(title: "Material", subtitle: "Peralatan untuk melakukan aktivitas ini", navigationLink: nil)
-            
+
+            ContentHeaderView(title: "Material", subtitle: "Peralatan untuk mendukung aktivitas ini", navigationLink: nil)
+
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
                     Spacer()
                         .padding(.leading, 10)
-                    
+
                     ForEach(0 ..< 5) { item in
                         StimulusMaterialView()
                             .padding(.trailing, 10)
@@ -30,9 +30,16 @@ struct StimulusDetailView: View {
                 }
             }
             .padding(.top)
-            
+
             Divider()
-                .padding(.vertical)
+                .padding(.top)
+                .padding(.bottom, 12)
+
+            ContentHeaderView(title: "Langkah-langkah", subtitle: "Panduan untuk aktivitas ini", navigationLink: nil)
+            
+            ForEach(1 ..< 5) { item in
+                StimulusStepView(order: item, description: "Lakukan Tummy Time di tempat yang datar seperti lantai, kasur, atau di atas perut dan pangkuan bunda")
+            }
         }
         
         .navigationTitle(Text("Detail Aktivitas"))
