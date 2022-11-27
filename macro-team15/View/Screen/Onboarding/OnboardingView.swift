@@ -1,5 +1,5 @@
 //
-//  OnboardingScreen.swift
+//  OnboardingView.swift
 //  macro-team15
 //
 //  Created by Aditya Cahyo on 23/11/22.
@@ -8,29 +8,31 @@
 import SwiftUI
 import PhotosUI
 
-struct OnboardingScreen: View {
-    @State var step: Int = 0
-    @State var name: String = ""
-    @State var date: Date = Date()
-    @State var selectedPicture: PhotosPickerItem? = nil
-    @State var selectedPictData: Data? = nil
+struct OnboardingView: View {
+//    @State var step: Int = 0
+//    @State var name: String = ""
+//    @State var date: Date = Date()
+//    @State var selectedPicture: PhotosPickerItem? = nil
+//    @State var selectedPictData: Data? = nil
+//
+    @StateObject var viewModel = OnboardingViewModel()
     
     var body: some View {
         
         ZStack(alignment: .top) {
             ZStack(alignment: .top) {
                 HStack {
-                    if step > 1 {
+                    if viewModel.step > 1 {
                         Button {
-                            step -= 1
+                            viewModel.prevStep()
                         } label: {
                             Label("Kembali", systemImage: "chevron.left").labelStyle(.titleAndIcon)
                         }
                     }
                     Spacer()
-                    if step == 3 {
+                    if viewModel.step == 3 {
                         Button("Lewati") {
-                            step = 4
+                            viewModel.step = 4
                         }
                     }
                 }
@@ -39,40 +41,41 @@ struct OnboardingScreen: View {
             }.zIndex(1)
             ZStack(alignment: .bottom) {
                 Color.green.opacity(0.1).ignoresSafeArea()
+                Text("\(viewModel.step)")
                 VStack {
-                    if (step != 3) {
-                        TuntunIllustration(step: $step)
+                    if (viewModel.step != 3) {
+                        TuntunIllustration(step: $viewModel.step)
                             .padding(.bottom, 30)
                     }
-                    switch step {
+                    switch viewModel.step {
                     case 0:
-                        GreetingOnboarding(step: $step)
+                        GreetingOnboarding(viewModel: viewModel)
                         
                     case 1:
-                        NameOnboarding(name: $name, step: $step)
+                        NameOnboarding(viewModel: viewModel)
                         
                     case 2:
-                        DateOnboarding(name: $name, date: $date, step: $step)
+                        DateOnboarding(viewModel: viewModel)
                         
                     case 3:
-                        ProfilePictureOnboarding(name: $name, step: $step, selectedPicture: $selectedPicture, selectedPictData: $selectedPictData)
-                        
+                        ProfilePictureOnboarding(viewModel: viewModel)
+                    
                     default:
-                        GreetingOnboarding(step: $step)
+                        GreetingOnboarding(viewModel: viewModel)
                     }
                 }
                 .padding()
                 .offset(y: -UIScreen.main.bounds.height / 5)
                 
-            }.animation(.default, value: step)
+            }.animation(.default, value: viewModel.step)
         }
         
     }
 }
 
-struct OnboardingScreen_Previews: PreviewProvider {
+struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingScreen()
+        OnboardingView()
     }
 }
 
@@ -118,18 +121,13 @@ struct OvalWhiteButtonStyle: ButtonStyle {
 }
 
 struct ProfilePictureOnboarding: View {
-    @Binding var name: String
-    @Binding var step: Int
-    @Binding var selectedPicture: PhotosPickerItem?
-    @Binding var selectedPictData: Data?
-    
-    @Environment(\.managedObjectContext) var moc
+    @ObservedObject var viewModel: OnboardingViewModel
     
     var body: some View {
         VStack {
             Group {
-                if let selectedPictData,
-                   let uiImage = UIImage(data: selectedPictData) {
+                if let photo = viewModel.photo,
+                   let uiImage = UIImage(data: photo) {
                     Image(uiImage: uiImage)
                 } else {
                     Image.ui.defaultPP
@@ -142,20 +140,20 @@ struct ProfilePictureOnboarding: View {
                 
             } label: {
                 PhotosPicker(
-                    selection: $selectedPicture,
+                    selection: $viewModel.selectedPicture,
                     matching: .images,
                     photoLibrary: .shared()
                 ) {
                     Text(
-                        selectedPictData != nil ?
+                        viewModel.photo != nil ?
                         "+ ganti foto" : "+ tambah foto"
                     )
                     .frame(minWidth: 90)
-                    .animation(.linear, value: selectedPictData)
-                }.onChange(of: selectedPicture) { newItem in
+                    .animation(.linear, value: viewModel.photo)
+                }.onChange(of: viewModel.selectedPicture) { newItem in
                     Task {
                         if let data = try? await newItem?.loadTransferable(type: Data.self) {
-                            selectedPictData = data
+                            viewModel.photo = data
                         }
                     }
                 }
@@ -165,47 +163,44 @@ struct ProfilePictureOnboarding: View {
             
         }
         HStack {
-            OnboardingText(text: "Wah, Tuntun jadi penasaran \(name) seperti apa?").padding(.bottom, 5)
+            OnboardingText(text: "Wah, Tuntun jadi penasaran \(viewModel.name) seperti apa?").padding(.bottom, 5)
             Spacer()
         }
         Button("Selesai") {
-//            let newBaby = Baby(context: moc)
-            
+            viewModel.saveBaby()
         }.buttonStyle(PrimaryButtonStyle())
     }
 }
 
 struct DateOnboarding: View {
-    @Binding var name: String
-    @Binding var date: Date
-    @Binding var step: Int
+    @ObservedObject var viewModel: OnboardingViewModel
     @State private var isShowingDialog = false
     
     var body: some View {
         Group {
             
             HStack {
-                OnboardingText(text: "Kapan \(name) hadir dan mewarnai hari-hari Ayah Bunda?").padding(.bottom, 5)
+                OnboardingText(text: "Kapan \(viewModel.name) hadir dan mewarnai hari-hari Ayah Bunda?").padding(.bottom, 5)
                 Spacer()
             }
             Button {
                 isShowingDialog.toggle()
             } label: {
-                Text("\(date.dmYFormat())")
+                Text("\(viewModel.birthDate.dmYFormat())")
                     .frame(maxWidth: .infinity)
-                    .animation(.linear, value: date)
+                    .animation(.linear, value: viewModel.birthDate)
             }
             .buttonStyle(OvalWhiteButtonStyle())
             .padding(.bottom)
-        }.offset(x: step == 2 ? 0 : -UIScreen.main.bounds.height)
+        }.offset(x: viewModel.step == 2 ? 0 : -UIScreen.main.bounds.height)
         
         Button("Selanjutnya") {
-            step == 2 ? step += 1 : nil
+            viewModel.nextStep()
         }
-        .disabled(Calendar.current.isDateInToday(date))
+        .disabled(Calendar.current.isDateInToday(viewModel.birthDate))
         .buttonStyle(PrimaryButtonStyle())
         .sheet(isPresented: $isShowingDialog) {
-            DatePicker("", selection: $date, in: ...Date(), displayedComponents: [.date])
+            DatePicker("", selection: $viewModel.birthDate, in: ...Date(), displayedComponents: [.date])
                 .frame(width: 100)
                 .datePickerStyle(.wheel)
                 .presentationDetents([.height(250)])
@@ -216,8 +211,7 @@ struct DateOnboarding: View {
 
 
 struct NameOnboarding: View {
-    @Binding var name: String
-    @Binding var step: Int
+    @ObservedObject var viewModel: OnboardingViewModel
     
     var body: some View {
         Group {
@@ -225,29 +219,28 @@ struct NameOnboarding: View {
                 OnboardingText(text: "Yuk, isi nama bayi yang akan Tuntun temani perjalanannya").padding(.bottom, 5)
                 Spacer()
             }
-            TextField("Aruna Mazaya", text: $name)
+            TextField("Aruna Mazaya", text: $viewModel.name)
                 .font(.headline)
                 .textFieldStyle(OvalTextFieldStyle())
                 .padding(.bottom)
-        }.offset(x: step == 1 ? 0 : -UIScreen.main.bounds.height)
+        }
         Button("Selanjutnya") {
-            step == 1 ? step += 1 : nil
+            viewModel.nextStep()
         }
         .buttonStyle(PrimaryButtonStyle())
-        .disabled(name.count < 1)
+        .disabled(viewModel.name.count < 1)
     }
 }
 
 struct GreetingOnboarding: View {
-    @Binding var step: Int
-    
+    @ObservedObject var viewModel: OnboardingViewModel
     
     var body: some View {
         HStack {
-            OnboardingText(text: "Hi Ayah Bunda!\nAku Tuntun, yang akan menemani perjalanan Ayah Bunda dan bayi di 1000 hari pertamanya!").offset(x: step == 0 ? 0 : -UIScreen.main.bounds.height)
+            OnboardingText(text: "Hi Ayah Bunda!\nAku Tuntun, yang akan menemani perjalanan Ayah Bunda dan bayi di 1000 hari pertamanya!").offset(x: viewModel.step == 0 ? 0 : -UIScreen.main.bounds.height)
         }.padding(.bottom, 5)
         Button("Selanjutnya") {
-            step == 0 ? step += 1 : nil
+            viewModel.nextStep()
         }.buttonStyle(PrimaryButtonStyle())
         
     }

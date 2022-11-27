@@ -69,7 +69,7 @@ struct DashboardScreen: View {
                     }
                 }
                 
-                .navigationTitle("\(geo.frame(in: .global).minY < 100 ? "Beranda" : "Hi, Ceroy!")")
+                .navigationTitle("\(geo.frame(in: .global).minY < 100 ? "Beranda" : "Hi, \(name)!")")
                 .toolbar {
                     // Milestone dropdown
                     ToolbarItem(placement: .navigationBarLeading) {
