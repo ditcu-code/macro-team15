@@ -40,7 +40,7 @@ struct MilestoneDetailView: View {
                 ContentHeaderView(title: "Catatan", subtitle: "Hal-hal penting mengenai perkembangan Ceroy", navigationLink: nil)
                 
                 ScrollView {
-                    NoteView(title: "Judul catatan", description: "Isi catatan", date: Date(), navigationLink: AnyView(NoteDetailView(note: "")))
+                    NoteView(title: "Judul catatan", description: "Isi catatan", date: Date(), navigationLink: AnyView(NoteDetailView(title: "", note: "")))
                 }
             }
         }
