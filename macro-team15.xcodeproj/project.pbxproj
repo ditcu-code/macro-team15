@@ -129,7 +129,7 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		0E46F147292FC2F300D54488 /* Core Data Model */ = {
+		0E46F147292FC2F300D54488 /* CoreDataModel */ = {
 			isa = PBXGroup;
 			children = (
 				0E8FE4D02933C6AC00DBF715 /* Baby+CoreDataClass.swift */,
@@ -141,7 +141,7 @@
 				0E8FE4CA2933A51F00DBF715 /* BabyMilestoneNote+CoreDataClass.swift */,
 				0E8FE4CB2933A51F00DBF715 /* BabyMilestoneNote+CoreDataProperties.swift */,
 			);
-			path = "Core Data Model";
+			path = CoreDataModel;
 			sourceTree = "<group>";
 		};
 		0E576EEA290A7AD400341C88 /* Service */ = {
@@ -253,7 +253,7 @@
 		0EDCE4352906A3140092F759 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0E46F147292FC2F300D54488 /* Core Data Model */,
+				0E46F147292FC2F300D54488 /* CoreDataModel */,
 				0E6F61F0290FC40B005C5415 /* Enum.swift */,
 				0EDCE4302906A1A50092F759 /* Persistence.swift */,
 				FAB8F3E4291A0227008F7C59 /* Shapes.swift */,
