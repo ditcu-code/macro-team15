@@ -26,6 +26,7 @@
 		0E8FE4CF2933C41600DBF715 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE4CE2933C41600DBF715 /* ContentViewModel.swift */; };
 		0E8FE4D22933C6AC00DBF715 /* Baby+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE4D02933C6AC00DBF715 /* Baby+CoreDataClass.swift */; };
 		0E8FE4D32933C6AC00DBF715 /* Baby+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE4D12933C6AC00DBF715 /* Baby+CoreDataProperties.swift */; };
+		0E8FE4D72933E1ED00DBF715 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE4D62933E1ED00DBF715 /* ViewModel.swift */; };
 		0E92692B29309AFD0050C375 /* userData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0E92692929309AFD0050C375 /* userData.xcdatamodeld */; };
 		0E9269382930D4970050C375 /* BabyPhoto+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9269302930D4970050C375 /* BabyPhoto+CoreDataClass.swift */; };
 		0E9269392930D4970050C375 /* BabyPhoto+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9269312930D4970050C375 /* BabyPhoto+CoreDataProperties.swift */; };
@@ -79,6 +80,7 @@
 		0E8FE4CE2933C41600DBF715 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		0E8FE4D02933C6AC00DBF715 /* Baby+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Baby+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		0E8FE4D12933C6AC00DBF715 /* Baby+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Baby+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		0E8FE4D62933E1ED00DBF715 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		0E92692A29309AFD0050C375 /* userData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = userData.xcdatamodel; sourceTree = "<group>"; };
 		0E9269302930D4970050C375 /* BabyPhoto+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BabyPhoto+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		0E9269312930D4970050C375 /* BabyPhoto+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BabyPhoto+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
@@ -234,6 +236,14 @@
 			path = Screen;
 			sourceTree = "<group>";
 		};
+		0E8FE4D52933E1E000DBF715 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0E8FE4D62933E1ED00DBF715 /* ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		0EA7D736292E23D20024DECC /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
@@ -256,6 +266,7 @@
 		0EDCE4362906A4D60092F759 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0E8FE4D52933E1E000DBF715 /* ViewModel */,
 				0E8FE4C52933A32900DBF715 /* Screen */,
 				FAB270C0291BBC7600C3E99A /* Badge */,
 				FA706AD12913C46D00AD30A4 /* Components */,
@@ -390,6 +401,7 @@
 				FA4513CD292BE44D002ADD1A /* HighlightedStimulusView.swift in Sources */,
 				0E7764FC291A4ABD005792FF /* BadgesScreen.swift in Sources */,
 				0E6F61F7290FC790005C5415 /* ReportScreen.swift in Sources */,
+				0E8FE4D72933E1ED00DBF715 /* ViewModel.swift in Sources */,
 				0E92693A2930D4970050C375 /* BabyMilestone+CoreDataClass.swift in Sources */,
 				0EA7D738292E24010024DECC /* OnboardingView.swift in Sources */,
 				0E6F61F4290FC75B005C5415 /* MilestoneScreen.swift in Sources */,
