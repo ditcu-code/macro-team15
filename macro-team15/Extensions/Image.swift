@@ -13,6 +13,10 @@ extension Image {
 
     struct UI {
         let placeholder = Image("PlaceholderImage")
+        let defaultPP = Image("DefaultProfilePicture")
+        let tuntunOnboarding = Image("TuntunOnboarding")
+        let tuntunHead = Image("TuntunHead")
+        let tuntunHand = Image("TuntunHand")
     }
 
 }

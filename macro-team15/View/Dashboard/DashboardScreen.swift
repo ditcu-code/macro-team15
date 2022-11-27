@@ -10,7 +10,9 @@ import SwiftUI
 struct DashboardScreen: View {
     
     let name: String
-    
+//    @FetchRequest(sortDescriptors: [])
+//    private var babyList: FetchedResults<Baby>
+//
     @State private var selectedMilestoneCategory = 1
     
     var body: some View {
@@ -67,7 +69,7 @@ struct DashboardScreen: View {
                     }
                 }
                 
-                .navigationTitle("\(geo.frame(in: .global).minY < 100 ? "Beranda" : "Hi, Ceroy!")")
+                .navigationTitle("\(geo.frame(in: .global).minY < 100 ? "Beranda" : "Hi, \(name)!")")
                 .toolbar {
                     // Milestone dropdown
                     ToolbarItem(placement: .navigationBarLeading) {
