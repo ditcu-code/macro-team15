@@ -13,7 +13,6 @@
 		0E6F61F1290FC40B005C5415 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6F61F0290FC40B005C5415 /* Enum.swift */; };
 		0E6F61F4290FC75B005C5415 /* MilestoneScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6F61F3290FC75B005C5415 /* MilestoneScreen.swift */; };
 		0E6F61F7290FC790005C5415 /* ReportScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6F61F6290FC790005C5415 /* ReportScreen.swift */; };
-		0E6F61F9290FD283005C5415 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6F61F8290FD283005C5415 /* ViewModel.swift */; };
 		0E7456F229069B4D00D792E6 /* macro_team15App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7456F129069B4D00D792E6 /* macro_team15App.swift */; };
 		0E7456F429069B4D00D792E6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7456F329069B4D00D792E6 /* ContentView.swift */; };
 		0E7456F629069B4E00D792E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E7456F529069B4E00D792E6 /* Assets.xcassets */; };
@@ -57,7 +56,6 @@
 		0E6F61F0290FC40B005C5415 /* Enum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		0E6F61F3290FC75B005C5415 /* MilestoneScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneScreen.swift; sourceTree = "<group>"; };
 		0E6F61F6290FC790005C5415 /* ReportScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportScreen.swift; sourceTree = "<group>"; };
-		0E6F61F8290FD283005C5415 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		0E7456EE29069B4D00D792E6 /* macro-team15.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "macro-team15.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E7456F129069B4D00D792E6 /* macro_team15App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = macro_team15App.swift; sourceTree = "<group>"; };
 		0E7456F329069B4D00D792E6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -105,15 +103,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0E576EE9290A7AB200341C88 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				0E6F61F8290FD283005C5415 /* ViewModel.swift */,
-				FA241A9C2930FBD600CAA09B /* KeyboardResponder.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		0E576EEA290A7AD400341C88 /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,12 +161,12 @@
 		0E7456F029069B4D00D792E6 /* macro-team15 */ = {
 			isa = PBXGroup;
 			children = (
+				0E8FE4D42933CD0C00DBF715 /* Utilities */,
 				FA13CD6A2914FCCD00616699 /* Extensions */,
 				0E576EED290A7B2100341C88 /* macro-team15.entitlements */,
 				0E7456F129069B4D00D792E6 /* macro_team15App.swift */,
 				0EDCE4352906A3140092F759 /* Model */,
 				0EDCE4362906A4D60092F759 /* View */,
-				0E576EE9290A7AB200341C88 /* ViewModel */,
 				0E576EEA290A7AD400341C88 /* Service */,
 				0E7456F529069B4E00D792E6 /* Assets.xcassets */,
 				0E7456F729069B4E00D792E6 /* Preview Content */,
@@ -199,6 +188,14 @@
 				0E7764FB291A4ABD005792FF /* BadgesScreen.swift */,
 			);
 			path = Badges;
+			sourceTree = "<group>";
+		};
+		0E8FE4D42933CD0C00DBF715 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				FA241A9C2930FBD600CAA09B /* KeyboardResponder.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		0EDCE4352906A3140092F759 /* Model */ = {
@@ -347,7 +344,6 @@
 				FA241A9D2930FBD600CAA09B /* KeyboardResponder.swift in Sources */,
 				FA7B02BB2917F60100552541 /* MilestoneProgressCompactView.swift in Sources */,
 				0EA7D733292CBF720024DECC /* RadarChart.swift in Sources */,
-				0E6F61F9290FD283005C5415 /* ViewModel.swift in Sources */,
 				FA4513C9292BDD17002ADD1A /* BackgroundView.swift in Sources */,
 				FA996A17292E23D400DF570E /* Image.swift in Sources */,
 				FACDC5DD292F5ED3007B51A4 /* ButtonStyle.swift in Sources */,
