@@ -129,21 +129,6 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		0E46F147292FC2F300D54488 /* CoreDataModel */ = {
-			isa = PBXGroup;
-			children = (
-				0E8FE4D02933C6AC00DBF715 /* Baby+CoreDataClass.swift */,
-				0E8FE4D12933C6AC00DBF715 /* Baby+CoreDataProperties.swift */,
-				0E9269302930D4970050C375 /* BabyPhoto+CoreDataClass.swift */,
-				0E9269312930D4970050C375 /* BabyPhoto+CoreDataProperties.swift */,
-				0E9269322930D4970050C375 /* BabyMilestone+CoreDataClass.swift */,
-				0E9269332930D4970050C375 /* BabyMilestone+CoreDataProperties.swift */,
-				0E8FE4CA2933A51F00DBF715 /* BabyMilestoneNote+CoreDataClass.swift */,
-				0E8FE4CB2933A51F00DBF715 /* BabyMilestoneNote+CoreDataProperties.swift */,
-			);
-			path = CoreDataModel;
-			sourceTree = "<group>";
-		};
 		0E576EEA290A7AD400341C88 /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +171,14 @@
 		0E7456E529069B4C00D792E6 = {
 			isa = PBXGroup;
 			children = (
+				0E8FE4D02933C6AC00DBF715 /* Baby+CoreDataClass.swift */,
+				0E8FE4D12933C6AC00DBF715 /* Baby+CoreDataProperties.swift */,
+				0E9269302930D4970050C375 /* BabyPhoto+CoreDataClass.swift */,
+				0E9269312930D4970050C375 /* BabyPhoto+CoreDataProperties.swift */,
+				0E9269322930D4970050C375 /* BabyMilestone+CoreDataClass.swift */,
+				0E9269332930D4970050C375 /* BabyMilestone+CoreDataProperties.swift */,
+				0E8FE4CA2933A51F00DBF715 /* BabyMilestoneNote+CoreDataClass.swift */,
+				0E8FE4CB2933A51F00DBF715 /* BabyMilestoneNote+CoreDataProperties.swift */,
 				0E7456F029069B4D00D792E6 /* macro-team15 */,
 				0E7456EF29069B4D00D792E6 /* Products */,
 			);
@@ -253,7 +246,6 @@
 		0EDCE4352906A3140092F759 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0E46F147292FC2F300D54488 /* CoreDataModel */,
 				0E6F61F0290FC40B005C5415 /* Enum.swift */,
 				0EDCE4302906A1A50092F759 /* Persistence.swift */,
 				FAB8F3E4291A0227008F7C59 /* Shapes.swift */,
