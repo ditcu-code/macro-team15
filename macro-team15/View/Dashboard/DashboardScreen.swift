@@ -10,9 +10,7 @@ import SwiftUI
 struct DashboardScreen: View {
     
     let name: String
-//    @FetchRequest(sortDescriptors: [])
-//    private var babyList: FetchedResults<Baby>
-//
+    
     @State private var selectedMilestoneCategory = 1
     
     var body: some View {
@@ -23,7 +21,6 @@ struct DashboardScreen: View {
                         .edgesIgnoringSafeArea(.all)
                     
                     ScrollView {
-
                         HighlightedStimulusView(withCTA: true)
                         
                         Divider()
@@ -70,7 +67,7 @@ struct DashboardScreen: View {
                     }
                 }
                 
-                .navigationTitle("\(geo.frame(in: .global).minY < 100 ? "Beranda" : "Hi, \(name)!")")
+                .navigationTitle("\(geo.frame(in: .global).minY < 100 ? "Beranda" : "Hi, Ceroy!")")
                 .toolbar {
                     // Milestone dropdown
                     ToolbarItem(placement: .navigationBarLeading) {
