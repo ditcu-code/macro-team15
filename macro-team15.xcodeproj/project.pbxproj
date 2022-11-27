@@ -23,6 +23,7 @@
 		0EA7D733292CBF720024DECC /* RadarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA7D732292CBF720024DECC /* RadarChart.swift */; };
 		0EDCE4332906A1A50092F759 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDCE4302906A1A50092F759 /* Persistence.swift */; };
 		FA13CD6C2914FCDA00616699 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA13CD6B2914FCDA00616699 /* Color.swift */; };
+		FA241A9D2930FBD600CAA09B /* KeyboardResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA241A9C2930FBD600CAA09B /* KeyboardResponder.swift */; };
 		FA34BD4D291A3FE8009DF42B /* MilestoneDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34BD4C291A3FE8009DF42B /* MilestoneDetailView.swift */; };
 		FA34BD4F291A5DAC009DF42B /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34BD4E291A5DAC009DF42B /* View.swift */; };
 		FA4513C9292BDD17002ADD1A /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4513C8292BDD17002ADD1A /* BackgroundView.swift */; };
@@ -44,6 +45,7 @@
 		FAE1733A293202110076ABFA /* StimulusDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE17339293202110076ABFA /* StimulusDetailView.swift */; };
 		FAE1733C29320A7E0076ABFA /* StimulusMaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE1733B29320A7E0076ABFA /* StimulusMaterialView.swift */; };
 		FAE1733E2932140F0076ABFA /* StimulusStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE1733D2932140F0076ABFA /* StimulusStepView.swift */; };
+		FAF49537292FA3AE00D396E1 /* NoteDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF49536292FA3AE00D396E1 /* NoteDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +67,7 @@
 		0EA7D732292CBF720024DECC /* RadarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadarChart.swift; sourceTree = "<group>"; };
 		0EDCE4302906A1A50092F759 /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		FA13CD6B2914FCDA00616699 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		FA241A9C2930FBD600CAA09B /* KeyboardResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardResponder.swift; sourceTree = "<group>"; };
 		FA34BD4C291A3FE8009DF42B /* MilestoneDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneDetailView.swift; sourceTree = "<group>"; };
 		FA34BD4E291A5DAC009DF42B /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		FA4513C8292BDD17002ADD1A /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
@@ -86,6 +89,7 @@
 		FAE17339293202110076ABFA /* StimulusDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StimulusDetailView.swift; sourceTree = "<group>"; };
 		FAE1733B29320A7E0076ABFA /* StimulusMaterialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StimulusMaterialView.swift; sourceTree = "<group>"; };
 		FAE1733D2932140F0076ABFA /* StimulusStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StimulusStepView.swift; sourceTree = "<group>"; };
+		FAF49536292FA3AE00D396E1 /* NoteDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				0E6F61F8290FD283005C5415 /* ViewModel.swift */,
+				FA241A9C2930FBD600CAA09B /* KeyboardResponder.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -132,6 +137,7 @@
 			children = (
 				0E6F61F3290FC75B005C5415 /* MilestoneScreen.swift */,
 				FA34BD4C291A3FE8009DF42B /* MilestoneDetailView.swift */,
+				FAF49536292FA3AE00D396E1 /* NoteDetailView.swift */,
 			);
 			path = Milestone;
 			sourceTree = "<group>";
@@ -334,6 +340,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAF49537292FA3AE00D396E1 /* NoteDetailView.swift in Sources */,
+				FA241A9D2930FBD600CAA09B /* KeyboardResponder.swift in Sources */,
 				FA7B02BB2917F60100552541 /* MilestoneProgressCompactView.swift in Sources */,
 				0EA7D733292CBF720024DECC /* RadarChart.swift in Sources */,
 				0E6F61F9290FD283005C5415 /* ViewModel.swift in Sources */,
@@ -498,7 +506,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"macro-team15/Preview Content\"";
-				DEVELOPMENT_TEAM = 474XANH3RF;
+				DEVELOPMENT_TEAM = 6PDVJXGB2J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -529,7 +537,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"macro-team15/Preview Content\"";
-				DEVELOPMENT_TEAM = 474XANH3RF;
+				DEVELOPMENT_TEAM = 6PDVJXGB2J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
