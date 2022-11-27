@@ -8,10 +8,15 @@
 import SwiftUI
 
 struct HighlightedStimulusView: View {
+    
+    let withCTA: Bool
+    
     var body: some View {
         VStack {
             Image("PlaceholderImage")
                 .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(height: 300)
             
             VStack {
                 Text("Aktivitas")
@@ -33,19 +38,19 @@ struct HighlightedStimulusView: View {
             .offset(CGSize(width: 0, height: -80))
             .padding(.bottom, -100)
             
-            Button("Lakukan") {
-                
+            if withCTA {
+                Button("Lakukan") {
+                    
+                }
+                .buttonStyle(PrimaryButtonStyle())
+                .padding([.top, .horizontal])
             }
-            .buttonStyle(PrimaryButtonStyle())
-            .padding()
-            
-            Divider()
         }
     }
 }
 
 struct HighlightedStimulusView_Previews: PreviewProvider {
     static var previews: some View {
-        HighlightedStimulusView()
+        HighlightedStimulusView(withCTA: true)
     }
 }
