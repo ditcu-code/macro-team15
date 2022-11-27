@@ -21,7 +21,6 @@
 		0E7456F929069B4E00D792E6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E7456F829069B4E00D792E6 /* Preview Assets.xcassets */; };
 		0E7764FC291A4ABD005792FF /* BadgesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7764FB291A4ABD005792FF /* BadgesScreen.swift */; };
 		0E7764FE291BBC86005792FF /* BadgesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7764FD291BBC86005792FF /* BadgesContainer.swift */; };
-		0E8FE4D92933E25E00DBF715 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE4D82933E25E00DBF715 /* ViewModel.swift */; };
 		0E8FE4CC2933A51F00DBF715 /* BabyMilestoneNote+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE4CA2933A51F00DBF715 /* BabyMilestoneNote+CoreDataClass.swift */; };
 		0E8FE4CD2933A51F00DBF715 /* BabyMilestoneNote+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE4CB2933A51F00DBF715 /* BabyMilestoneNote+CoreDataProperties.swift */; };
 		0E8FE4CF2933C41600DBF715 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE4CE2933C41600DBF715 /* ContentViewModel.swift */; };
@@ -74,14 +73,13 @@
 		0E6F61F3290FC75B005C5415 /* MilestoneScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneScreen.swift; sourceTree = "<group>"; };
 		0E6F61F6290FC790005C5415 /* ReportScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportScreen.swift; sourceTree = "<group>"; };
 		0E6F61F8290FD283005C5415 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
-		0E7456EE29069B4D00D792E6 /* macro-team15.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "macro-team15.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E7456EE29069B4D00D792E6 /* macro-team15.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "macro-team15.app"; path = "/Users/ditcu/Code/macro-team15/build/Debug-iphoneos/macro-team15.app"; sourceTree = "<absolute>"; };
 		0E7456F129069B4D00D792E6 /* macro_team15App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = macro_team15App.swift; sourceTree = "<group>"; };
 		0E7456F329069B4D00D792E6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0E7456F529069B4E00D792E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E7456F829069B4E00D792E6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0E7764FB291A4ABD005792FF /* BadgesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesScreen.swift; sourceTree = "<group>"; };
 		0E7764FD291BBC86005792FF /* BadgesContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesContainer.swift; sourceTree = "<group>"; };
-		0E8FE4D82933E25E00DBF715 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		0E8FE4CA2933A51F00DBF715 /* BabyMilestoneNote+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BabyMilestoneNote+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		0E8FE4CB2933A51F00DBF715 /* BabyMilestoneNote+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BabyMilestoneNote+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		0E8FE4CE2933C41600DBF715 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
@@ -194,16 +192,7 @@
 				0E8FE4CA2933A51F00DBF715 /* BabyMilestoneNote+CoreDataClass.swift */,
 				0E8FE4CB2933A51F00DBF715 /* BabyMilestoneNote+CoreDataProperties.swift */,
 				0E7456F029069B4D00D792E6 /* macro-team15 */,
-				0E7456EF29069B4D00D792E6 /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		0E7456EF29069B4D00D792E6 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				0E7456EE29069B4D00D792E6 /* macro-team15.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		0E7456F029069B4D00D792E6 /* macro-team15 */ = {
@@ -240,22 +229,6 @@
 			path = Badges;
 			sourceTree = "<group>";
 		};
-          0E8FE4D42933CD0C00DBF715 /* Utilities */ = {
-            isa = PBXGroup;
-            children = (
-                FA241A9C2930FBD600CAA09B /* KeyboardResponder.swift */,
-            );
-            path = Utilities;
-            sourceTree = "<group>";
-        };
-        0E8FE4DA2933E26400DBF715 /* ViewModel */ = {
-            isa = PBXGroup;
-            children = (
-                0E8FE4D82933E25E00DBF715 /* ViewModel.swift */,
-            );
-            path = ViewModel;
-            sourceTree = "<group>";
-        };
 		0E8FE4C52933A32900DBF715 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
@@ -264,6 +237,14 @@
 				0EA7D736292E23D20024DECC /* Onboarding */,
 			);
 			path = Screen;
+			sourceTree = "<group>";
+		};
+		0E8FE4D42933CD0C00DBF715 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				FA241A9C2930FBD600CAA09B /* KeyboardResponder.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		0E8FE4D52933E1E000DBF715 /* ViewModel */ = {
@@ -400,7 +381,7 @@
 				Base,
 			);
 			mainGroup = 0E7456E529069B4C00D792E6;
-			productRefGroup = 0E7456EF29069B4D00D792E6 /* Products */;
+			productRefGroup = 0E7456E529069B4C00D792E6;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -469,7 +450,6 @@
 				0E8FE4CF2933C41600DBF715 /* ContentViewModel.swift in Sources */,
 				FA34BD4F291A5DAC009DF42B /* View.swift in Sources */,
 				FAE1733E2932140F0076ABFA /* StimulusStepView.swift in Sources */,
-				0E8FE4D92933E25E00DBF715 /* ViewModel.swift in Sources */,
 				FA48EFBA292CC746009ED62B /* ContentHeaderView.swift in Sources */,
 				FA7B02B92917DABA00552541 /* MilestoneProgressFullView.swift in Sources */,
 				0E8FE4D22933C6AC00DBF715 /* Baby+CoreDataClass.swift in Sources */,
