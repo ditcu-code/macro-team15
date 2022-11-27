@@ -13,7 +13,7 @@ struct macro_team15App: App {
     
     var body: some Scene {
         WindowGroup {
-            ProgressShareView()
+            ContentView()
                 .environment(\.managedObjectContext, dataController.container.viewContext)
         }
     }

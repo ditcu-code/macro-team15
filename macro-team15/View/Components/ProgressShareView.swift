@@ -9,14 +9,17 @@ import SwiftUI
 
 struct ProgressShareView: View {
     
-    @Environment(\.presentationMode) var presentationMode
     @State var isPresented = false
-    
+    @State var isShareSheetPresented = false
+    @State var image: UIImage? = nil
+    @State var items: [Any] = []
+    @State var sheet = false
+        
     var body: some View {
         Button("Share") {
             isPresented.toggle()
         }
-        
+
         .sheet(isPresented: $isPresented) {
             VStack(alignment: .leading) {
                 ZStack(alignment: .topTrailing) {
@@ -69,7 +72,13 @@ struct ProgressShareView: View {
                         .buttonStyle(PrimaryButtonStyle())
 
                         Button {
+                            items.removeAll()
                             
+                            let image = snapshot.asImage
+                            items.append("Ayo download Panda")
+                            items.append(image)
+                            
+                            sheet.toggle()
                         } label: {
                             Label("Bagikan", systemImage: "square.and.arrow.up")
                                 .labelStyle(.iconOnly)
@@ -85,8 +94,19 @@ struct ProgressShareView: View {
                 
                 Spacer()
             }
-//            .padding(.horizontal)
+            
+            .sheet(isPresented: $sheet) {
+                ShareSheet(items: items)
+            }
         }
+    }
+    
+    var snapshot: some View {
+        Text("Hello, SwiftUI")
+            .padding()
+            .background(Color.blue)
+            .foregroundColor(.white)
+            .clipShape(Capsule())
     }
     
 }
@@ -95,4 +115,19 @@ struct ProgressShareView_Previews: PreviewProvider {
     static var previews: some View {
         ProgressShareView()
     }
+}
+
+// MARK: Share sheet
+struct ShareSheet: UIViewControllerRepresentable {
+    
+    var items: [Any]
+    
+    func makeUIViewController(context: Context) -> UIActivityViewController {
+        let controller = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        
+        return controller
+    }
+    
+    func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {}
+    
 }
