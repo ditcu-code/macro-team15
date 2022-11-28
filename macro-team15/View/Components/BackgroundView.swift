@@ -9,7 +9,10 @@ import SwiftUI
 
 struct BackgroundView: View {
     var body: some View {
-        Color("BackgroundColor")
+        ZStack(alignment: .bottom) {
+            Image("BackgroundFill1Image")
+            Image("BackgroundFill2Image")
+        }
     }
 }
 
