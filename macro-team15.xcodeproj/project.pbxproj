@@ -62,6 +62,9 @@
 		FAF49537292FA3AE00D396E1 /* NoteDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF49536292FA3AE00D396E1 /* NoteDetailView.swift */; };
 		FAF8545C29349463009C8CA5 /* AlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF8545B29349463009C8CA5 /* AlbumView.swift */; };
 		FAF8546029349AC4009C8CA5 /* ProfileAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF8545F29349AC4009C8CA5 /* ProfileAvatarView.swift */; };
+		FAF854622934B612009C8CA5 /* MilestonePhotoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF854612934B612009C8CA5 /* MilestonePhotoCardView.swift */; };
+		FAF854642934B62C009C8CA5 /* PhotoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF854632934B62C009C8CA5 /* PhotoCardView.swift */; };
+		FAF854662934B654009C8CA5 /* CustomSegmentedControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF854652934B654009C8CA5 /* CustomSegmentedControlView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -123,6 +126,9 @@
 		FAF8545829347211009C8CA5 /* macro-team15.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "macro-team15.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF8545B29349463009C8CA5 /* AlbumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumView.swift; sourceTree = "<group>"; };
 		FAF8545F29349AC4009C8CA5 /* ProfileAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAvatarView.swift; sourceTree = "<group>"; };
+		FAF854612934B612009C8CA5 /* MilestonePhotoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestonePhotoCardView.swift; sourceTree = "<group>"; };
+		FAF854632934B62C009C8CA5 /* PhotoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCardView.swift; sourceTree = "<group>"; };
+		FAF854652934B654009C8CA5 /* CustomSegmentedControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControlView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -348,6 +354,9 @@
 			isa = PBXGroup;
 			children = (
 				FAF8545B29349463009C8CA5 /* AlbumView.swift */,
+				FAF854652934B654009C8CA5 /* CustomSegmentedControlView.swift */,
+				FAF854612934B612009C8CA5 /* MilestonePhotoCardView.swift */,
+				FAF854632934B62C009C8CA5 /* PhotoCardView.swift */,
 			);
 			path = Album;
 			sourceTree = "<group>";
@@ -426,6 +435,7 @@
 			files = (
 				FAF49537292FA3AE00D396E1 /* NoteDetailView.swift in Sources */,
 				FA241A9D2930FBD600CAA09B /* KeyboardResponder.swift in Sources */,
+				FAF854622934B612009C8CA5 /* MilestonePhotoCardView.swift in Sources */,
 				FA7B02BB2917F60100552541 /* MilestoneProgressCompactView.swift in Sources */,
 				0EA7D733292CBF720024DECC /* RadarChart.swift in Sources */,
 				0E6F61F9290FD283005C5415 /* OnboardingViewModel.swift in Sources */,
@@ -463,12 +473,14 @@
 				0E7456F229069B4D00D792E6 /* macro_team15App.swift in Sources */,
 				0E6F61F1290FC40B005C5415 /* Enum.swift in Sources */,
 				FA34BD4D291A3FE8009DF42B /* MilestoneDetailView.swift in Sources */,
+				FAF854662934B654009C8CA5 /* CustomSegmentedControlView.swift in Sources */,
 				0E9269392930D4970050C375 /* BabyPhoto+CoreDataProperties.swift in Sources */,
 				0E8FE4CF2933C41600DBF715 /* ContentViewModel.swift in Sources */,
 				FA34BD4F291A5DAC009DF42B /* View.swift in Sources */,
 				FAE1733E2932140F0076ABFA /* StimulusStepView.swift in Sources */,
 				FA48EFBA292CC746009ED62B /* ContentHeaderView.swift in Sources */,
 				FA7B02B92917DABA00552541 /* MilestoneProgressFullView.swift in Sources */,
+				FAF854642934B62C009C8CA5 /* PhotoCardView.swift in Sources */,
 				0E8FE4D22933C6AC00DBF715 /* Baby+CoreDataClass.swift in Sources */,
 				FA4513CB292BE047002ADD1A /* DashboardHeaderView.swift in Sources */,
 				0E6F61EF290FC348005C5415 /* DashboardScreen.swift in Sources */,
