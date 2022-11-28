@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DashboardScreen: View {
+    
     let name: String
     @State private var selectedMilestoneCategory = 1
     
@@ -85,13 +86,7 @@ struct DashboardScreen: View {
                     
                     // Profile image
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        Button {
-                            
-                        } label: {
-                            Image(systemName: "person.circle.fill")
-                                .resizable()
-                                .frame(minWidth: 35, minHeight: 35)
-                        }
+                        ProfileAvatarView()
                     }
                 }
             }

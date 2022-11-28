@@ -13,7 +13,7 @@ struct macro_team15App: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AlbumScreen(name: "Ceroy")
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

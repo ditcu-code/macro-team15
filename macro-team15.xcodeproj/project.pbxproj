@@ -60,6 +60,8 @@
 		FAE1733C29320A7E0076ABFA /* StimulusMaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE1733B29320A7E0076ABFA /* StimulusMaterialView.swift */; };
 		FAE1733E2932140F0076ABFA /* StimulusStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE1733D2932140F0076ABFA /* StimulusStepView.swift */; };
 		FAF49537292FA3AE00D396E1 /* NoteDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF49536292FA3AE00D396E1 /* NoteDetailView.swift */; };
+		FAF8545C29349463009C8CA5 /* AlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF8545B29349463009C8CA5 /* AlbumView.swift */; };
+		FAF8546029349AC4009C8CA5 /* ProfileAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF8545F29349AC4009C8CA5 /* ProfileAvatarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,7 +75,6 @@
 		0E6F61F3290FC75B005C5415 /* MilestoneScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneScreen.swift; sourceTree = "<group>"; };
 		0E6F61F6290FC790005C5415 /* ReportScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportScreen.swift; sourceTree = "<group>"; };
 		0E6F61F8290FD283005C5415 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
-		0E7456EE29069B4D00D792E6 /* macro-team15.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "macro-team15.app"; path = "/Users/ditcu/Code/macro-team15/build/Debug-iphoneos/macro-team15.app"; sourceTree = "<absolute>"; };
 		0E7456F129069B4D00D792E6 /* macro_team15App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = macro_team15App.swift; sourceTree = "<group>"; };
 		0E7456F329069B4D00D792E6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0E7456F529069B4E00D792E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -119,6 +120,9 @@
 		FAE1733B29320A7E0076ABFA /* StimulusMaterialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StimulusMaterialView.swift; sourceTree = "<group>"; };
 		FAE1733D2932140F0076ABFA /* StimulusStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StimulusStepView.swift; sourceTree = "<group>"; };
 		FAF49536292FA3AE00D396E1 /* NoteDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailView.swift; sourceTree = "<group>"; };
+		FAF8545829347211009C8CA5 /* macro-team15.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "macro-team15.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAF8545B29349463009C8CA5 /* AlbumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumView.swift; sourceTree = "<group>"; };
+		FAF8545F29349AC4009C8CA5 /* ProfileAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAvatarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +196,7 @@
 				0E8FE4CA2933A51F00DBF715 /* BabyMilestoneNote+CoreDataClass.swift */,
 				0E8FE4CB2933A51F00DBF715 /* BabyMilestoneNote+CoreDataProperties.swift */,
 				0E7456F029069B4D00D792E6 /* macro-team15 */,
+				FAF8545829347211009C8CA5 /* macro-team15.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -235,6 +240,7 @@
 				0E7456F329069B4D00D792E6 /* ContentView.swift */,
 				0E8FE4CE2933C41600DBF715 /* ContentViewModel.swift */,
 				0EA7D736292E23D20024DECC /* Onboarding */,
+				FAF8545929349431009C8CA5 /* Album */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -315,6 +321,7 @@
 				FA996A18292E25F700DF570E /* MissionView.swift */,
 				FACDC5DA292F5DE4007B51A4 /* NoteView.swift */,
 				FA7B7EFF29339488005E8425 /* ProgressShareView.swift */,
+				FAF8545F29349AC4009C8CA5 /* ProfileAvatarView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -337,6 +344,14 @@
 			path = Stimulus;
 			sourceTree = "<group>";
 		};
+		FAF8545929349431009C8CA5 /* Album */ = {
+			isa = PBXGroup;
+			children = (
+				FAF8545B29349463009C8CA5 /* AlbumView.swift */,
+			);
+			path = Album;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -354,7 +369,7 @@
 			);
 			name = "macro-team15";
 			productName = "macro-team15";
-			productReference = 0E7456EE29069B4D00D792E6 /* macro-team15.app */;
+			productReference = FAF8545829347211009C8CA5 /* macro-team15.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -437,11 +452,13 @@
 				0E9269382930D4970050C375 /* BabyPhoto+CoreDataClass.swift in Sources */,
 				FACDC5DB292F5DE4007B51A4 /* NoteView.swift in Sources */,
 				0E7456F429069B4D00D792E6 /* ContentView.swift in Sources */,
+				FAF8545C29349463009C8CA5 /* AlbumView.swift in Sources */,
 				0E8FE4D32933C6AC00DBF715 /* Baby+CoreDataProperties.swift in Sources */,
 				0E576EEC290A7AF900341C88 /* CloudKitService.swift in Sources */,
 				FA48EFBC292CD5D0009ED62B /* ActivityCardView.swift in Sources */,
 				0E8FE4CD2933A51F00DBF715 /* BabyMilestoneNote+CoreDataProperties.swift in Sources */,
 				FA48EFBE292D3BF7009ED62B /* MilestoneCategoryCardView.swift in Sources */,
+				FAF8546029349AC4009C8CA5 /* ProfileAvatarView.swift in Sources */,
 				FA706AD32913C49400AD30A4 /* CardView.swift in Sources */,
 				0E7456F229069B4D00D792E6 /* macro_team15App.swift in Sources */,
 				0E6F61F1290FC40B005C5415 /* Enum.swift in Sources */,

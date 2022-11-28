@@ -28,9 +28,9 @@ struct ContentView: View {
                     }
                     .tag(Tabs.milestone)
                 
-                ReportScreen()
+                AlbumScreen(name: viewModel.babies[0].name ?? "")
                     .tabItem {
-                        Label("Report", systemImage: "newspaper")
+                        Label("Album", systemImage: "photo.on.rectangle")
                     }
                     .tag(Tabs.report)
             }
