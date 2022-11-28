@@ -33,9 +33,14 @@ class OnboardingViewModel: ObservableObject {
 
         baby.name = name
         baby.birthDate = birthDate
-        baby.photo = defaultPhoto ?? photo
+        baby.photo = photo ?? defaultPhoto
         
         PersistenceController.shared.save()
+    }
+    
+    func finalStep() {
+        saveBaby()
+        UserDefaults.standard.set(true, forKey: "isDoneOnboarding")
     }
     
 }
