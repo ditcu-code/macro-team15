@@ -19,21 +19,16 @@ struct RadarChart: View {
         ZStack {
             RadarChartGrid(categories: max.count, divisions: 10)
                 .stroke(gridColor.opacity(0.5), lineWidth: 0.2)
-            
-            RadarChartPath(data: data, max: max).scaleEffect(pathProgress)
-                .animation(.spring(), value: pathProgress)
+
+            RadarChartPath(data: data, max: max)
+                .fill(dataColor)
+            //                .scaleEffect(pathProgress)
+            //                .animation(.spring(), value: pathProgress)
             if let dataVersus = dataVersus {
                 RadarChartPath(data: dataVersus, max: max)
                     .fill(dataColor)
             }
-            Slider(value: $pathProgress, in: 0.0...1.0)
-                            .padding()
-        }.onAppear {
-            withAnimation(.linear(duration: 4)) {
-                data = [10.0, 18.0, 19.0, 23.0]
-            }
-            
-        }
+        }.rotationEffect(.degrees(45))
     }
 }
 

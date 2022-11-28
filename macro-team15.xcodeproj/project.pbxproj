@@ -27,6 +27,7 @@
 		0E8FE4D22933C6AC00DBF715 /* Baby+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE4D02933C6AC00DBF715 /* Baby+CoreDataClass.swift */; };
 		0E8FE4D32933C6AC00DBF715 /* Baby+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE4D12933C6AC00DBF715 /* Baby+CoreDataProperties.swift */; };
 		0E8FE4D72933E1ED00DBF715 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE4D62933E1ED00DBF715 /* ViewModel.swift */; };
+		0E8FE4E22933ED1500DBF715 /* RaporView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE4E12933ED1500DBF715 /* RaporView.swift */; };
 		0E92692B29309AFD0050C375 /* userData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0E92692929309AFD0050C375 /* userData.xcdatamodeld */; };
 		0E9269382930D4970050C375 /* BabyPhoto+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9269302930D4970050C375 /* BabyPhoto+CoreDataClass.swift */; };
 		0E9269392930D4970050C375 /* BabyPhoto+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9269312930D4970050C375 /* BabyPhoto+CoreDataProperties.swift */; };
@@ -73,7 +74,6 @@
 		0E6F61F3290FC75B005C5415 /* MilestoneScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneScreen.swift; sourceTree = "<group>"; };
 		0E6F61F6290FC790005C5415 /* ReportScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportScreen.swift; sourceTree = "<group>"; };
 		0E6F61F8290FD283005C5415 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
-		0E7456EE29069B4D00D792E6 /* macro-team15.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "macro-team15.app"; path = "/Users/ditcu/Code/macro-team15/build/Debug-iphoneos/macro-team15.app"; sourceTree = "<absolute>"; };
 		0E7456F129069B4D00D792E6 /* macro_team15App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = macro_team15App.swift; sourceTree = "<group>"; };
 		0E7456F329069B4D00D792E6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0E7456F529069B4E00D792E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -86,6 +86,8 @@
 		0E8FE4D02933C6AC00DBF715 /* Baby+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Baby+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		0E8FE4D12933C6AC00DBF715 /* Baby+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Baby+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		0E8FE4D62933E1ED00DBF715 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		0E8FE4DF2933E52300DBF715 /* macro-team15.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "macro-team15.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E8FE4E12933ED1500DBF715 /* RaporView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaporView.swift; sourceTree = "<group>"; };
 		0E92692A29309AFD0050C375 /* userData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = userData.xcdatamodel; sourceTree = "<group>"; };
 		0E9269302930D4970050C375 /* BabyPhoto+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BabyPhoto+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		0E9269312930D4970050C375 /* BabyPhoto+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BabyPhoto+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
@@ -192,6 +194,7 @@
 				0E8FE4CA2933A51F00DBF715 /* BabyMilestoneNote+CoreDataClass.swift */,
 				0E8FE4CB2933A51F00DBF715 /* BabyMilestoneNote+CoreDataProperties.swift */,
 				0E7456F029069B4D00D792E6 /* macro-team15 */,
+				0E8FE4DF2933E52300DBF715 /* macro-team15.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -234,6 +237,7 @@
 			children = (
 				0E7456F329069B4D00D792E6 /* ContentView.swift */,
 				0E8FE4CE2933C41600DBF715 /* ContentViewModel.swift */,
+				0E8FE4E02933ECAB00DBF715 /* Rapor */,
 				0EA7D736292E23D20024DECC /* Onboarding */,
 			);
 			path = Screen;
@@ -253,6 +257,14 @@
 				0E8FE4D62933E1ED00DBF715 /* ViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0E8FE4E02933ECAB00DBF715 /* Rapor */ = {
+			isa = PBXGroup;
+			children = (
+				0E8FE4E12933ED1500DBF715 /* RaporView.swift */,
+			);
+			path = Rapor;
 			sourceTree = "<group>";
 		};
 		0EA7D736292E23D20024DECC /* Onboarding */ = {
@@ -354,7 +366,7 @@
 			);
 			name = "macro-team15";
 			productName = "macro-team15";
-			productReference = 0E7456EE29069B4D00D792E6 /* macro-team15.app */;
+			productReference = 0E8FE4DF2933E52300DBF715 /* macro-team15.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -410,6 +422,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAF49537292FA3AE00D396E1 /* NoteDetailView.swift in Sources */,
+				0E8FE4E22933ED1500DBF715 /* RaporView.swift in Sources */,
 				FA241A9D2930FBD600CAA09B /* KeyboardResponder.swift in Sources */,
 				FA7B02BB2917F60100552541 /* MilestoneProgressCompactView.swift in Sources */,
 				0EA7D733292CBF720024DECC /* RadarChart.swift in Sources */,

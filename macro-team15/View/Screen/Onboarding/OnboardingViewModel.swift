@@ -34,7 +34,7 @@ class OnboardingViewModel: ObservableObject {
         baby.name = name
         baby.birthDate = birthDate
         baby.photo = defaultPhoto ?? photo
-//
+        
         PersistenceController.shared.save()
     }
     

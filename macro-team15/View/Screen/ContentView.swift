@@ -8,39 +8,47 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var selectedTab: Tabs = .home
-    @ObservedObject var viewModel = ContentViewModel()
-    
+    @StateObject var viewModel = ContentViewModel()
+    @AppStorage("isDoneOnboarding") var isDoneOnboarding: Bool = false
+
     var body: some View {
-        if (viewModel.babies.isEmpty) {
-            OnboardingView()
+        if (isDoneOnboarding || !viewModel.babies.isEmpty) {
+            TabViews(viewModel: viewModel)
         } else {
-            TabView(selection: $selectedTab) {
-                DashboardScreen(name: viewModel.babies[0].name ?? "")
-                    .tabItem {
-                        Label("Home", systemImage: "house")
-                    }
-                    .tag(Tabs.home)
-                
-                MilestoneScreen()
-                    .tabItem {
-                        Label("Milestone", systemImage: "figure.walk")
-                    }
-                    .tag(Tabs.milestone)
-                
-                ReportScreen()
-                    .tabItem {
-                        Label("Report", systemImage: "newspaper")
-                    }
-                    .tag(Tabs.report)
-            }
+            OnboardingView()
         }
-        
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+struct TabViews: View {
+    @State private var selectedTab: Tabs = .home
+    @ObservedObject var viewModel: ContentViewModel
+    
+    var body: some View {
+        TabView(selection: $selectedTab) {
+            DashboardScreen(name: viewModel.babies[0].name ?? "")
+                .tabItem {
+                    Label("Home", systemImage: "house")
+                }
+                .tag(Tabs.home)
+            
+            MilestoneScreen()
+                .tabItem {
+                    Label("Milestone", systemImage: "figure.walk")
+                }
+                .tag(Tabs.milestone)
+            
+            ReportScreen()
+                .tabItem {
+                    Label("Report", systemImage: "newspaper")
+                }
+                .tag(Tabs.report)
+        }
     }
 }

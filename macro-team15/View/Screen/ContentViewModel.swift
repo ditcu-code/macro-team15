@@ -17,7 +17,6 @@ class ContentViewModel: ObservableObject {
     func getBaby() {
         let context = PersistenceController.shared.container.viewContext
         let req = Baby.fetchRequest()
-//        let req = Baby.fetchRequest()
         req.shouldRefreshRefetchedObjects = true
         
         do {
@@ -26,7 +25,7 @@ class ContentViewModel: ObservableObject {
         } catch {
             print(error.localizedDescription)
         }
+        
         print(babies)
-//        return Baby.generateNew("Aruna", Date(), nil)
     }
 }

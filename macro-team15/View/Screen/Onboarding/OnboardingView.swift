@@ -9,16 +9,9 @@ import SwiftUI
 import PhotosUI
 
 struct OnboardingView: View {
-//    @State var step: Int = 0
-//    @State var name: String = ""
-//    @State var date: Date = Date()
-//    @State var selectedPicture: PhotosPickerItem? = nil
-//    @State var selectedPictData: Data? = nil
-//
     @StateObject var viewModel = OnboardingViewModel()
     
     var body: some View {
-        
         ZStack(alignment: .top) {
             ZStack(alignment: .top) {
                 HStack {
@@ -39,9 +32,10 @@ struct OnboardingView: View {
                 .foregroundColor(Color.ui.primary)
                 .padding()
             }.zIndex(1)
+            
             ZStack(alignment: .bottom) {
                 Color.green.opacity(0.1).ignoresSafeArea()
-                Text("\(viewModel.step)")
+                
                 VStack {
                     if (viewModel.step != 3) {
                         TuntunIllustration(step: $viewModel.step)
@@ -59,7 +53,7 @@ struct OnboardingView: View {
                         
                     case 3:
                         ProfilePictureOnboarding(viewModel: viewModel)
-                    
+                        
                     default:
                         GreetingOnboarding(viewModel: viewModel)
                     }
@@ -166,9 +160,12 @@ struct ProfilePictureOnboarding: View {
             OnboardingText(text: "Wah, Tuntun jadi penasaran \(viewModel.name) seperti apa?").padding(.bottom, 5)
             Spacer()
         }
+        
         Button("Selesai") {
             viewModel.saveBaby()
+            UserDefaults.standard.set(true, forKey: "isDoneOnboarding")
         }.buttonStyle(PrimaryButtonStyle())
+        
     }
 }
 
