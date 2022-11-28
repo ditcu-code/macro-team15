@@ -13,12 +13,11 @@ struct ReportScreen: View {
     
     var body: some View {
         NavigationView {
-            ScrollView {
-                ZStack(alignment: .top) {
-                    
-                    BackgroundView()
-                        .frame(height: 225)
-                    
+            ZStack(alignment: .top) {
+                BackgroundView()
+                    .ignoresSafeArea()
+                
+                ScrollView {
                     VStack {
                         ProfileView()
                         
