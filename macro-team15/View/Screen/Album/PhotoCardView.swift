@@ -11,8 +11,11 @@ struct PhotoCardView: View {
     var body: some View {
         Image.ui.placeholder
             .resizable()
-            .aspectRatio(contentMode: .fill)
+            .scaledToFill()
+            .frame(minWidth: 0, maxWidth: .infinity)
+            .frame(height: 200)
             .cornerRadius(20, corners: [.topLeft, .topRight])
+            .clipped()
     }
 }
 

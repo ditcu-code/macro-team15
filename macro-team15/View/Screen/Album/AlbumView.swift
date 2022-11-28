@@ -44,8 +44,6 @@ struct AlbumScreen: View {
                                     .padding(i % 2 == 0 ? .leading : .trailing)
                             }
                         }
-                        
-                        Spacer()
                     }
                 }
             }
