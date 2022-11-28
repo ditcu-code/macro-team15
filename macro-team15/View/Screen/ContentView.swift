@@ -34,19 +34,19 @@ struct TabViews: View {
         TabView(selection: $selectedTab) {
             DashboardScreen(name: viewModel.babies[0].name ?? "")
                 .tabItem {
-                    Label("Home", systemImage: "house")
+                    Label("Progres", systemImage: "rectangle.stack.fill")
                 }
                 .tag(Tabs.home)
             
             MilestoneScreen()
                 .tabItem {
-                    Label("Milestone", systemImage: "figure.walk")
+                    Label("Rapor", systemImage: "list.bullet.rectangle")
                 }
                 .tag(Tabs.milestone)
             
             ReportScreen()
                 .tabItem {
-                    Label("Report", systemImage: "newspaper")
+                    Label("Album", systemImage: "photo.on.rectangle")
                 }
                 .tag(Tabs.report)
         }
