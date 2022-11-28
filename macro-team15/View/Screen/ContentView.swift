@@ -12,7 +12,7 @@ struct ContentView: View {
     @ObservedObject var viewModel = ContentViewModel()
     
     var body: some View {
-        if (viewModel.babies.isEmpty) {
+        if (true) {
             OnboardingView()
         } else {
             TabView(selection: $selectedTab) {
