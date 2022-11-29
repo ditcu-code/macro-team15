@@ -16,6 +16,7 @@ struct AlbumScreen: View {
     ]
     
     @State var selectedTab = 0
+    @State var selectedPhoto = false
     
     var body: some View {
         NavigationView {
@@ -41,6 +42,7 @@ struct AlbumScreen: View {
                             if selectedTab == 0 {
                                 ForEach(0..<2) { i in
                                     Button {
+                                        selectedPhoto.toggle()
                                     } label: {
                                         MilestonePhotoCardView()
                                             .padding(.vertical)
@@ -50,6 +52,7 @@ struct AlbumScreen: View {
                             } else {
                                 ForEach(0..<2) { i in
                                     Button {
+                                        selectedPhoto.toggle()
                                     } label: {
                                         StimulusPhotoCardView()
                                             .padding(.vertical)
@@ -69,6 +72,9 @@ struct AlbumScreen: View {
                     ProfileAvatarView()
                 }
             }
+            .sheet(isPresented: $selectedPhoto, content: {
+                ProgressShareView(isPresented: $selectedPhoto)
+            })
         }
     }
 }
