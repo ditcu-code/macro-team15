@@ -35,13 +35,13 @@ struct TabViews: View {
                 }
                 .tag(Tabs.home)
             
-            MilestoneScreen()
+            ReportView()
                 .tabItem {
                     Label("Rapor", systemImage: "list.bullet.rectangle")
                 }
                 .tag(Tabs.milestone)
             
-            ReportScreen()
+            AlbumScreen(name: "Aruna")
                 .tabItem {
                     Label("Album", systemImage: "photo.on.rectangle")
                 }

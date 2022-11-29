@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct DashboardScreen: View {
-    
-    let name: String
     @State private var selectedMilestoneCategory = 1
     @ObservedObject var viewModel = DashboardViewModel()
     
@@ -67,7 +65,7 @@ struct DashboardScreen: View {
                     }
                 }
                 
-                .navigationTitle("\(geo.frame(in: .global).minY < 100 ? "Beranda" : "Hi, \(viewModel.babies.first?.name ?? "a")!")")
+                .navigationTitle("\(geo.frame(in: .global).minY < 100 ? "Beranda" : "Hi, \(viewModel.babies.first?.name ?? "Aruna")!")")
                 .toolbar {
                     // Milestone dropdown
                     ToolbarItem(placement: .navigationBarLeading) {
