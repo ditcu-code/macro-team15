@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DashboardScreen: View {
-
+    
     @State private var selectedMilestoneCategory = 1
     @State private var milestonePeriod = false
     @ObservedObject var viewModel = DashboardViewModel()
@@ -26,20 +26,20 @@ struct DashboardScreen: View {
                         
                         Divider()
                             .padding(.vertical)
-
+                        
                         ContentHeaderView(title: "Aktivitas", subtitle: "Dirancang untuk mendukung pencapaian Ceroy", navigationLink: AnyView(Text("Detail")))
-
+                        
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack {
                                 Spacer()
                                     .padding(.leading, 8)
-
+                                
                                 ForEach(0 ..< 5) { item in
                                     ActivityCardView(title: "Tummy Time", subtitle: "Aktivitas ini dapat mendukung pencapaian motorik dan kognitif!", navigationLink: AnyView(Text("Detail")))
                                 }
                             }
                         }
-
+                        
                         ContentHeaderView(title: "Milestone", subtitle: "Perkembangan Ceroy di bulan ini", navigationLink: nil)
                             .padding(.top)
                         
@@ -94,17 +94,18 @@ struct DashboardScreen: View {
                         }
                     }
                 }
-
+                
                 .sheet(isPresented: $profileSwitcher) {
                     ProfileSwitcherSheet()
                     
-                .sheet(isPresented: $milestonePeriod) {
-                    MilestonePeriodSheet()
+                        .sheet(isPresented: $milestonePeriod) {
+                            MilestonePeriodSheet()
+                        }
                 }
             }
         }
+        
     }
-    
 }
 
 struct DashboardScreen_Previews: PreviewProvider {
