@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DashboardScreen: View {
-    
+
     @State private var selectedMilestoneCategory = 1
     @State private var milestonePeriod = false
     @ObservedObject var viewModel = DashboardViewModel()
@@ -86,13 +86,7 @@ struct DashboardScreen: View {
                     
                     // Profile image
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        Button {
-                            
-                        } label: {
-                            Image(systemName: "person.circle.fill")
-                                .resizable()
-                                .frame(minWidth: 35, minHeight: 35)
-                        }
+                        ProfileAvatarView()
                     }
                 }
                 .sheet(isPresented: $milestonePeriod) {

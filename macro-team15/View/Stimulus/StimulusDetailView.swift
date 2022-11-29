@@ -55,20 +55,22 @@ struct StimulusDetailView: View {
 
                 Divider()
 
-//                ContentHeaderView(title: "Aktivitas lainnya", subtitle: "Kegiatan untuk mendukung milestone lainnya", navigationLink: nil)
-//                    .padding(.top)
-                
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack {
-                        Spacer()
-                            .padding(.leading, 8)
+                Group {
+                    ContentHeaderView(title: "Aktivitas lainnya", subtitle: "Kegiatan untuk mendukung milestone lainnya", navigationLink: nil)
+                        .padding(.top)
+                    
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack {
+                            Spacer()
+                                .padding(.leading, 8)
 
-                        ForEach(0 ..< 5) { item in
-                            ActivityCardView(title: "Tummy Time", subtitle: "Aktivitas ini dapat mendukung pencapaian motorik dan kognitif!", navigationLink: AnyView(Text("Detail")))
+                            ForEach(0 ..< 5) { item in
+                                ActivityCardView(title: "Tummy Time", subtitle: "Aktivitas ini dapat mendukung pencapaian motorik dan kognitif!", navigationLink: AnyView(Text("Detail")))
+                            }
                         }
                     }
+                    .padding(.vertical)
                 }
-                .padding(.vertical)
             }
         }
         
