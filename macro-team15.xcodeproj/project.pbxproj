@@ -42,6 +42,7 @@
 		0E8FE50F29366D9200DBF715 /* BabyMilestoneNote+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE50729366D9200DBF715 /* BabyMilestoneNote+CoreDataProperties.swift */; };
 		0E8FE51029366D9200DBF715 /* BabyMilestone+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE50829366D9200DBF715 /* BabyMilestone+CoreDataClass.swift */; };
 		0E8FE51129366D9200DBF715 /* BabyMilestone+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE50929366D9200DBF715 /* BabyMilestone+CoreDataProperties.swift */; };
+		0E8FE5142936760200DBF715 /* MilestoneCategoryCardViewV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE5132936760200DBF715 /* MilestoneCategoryCardViewV2.swift */; };
 		0E92692B29309AFD0050C375 /* userData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0E92692929309AFD0050C375 /* userData.xcdatamodeld */; };
 		0EA7D733292CBF720024DECC /* RadarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA7D732292CBF720024DECC /* RadarChart.swift */; };
 		0EA7D738292E24010024DECC /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA7D737292E24010024DECC /* OnboardingView.swift */; };
@@ -120,6 +121,7 @@
 		0E8FE50729366D9200DBF715 /* BabyMilestoneNote+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BabyMilestoneNote+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0E8FE50829366D9200DBF715 /* BabyMilestone+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BabyMilestone+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0E8FE50929366D9200DBF715 /* BabyMilestone+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BabyMilestone+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0E8FE5132936760200DBF715 /* MilestoneCategoryCardViewV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneCategoryCardViewV2.swift; sourceTree = "<group>"; };
 		0E92692A29309AFD0050C375 /* userData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = userData.xcdatamodel; sourceTree = "<group>"; };
 		0EA7D732292CBF720024DECC /* RadarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadarChart.swift; sourceTree = "<group>"; };
 		0EA7D737292E24010024DECC /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 			children = (
 				0E7456F329069B4D00D792E6 /* ContentView.swift */,
 				0E8FE4CE2933C41600DBF715 /* ContentViewModel.swift */,
+				0E8FE512293675C300DBF715 /* Progress */,
 				0E8FE4E02933ECAB00DBF715 /* Report */,
 				0EA7D736292E23D20024DECC /* Onboarding */,
 				FAF8545929349431009C8CA5 /* Album */,
@@ -325,6 +328,14 @@
 				0E8FE4FC29364D9700DBF715 /* Milestone.swift */,
 			);
 			path = StaticData;
+			sourceTree = "<group>";
+		};
+		0E8FE512293675C300DBF715 /* Progress */ = {
+			isa = PBXGroup;
+			children = (
+				0E8FE5132936760200DBF715 /* MilestoneCategoryCardViewV2.swift */,
+			);
+			path = Progress;
 			sourceTree = "<group>";
 		};
 		0EA7D736292E23D20024DECC /* Onboarding */ = {
@@ -553,6 +564,7 @@
 				FA34BD4D291A3FE8009DF42B /* MilestoneDetailView.swift in Sources */,
 				FAF854662934B654009C8CA5 /* CustomSegmentedControlView.swift in Sources */,
 				0E8FE4CF2933C41600DBF715 /* ContentViewModel.swift in Sources */,
+				0E8FE5142936760200DBF715 /* MilestoneCategoryCardViewV2.swift in Sources */,
 				FA34BD4F291A5DAC009DF42B /* View.swift in Sources */,
 				FAE1733E2932140F0076ABFA /* StimulusStepView.swift in Sources */,
 				FA9341312936057F004975FE /* ProfileSwitcherSheet.swift in Sources */,

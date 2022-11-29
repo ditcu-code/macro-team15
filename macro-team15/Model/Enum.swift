@@ -12,7 +12,7 @@ enum Tabs: String, CaseIterable, Identifiable {
     var id: Self { self }
 }
 
-enum MilestoneCategory: String {
+enum MilestoneCategory: String, CaseIterable {
     case motoric = "Motorik"
     case cognitive = "Kognitif"
     case social = "Social & Emosional"
