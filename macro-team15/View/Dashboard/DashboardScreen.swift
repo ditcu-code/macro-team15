@@ -68,7 +68,7 @@ struct DashboardScreen: View {
                     }
                 }
                 
-                .navigationTitle("\(geo.frame(in: .global).minY < 100 ? "Beranda" : "Hi, \(viewModel.babies.first?.name ?? "a")!")")
+                .navigationTitle("\(geo.frame(in: .global).minY < 100 ? "Beranda" : "Hi, \(viewModel.babies.first?.name ?? "Aruna")!")")
                 .toolbar {
                     // Milestone dropdown
                     ToolbarItem(placement: .navigationBarLeading) {
@@ -97,11 +97,12 @@ struct DashboardScreen: View {
                 
                 .sheet(isPresented: $profileSwitcher) {
                     ProfileSwitcherSheet()
-                    
-                        .sheet(isPresented: $milestonePeriod) {
-                            MilestonePeriodSheet()
-                        }
                 }
+                
+                .sheet(isPresented: $milestonePeriod) {
+                    MilestonePeriodSheet()
+                }
+                
             }
         }
         

@@ -65,13 +65,15 @@ struct ProfilePictureOnboarding: View {
 }
 
 struct SmallGreenButtonStyle: ButtonStyle {
+    var transparent: Bool = false
+    
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
             .font(.subheadline.bold())
             .foregroundColor(.white)
             .padding(.vertical, 10)
             .frame(minWidth: 125)
-            .background(Color.ui.primary)
+            .background(Color.ui.primary.opacity(transparent ? 0.3 : 1))
             .cornerRadius(16)
             .shadow(
                 color: .gray.opacity(0.5),
