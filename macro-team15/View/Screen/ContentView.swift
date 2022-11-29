@@ -8,34 +8,45 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var selectedTab: Tabs = .home
     @ObservedObject var viewModel = ContentViewModel()
+    @AppStorage("isDoneOnboarding") var isDoneOnboarding: Bool = false
     
     var body: some View {
-        if (viewModel.babies.isEmpty) {
-            OnboardingView()
-        } else {
-            TabView(selection: $selectedTab) {
-                DashboardScreen(name: viewModel.babies[0].name ?? "")
-                    .tabItem {
-                        Label("Home", systemImage: "house")
-                    }
-                    .tag(Tabs.home)
-                
-                MilestoneScreen()
-                    .tabItem {
-                        Label("Milestone", systemImage: "figure.walk")
-                    }
-                    .tag(Tabs.milestone)
-                
-                AlbumScreen(name: viewModel.babies[0].name ?? "")
-                    .tabItem {
-                        Label("Album", systemImage: "photo.on.rectangle")
-                    }
-                    .tag(Tabs.report)
+        if (isDoneOnboarding || !viewModel.babies.isEmpty) {
+            if (viewModel.babies.count > 0) {
+                TabViews()
+            } else {
+                TuntunLoading()
             }
+        } else {
+            OnboardingView()
         }
-        
+    }
+}
+
+struct TabViews: View {
+    @State private var selectedTab: Tabs = .home
+    
+    var body: some View {
+        TabView(selection: $selectedTab) {
+            DashboardScreen()
+                .tabItem {
+                    Label("Progres", systemImage: "rectangle.stack.fill")
+                }
+                .tag(Tabs.home)
+            
+            MilestoneScreen()
+                .tabItem {
+                    Label("Rapor", systemImage: "list.bullet.rectangle")
+                }
+                .tag(Tabs.milestone)
+            
+            ReportScreen()
+                .tabItem {
+                    Label("Album", systemImage: "photo.on.rectangle")
+                }
+                .tag(Tabs.report)
+        }
     }
 }
 

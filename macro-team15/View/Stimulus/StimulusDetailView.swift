@@ -10,7 +10,7 @@ import SwiftUI
 struct StimulusDetailView: View {
     var body: some View {
         ZStack {
-            Color.ui.background
+            BackgroundView()
                 .edgesIgnoringSafeArea(.all)
             
             ScrollView {

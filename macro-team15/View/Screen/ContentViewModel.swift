@@ -6,27 +6,25 @@
 //
 
 import Foundation
+import Combine
+import CoreData
 
 class ContentViewModel: ObservableObject {
     @Published var babies: [Baby] = []
     
+    private var cancellable: AnyCancellable?
+    
     init () {
         getBaby()
+        cancellable = NotificationCenter.default.publisher(for: NSManagedObjectContext.didSaveObjectsNotification, object: nil)
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { _ in
+                self.getBaby()
+            })
     }
     
     func getBaby() {
-        let context = PersistenceController.shared.container.viewContext
-        let req = Baby.fetchRequest()
-//        let req = Baby.fetchRequest()
-        req.shouldRefreshRefetchedObjects = true
-        
-        do {
-            let reqBabies = try context.fetch(req)
-            babies = reqBabies
-        } catch {
-            print(error.localizedDescription)
-        }
-        print(babies)
-//        return Baby.generateNew("Aruna", Date(), nil)
+        let req = Baby.getAllBaby()
+        babies = req
     }
 }
