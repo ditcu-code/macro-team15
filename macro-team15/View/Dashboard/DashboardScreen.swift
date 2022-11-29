@@ -12,6 +12,7 @@ struct DashboardScreen: View {
     @State private var selectedMilestoneCategory = 1
     @State private var milestonePeriod = false
     @ObservedObject var viewModel = DashboardViewModel()
+    @State private var profileSwitcher = false
     
     var body: some View {
         NavigationView {
@@ -86,9 +87,17 @@ struct DashboardScreen: View {
                     
                     // Profile image
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        ProfileAvatarView()
+                        Button {
+                            profileSwitcher.toggle()
+                        } label: {
+                            ProfileAvatarView()
+                        }
                     }
                 }
+
+                .sheet(isPresented: $profileSwitcher) {
+                    ProfileSwitcherSheet()
+                    
                 .sheet(isPresented: $milestonePeriod) {
                     MilestonePeriodSheet()
                 }
