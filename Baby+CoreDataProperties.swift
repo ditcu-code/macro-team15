@@ -2,7 +2,7 @@
 //  Baby+CoreDataProperties.swift
 //  macro-team15
 //
-//  Created by Aditya Cahyo on 27/11/22.
+//  Created by Aditya Cahyo on 29/11/22.
 //
 //
 
@@ -19,6 +19,7 @@ extension Baby {
     @NSManaged public var birthDate: Date?
     @NSManaged public var name: String?
     @NSManaged public var photo: Data?
+    @NSManaged public var id: UUID?
     @NSManaged public var milestones: NSSet?
     @NSManaged public var photos: NSSet?
     
