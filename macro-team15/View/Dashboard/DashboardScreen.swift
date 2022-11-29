@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct DashboardScreen: View {
-    
-    let name: String
+
     @State private var selectedMilestoneCategory = 1
+    @State private var milestonePeriod = false
     @ObservedObject var viewModel = DashboardViewModel()
     
     var body: some View {
@@ -71,24 +71,26 @@ struct DashboardScreen: View {
                 .toolbar {
                     // Milestone dropdown
                     ToolbarItem(placement: .navigationBarLeading) {
-                        HStack(alignment: .bottom) {
-                            Button {
-                                
-                            } label: {
-                                Text("Bulan ke-1")
-                                
-                                Image(systemName: "chevron.down")
-                                    .padding(.leading, -4)
-                            }
-                            .font(.headline)
-                            .foregroundColor(Color.ui.text)
+                        Button {
+                            milestonePeriod.toggle()
+                        } label: {
+                            Text("Bulan ke-1")
+                            
+                            Image(systemName: "chevron.down")
+                                .bold()
+                                .padding(.leading, -4)
                         }
+                        .font(.headline)
+                        .foregroundColor(Color.ui.primary)
                     }
                     
                     // Profile image
                     ToolbarItem(placement: .navigationBarTrailing) {
                         ProfileAvatarView()
                     }
+                }
+                .sheet(isPresented: $milestonePeriod) {
+                    MilestonePeriodSheet()
                 }
             }
         }
