@@ -2,7 +2,7 @@
 //  BabyMilestoneNote+CoreDataProperties.swift
 //  macro-team15
 //
-//  Created by Aditya Cahyo on 27/11/22.
+//  Created by Aditya Cahyo on 29/11/22.
 //
 //
 
@@ -16,10 +16,11 @@ extension BabyMilestoneNote {
         return NSFetchRequest<BabyMilestoneNote>(entityName: "BabyMilestoneNote")
     }
 
+    @NSManaged public var body: String?
     @NSManaged public var isImportant: Bool
     @NSManaged public var modifiedDate: Date?
-    @NSManaged public var body: String?
     @NSManaged public var title: String?
+    @NSManaged public var id: UUID?
     @NSManaged public var milestone: BabyMilestone?
 
 }

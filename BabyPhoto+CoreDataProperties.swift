@@ -2,7 +2,7 @@
 //  BabyPhoto+CoreDataProperties.swift
 //  macro-team15
 //
-//  Created by Aditya Cahyo on 25/11/22.
+//  Created by Aditya Cahyo on 29/11/22.
 //
 //
 
@@ -16,10 +16,11 @@ extension BabyPhoto {
         return NSFetchRequest<BabyPhoto>(entityName: "BabyPhoto")
     }
 
-    @NSManaged public var photo: Data?
     @NSManaged public var createdDate: Date?
     @NSManaged public var milestoneID: String?
+    @NSManaged public var photo: Data?
     @NSManaged public var stimulusID: String?
+    @NSManaged public var id: UUID?
     @NSManaged public var baby: Baby?
 
 }
