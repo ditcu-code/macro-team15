@@ -97,11 +97,12 @@ struct DashboardScreen: View {
                 
                 .sheet(isPresented: $profileSwitcher) {
                     ProfileSwitcherSheet()
-                    
-                        .sheet(isPresented: $milestonePeriod) {
-                            MilestonePeriodSheet()
-                        }
                 }
+                
+                .sheet(isPresented: $milestonePeriod) {
+                    MilestonePeriodSheet()
+                }
+                
             }
         }
         

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ReportView: View {
     var name = "Ceroy"
+    @State private var milestonePeriod = false
+    @State private var milestoneVersusPeriod = false
     
     var body: some View {
         NavigationView {
@@ -65,13 +67,13 @@ struct ReportView: View {
                     
                     HStack {
                         Button {
-                            
+                            milestonePeriod.toggle()
                         } label: {
                             Text("Bulan ke-2").frame(maxWidth: .infinity)
                         }.buttonStyle(SmallGreenButtonStyle())
                         
                         Button {
-                            
+                            milestoneVersusPeriod.toggle()
                         } label: {
                             Text("Pilih Bulan").frame(maxWidth: .infinity)
                         }.buttonStyle(SmallGreenButtonStyle())
@@ -102,6 +104,12 @@ struct ReportView: View {
             .background(alignment: .center) {
                 Image("BackgroundFill1Image")
                 Image("BackgroundFill2Image")
+            }
+            .sheet(isPresented: $milestonePeriod) {
+                MilestonePeriodSheet()
+            }
+            .sheet(isPresented: $milestoneVersusPeriod) {
+                MilestonePeriodSheet()
             }
             
         }
