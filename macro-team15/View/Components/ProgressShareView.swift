@@ -18,10 +18,7 @@ struct ProgressShareView: View {
     var body: some View {
         VStack(alignment: .leading) {
             ZStack(alignment: .topTrailing) {
-                Image.ui.placeholder
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: UIScreen.main.bounds.size.width, height: 350)
+                snapshot
                 
                 HStack {
                     Spacer()
@@ -96,11 +93,10 @@ struct ProgressShareView: View {
     }
     
     var snapshot: some View {
-        Text("Hello, SwiftUI")
-            .padding()
-            .background(Color.blue)
-            .foregroundColor(.white)
-            .clipShape(Capsule())
+        Image.ui.placeholder
+            .resizable()
+            .aspectRatio(contentMode: .fill)
+            .frame(width: UIScreen.main.bounds.size.width, height: 350)
     }
     
 }
