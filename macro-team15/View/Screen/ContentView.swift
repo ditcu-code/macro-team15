@@ -8,31 +8,28 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var viewModel = ContentViewModel()
+    @ObservedObject var viewModel = ContentViewModel()
     @AppStorage("isDoneOnboarding") var isDoneOnboarding: Bool = false
-
+    
     var body: some View {
         if (isDoneOnboarding || !viewModel.babies.isEmpty) {
-            TabViews(viewModel: viewModel)
+            if (viewModel.babies.count > 0) {
+                TabViews()
+            } else {
+                TuntunLoading()
+            }
         } else {
             OnboardingView()
         }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
-
 struct TabViews: View {
     @State private var selectedTab: Tabs = .home
-    @ObservedObject var viewModel: ContentViewModel
     
     var body: some View {
         TabView(selection: $selectedTab) {
-            DashboardScreen(name: viewModel.babies[0].name ?? "")
+            DashboardScreen()
                 .tabItem {
                     Label("Progres", systemImage: "rectangle.stack.fill")
                 }
@@ -50,5 +47,11 @@ struct TabViews: View {
                 }
                 .tag(Tabs.report)
         }
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
     }
 }
