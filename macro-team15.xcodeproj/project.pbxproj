@@ -36,6 +36,7 @@
 		0E8FE4F229349DFF00DBF715 /* OnboardingText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE4F129349DFF00DBF715 /* OnboardingText.swift */; };
 		0E8FE4F62934F19F00DBF715 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE4F52934F19F00DBF715 /* DashboardViewModel.swift */; };
 		0E8FE4F82935AB3E00DBF715 /* TuntunLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE4F72935AB3E00DBF715 /* TuntunLoading.swift */; };
+		0E8FE4FA2935ADA300DBF715 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E8FE4F92935ADA300DBF715 /* LaunchScreen.storyboard */; };
 		0E92692B29309AFD0050C375 /* userData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0E92692929309AFD0050C375 /* userData.xcdatamodeld */; };
 		0E9269382930D4970050C375 /* BabyPhoto+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9269302930D4970050C375 /* BabyPhoto+CoreDataClass.swift */; };
 		0E9269392930D4970050C375 /* BabyPhoto+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9269312930D4970050C375 /* BabyPhoto+CoreDataProperties.swift */; };
@@ -104,6 +105,7 @@
 		0E8FE4F129349DFF00DBF715 /* OnboardingText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingText.swift; sourceTree = "<group>"; };
 		0E8FE4F52934F19F00DBF715 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		0E8FE4F72935AB3E00DBF715 /* TuntunLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuntunLoading.swift; sourceTree = "<group>"; };
+		0E8FE4F92935ADA300DBF715 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E92692A29309AFD0050C375 /* userData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = userData.xcdatamodel; sourceTree = "<group>"; };
 		0E9269302930D4970050C375 /* BabyPhoto+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BabyPhoto+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		0E9269312930D4970050C375 /* BabyPhoto+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BabyPhoto+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
@@ -202,6 +204,7 @@
 		0E7456E529069B4C00D792E6 = {
 			isa = PBXGroup;
 			children = (
+				0E8FE4F92935ADA300DBF715 /* LaunchScreen.storyboard */,
 				0E8FE4D02933C6AC00DBF715 /* Baby+CoreDataClass.swift */,
 				0E8FE4D12933C6AC00DBF715 /* Baby+CoreDataProperties.swift */,
 				0E9269302930D4970050C375 /* BabyPhoto+CoreDataClass.swift */,
@@ -442,6 +445,7 @@
 				0E46F141292FAFE000D54488 /* Alexandria-SemiBold.ttf in Resources */,
 				0E46F140292FAFE000D54488 /* Alexandria-Light.ttf in Resources */,
 				0E7456F929069B4E00D792E6 /* Preview Assets.xcassets in Resources */,
+				0E8FE4FA2935ADA300DBF715 /* LaunchScreen.storyboard in Resources */,
 				0E7456F629069B4E00D792E6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -649,6 +653,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -685,6 +690,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
