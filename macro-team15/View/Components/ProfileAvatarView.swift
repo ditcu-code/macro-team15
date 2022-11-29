@@ -9,13 +9,9 @@ import SwiftUI
 
 struct ProfileAvatarView: View {
     var body: some View {
-        Button {
-            
-        } label: {
-            Image(systemName: "person.circle.fill")
-                .resizable()
-                .frame(minWidth: 35, minHeight: 35)
-        }
+        Image(systemName: "person.circle.fill")
+            .resizable()
+            .frame(minWidth: 35, minHeight: 35)
     }
 }
 

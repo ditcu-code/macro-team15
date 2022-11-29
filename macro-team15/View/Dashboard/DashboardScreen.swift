@@ -9,9 +9,9 @@ import SwiftUI
 
 struct DashboardScreen: View {
     
-    let name: String
     @State private var selectedMilestoneCategory = 1
     @ObservedObject var viewModel = DashboardViewModel()
+    @State private var profileSwitcher = false
     
     var body: some View {
         NavigationView {
@@ -87,8 +87,15 @@ struct DashboardScreen: View {
                     
                     // Profile image
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        ProfileAvatarView()
+                        Button {
+                            profileSwitcher.toggle()
+                        } label: {
+                            ProfileAvatarView()
+                        }
                     }
+                }
+                .sheet(isPresented: $profileSwitcher) {
+                    ProfileSwitcherSheet()
                 }
             }
         }
