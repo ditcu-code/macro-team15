@@ -20,9 +20,12 @@ struct MilestonePhotoCardView: View {
                 
                 Text("Bisa mengangkat dagu sehingga berbalik ke posisi tengkurap!")
                     .font(.footnote)
+                    .foregroundColor(Color.ui.text)
+                    .multilineTextAlignment(.leading)
                 
                 Text(Date().dmYFormat())
                     .font(.footnote)
+                    .foregroundColor(Color.ui.text)
                     .padding(.top, 4)
                     .padding(.bottom, 12)
             }

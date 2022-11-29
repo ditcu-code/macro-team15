@@ -14,15 +14,18 @@ struct StimulusPhotoCardView: View {
             
             Group {
                 Text("Bulan ke-1")
+                    .font(.footnote)
+                    .foregroundColor(Color.ui.text)
+                
+                Text("Tummy Time")
                     .font(.title3)
                     .foregroundColor(Color.ui.secondary)
+                    .multilineTextAlignment(.leading)
                     .padding(.bottom, 4)
-                
-                Text("Bisa mengangkat dagu sehingga berbalik ke posisi tengkurap!")
-                    .font(.footnote)
                 
                 Text(Date().dmYFormat())
                     .font(.footnote)
+                    .foregroundColor(Color.ui.text)
                     .padding(.top, 4)
                     .padding(.bottom, 12)
             }

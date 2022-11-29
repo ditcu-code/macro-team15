@@ -38,12 +38,27 @@ struct AlbumScreen: View {
                     
                     ScrollView {
                         LazyVGrid(columns: layout, spacing: 20) {
-                            ForEach(0..<2) { i in
-                                MilestonePhotoCardView()
-                                    .padding(.vertical)
-                                    .padding(i % 2 == 0 ? .leading : .trailing)
+                            if selectedTab == 0 {
+                                ForEach(0..<2) { i in
+                                    Button {
+                                    } label: {
+                                        MilestonePhotoCardView()
+                                            .padding(.vertical)
+                                            .padding(i % 2 == 0 ? .leading : .trailing)
+                                    }
+                                }
+                            } else {
+                                ForEach(0..<2) { i in
+                                    Button {
+                                    } label: {
+                                        StimulusPhotoCardView()
+                                            .padding(.vertical)
+                                            .padding(i % 2 == 0 ? .leading : .trailing)
+                                    }
+                                }
                             }
                         }
+                        .animation(Animation.spring(), value: 2)
                     }
                 }
             }
