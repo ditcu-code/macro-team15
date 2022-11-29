@@ -34,7 +34,6 @@
 		0E8FE4F82935AB3E00DBF715 /* TuntunLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE4F72935AB3E00DBF715 /* TuntunLoading.swift */; };
 		0E8FE4FA2935ADA300DBF715 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E8FE4F92935ADA300DBF715 /* LaunchScreen.storyboard */; };
 		0E8FE4FD29364D9700DBF715 /* Milestone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE4FC29364D9700DBF715 /* Milestone.swift */; };
-		0E8FE50129365D7A00DBF715 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE50029365D7A00DBF715 /* File.swift */; };
 		0E8FE50A29366D9200DBF715 /* BabyPhoto+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE50229366D9200DBF715 /* BabyPhoto+CoreDataClass.swift */; };
 		0E8FE50B29366D9200DBF715 /* BabyPhoto+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE50329366D9200DBF715 /* BabyPhoto+CoreDataProperties.swift */; };
 		0E8FE50C29366D9200DBF715 /* Baby+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE50429366D9200DBF715 /* Baby+CoreDataClass.swift */; };
@@ -113,7 +112,6 @@
 		0E8FE4F72935AB3E00DBF715 /* TuntunLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuntunLoading.swift; sourceTree = "<group>"; };
 		0E8FE4F92935ADA300DBF715 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E8FE4FC29364D9700DBF715 /* Milestone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Milestone.swift; sourceTree = "<group>"; };
-		0E8FE50029365D7A00DBF715 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		0E8FE50229366D9200DBF715 /* BabyPhoto+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BabyPhoto+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0E8FE50329366D9200DBF715 /* BabyPhoto+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BabyPhoto+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0E8FE50429366D9200DBF715 /* Baby+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Baby+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -325,7 +323,6 @@
 			isa = PBXGroup;
 			children = (
 				0E8FE4FC29364D9700DBF715 /* Milestone.swift */,
-				0E8FE50029365D7A00DBF715 /* File.swift */,
 			);
 			path = StaticData;
 			sourceTree = "<group>";
@@ -549,7 +546,6 @@
 				FA48EFBE292D3BF7009ED62B /* MilestoneCategoryCardView.swift in Sources */,
 				FAF8546029349AC4009C8CA5 /* ProfileAvatarView.swift in Sources */,
 				0E8FE50B29366D9200DBF715 /* BabyPhoto+CoreDataProperties.swift in Sources */,
-				0E8FE50129365D7A00DBF715 /* File.swift in Sources */,
 				FA706AD32913C49400AD30A4 /* CardView.swift in Sources */,
 				0E7456F229069B4D00D792E6 /* macro_team15App.swift in Sources */,
 				0E6F61F1290FC40B005C5415 /* Enum.swift in Sources */,
