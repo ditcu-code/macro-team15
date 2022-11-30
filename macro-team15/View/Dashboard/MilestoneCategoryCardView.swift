@@ -10,10 +10,9 @@ import SwiftUI
 struct MilestoneCategoryCardView: View {
     
     let categoryTitle: String
-    let missionTitle: String
-    let primaryColor: Color
-    let secondaryColor: Color
-    let navigationLink: AnyView
+    let color: Color
+    let currentProgress: Int
+    let allProgress: Int
     
     var body: some View {
         DisclosureGroup {
@@ -22,7 +21,7 @@ struct MilestoneCategoryCardView: View {
                 
                 ForEach(0 ..< 5) { item in
                     NavigationLink {
-                        navigationLink
+                        MilestoneDetailView()
                     } label: {
                         VStack {
                             Divider()
@@ -33,17 +32,17 @@ struct MilestoneCategoryCardView: View {
                                     Image(systemName: "checkmark.circle.fill")
                                         .resizable()
                                         .frame(width: 28, height: 28)
-                                        .foregroundColor(primaryColor)
+                                        .foregroundColor(color)
                                 }
                                 .padding(12)
                                 
-                                Text(missionTitle)
+                                Text("Bisa mengangkat dagu sehingga berbalik ke posisi tengkurap")
                                     .multilineTextAlignment(.leading)
                                 
                                 Spacer()
                                 
                                 Image(systemName: "chevron.right")
-                                    .foregroundColor(primaryColor)
+                                    .foregroundColor(color)
                             }
                         }
                     }
@@ -55,7 +54,7 @@ struct MilestoneCategoryCardView: View {
                 Image(systemName: "gearshape.fill")
                     .resizable()
                     .frame(width: 32, height: 32)
-                    .foregroundColor(primaryColor)
+                    .foregroundColor(color)
                     .padding(12)
                 
                 VStack(alignment: .leading) {
@@ -69,11 +68,21 @@ struct MilestoneCategoryCardView: View {
                             .fontWeight(.semibold)
                     }
                     
-                    HStack {
-                        ForEach(0 ..< 4) { item in
-                            Capsule()
-                                .frame(width: 32)
-                                .foregroundColor(primaryColor)
+                    ZStack(alignment: .leading) {
+                        HStack {
+                            ForEach(0 ..< allProgress) { item in
+                                Capsule()
+                                    .frame(width: 32)
+                                    .foregroundColor(color.opacity(0.3))
+                            }
+                        }
+                        
+                        HStack {
+                            ForEach(0 ..< currentProgress) { item in
+                                Capsule()
+                                    .frame(width: 32)
+                                    .foregroundColor(color)
+                            }
                         }
                     }
                 }
@@ -88,6 +97,6 @@ struct MilestoneCategoryCardView: View {
 
 struct MilestoneCategoryCardView_Previews: PreviewProvider {
     static var previews: some View {
-        MilestoneCategoryCardView(categoryTitle: "Motorik", missionTitle: "Bisa mengangkat dagu sehingga berbalik ke posisi tengkurap", primaryColor: Color.ui.motorPrimary, secondaryColor: Color.ui.motorSecondary, navigationLink: AnyView(Text("Detail")))
+        MilestoneCategoryCardView(categoryTitle: "Motorik", color: Color.ui.motorPrimary, currentProgress: 2, allProgress: 4)
     }
 }

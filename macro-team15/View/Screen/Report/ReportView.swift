@@ -116,6 +116,24 @@ struct ReportView: View {
                     }.padding()
                     
                     Divider().padding(.horizontal)
+                    
+                    // MARK: Milestone Category Progress
+                    VStack {
+                        // Motor
+                        ForEach(0 ..< 5) { item in
+                            MilestoneCategoryCardView(categoryTitle: "Motorik", color: Color.ui.motorPrimary, currentProgress: 2, allProgress: 4)
+                            
+                            Divider()
+                        }
+                        
+                        // Cognitive
+                        MilestoneCategoryCardView(categoryTitle: "Kognitif", color: Color.ui.cognitivePrimary, currentProgress: 2, allProgress: 4)
+                    }
+                    .background(
+                        RoundedRectangle(cornerRadius: 20)
+                            .foregroundColor(.white)
+                    )
+                    .padding(.horizontal)
                 }
             }
             .navigationTitle("Rapor")

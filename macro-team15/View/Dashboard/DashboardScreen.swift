@@ -47,12 +47,12 @@ struct DashboardScreen: View {
                             
                             
                             // Motor
-                            MilestoneCategoryCardView(categoryTitle: "Motorik", missionTitle: "Bisa mengangkat dagu sehingga berbalik ke posisi tengkurap", primaryColor: Color.ui.motorPrimary, secondaryColor: Color.ui.motorSecondary, navigationLink: AnyView(MilestoneDetailView()))
+                            MilestoneCategoryCardView(categoryTitle: "Motorik", color: Color.ui.motorPrimary, currentProgress: 1, allProgress: 5)
                             
                             Divider()
                             
                             // Cognitive
-                            MilestoneCategoryCardView(categoryTitle: "Kognitif", missionTitle: "Bisa mengangkat dagu sehingga berbalik ke posisi tengkurap", primaryColor: Color.ui.cognitivePrimary, secondaryColor: Color.ui.cognitiveSecondary, navigationLink: AnyView(MilestoneDetailView()))
+                            MilestoneCategoryCardView(categoryTitle: "Kognitif", color: Color.ui.cognitivePrimary, currentProgress: 2, allProgress: 4)
                         }
                         .background(
                             RoundedRectangle(cornerRadius: 20)
