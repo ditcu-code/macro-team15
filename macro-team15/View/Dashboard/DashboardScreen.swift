@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct DashboardScreen: View {
+    @State private var selectedMonth: Int = 1
+    @State private var milestonePeriod: Bool = false
+    @State private var profileSwitcher: Bool = false
     
-    @State private var selectedMilestoneCategory = 1
-    @State private var milestonePeriod = false
     @ObservedObject var viewModel = DashboardViewModel()
-    @State private var profileSwitcher = false
+    private var milestoneData: [Milestone] = MilestoneData.getAll()
     
     var body: some View {
+        let babyName = viewModel.babies.first?.name ?? "Aruna"
+        
         NavigationView {
             GeometryReader { geo in
                 ZStack {
@@ -27,7 +30,7 @@ struct DashboardScreen: View {
                         Divider()
                             .padding(.vertical)
                         
-                        ContentHeaderView(title: "Aktivitas", subtitle: "Dirancang untuk mendukung pencapaian Ceroy", navigationLink: AnyView(Text("Detail")))
+                        ContentHeaderView(title: "Aktivitas", subtitle: "Dirancang untuk mendukung pencapaian \(babyName)", navigationLink: AnyView(Text("Detail")))
                         
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack {
@@ -40,19 +43,21 @@ struct DashboardScreen: View {
                             }
                         }
                         
-                        ContentHeaderView(title: "Milestone", subtitle: "Perkembangan Ceroy di bulan ini", navigationLink: nil)
+                        ContentHeaderView(title: "Milestone", subtitle: "Perkembangan \(babyName) di bulan ini", navigationLink: nil)
                             .padding(.top)
                         
                         VStack {
-                            
-                            
-                            // Motor
-                            MilestoneCategoryCardView(categoryTitle: "Motorik", missionTitle: "Bisa mengangkat dagu sehingga berbalik ke posisi tengkurap", primaryColor: Color.ui.motorPrimary, secondaryColor: Color.ui.motorSecondary, navigationLink: AnyView(MilestoneDetailView()))
-                            
-                            Divider()
-                            
-                            // Cognitive
-                            MilestoneCategoryCardView(categoryTitle: "Kognitif", missionTitle: "Bisa mengangkat dagu sehingga berbalik ke posisi tengkurap", primaryColor: Color.ui.cognitivePrimary, secondaryColor: Color.ui.cognitiveSecondary, navigationLink: AnyView(MilestoneDetailView()))
+                            ForEach(MilestoneCategory.allCases, id: \.self) { category in
+                                let list = milestoneData.filter { item in
+                                    item.category == category &&
+                                    item.month == selectedMonth
+                                }
+                                
+                                MilestoneCategoryCardViewV2(category: category, milestone: list, navigationLink: AnyView(MilestoneDetailView()))
+                                if category != MilestoneCategory.allCases.last {
+                                    Divider()
+                                }
+                            }
                         }
                         .background(
                             RoundedRectangle(cornerRadius: 20)
@@ -60,7 +65,7 @@ struct DashboardScreen: View {
                         )
                         .padding(.horizontal)
                         
-                        ContentHeaderView(title: "Catatan", subtitle: "Hal-hal penting mengenai perkembangan Ceroy", navigationLink: AnyView(Text("Detail")))
+                        ContentHeaderView(title: "Catatan", subtitle: "Hal-hal penting mengenai perkembangan \(babyName)", navigationLink: AnyView(Text("Detail")))
                             .padding(.top)
                         
                         Text("Tidak ada catatan penting")
@@ -68,14 +73,14 @@ struct DashboardScreen: View {
                     }
                 }
                 
-                .navigationTitle("\(geo.frame(in: .global).minY < 100 ? "Beranda" : "Hi, \(viewModel.babies.first?.name ?? "Aruna")!")")
+                .navigationTitle("\(geo.frame(in: .global).minY < 100 ? "Beranda" : "Hi, \(babyName)!")")
                 .toolbar {
                     // Milestone dropdown
                     ToolbarItem(placement: .navigationBarLeading) {
                         Button {
                             milestonePeriod.toggle()
                         } label: {
-                            Text("Bulan ke-1")
+                            Text("Bulan ke-\(selectedMonth)")
                             
                             Image(systemName: "chevron.down")
                                 .bold()
@@ -90,7 +95,7 @@ struct DashboardScreen: View {
                         Button {
                             profileSwitcher.toggle()
                         } label: {
-                            ProfileAvatarView()
+                            ProfileAvatarViewV2(photo: viewModel.babies.first?.photo!)
                         }
                     }
                 }
@@ -100,7 +105,7 @@ struct DashboardScreen: View {
                 }
                 
                 .sheet(isPresented: $milestonePeriod) {
-                    MilestonePeriodSheet()
+                    MilestonePeriodSheet(selectedMonth: $selectedMonth)
                 }
                 
             }
