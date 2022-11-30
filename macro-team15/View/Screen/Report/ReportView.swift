@@ -83,24 +83,47 @@ struct ReportView: View {
                     
                     // MARK: Compare Button
                     HStack {
-                        // First month
                         Button {
                             monthPeriod.toggle()
                         } label: {
-                            Text("Bulan ke-2").frame(maxWidth: .infinity)
-                        }.buttonStyle(SmallGreenButtonStyle())
+                            VStack(spacing: 4) {
+                                HStack {
+                                    Text("Bulan ke-1")
+                                        .font(.subheadline)
+                                        .fontWeight(.semibold)
+                                    
+                                    Image(systemName: "chevron.down")
+                                }
+                                
+                                Capsule()
+                                    .frame(height: 1)
+                            }
+                            .foregroundColor(Color.ui.primary)
+                            .padding(.horizontal, 8)
+                        }
                         
-                        // Second month
                         Button {
                             monthVersusPeriod.toggle()
                         } label: {
-                            Text("Pilih Bulan").frame(maxWidth: .infinity)
-                        }.buttonStyle(SmallGreenButtonStyle())
+                            VStack(spacing: 4) {
+                                HStack {
+                                    Text("Bulan ke-2")
+                                        .font(.subheadline)
+                                        .fontWeight(.semibold)
+                                    
+                                    Image(systemName: "chevron.down")
+                                }
+                                
+                                Capsule()
+                                    .frame(height: 1)
+                            }
+                            .foregroundColor(Color.ui.primary)
+                            .padding(.horizontal, 8)
+                            
+                        }
                     }
                     .frame(height: 70)
                     .padding(.horizontal)
-                    
-                    Divider().padding(.horizontal)
                     
                     // MARK: Summary message
                     ZStack {
