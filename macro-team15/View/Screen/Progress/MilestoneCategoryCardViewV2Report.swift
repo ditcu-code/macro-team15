@@ -70,7 +70,7 @@ struct MilestoneCategoryCardViewV2Report: View {
                         ReportMilestoneView(item: item, color: colorSwitcher(true), navigationLink: navigationLink)
                     }
                 } else {
-                    
+                    NoReportMilestoneView()
                 }
             }
             
@@ -107,48 +107,4 @@ struct MilestoneCategoryCardViewV2Report_Previews: PreviewProvider {
         
         MilestoneCategoryCardViewV2Report(category: .motoric, milestone: nil, navigationLink: AnyView(Text("Nav")))
     }
-}
-
-struct ReportMilestoneView: View {
-    
-    let item: Milestone
-    let color: Color
-    let navigationLink: AnyView
-    
-    var body: some View {
-        NavigationLink {
-            navigationLink
-        } label: {
-            VStack {
-                Divider()
-                
-                HStack {
-                    Button {
-                    } label: {
-                        Image(systemName: "checkmark.circle.fill")
-                            .resizable()
-                            .frame(width: 28, height: 28)
-                            .foregroundColor(color)
-                    }
-                    .padding(12)
-                    
-                    VStack(alignment: .leading, spacing: 4) {
-                        Text(item.title)
-                            .multilineTextAlignment(.leading)
-                        
-                        Text("Bulan ke-\(item.month)")
-                            .font(.subheadline)
-                            .fontWeight(.semibold)
-                            .foregroundColor(Color.ui.secondary)
-                    }
-                    
-                    Spacer()
-                    
-                    Image(systemName: "chevron.right")
-                        .foregroundColor(color)
-                }
-            }
-        }
-    }
-    
 }
