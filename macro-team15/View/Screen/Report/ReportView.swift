@@ -158,6 +158,11 @@ struct ReportView: View {
                             .foregroundColor(.white)
                     )
                     .padding([.top, .horizontal])
+                    
+                    Divider()
+                        .padding()
+                    
+                    ContentHeaderView(title: "Catatan", subtitle: "Hal-hal penting mengenai perkembangan Ceroy", navigationLink: AnyView(Text("Catatan")))
                 }
             }
             .navigationTitle("Rapor")
