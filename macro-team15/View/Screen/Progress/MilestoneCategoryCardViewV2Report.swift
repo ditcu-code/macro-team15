@@ -10,7 +10,7 @@ import SwiftUI
 struct MilestoneCategoryCardViewV2Report: View {
     
     let category: MilestoneCategory
-    let milestone: [Milestone]
+    let milestone: [Milestone]?
     let navigationLink: AnyView
     
     private func colorSwitcher(_ isPrimary: Bool) -> Color {
@@ -65,40 +65,12 @@ struct MilestoneCategoryCardViewV2Report: View {
             VStack {
                 Spacer()
                 
-                ForEach(milestone) { item in
-                    NavigationLink {
-                        navigationLink
-                    } label: {
-                        VStack {
-                            Divider()
-                            
-                            HStack {
-                                Button {
-                                } label: {
-                                    Image(systemName: "checkmark.circle.fill")
-                                        .resizable()
-                                        .frame(width: 28, height: 28)
-                                        .foregroundColor(colorSwitcher(true))
-                                }
-                                .padding(12)
-                                
-                                VStack(alignment: .leading, spacing: 4) {
-                                    Text(item.title)
-                                        .multilineTextAlignment(.leading)
-                                    
-                                    Text("Bulan ke-\(item.month)")
-                                        .font(.subheadline)
-                                        .fontWeight(.semibold)
-                                        .foregroundColor(Color.ui.secondary)
-                                }
-                                
-                                Spacer()
-                                
-                                Image(systemName: "chevron.right")
-                                    .foregroundColor(colorSwitcher(true))
-                            }
-                        }
+                if let milestone = milestone {
+                    ForEach(milestone) { item in
+                        ReportMilestoneView(item: item, color: colorSwitcher(true), navigationLink: navigationLink)
                     }
+                } else {
+                    
                 }
             }
             
@@ -115,7 +87,7 @@ struct MilestoneCategoryCardViewV2Report: View {
                         .fontWeight(.semibold)
                         .foregroundColor(Color.ui.secondary)
                     
-                    Text("\(milestone.count) misi")
+                    Text("\(milestone?.count ?? 0) misi")
                         .fontWeight(.medium)
                         .foregroundColor(Color.ui.text)
                 }
@@ -132,5 +104,51 @@ struct MilestoneCategoryCardViewV2Report: View {
 struct MilestoneCategoryCardViewV2Report_Previews: PreviewProvider {
     static var previews: some View {
         MilestoneCategoryCardViewV2Report(category: .motoric, milestone: [Milestone(id: 1, titleEN: "titleEN", title: "title", month: 1, warningMonth: 2, category: .motoric, stimulusID: nil)], navigationLink: AnyView(Text("Nav")))
+        
+        MilestoneCategoryCardViewV2Report(category: .motoric, milestone: nil, navigationLink: AnyView(Text("Nav")))
     }
+}
+
+struct ReportMilestoneView: View {
+    
+    let item: Milestone
+    let color: Color
+    let navigationLink: AnyView
+    
+    var body: some View {
+        NavigationLink {
+            navigationLink
+        } label: {
+            VStack {
+                Divider()
+                
+                HStack {
+                    Button {
+                    } label: {
+                        Image(systemName: "checkmark.circle.fill")
+                            .resizable()
+                            .frame(width: 28, height: 28)
+                            .foregroundColor(color)
+                    }
+                    .padding(12)
+                    
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(item.title)
+                            .multilineTextAlignment(.leading)
+                        
+                        Text("Bulan ke-\(item.month)")
+                            .font(.subheadline)
+                            .fontWeight(.semibold)
+                            .foregroundColor(Color.ui.secondary)
+                    }
+                    
+                    Spacer()
+                    
+                    Image(systemName: "chevron.right")
+                        .foregroundColor(color)
+                }
+            }
+        }
+    }
+    
 }
