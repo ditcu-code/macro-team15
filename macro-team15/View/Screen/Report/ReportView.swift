@@ -9,8 +9,10 @@ import SwiftUI
 
 struct ReportView: View {
     var name = "Ceroy"
-    @State private var milestonePeriod = false
-    @State private var milestoneVersusPeriod = false
+    @State private var monthPeriod = false
+    @State private var monthVersusPeriod = false
+    @State private var month: Int = 1
+    @State private var monthVersus: Int = 0
     
     var body: some View {
         NavigationView {
@@ -83,14 +85,14 @@ struct ReportView: View {
                     HStack {
                         // First month
                         Button {
-                            milestonePeriod.toggle()
+                            monthPeriod.toggle()
                         } label: {
                             Text("Bulan ke-2").frame(maxWidth: .infinity)
                         }.buttonStyle(SmallGreenButtonStyle())
                         
                         // Second month
                         Button {
-                            milestoneVersusPeriod.toggle()
+                            monthVersusPeriod.toggle()
                         } label: {
                             Text("Pilih Bulan").frame(maxWidth: .infinity)
                         }.buttonStyle(SmallGreenButtonStyle())
@@ -140,11 +142,11 @@ struct ReportView: View {
             .background(alignment: .center) {
                 BackgroundView()
             }
-            .sheet(isPresented: $milestonePeriod) {
-                MilestonePeriodSheet()
+            .sheet(isPresented: $monthPeriod) {
+                MilestonePeriodSheet(selectedMonth: $month)
             }
-            .sheet(isPresented: $milestoneVersusPeriod) {
-                MilestonePeriodSheet()
+            .sheet(isPresented: $monthVersusPeriod) {
+                MilestonePeriodSheet(selectedMonth: $monthVersus)
             }
             
         }

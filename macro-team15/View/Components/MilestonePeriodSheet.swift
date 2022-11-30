@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MilestonePeriodSheet: View {
     
+    @Binding var selectedMonth: Int
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
@@ -39,7 +40,7 @@ struct MilestonePeriodSheet: View {
                 ForEach(1..<25) { item in
                     Button {
                         // Insert function here
-                        
+                        selectedMonth = item
                         dismiss()
                     } label: {
                         HStack {
@@ -65,8 +66,8 @@ struct MilestonePeriodSheet: View {
     
 }
 
-struct MilestonePeriodSheet_Previews: PreviewProvider {
-    static var previews: some View {
-        MilestonePeriodSheet()
-    }
-}
+//struct MilestonePeriodSheet_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MilestonePeriodSheet()
+//    }
+//}
