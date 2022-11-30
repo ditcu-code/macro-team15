@@ -122,20 +122,19 @@ struct ReportView: View {
                     // MARK: Milestone Category Progress
                     VStack {
                         // Motor
-                        ForEach(0 ..< 5) { item in
-                            MilestoneCategoryCardView(categoryTitle: "Motorik", color: Color.ui.motorPrimary, currentProgress: 2, allProgress: 4)
+                        ForEach(0 ..< 4) { item in
+                            MilestoneCategoryCardViewV2Report(category: .motoric, milestone: [Milestone(id: 1, titleEN: "titleEN", title: "title", month: 1, warningMonth: 2, category: .motoric, stimulusID: nil)], navigationLink: AnyView(Text("Nav")))
                             
-                            Divider()
+                            if item != 3 {
+                                Divider()
+                            }
                         }
-                        
-                        // Cognitive
-                        MilestoneCategoryCardView(categoryTitle: "Kognitif", color: Color.ui.cognitivePrimary, currentProgress: 2, allProgress: 4)
                     }
                     .background(
                         RoundedRectangle(cornerRadius: 20)
                             .foregroundColor(.white)
                     )
-                    .padding(.horizontal)
+                    .padding([.top, .horizontal])
                 }
             }
             .navigationTitle("Rapor")

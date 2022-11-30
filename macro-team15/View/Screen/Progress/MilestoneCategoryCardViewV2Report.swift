@@ -66,8 +66,13 @@ struct MilestoneCategoryCardViewV2Report: View {
                 Spacer()
                 
                 if let milestone = milestone {
-                    ForEach(milestone) { item in
-                        ReportMilestoneView(item: item, color: colorSwitcher(true), navigationLink: navigationLink)
+                    ForEach(milestone.indices) { index in
+                        if index == 0 {
+                            Spacer()
+                                .padding(.top, 12)
+                        }
+                        
+                        ReportMilestoneView(item: milestone[index], color: colorSwitcher(true), navigationLink: navigationLink)
                     }
                 } else {
                     NoReportMilestoneView()

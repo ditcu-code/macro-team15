@@ -11,6 +11,7 @@ struct NoReportMilestoneView: View {
     var body: some View {
         VStack {
             Divider()
+                .padding(.vertical)
             
             HStack {
                 Image.ui.tuntunHead
