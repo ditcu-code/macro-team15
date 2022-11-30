@@ -18,20 +18,27 @@ struct ReportView: View {
         NavigationView {
             ScrollView {
                 VStack {
+                    // MARK: Milestone Progress Header
                     Text("Perkembangan Milestone\n\(name)")
                         .font(.title2.bold())
                         .foregroundColor(Color.ui.primary)
                         .multilineTextAlignment(.center)
+                    
+                    // MARK: Chart
                     ZStack(alignment: .top) {
                         VStack {
                             HStack {
+                                // Motor stats
                                 VStack(alignment: .leading) {
                                     Text("Motorik")
                                         .bold()
                                         .foregroundColor(Color.ui.motorPrimary)
                                     Text("20 / 118").font(.footnote)
                                 }
+                                
                                 Spacer()
+                                
+                                // Cognitive stats
                                 VStack(alignment: .trailing) {
                                     Text("Kognitif")
                                         .bold()
@@ -39,15 +46,21 @@ struct ReportView: View {
                                     Text("20 / 118").font(.footnote)
                                 }
                             }
+                            
                             Spacer()
+                            
                             HStack {
+                                // Social stats
                                 VStack(alignment: .leading) {
                                     Text("Sosial & Emosional")
                                         .bold()
                                         .foregroundColor(Color.ui.socialPrimary)
                                     Text("20 / 118").font(.footnote)
                                 }
+                                
                                 Spacer()
+                                
+                                // Language stats
                                 VStack(alignment: .trailing) {
                                     Text("Bahasa")
                                         .bold()
@@ -58,6 +71,7 @@ struct ReportView: View {
                         }
                         .padding(.horizontal)
                         
+                        // Radar chart
                         RadarChart(
                             data: [9.0, 14.0, 15.0, 20.0],
                             dataVersus: [10.0, 18.0, 19.0, 23.0],
@@ -67,13 +81,16 @@ struct ReportView: View {
                         ).frame(width: UIScreen.main.bounds.width - 50, height: UIScreen.main.bounds.width - 50)
                     }
                     
+                    // MARK: Compare Button
                     HStack {
+                        // First month
                         Button {
                             monthPeriod.toggle()
                         } label: {
                             Text("Bulan ke-2").frame(maxWidth: .infinity)
                         }.buttonStyle(SmallGreenButtonStyle())
                         
+                        // Second month
                         Button {
                             monthVersusPeriod.toggle()
                         } label: {
@@ -85,6 +102,7 @@ struct ReportView: View {
                     
                     Divider().padding(.horizontal)
                     
+                    // MARK: Summary message
                     ZStack {
                         Color.white.cornerRadius(10).shadow(radius: 2)
                         
@@ -100,12 +118,29 @@ struct ReportView: View {
                     }.padding()
                     
                     Divider().padding(.horizontal)
+                    
+                    // MARK: Milestone Category Progress
+                    VStack {
+                        // Motor
+                        ForEach(0 ..< 5) { item in
+                            MilestoneCategoryCardView(categoryTitle: "Motorik", color: Color.ui.motorPrimary, currentProgress: 2, allProgress: 4)
+                            
+                            Divider()
+                        }
+                        
+                        // Cognitive
+                        MilestoneCategoryCardView(categoryTitle: "Kognitif", color: Color.ui.cognitivePrimary, currentProgress: 2, allProgress: 4)
+                    }
+                    .background(
+                        RoundedRectangle(cornerRadius: 20)
+                            .foregroundColor(.white)
+                    )
+                    .padding(.horizontal)
                 }
             }
             .navigationTitle("Rapor")
             .background(alignment: .center) {
-                Image("BackgroundFill1Image")
-                Image("BackgroundFill2Image")
+                BackgroundView()
             }
             .sheet(isPresented: $monthPeriod) {
                 MilestonePeriodSheet(selectedMonth: $month)
