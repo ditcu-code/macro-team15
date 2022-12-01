@@ -6,16 +6,36 @@
 //
 
 import Foundation
+import CoreData
 
 class DashboardViewModel: ObservableObject {
     @Published var babies: [Baby] = []
+    @Published var currentBaby: Baby? = nil
+//    @Published var babyMilestones: [BabyMilestone] = []
+//    @Published var appData = AppData()
     
     init () {
-        getBaby()
+        getData()
     }
     
-    func getBaby() {
-        let req = Baby.getAllBaby()
+    func getData() {
+//        setCurrentBabyId()
+        getBabies()
+//        getBabyMilestones()
+    }
+//
+//    func setCurrentBabyId() {
+//        let baby = Baby.getSpecificBaby(with: UUID(uuidString: appData.currentBabyId))
+//        currentBaby = baby
+//    }
+    
+    func getBabies() {
+        let req = Baby.getAll()
         babies = req
     }
+    
+//    func getBabyMilestones() {
+//        let req = BabyMilestone.getAll()
+//        babyMilestones = req
+//    }
 }

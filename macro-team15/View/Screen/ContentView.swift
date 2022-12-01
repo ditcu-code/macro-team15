@@ -8,12 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var viewModel = ContentViewModel()
-    @AppStorage("isDoneOnboarding") var isDoneOnboarding: Bool = false
+    @ObservedObject var vm = ContentViewModel()
     
     var body: some View {
-        if (isDoneOnboarding || !viewModel.babies.isEmpty) {
-            if (viewModel.babies.count > 0) {
+        if (vm.appData.isDoneOnboarding || !vm.babies.isEmpty) {
+            if (vm.babies.count > 0) {
                 TabViews()
             } else {
                 TuntunLoading()

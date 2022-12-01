@@ -14,29 +14,32 @@ struct ContentHeaderView: View {
     let navigationLink: AnyView?
     
     var body: some View {
-        HStack {
-            VStack(alignment: .leading, spacing: 10) {
+        VStack(alignment: .leading) {
+            HStack {
                 Text(title)
                     .font(.title2)
-                    .fontWeight(.semibold)
-                    .foregroundColor(Color.ui.secondary)
+                    .foregroundColor(Color.ui.primary)
                 
-                Text(subtitle)
-                    .font(.subheadline)
-                    .fontWeight(.light)
-                    .foregroundColor(Color.ui.secondary)
-            }
-            
-            Spacer()
-            
-            if let link = navigationLink {
-                NavigationLink("Lihat semua") {
-                    link
+                Spacer()
+                
+                if let link = navigationLink {
+                    NavigationLink {
+                        link
+                    } label: {
+                        Text("Lihat semua")
+                            .foregroundColor(Color.ui.primary)
+                            .bold()
+                    }
+
                 }
-                .buttonStyle(SecondaryButtonStyle())
             }
+            .padding(.bottom, 4)
+            
+            Text(subtitle)
+                .font(.subheadline)
+                .foregroundColor(Color.ui.secondary)
         }
-        .padding([.bottom, .horizontal])
+        .padding(.horizontal)
     }
     
 }
@@ -44,6 +47,5 @@ struct ContentHeaderView: View {
 struct ContentHeaderView_Previews: PreviewProvider {
     static var previews: some View {
         ContentHeaderView(title: "Aktivitas", subtitle: "Dirancang untuk mendukung pencapaian Ceroy", navigationLink: AnyView(Text("")))
-            .frame(height: 100)
     }
 }
