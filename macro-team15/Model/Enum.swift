@@ -18,3 +18,8 @@ enum MilestoneCategory: String, CaseIterable {
     case social = "Social & Emosional"
     case language = "Bahasa"
 }
+
+enum StimulusType: String, CaseIterable {
+    case activity = "Aktivitas"
+    case information = "Informasi"
+}
