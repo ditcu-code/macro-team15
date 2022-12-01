@@ -83,8 +83,12 @@ struct MilestoneCategoryCardViewV2: View {
 //                                    babyMilestone.checkedDate = Date()
 //                                    babyMilestone.isChecked = true
 //                                    babyMilestone.milestoneID = Int16(item.id)
-//                                    
+//
 //                                    PersistenceController.shared.save()
+                                    
+                                    let babyMiles = BabyMilestone.getSpecificMilestone(with: Int16(item.id))
+                                    print(Int(item.id))
+                                    print(babyMiles)
                                     
                                 } label: {
                                     Image(systemName: "checkmark.circle.fill")

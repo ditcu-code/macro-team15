@@ -12,6 +12,10 @@ class MilestoneCategoryCardViewModel: ObservableObject {
     @Published var appData = AppData()
     @Published var babyMilestones: [BabyMilestone] = []
     
+    init() {
+        getAllMilestone()
+    }
+    
     func getAllMilestone() {
         let milestones = BabyMilestone.getAllBabyMilestone()
         babyMilestones = milestones

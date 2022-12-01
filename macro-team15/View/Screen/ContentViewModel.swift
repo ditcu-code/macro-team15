@@ -13,7 +13,7 @@ class ContentViewModel: ObservableObject {
     @Published var babies: [Baby] = []
     @Published var currentBaby: Baby? = nil
     @Published var appData = AppData()
-
+    
     private var cancellable: AnyCancellable?
     
     init () {
@@ -23,6 +23,7 @@ class ContentViewModel: ObservableObject {
             .sink(receiveValue: { _ in
                 self.getBabies()
             })
+        setCurrentBaby()
     }
     
     func getBabies() {
@@ -30,15 +31,16 @@ class ContentViewModel: ObservableObject {
         babies = req
     }
     
-    func setCurrentBabyId() {
+    func setCurrentBaby() {
         if let id = babies.first?.id {
-            UserDefaults.standard.set(
-                id.uuidString,
-                forKey: "currentBabyId"
-            )
             let baby = Baby.getSpecificBaby(with: id)
             currentBaby = baby
-            injectAllMilestone(baby: baby)
+            do {
+                if BabyMilestone.getAllBabyMilestone().isEmpty {
+                    injectAllMilestone(baby: baby)
+                }
+            }
+
         }
     }
     
@@ -55,11 +57,11 @@ class ContentViewModel: ObservableObject {
         PersistenceController.shared.save()
     }
     
-//    func getAllMilestone() {
-//        let assd = BabyMilestone.getAllBabyMilestone()
-//
-//        print(assd.first?.milestoneID)
-//    }
-//
-
+    //    func getAllMilestone() {
+    //        let assd = BabyMilestone.getAllBabyMilestone()
+    //
+    //        print(assd.first?.milestoneID)
+    //    }
+    //
+    
 }

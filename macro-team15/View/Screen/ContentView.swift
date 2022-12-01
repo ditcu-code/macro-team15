@@ -15,11 +15,11 @@ struct ContentView: View {
         if (viewModel.appData.isDoneOnboarding || !viewModel.babies.isEmpty) {
             if (viewModel.babies.count > 0) {
                 TabViews()
-                    .onAppear {
-                        if viewModel.appData.currentBabyId.isEmpty {
-                            viewModel.setCurrentBabyId()
-                        }
-                    }
+//                    .onAppear {
+//                        if viewModel.appData.currentBabyId.isEmpty {
+//                            viewModel.setCurrentBabyId()
+//                        }
+//                    }
             } else {
                 TuntunLoading()
             }

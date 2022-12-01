@@ -61,4 +61,14 @@ extension BabyMilestone : Identifiable {
         return []
     }
     
+    static func getSpecificMilestone(with milestoneID: Int16?) -> BabyMilestone? {
+        let context = PersistenceController.viewContext
+        guard let milestoneID = milestoneID else { return nil }
+        let request = BabyMilestone.fetchRequest()
+        print("milestoneID", milestoneID)
+        request.predicate = NSPredicate(format: "milestoneID == %@", "1", milestoneID as CVarArg)
+        guard let items = try? context.fetch(request) else { return nil }
+        return items.first
+    }
+    
 }

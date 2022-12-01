@@ -187,6 +187,23 @@
 			path = ProfileSwitcherSheet;
 			sourceTree = "<group>";
 		};
+		0E0C8BDD293899F7009ABC42 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				0E0C8BDE29389A05009ABC42 /* MilestoneCategoryCardView */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		0E0C8BDE29389A05009ABC42 /* MilestoneCategoryCardView */ = {
+			isa = PBXGroup;
+			children = (
+				0E8FE5132936760200DBF715 /* MilestoneCategoryCardViewV2.swift */,
+				0E2F9A902937396900DDAA28 /* MilestoneCategoryCardViewModel.swift */,
+			);
+			path = MilestoneCategoryCardView;
+			sourceTree = "<group>";
+		};
 		0E46F13D292FAF8A00D54488 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -349,8 +366,7 @@
 		0E8FE512293675C300DBF715 /* Progress */ = {
 			isa = PBXGroup;
 			children = (
-				0E8FE5132936760200DBF715 /* MilestoneCategoryCardViewV2.swift */,
-				0E2F9A902937396900DDAA28 /* MilestoneCategoryCardViewModel.swift */,
+				0E0C8BDD293899F7009ABC42 /* Components */,
 			);
 			path = Progress;
 			sourceTree = "<group>";
