@@ -29,8 +29,10 @@ struct ProfilePictureOnboarding: View {
             .frame(width: 200, height: 200)
             .clipShape(Circle())
             
-            Button("Abc") {
+            Button{
                 shouldPresentActionScheet.toggle()
+            } label: {
+                Label(viewModel.photo != nil ? "Ganti Foto" : "Tambah Foto", systemImage: "plus")
             }
             .buttonStyle(SmallGreenButtonStyle())
             .padding()

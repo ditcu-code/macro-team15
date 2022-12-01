@@ -55,7 +55,7 @@ struct SmallGreenButtonStyle: ButtonStyle {
         configuration.label
             .font(.subheadline.bold())
             .foregroundColor(.white)
-            .padding(.vertical, 10)
+            .padding(10)
             .frame(minWidth: 125)
             .background(Color.ui.primary.opacity(transparent ? 0.3 : 1))
             .cornerRadius(16)
