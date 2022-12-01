@@ -18,6 +18,12 @@ struct Milestone: Hashable, Identifiable {
     let stimulusID: [Int]?
 }
 
+extension MilestoneData {
+    static func getMonths() -> [Int] {
+        return MilestoneData.getAll().map { $0.month }.uniqued()
+    }
+}
+
 class MilestoneData {
     static func getAll() -> [Milestone] {
         return [

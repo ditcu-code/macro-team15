@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct DashboardScreen: View {
-    @State private var selectedMonth: Int = 1
     @State private var milestonePeriod: Bool = false
     @State private var profileSwitcher: Bool = false
     
     @ObservedObject var vm = DashboardViewModel()
+    @ObservedObject var appData = AppData()
     private var milestoneData: [Milestone] = MilestoneData.getAll()
     
     var body: some View {
@@ -50,7 +50,7 @@ struct DashboardScreen: View {
                             ForEach(MilestoneCategory.allCases, id: \.self) { category in
                                 let list = milestoneData.filter { item in
                                     item.category == category &&
-                                    item.month == selectedMonth
+                                    item.month == appData.selectedMonth
                                 }
                                 
                                 MilestoneCategoryCardViewV2(category: category, milestone: list, navigationLink: AnyView(MilestoneDetailView()))
@@ -80,7 +80,7 @@ struct DashboardScreen: View {
                         Button {
                             milestonePeriod.toggle()
                         } label: {
-                            Text("Bulan ke-\(selectedMonth)")
+                            Text("Bulan ke-\(appData.selectedMonth)")
                             
                             Image(systemName: "chevron.down")
                                 .bold()
@@ -105,7 +105,7 @@ struct DashboardScreen: View {
                 }
                 
                 .sheet(isPresented: $milestonePeriod) {
-                    MilestonePeriodSheet(selectedMonth: $selectedMonth)
+                    MilestonePeriodSheet()
                 }
                 
             }

@@ -12,22 +12,22 @@ class DashboardViewModel: ObservableObject {
     @Published var babies: [Baby] = []
     @Published var currentBaby: Baby? = nil
 //    @Published var babyMilestones: [BabyMilestone] = []
-    @Published var appData = AppData()
+//    @Published var appData = AppData()
     
     init () {
         getData()
     }
     
     func getData() {
-        setCurrentBabyId()
+//        setCurrentBabyId()
         getBabies()
 //        getBabyMilestones()
     }
-    
-    func setCurrentBabyId() {
-        let baby = Baby.getSpecificBaby(with: UUID(uuidString: appData.currentBabyId))
-        currentBaby = baby
-    }
+//
+//    func setCurrentBabyId() {
+//        let baby = Baby.getSpecificBaby(with: UUID(uuidString: appData.currentBabyId))
+//        currentBaby = baby
+//    }
     
     func getBabies() {
         let req = Baby.getAll()

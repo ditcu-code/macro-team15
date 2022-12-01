@@ -61,7 +61,9 @@ struct MilestoneCategoryCardViewV2: View {
                                     Button {
                                         babyMiles.isChecked.toggle()
                                         PersistenceController.shared.save()
-                                        
+                                            
+                                                print(MilestoneData.getMonths())
+                                            
                                         refreshID += 1
                                     } label: {
                                         Image(systemName: babyMiles.isChecked ? "checkmark.circle.fill" : "checkmark.circle")
@@ -135,7 +137,7 @@ struct Capsules: View {
         HStack {
             ForEach(sortCaps()) { item in
                 Capsule()
-                    .frame(width: 32)
+                    .frame(maxWidth: 30)
                     .foregroundColor(color.opacity(item.isChecked ? 1 : 0.3))
             }
         }

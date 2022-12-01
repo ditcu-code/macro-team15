@@ -42,6 +42,11 @@ class OnboardingViewModel: ObservableObject {
             forKey: "currentBabyId"
         )
         
+        UserDefaults.standard.set(
+            Calendar.current.dateComponents([.month], from: birthDate, to: Date()).month,
+            forKey: "selectedMonth"
+        )
+        
         if BabyMilestone.getAll().isEmpty {
             injectAllMilestone(baby: baby)
         }

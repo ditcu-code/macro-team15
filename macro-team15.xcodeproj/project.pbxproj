@@ -12,6 +12,7 @@
 		0E0C8BDC29388C0F009ABC42 /* ProfileSwitcherSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0C8BDB29388C0F009ABC42 /* ProfileSwitcherSheetViewModel.swift */; };
 		0E0C8BE12938EA16009ABC42 /* MaterialData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0C8BE02938EA16009ABC42 /* MaterialData.swift */; };
 		0E0C8BE32938EA35009ABC42 /* StimulusData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0C8BE22938EA35009ABC42 /* StimulusData.swift */; };
+		0E0C8BE629390642009ABC42 /* MilestonePeriodSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0C8BE529390642009ABC42 /* MilestonePeriodSheetViewModel.swift */; };
 		0E2F9A912937396900DDAA28 /* MilestoneCategoryCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2F9A902937396900DDAA28 /* MilestoneCategoryCardViewModel.swift */; };
 		0E2F9A932937487D00DDAA28 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2F9A922937487D00DDAA28 /* AppData.swift */; };
 		0E2F9A962937657F00DDAA28 /* BabyMilestone+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2F9A942937657F00DDAA28 /* BabyMilestone+CoreDataClass.swift */; };
@@ -93,6 +94,7 @@
 		0E0C8BDB29388C0F009ABC42 /* ProfileSwitcherSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSwitcherSheetViewModel.swift; sourceTree = "<group>"; };
 		0E0C8BE02938EA16009ABC42 /* MaterialData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialData.swift; sourceTree = "<group>"; };
 		0E0C8BE22938EA35009ABC42 /* StimulusData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StimulusData.swift; sourceTree = "<group>"; };
+		0E0C8BE529390642009ABC42 /* MilestonePeriodSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestonePeriodSheetViewModel.swift; sourceTree = "<group>"; };
 		0E2F9A902937396900DDAA28 /* MilestoneCategoryCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneCategoryCardViewModel.swift; sourceTree = "<group>"; };
 		0E2F9A922937487D00DDAA28 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		0E2F9A942937657F00DDAA28 /* BabyMilestone+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BabyMilestone+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -198,6 +200,15 @@
 				0E2F9A902937396900DDAA28 /* MilestoneCategoryCardViewModel.swift */,
 			);
 			path = MilestoneCategoryCardView;
+			sourceTree = "<group>";
+		};
+		0E0C8BE42939061E009ABC42 /* MilestonePeriodSheet */ = {
+			isa = PBXGroup;
+			children = (
+				FA93412E2935EFFD004975FE /* MilestonePeriodSheet.swift */,
+				0E0C8BE529390642009ABC42 /* MilestonePeriodSheetViewModel.swift */,
+			);
+			path = MilestonePeriodSheet;
 			sourceTree = "<group>";
 		};
 		0E46F13D292FAF8A00D54488 /* Fonts */ = {
@@ -421,6 +432,7 @@
 		FA706AD12913C46D00AD30A4 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				0E0C8BE42939061E009ABC42 /* MilestonePeriodSheet */,
 				0E0C8BDA29388BE9009ABC42 /* ProfileSwitcherSheet */,
 				0E7764FD291BBC86005792FF /* BadgesContainer.swift */,
 				FA706AD22913C49400AD30A4 /* CardView.swift */,
@@ -434,7 +446,6 @@
 				FA7B7EFF29339488005E8425 /* ProgressShareView.swift */,
 				FAF8545F29349AC4009C8CA5 /* ProfileAvatarView.swift */,
 				0E8FE4F72935AB3E00DBF715 /* TuntunLoading.swift */,
-				FA93412E2935EFFD004975FE /* MilestonePeriodSheet.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -554,6 +565,7 @@
 				0EA7D733292CBF720024DECC /* RadarChart.swift in Sources */,
 				0E6F61F9290FD283005C5415 /* OnboardingViewModel.swift in Sources */,
 				FA4513C9292BDD17002ADD1A /* BackgroundView.swift in Sources */,
+				0E0C8BE629390642009ABC42 /* MilestonePeriodSheetViewModel.swift in Sources */,
 				0E0C8BD92937954D009ABC42 /* BabyPhoto+CoreDataProperties.swift in Sources */,
 				FA996A17292E23D400DF570E /* Image.swift in Sources */,
 				FACDC5DD292F5ED3007B51A4 /* ButtonStyle.swift in Sources */,

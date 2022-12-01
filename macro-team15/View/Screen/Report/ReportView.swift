@@ -143,10 +143,10 @@ struct ReportView: View {
                 BackgroundView()
             }
             .sheet(isPresented: $monthPeriod) {
-                MilestonePeriodSheet(selectedMonth: $month)
+                MilestonePeriodSheetBinding(selectedMonth: $month)
             }
             .sheet(isPresented: $monthVersusPeriod) {
-                MilestonePeriodSheet(selectedMonth: $monthVersus)
+                MilestonePeriodSheetBinding(selectedMonth: $monthVersus)
             }
             
         }
