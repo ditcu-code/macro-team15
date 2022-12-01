@@ -5,14 +5,6 @@
 //  Created by Darma Wiryanata on 01/12/22.
 //
 
-import Foundation
-//
-//  SUImagePickerView.swift
-//  SUImagePickerView
-//
-//  Created by Karthick Selvaraj on 02/05/20.
-//  Copyright © 2020 Karthick Selvaraj. All rights reserved.
-//
 import SwiftUI
 import UIKit
 
