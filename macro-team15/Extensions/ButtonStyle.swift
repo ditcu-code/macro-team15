@@ -26,24 +26,3 @@ struct PrimaryButtonStyle: ButtonStyle {
             )
     }
 }
-
-struct SecondaryButtonStyle: ButtonStyle {
-    @Environment(\.isEnabled) var isEnabled
-    
-    func makeBody(configuration: Self.Configuration) -> some View {
-        configuration.label
-            .font(.body.bold())
-            .foregroundColor(Color.ui.secondary)
-            .frame(minHeight: 60)
-            .padding(.horizontal)
-            .background(
-                Capsule()
-                    .foregroundColor(Color.ui.primary.opacity(0.2))
-                    .shadow(
-                        color: .gray.opacity(0.5),
-                        radius: 2, x: 0, y: 1
-                    )
-            )
-            .scaleEffect(configuration.isPressed ? 0.95: 1)
-    }
-}
