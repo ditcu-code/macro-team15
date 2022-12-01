@@ -187,14 +187,6 @@
 			path = ProfileSwitcherSheet;
 			sourceTree = "<group>";
 		};
-		0E0C8BDD293899F7009ABC42 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				0E0C8BDE29389A05009ABC42 /* MilestoneCategoryCardView */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
 		0E0C8BDE29389A05009ABC42 /* MilestoneCategoryCardView */ = {
 			isa = PBXGroup;
 			children = (
@@ -366,7 +358,7 @@
 		0E8FE512293675C300DBF715 /* Progress */ = {
 			isa = PBXGroup;
 			children = (
-				0E0C8BDD293899F7009ABC42 /* Components */,
+				0E0C8BDE29389A05009ABC42 /* MilestoneCategoryCardView */,
 			);
 			path = Progress;
 			sourceTree = "<group>";
