@@ -70,7 +70,7 @@ extension Baby : Identifiable {
         return items.first
     }
     
-    static func getAllBaby() -> [Baby] {
+    static func getAll() -> [Baby] {
         let context = PersistenceController.viewContext
         let request = Baby.fetchRequest()
         request.shouldRefreshRefetchedObjects = true

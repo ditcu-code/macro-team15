@@ -11,7 +11,7 @@ import CoreData
 class DashboardViewModel: ObservableObject {
     @Published var babies: [Baby] = []
     @Published var currentBaby: Baby? = nil
-    @Published var babyMilestones: [BabyMilestone] = []
+//    @Published var babyMilestones: [BabyMilestone] = []
     @Published var appData = AppData()
     
     init () {
@@ -19,9 +19,9 @@ class DashboardViewModel: ObservableObject {
     }
     
     func getData() {
-        getBabies()
-        getBabyMilestones()
         setCurrentBabyId()
+        getBabies()
+//        getBabyMilestones()
     }
     
     func setCurrentBabyId() {
@@ -30,12 +30,12 @@ class DashboardViewModel: ObservableObject {
     }
     
     func getBabies() {
-        let req = Baby.getAllBaby()
+        let req = Baby.getAll()
         babies = req
     }
     
-    func getBabyMilestones() {
-        let req = Baby.getAllBaby()
-        babies = req
-    }
+//    func getBabyMilestones() {
+//        let req = BabyMilestone.getAll()
+//        babyMilestones = req
+//    }
 }

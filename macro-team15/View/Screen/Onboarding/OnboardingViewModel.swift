@@ -42,12 +42,29 @@ class OnboardingViewModel: ObservableObject {
             forKey: "currentBabyId"
         )
         
+        if BabyMilestone.getAll().isEmpty {
+            injectAllMilestone(baby: baby)
+        }
+        
         PersistenceController.shared.save()
     }
     
     func finalStep() {
         saveBaby()
         UserDefaults.standard.set(true, forKey: "isDoneOnboarding")
+    }
+    
+    func injectAllMilestone(baby: Baby?) {
+        let allMilestones = MilestoneData.getAll()
+        allMilestones.forEach { item in
+            let context = PersistenceController.viewContext
+            let babyMilestone = BabyMilestone(context: context)
+            babyMilestone.baby = baby
+            babyMilestone.id = UUID()
+            babyMilestone.isChecked = false
+            babyMilestone.milestoneID = Int16(item.id)
+        }
+        PersistenceController.shared.save()
     }
     
 }

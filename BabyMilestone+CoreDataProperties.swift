@@ -43,7 +43,7 @@ extension BabyMilestone {
 
 extension BabyMilestone : Identifiable {
     
-    static func getAllBabyMilestone() -> [BabyMilestone] {
+    static func getAll() -> [BabyMilestone] {
         let context = PersistenceController.viewContext
         let request = BabyMilestone.fetchRequest()
         request.shouldRefreshRefetchedObjects = true
@@ -65,8 +65,7 @@ extension BabyMilestone : Identifiable {
         let context = PersistenceController.viewContext
         guard let milestoneID = milestoneID else { return nil }
         let request = BabyMilestone.fetchRequest()
-        print("milestoneID", milestoneID)
-        request.predicate = NSPredicate(format: "milestoneID == %@", "1", milestoneID as CVarArg)
+        request.predicate = NSPredicate(format: "milestoneID == %@", milestoneID.description)
         guard let items = try? context.fetch(request) else { return nil }
         return items.first
     }

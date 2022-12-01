@@ -12,38 +12,20 @@ struct MilestoneCategoryCardViewV2: View {
     let category: MilestoneCategory
     let milestone: [Milestone]
     let navigationLink: AnyView
-    let context = PersistenceController.viewContext
-    @ObservedObject var vm: MilestoneCategoryCardViewModel = MilestoneCategoryCardViewModel()
     
-    private func colorSwitcher(_ isPrimary: Bool) -> Color {
+    //    @ObservedObject var vm: MilestoneCategoryCardViewModel = MilestoneCategoryCardViewModel()
+    @State var refreshID: Int = 0
+    
+    private func colorSwitcher() -> Color {
         switch category {
         case .cognitive:
-            if isPrimary {
-                return Color.ui.cognitivePrimary
-            } else {
-                return Color.ui.cognitiveSecondary
-            }
-            
+            return Color.ui.cognitivePrimary
         case .motoric:
-            if isPrimary {
-                return Color.ui.motorPrimary
-            } else {
-                return Color.ui.motorSecondary
-            }
-            
+            return Color.ui.motorPrimary
         case .social:
-            if isPrimary {
-                return Color.ui.socialPrimary
-            } else {
-                return Color.ui.socialSecondary
-            }
-            
+            return Color.ui.socialPrimary
         case .language:
-            if isPrimary {
-                return Color.ui.languagePrimary
-            } else {
-                return Color.ui.languageSecondary
-            }
+            return Color.ui.languagePrimary
         }
     }
     
@@ -67,41 +49,34 @@ struct MilestoneCategoryCardViewV2: View {
             VStack {
                 Spacer()
                 
-                ForEach(milestone) { item in
-                    NavigationLink {
-                        navigationLink
-                    } label: {
-                        VStack {
-                            Divider()
-                            
-                            HStack {
-                                Button {
-                                    
-//                                    let babyMilestone = BabyMilestone(context: context)
-//                                    babyMilestone.baby = vm.appData.currentBaby
-//                                    babyMilestone.id = UUID()
-//                                    babyMilestone.checkedDate = Date()
-//                                    babyMilestone.isChecked = true
-//                                    babyMilestone.milestoneID = Int16(item.id)
-//
-//                                    PersistenceController.shared.save()
-                                    
-                                    let babyMiles = BabyMilestone.getSpecificMilestone(with: Int16(item.id))
-                                    print(Int(item.id))
-                                    print(babyMiles)
-                                    
-                                } label: {
-                                    Image(systemName: "checkmark.circle.fill")
-                                        .resizable()
-                                        .frame(width: 28, height: 28)
-                                        .foregroundColor(colorSwitcher(true))
-                                }.padding(12)
+                ForEach(milestone, id: \.id) { item in
+                    if let babyMiles = BabyMilestone.getSpecificMilestone(with: Int16(item.id)) {
+                        NavigationLink {
+                            navigationLink
+                        } label: {
+                            VStack {
+                                Divider()
                                 
-                                Text(item.title).multilineTextAlignment(.leading)
-                                
-                                Spacer()
-                                
-                                Image(systemName: "chevron.right").foregroundColor(colorSwitcher(true))
+                                HStack {
+                                    Button {
+                                        babyMiles.isChecked.toggle()
+                                        PersistenceController.shared.save()
+                                        
+                                        refreshID += 1
+                                    } label: {
+                                        Image(systemName: babyMiles.isChecked ? "checkmark.circle.fill" : "checkmark.circle")
+                                            .resizable()
+                                            .frame(width: 28, height: 28)
+                                            .foregroundColor(colorSwitcher())
+                                            .id(refreshID)
+                                    }.padding(12)
+                                    
+                                    Text(item.title).multilineTextAlignment(.leading)
+                                    
+                                    Spacer()
+                                    
+                                    Image(systemName: "chevron.right").foregroundColor(colorSwitcher())
+                                }
                             }
                         }
                     }
@@ -113,7 +88,7 @@ struct MilestoneCategoryCardViewV2: View {
             HStack {
                 Image(systemName: iconSwitcher())
                     .font(.title)
-                    .foregroundColor(colorSwitcher(true))
+                    .foregroundColor(colorSwitcher())
                     .frame(maxWidth: 50)
                 
                 VStack(alignment: .leading) {
@@ -127,13 +102,7 @@ struct MilestoneCategoryCardViewV2: View {
                             .fontWeight(.semibold)
                     }
                     
-                    HStack {
-                        ForEach(milestone) { item in
-                            Capsule()
-                                .frame(width: 32)
-                                .foregroundColor(colorSwitcher(true))
-                        }
-                    }
+                    Capsules(milestone: milestone, color: colorSwitcher()).id(refreshID)
                 }
                 
                 Spacer()
@@ -146,3 +115,30 @@ struct MilestoneCategoryCardViewV2: View {
 }
 
 
+struct Capsules: View {
+    var milestone: [Milestone]
+    var color: Color
+    
+    func sortCaps() -> [BabyMilestone] {
+        var babyMilestones: [BabyMilestone] = []
+        
+        milestone.forEach { item in
+            if let babyMiles = BabyMilestone.getSpecificMilestone(with: Int16(item.id)) {
+                babyMilestones.append(babyMiles)
+            }
+        }
+        
+        return babyMilestones.sorted { $0.isChecked && !$1.isChecked }
+    }
+    
+    var body: some View {
+        HStack {
+            ForEach(sortCaps()) { item in
+                Capsule()
+                    .frame(width: 32)
+                    .foregroundColor(color.opacity(item.isChecked ? 1 : 0.3))
+            }
+        }
+    }
+    
+}
