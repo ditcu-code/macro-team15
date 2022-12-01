@@ -10,6 +10,8 @@
 		0E0C8BD82937954D009ABC42 /* BabyPhoto+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0C8BD62937954D009ABC42 /* BabyPhoto+CoreDataClass.swift */; };
 		0E0C8BD92937954D009ABC42 /* BabyPhoto+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0C8BD72937954D009ABC42 /* BabyPhoto+CoreDataProperties.swift */; };
 		0E0C8BDC29388C0F009ABC42 /* ProfileSwitcherSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0C8BDB29388C0F009ABC42 /* ProfileSwitcherSheetViewModel.swift */; };
+		0E0C8BE12938EA16009ABC42 /* MaterialData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0C8BE02938EA16009ABC42 /* MaterialData.swift */; };
+		0E0C8BE32938EA35009ABC42 /* StimulusData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0C8BE22938EA35009ABC42 /* StimulusData.swift */; };
 		0E2F9A912937396900DDAA28 /* MilestoneCategoryCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2F9A902937396900DDAA28 /* MilestoneCategoryCardViewModel.swift */; };
 		0E2F9A932937487D00DDAA28 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2F9A922937487D00DDAA28 /* AppData.swift */; };
 		0E2F9A962937657F00DDAA28 /* BabyMilestone+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2F9A942937657F00DDAA28 /* BabyMilestone+CoreDataClass.swift */; };
@@ -40,7 +42,7 @@
 		0E8FE4F62934F19F00DBF715 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE4F52934F19F00DBF715 /* DashboardViewModel.swift */; };
 		0E8FE4F82935AB3E00DBF715 /* TuntunLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE4F72935AB3E00DBF715 /* TuntunLoading.swift */; };
 		0E8FE4FA2935ADA300DBF715 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E8FE4F92935ADA300DBF715 /* LaunchScreen.storyboard */; };
-		0E8FE4FD29364D9700DBF715 /* Milestone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE4FC29364D9700DBF715 /* Milestone.swift */; };
+		0E8FE4FD29364D9700DBF715 /* MilestoneData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE4FC29364D9700DBF715 /* MilestoneData.swift */; };
 		0E8FE50C29366D9200DBF715 /* Baby+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE50429366D9200DBF715 /* Baby+CoreDataClass.swift */; };
 		0E8FE50D29366D9200DBF715 /* Baby+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE50529366D9200DBF715 /* Baby+CoreDataProperties.swift */; };
 		0E8FE50E29366D9200DBF715 /* BabyMilestoneNote+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE50629366D9200DBF715 /* BabyMilestoneNote+CoreDataClass.swift */; };
@@ -89,6 +91,8 @@
 		0E0C8BD62937954D009ABC42 /* BabyPhoto+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BabyPhoto+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0E0C8BD72937954D009ABC42 /* BabyPhoto+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BabyPhoto+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0E0C8BDB29388C0F009ABC42 /* ProfileSwitcherSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSwitcherSheetViewModel.swift; sourceTree = "<group>"; };
+		0E0C8BE02938EA16009ABC42 /* MaterialData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialData.swift; sourceTree = "<group>"; };
+		0E0C8BE22938EA35009ABC42 /* StimulusData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StimulusData.swift; sourceTree = "<group>"; };
 		0E2F9A902937396900DDAA28 /* MilestoneCategoryCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneCategoryCardViewModel.swift; sourceTree = "<group>"; };
 		0E2F9A922937487D00DDAA28 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		0E2F9A942937657F00DDAA28 /* BabyMilestone+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BabyMilestone+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -122,7 +126,7 @@
 		0E8FE4F52934F19F00DBF715 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		0E8FE4F72935AB3E00DBF715 /* TuntunLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuntunLoading.swift; sourceTree = "<group>"; };
 		0E8FE4F92935ADA300DBF715 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		0E8FE4FC29364D9700DBF715 /* Milestone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Milestone.swift; sourceTree = "<group>"; };
+		0E8FE4FC29364D9700DBF715 /* MilestoneData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneData.swift; sourceTree = "<group>"; };
 		0E8FE50429366D9200DBF715 /* Baby+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Baby+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0E8FE50529366D9200DBF715 /* Baby+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Baby+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0E8FE50629366D9200DBF715 /* BabyMilestoneNote+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BabyMilestoneNote+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -350,7 +354,9 @@
 		0E8FE4FB29364D8600DBF715 /* StaticData */ = {
 			isa = PBXGroup;
 			children = (
-				0E8FE4FC29364D9700DBF715 /* Milestone.swift */,
+				0E8FE4FC29364D9700DBF715 /* MilestoneData.swift */,
+				0E0C8BE02938EA16009ABC42 /* MaterialData.swift */,
+				0E0C8BE22938EA35009ABC42 /* StimulusData.swift */,
 			);
 			path = StaticData;
 			sourceTree = "<group>";
@@ -576,8 +582,9 @@
 				FAE1733A293202110076ABFA /* StimulusDetailView.swift in Sources */,
 				FA13CD6C2914FCDA00616699 /* Color.swift in Sources */,
 				FACDC5DB292F5DE4007B51A4 /* NoteView.swift in Sources */,
+				0E0C8BE12938EA16009ABC42 /* MaterialData.swift in Sources */,
 				0E7456F429069B4D00D792E6 /* ContentView.swift in Sources */,
-				0E8FE4FD29364D9700DBF715 /* Milestone.swift in Sources */,
+				0E8FE4FD29364D9700DBF715 /* MilestoneData.swift in Sources */,
 				FAF8545C29349463009C8CA5 /* AlbumView.swift in Sources */,
 				0E576EEC290A7AF900341C88 /* CloudKitService.swift in Sources */,
 				FA48EFBC292CD5D0009ED62B /* ActivityCardView.swift in Sources */,
@@ -600,6 +607,7 @@
 				FA93412F2935EFFD004975FE /* MilestonePeriodSheet.swift in Sources */,
 				FA48EFBA292CC746009ED62B /* ContentHeaderView.swift in Sources */,
 				FA7B02B92917DABA00552541 /* MilestoneProgressFullView.swift in Sources */,
+				0E0C8BE32938EA35009ABC42 /* StimulusData.swift in Sources */,
 				FAF854642934B62C009C8CA5 /* PhotoCardView.swift in Sources */,
 				FA4513CB292BE047002ADD1A /* DashboardHeaderView.swift in Sources */,
 				0E6F61EF290FC348005C5415 /* DashboardScreen.swift in Sources */,
