@@ -9,12 +9,17 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var viewModel = ContentViewModel()
-    @AppStorage("isDoneOnboarding") var isDoneOnboarding: Bool = false
+    @ObservedObject var appData = AppData()
     
     var body: some View {
-        if (isDoneOnboarding || !viewModel.babies.isEmpty) {
+        if (viewModel.appData.isDoneOnboarding || !viewModel.babies.isEmpty) {
             if (viewModel.babies.count > 0) {
                 TabViews()
+                    .onAppear {
+                        if viewModel.appData.currentBabyId.isEmpty {
+                            viewModel.setCurrentBabyId()
+                        }
+                    }
             } else {
                 TuntunLoading()
             }

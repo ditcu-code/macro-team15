@@ -12,6 +12,8 @@ struct MilestoneCategoryCardViewV2: View {
     let category: MilestoneCategory
     let milestone: [Milestone]
     let navigationLink: AnyView
+    let context = PersistenceController.viewContext
+    @ObservedObject var vm: MilestoneCategoryCardViewModel = MilestoneCategoryCardViewModel()
     
     private func colorSwitcher(_ isPrimary: Bool) -> Color {
         switch category {
@@ -74,21 +76,28 @@ struct MilestoneCategoryCardViewV2: View {
                             
                             HStack {
                                 Button {
+                                    
+//                                    let babyMilestone = BabyMilestone(context: context)
+//                                    babyMilestone.baby = vm.appData.currentBaby
+//                                    babyMilestone.id = UUID()
+//                                    babyMilestone.checkedDate = Date()
+//                                    babyMilestone.isChecked = true
+//                                    babyMilestone.milestoneID = Int16(item.id)
+//                                    
+//                                    PersistenceController.shared.save()
+                                    
                                 } label: {
                                     Image(systemName: "checkmark.circle.fill")
                                         .resizable()
                                         .frame(width: 28, height: 28)
                                         .foregroundColor(colorSwitcher(true))
-                                }
-                                .padding(12)
+                                }.padding(12)
                                 
-                                Text(item.title)
-                                    .multilineTextAlignment(.leading)
+                                Text(item.title).multilineTextAlignment(.leading)
                                 
                                 Spacer()
                                 
-                                Image(systemName: "chevron.right")
-                                    .foregroundColor(colorSwitcher(true))
+                                Image(systemName: "chevron.right").foregroundColor(colorSwitcher(true))
                             }
                         }
                     }
@@ -96,6 +105,7 @@ struct MilestoneCategoryCardViewV2: View {
             }
             
         } label: {
+            
             HStack {
                 Image(systemName: iconSwitcher())
                     .font(.title)
@@ -114,7 +124,7 @@ struct MilestoneCategoryCardViewV2: View {
                     }
                     
                     HStack {
-                        ForEach(0 ..< 4) { item in
+                        ForEach(milestone) { item in
                             Capsule()
                                 .frame(width: 32)
                                 .foregroundColor(colorSwitcher(true))
@@ -124,6 +134,7 @@ struct MilestoneCategoryCardViewV2: View {
                 
                 Spacer()
             }
+            
         }
         .foregroundColor(Color.ui.text)
         .padding()

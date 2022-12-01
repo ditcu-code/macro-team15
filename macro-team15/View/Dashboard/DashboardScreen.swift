@@ -12,11 +12,11 @@ struct DashboardScreen: View {
     @State private var milestonePeriod: Bool = false
     @State private var profileSwitcher: Bool = false
     
-    @ObservedObject var viewModel = DashboardViewModel()
+    @ObservedObject var vm = DashboardViewModel()
     private var milestoneData: [Milestone] = MilestoneData.getAll()
     
     var body: some View {
-        let babyName = viewModel.babies.first?.name ?? "Aruna"
+        let babyName = vm.currentBaby?.name ?? "Aruna"
         
         NavigationView {
             GeometryReader { geo in
@@ -73,7 +73,7 @@ struct DashboardScreen: View {
                     }
                 }
                 
-                .navigationTitle("\(geo.frame(in: .global).minY < 100 ? "Beranda" : "Hi, \(babyName)!")")
+                .navigationTitle("\(geo.frame(in: .global).minY < 100 ? "Progres" : "Hi, \(babyName)!")")
                 .toolbar {
                     // Milestone dropdown
                     ToolbarItem(placement: .navigationBarLeading) {
@@ -95,7 +95,7 @@ struct DashboardScreen: View {
                         Button {
                             profileSwitcher.toggle()
                         } label: {
-                            ProfileAvatarViewV2(photo: viewModel.babies.first?.photo!)
+                            ProfileAvatarViewV2(photo: vm.babies.first?.photo!)
                         }
                     }
                 }

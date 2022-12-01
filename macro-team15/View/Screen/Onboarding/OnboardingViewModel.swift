@@ -27,13 +27,20 @@ class OnboardingViewModel: ObservableObject {
     }
     
     func saveBaby() {
-        let context = PersistenceController.shared.container.viewContext
+        let context = PersistenceController.viewContext
         let baby = Baby(context: context)
         let defaultPhoto = UIImage(named: "DefaultProfilePicture")?.pngData()
-
+        let newId = UUID()
+        
+        baby.id = newId
         baby.name = name
         baby.birthDate = birthDate
         baby.photo = photo ?? defaultPhoto
+        
+        UserDefaults.standard.set(
+            newId.uuidString,
+            forKey: "currentBabyId"
+        )
         
         PersistenceController.shared.save()
     }

@@ -61,6 +61,15 @@ extension Baby {
 
 extension Baby : Identifiable {
     
+    static func getSpecificBaby(with id: UUID?) -> Baby? {
+        let context = PersistenceController.viewContext
+        guard let id = id else { return nil }
+        let request = Baby.fetchRequest()
+        request.predicate = NSPredicate(format: "%K == %@", "id", id as CVarArg)
+        guard let items = try? context.fetch(request) else { return nil }
+        return items.first
+    }
+    
     static func getAllBaby() -> [Baby] {
         let context = PersistenceController.viewContext
         let request = Baby.fetchRequest()
