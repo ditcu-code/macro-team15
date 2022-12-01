@@ -28,7 +28,7 @@ struct DashboardScreen: View {
                         HighlightedStimulusView(withCTA: true)
                         
                         Divider()
-                            .padding(.vertical)
+                            .padding()
                         
                         ContentHeaderView(title: "Aktivitas", subtitle: "Dirancang untuk mendukung pencapaian \(babyName)", navigationLink: AnyView(Text("Detail")))
                         
@@ -43,8 +43,10 @@ struct DashboardScreen: View {
                             }
                         }
                         
+                        Divider()
+                            .padding()
+                        
                         ContentHeaderView(title: "Milestone", subtitle: "Perkembangan \(babyName) di bulan ini", navigationLink: nil)
-                            .padding(.top)
                         
                         VStack {
                             ForEach(MilestoneCategory.allCases, id: \.self) { category in
@@ -65,8 +67,10 @@ struct DashboardScreen: View {
                         )
                         .padding(.horizontal)
                         
+                        Divider()
+                            .padding()
+                        
                         ContentHeaderView(title: "Catatan", subtitle: "Hal-hal penting mengenai perkembangan \(babyName)", navigationLink: AnyView(Text("Detail")))
-                            .padding(.top)
                         
                         Text("Tidak ada catatan penting")
                             .padding(.vertical, 80)
