@@ -58,7 +58,7 @@ struct NoteView: View {
                     .foregroundColor(.white)
                     .shadow(radius: 3, x: 1, y: 1)
             )
-            .padding()
+            .padding(.horizontal)
         }
     }
 }
