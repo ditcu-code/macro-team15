@@ -9,7 +9,12 @@ import SwiftUI
 import PhotosUI
 
 struct ProfilePictureOnboarding: View {
+    
     @ObservedObject var viewModel: OnboardingViewModel
+    @State private var image: UIImage? = UIImage(named: "TuntunHead")
+    @State private var shouldPresentImagePicker = false
+    @State private var shouldPresentActionScheet = false
+    @State private var shouldPresentCamera = false
     
     var body: some View {
         VStack {
@@ -24,27 +29,8 @@ struct ProfilePictureOnboarding: View {
             .frame(width: 200, height: 200)
             .clipShape(Circle())
             
-            Button {
-                
-            } label: {
-                PhotosPicker(
-                    selection: $viewModel.selectedPicture,
-                    matching: .images,
-                    photoLibrary: .shared()
-                ) {
-                    Text(
-                        viewModel.photo != nil ?
-                        "+ ganti foto" : "+ tambah foto"
-                    )
-                    .frame(minWidth: 90)
-                    .animation(.linear, value: viewModel.photo)
-                }.onChange(of: viewModel.selectedPicture) { newItem in
-                    Task {
-                        if let data = try? await newItem?.loadTransferable(type: Data.self) {
-                            viewModel.photo = data
-                        }
-                    }
-                }
+            Button("Abc") {
+                shouldPresentActionScheet.toggle()
             }
             .buttonStyle(SmallGreenButtonStyle())
             .padding()
@@ -60,6 +46,25 @@ struct ProfilePictureOnboarding: View {
         }
         .buttonStyle(PrimaryButtonStyle())
         .disabled(viewModel.photo == nil)
+        .sheet(isPresented: $shouldPresentImagePicker) {
+            SUImagePickerView(sourceType: self.shouldPresentCamera ? .camera : .photoLibrary, image: self.$image, isPresented: self.$shouldPresentImagePicker)
+        }
+        .actionSheet(isPresented: $shouldPresentActionScheet) { () -> ActionSheet in
+            ActionSheet(title: Text("Choose mode"), message: Text("Please choose your preferred mode to set your profile image"), buttons: [ActionSheet.Button.default(Text("Camera"), action: {
+                self.shouldPresentImagePicker = true
+                self.shouldPresentCamera = true
+            }), ActionSheet.Button.default(Text("Photo Library"), action: {
+                self.shouldPresentImagePicker = true
+                self.shouldPresentCamera = false
+            }), ActionSheet.Button.cancel()])
+        }
+        .onChange(of: image) { newItem in
+            Task {
+                
+                let dataImage = newItem?.pngData()
+                viewModel.photo = dataImage
+            }
+        }
         
     }
 }
@@ -79,5 +84,38 @@ struct SmallGreenButtonStyle: ButtonStyle {
                 color: .gray.opacity(0.5),
                 radius: 2, x: 0, y: 1
             )
+    }
+}
+
+import SwiftUI
+
+struct CameraView: View {
+    
+    @State private var image: UIImage? = UIImage(named: "TuntunHead")
+    @State private var shouldPresentImagePicker = false
+    @State private var shouldPresentActionScheet = false
+    @State private var shouldPresentCamera = false
+    
+    var body: some View {
+        // WARNING: Force wrapped image for demo purpose
+        Image(uiImage: image!)
+            .resizable()
+            .aspectRatio(contentMode: .fill)
+            .frame(width: 300, height: 300)
+            .clipShape(Circle())
+            .overlay(Circle().stroke(Color.white, lineWidth: 4))
+            .shadow(radius: 10)
+            .onTapGesture { self.shouldPresentActionScheet = true }
+            .sheet(isPresented: $shouldPresentImagePicker) {
+                SUImagePickerView(sourceType: self.shouldPresentCamera ? .camera : .photoLibrary, image: self.$image, isPresented: self.$shouldPresentImagePicker)
+        }.actionSheet(isPresented: $shouldPresentActionScheet) { () -> ActionSheet in
+            ActionSheet(title: Text("Choose mode"), message: Text("Please choose your preferred mode to set your profile image"), buttons: [ActionSheet.Button.default(Text("Camera"), action: {
+                self.shouldPresentImagePicker = true
+                self.shouldPresentCamera = true
+            }), ActionSheet.Button.default(Text("Photo Library"), action: {
+                self.shouldPresentImagePicker = true
+                self.shouldPresentCamera = false
+            }), ActionSheet.Button.cancel()])
+        }
     }
 }
