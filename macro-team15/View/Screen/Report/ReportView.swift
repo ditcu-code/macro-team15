@@ -163,6 +163,8 @@ struct ReportView: View {
                         .padding()
                     
                     ContentHeaderView(title: "Catatan", subtitle: "Hal-hal penting mengenai perkembangan Ceroy", navigationLink: AnyView(Text("Catatan")))
+                    
+                    
                 }
             }
             .navigationTitle("Rapor")

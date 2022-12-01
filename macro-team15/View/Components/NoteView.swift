@@ -18,24 +18,39 @@ struct NoteView: View {
         NavigationLink {
             navigationLink
         } label: {
-            HStack(alignment: .top) {
-                VStack(alignment: .leading) {
+            VStack(alignment: .leading) {
+                HStack {
                     Text(title)
                         .bold()
                         .foregroundColor(Color.ui.secondary)
+                        .frame(maxWidth: UIScreen.main.bounds.size.width - 140)
+                        .lineLimit(nil)
+                        .fixedSize()
+                        .multilineTextAlignment(.leading)
                     
-                    Text(date.dmYFormat())
-                        .font(.footnote)
-                        .foregroundColor(Color.ui.text)
+                    Spacer()
                     
+                    Image(systemName: "bookmark.fill")
+                        .foregroundColor(Color.ui.primary)
+                        .font(.system(size: 22))
+                        .bold()
+                }
+                .padding(.bottom)
+                
+                HStack() {
                     Text(description)
                         .foregroundColor(Color.ui.text)
+                        .frame(maxWidth: UIScreen.main.bounds.size.width - 140)
+                        .lineLimit(nil)
+                        .fixedSize()
+                        .multilineTextAlignment(.leading)
+                    
+                    Spacer()
+                    
+                    Text(date.shortdmYFormat())
+                        .font(.footnote)
+                        .foregroundColor(Color.ui.text)
                 }
-                
-                Spacer()
-                
-                Image(systemName: "bookmark.fill")
-                    .foregroundColor(Color.ui.primary)
             }
             .padding()
             .background(
