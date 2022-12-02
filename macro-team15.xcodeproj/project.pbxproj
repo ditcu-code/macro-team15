@@ -63,6 +63,7 @@
 		FA48EFBC292CD5D0009ED62B /* ActivityCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA48EFBB292CD5D0009ED62B /* ActivityCardView.swift */; };
 		FA48EFBE292D3BF7009ED62B /* MilestoneCategoryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA48EFBD292D3BF7009ED62B /* MilestoneCategoryCardView.swift */; };
 		FA706AD32913C49400AD30A4 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA706AD22913C49400AD30A4 /* CardView.swift */; };
+		FA77F7FA2938A8330054C87D /* ImageCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA77F7F92938A8330054C87D /* ImageCamera.swift */; };
 		FA7B02B92917DABA00552541 /* MilestoneProgressFullView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7B02B82917DABA00552541 /* MilestoneProgressFullView.swift */; };
 		FA7B02BB2917F60100552541 /* MilestoneProgressCompactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7B02BA2917F60100552541 /* MilestoneProgressCompactView.swift */; };
 		FA7B7F0029339488005E8425 /* ProgressShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7B7EFF29339488005E8425 /* ProgressShareView.swift */; };
@@ -147,6 +148,7 @@
 		FA48EFBB292CD5D0009ED62B /* ActivityCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCardView.swift; sourceTree = "<group>"; };
 		FA48EFBD292D3BF7009ED62B /* MilestoneCategoryCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneCategoryCardView.swift; sourceTree = "<group>"; };
 		FA706AD22913C49400AD30A4 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		FA77F7F92938A8330054C87D /* ImageCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCamera.swift; sourceTree = "<group>"; };
 		FA7B02B82917DABA00552541 /* MilestoneProgressFullView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneProgressFullView.swift; sourceTree = "<group>"; };
 		FA7B02BA2917F60100552541 /* MilestoneProgressCompactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneProgressCompactView.swift; sourceTree = "<group>"; };
 		FA7B7EFF29339488005E8425 /* ProgressShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressShareView.swift; sourceTree = "<group>"; };
@@ -273,6 +275,8 @@
 		0E7456F029069B4D00D792E6 /* macro-team15 */ = {
 			isa = PBXGroup;
 			children = (
+				FA77F7F82938A81D0054C87D /* Helper */,
+				0E46F142292FB14D00D54488 /* Info.plist */,
 				0E8FE4D42933CD0C00DBF715 /* Utilities */,
 				FA13CD6A2914FCCD00616699 /* Extensions */,
 				0EDCE4352906A3140092F759 /* Model */,
@@ -447,6 +451,14 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		FA77F7F82938A81D0054C87D /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				FA77F7F92938A8330054C87D /* ImageCamera.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		FAB270C0291BBC7600C3E99A /* Badge */ = {
 			isa = PBXGroup;
 			children = (
@@ -585,6 +597,8 @@
 				0E0C8BD82937954D009ABC42 /* BabyPhoto+CoreDataClass.swift in Sources */,
 				FAB270C2291BBC8B00C3E99A /* BadgeDetailView.swift in Sources */,
 				0E7764FE291BBC86005792FF /* BadgesContainer.swift in Sources */,
+				FA77F7FA2938A8330054C87D /* ImageCamera.swift in Sources */,
+				0E8FE50A29366D9200DBF715 /* BabyPhoto+CoreDataClass.swift in Sources */,
 				0EDCE4332906A1A50092F759 /* Persistence.swift in Sources */,
 				FA7B7F0029339488005E8425 /* ProgressShareView.swift in Sources */,
 				FAE1733A293202110076ABFA /* StimulusDetailView.swift in Sources */,
@@ -758,6 +772,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Tuntun;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical";
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need the camera permission";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -795,6 +810,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Tuntun;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical";
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need the camera permission";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
