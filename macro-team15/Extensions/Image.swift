@@ -18,6 +18,7 @@ extension Image {
         let tuntunHead = Image("TuntunHead")
         let tuntunHeadSad = Image("TuntunHeadSad")
         let tuntunHand = Image("TuntunHand")
+        let tummyTime = Image("tummyTime")
         let tuntunNoNote = Image("TuntunNoNote")
     }
 

@@ -56,7 +56,7 @@ class StimulusData {
                               "Ayah bunda juga bisa menunjuk benda di sekitar",
                               "Ulangi kata / nama dari benda yang ada di gambar beberapa kali",
                               "Berikan respon saat bayi berusaha mengeluarkan suara", ],
-                materials: [44567]
+                materials: [1, 6]
             ),
             Stimulus(
                 id: 4,
@@ -311,7 +311,7 @@ class StimulusData {
                               "Taruh Si Kecil secara perlahan pada posisi tengkurap.",
                               "Ajak Si Kecil untuk berinteraksi dengan berbicara, bercanda, bermain dengan mainannya, atau melihat gambar-gambar di buku.",
                               "Letakkan cermin di depan Si Kecil agar perhatiannya bisa teralih dengan melihat bayangannya.", ],
-                materials: [44568]
+                materials: [1, 7]
             ),
         ]
     }
