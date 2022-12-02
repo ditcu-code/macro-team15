@@ -12,14 +12,15 @@ struct MissionView: View {
     let missionTitle: String
     
     var body: some View {
-        ZStack(alignment: .bottom) {
-            Image.ui.placeholder
+        VStack {
+            Image.ui.milestoneIcon.padding(.vertical)
             
             Text(missionTitle)
-                .font(.title2)
+                .font(.custom(FontType.light.rawValue, size: 19))
                 .foregroundColor(Color.ui.secondary)
+                .multilineTextAlignment(.center)
                 .frame(maxWidth: 300)
-        }
+        }.padding()
     }
     
 }

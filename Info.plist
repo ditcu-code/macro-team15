@@ -5,6 +5,7 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Alexandria-Light.ttf</string>
+		<string>Alexandria-Regular.ttf</string>
 		<string>Alexandria-SemiBold.ttf</string>
 	</array>
 </dict>

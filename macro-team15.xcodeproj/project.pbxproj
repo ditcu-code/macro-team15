@@ -13,12 +13,17 @@
 		0E0C8BE12938EA16009ABC42 /* MaterialData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0C8BE02938EA16009ABC42 /* MaterialData.swift */; };
 		0E0C8BE32938EA35009ABC42 /* StimulusData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0C8BE22938EA35009ABC42 /* StimulusData.swift */; };
 		0E0C8BE629390642009ABC42 /* MilestonePeriodSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0C8BE529390642009ABC42 /* MilestonePeriodSheetViewModel.swift */; };
+		0E1C86E22939B80700195E04 /* Alexandria-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E4151972939B64D00A2A448 /* Alexandria-Light.ttf */; };
+		0E1C86E32939B80A00195E04 /* Alexandria-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E4151982939B65A00A2A448 /* Alexandria-SemiBold.ttf */; };
+		0E1C86E52939B82A00195E04 /* Alexandria-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E1C86E42939B82800195E04 /* Alexandria-Regular.ttf */; };
+		0E1C86E72939DB4000195E04 /* FontType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1C86E62939DB4000195E04 /* FontType.swift */; };
+		0E1C86E9293A0F9E00195E04 /* StringManipulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1C86E8293A0F9E00195E04 /* StringManipulation.swift */; };
+		0E1C86EB293A14F000195E04 /* MilestoneCategoryCardDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1C86EA293A14F000195E04 /* MilestoneCategoryCardDashboardView.swift */; };
+		0E1C86ED293A439200195E04 /* StimulusDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1C86EC293A439200195E04 /* StimulusDetailViewModel.swift */; };
 		0E2F9A912937396900DDAA28 /* MilestoneCategoryCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2F9A902937396900DDAA28 /* MilestoneCategoryCardViewModel.swift */; };
 		0E2F9A932937487D00DDAA28 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2F9A922937487D00DDAA28 /* AppData.swift */; };
 		0E2F9A962937657F00DDAA28 /* BabyMilestone+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2F9A942937657F00DDAA28 /* BabyMilestone+CoreDataClass.swift */; };
 		0E2F9A972937657F00DDAA28 /* BabyMilestone+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2F9A952937657F00DDAA28 /* BabyMilestone+CoreDataProperties.swift */; };
-		0E46F140292FAFE000D54488 /* Alexandria-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E46F13E292FAFE000D54488 /* Alexandria-Light.ttf */; };
-		0E46F141292FAFE000D54488 /* Alexandria-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E46F13F292FAFE000D54488 /* Alexandria-SemiBold.ttf */; };
 		0E576EEC290A7AF900341C88 /* CloudKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E576EEB290A7AF900341C88 /* CloudKitService.swift */; };
 		0E6F61EF290FC348005C5415 /* DashboardScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6F61EE290FC348005C5415 /* DashboardScreen.swift */; };
 		0E6F61F1290FC40B005C5415 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6F61F0290FC40B005C5415 /* Enum.swift */; };
@@ -68,9 +73,9 @@
 		FA7B7F0029339488005E8425 /* ProgressShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7B7EFF29339488005E8425 /* ProgressShareView.swift */; };
 		FA888ED92939F93F0035C733 /* NoReportMilestoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA888ED82939F93F0035C733 /* NoReportMilestoneView.swift */; };
 		FA888EDB2939F9730035C733 /* ReportMilestoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA888EDA2939F9730035C733 /* ReportMilestoneView.swift */; };
-		FA888EDE2939FAEF0035C733 /* MilestoneCategoryCardViewV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA888EDD2939FAEF0035C733 /* MilestoneCategoryCardViewV2.swift */; };
 		FA888EE4293A06970035C733 /* StimuliView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA888EE3293A06970035C733 /* StimuliView.swift */; };
 		FA888EE6293A08DB0035C733 /* ActivityCardLongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA888EE5293A08DB0035C733 /* ActivityCardLongView.swift */; };
+		FA888EDE2939FAEF0035C733 /* MilestoneCategoryCardViewReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA888EDD2939FAEF0035C733 /* MilestoneCategoryCardViewReport.swift */; };
 		FA93412F2935EFFD004975FE /* MilestonePeriodSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93412E2935EFFD004975FE /* MilestonePeriodSheet.swift */; };
 		FA9341312936057F004975FE /* ProfileSwitcherSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9341302936057F004975FE /* ProfileSwitcherSheet.swift */; };
 		FA996A17292E23D400DF570E /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA996A16292E23D400DF570E /* Image.swift */; };
@@ -99,12 +104,17 @@
 		0E0C8BE02938EA16009ABC42 /* MaterialData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialData.swift; sourceTree = "<group>"; };
 		0E0C8BE22938EA35009ABC42 /* StimulusData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StimulusData.swift; sourceTree = "<group>"; };
 		0E0C8BE529390642009ABC42 /* MilestonePeriodSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestonePeriodSheetViewModel.swift; sourceTree = "<group>"; };
+		0E1C86E42939B82800195E04 /* Alexandria-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Alexandria-Regular.ttf"; sourceTree = "<group>"; };
+		0E1C86E62939DB4000195E04 /* FontType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontType.swift; sourceTree = "<group>"; };
+		0E1C86E8293A0F9E00195E04 /* StringManipulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringManipulation.swift; sourceTree = "<group>"; };
+		0E1C86EA293A14F000195E04 /* MilestoneCategoryCardDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneCategoryCardDashboardView.swift; sourceTree = "<group>"; };
+		0E1C86EC293A439200195E04 /* StimulusDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StimulusDetailViewModel.swift; sourceTree = "<group>"; };
 		0E2F9A902937396900DDAA28 /* MilestoneCategoryCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneCategoryCardViewModel.swift; sourceTree = "<group>"; };
 		0E2F9A922937487D00DDAA28 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		0E2F9A942937657F00DDAA28 /* BabyMilestone+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BabyMilestone+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0E2F9A952937657F00DDAA28 /* BabyMilestone+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BabyMilestone+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		0E46F13E292FAFE000D54488 /* Alexandria-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Alexandria-Light.ttf"; sourceTree = "<group>"; };
-		0E46F13F292FAFE000D54488 /* Alexandria-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Alexandria-SemiBold.ttf"; sourceTree = "<group>"; };
+		0E4151972939B64D00A2A448 /* Alexandria-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Alexandria-Light.ttf"; sourceTree = "<group>"; };
+		0E4151982939B65A00A2A448 /* Alexandria-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Alexandria-SemiBold.ttf"; sourceTree = "<group>"; };
 		0E46F142292FB14D00D54488 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E576EEB290A7AF900341C88 /* CloudKitService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitService.swift; sourceTree = "<group>"; };
 		0E576EED290A7B2100341C88 /* macro-team15.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "macro-team15.entitlements"; sourceTree = "<group>"; };
@@ -157,9 +167,9 @@
 		FA7B7EFF29339488005E8425 /* ProgressShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressShareView.swift; sourceTree = "<group>"; };
 		FA888ED82939F93F0035C733 /* NoReportMilestoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoReportMilestoneView.swift; sourceTree = "<group>"; };
 		FA888EDA2939F9730035C733 /* ReportMilestoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportMilestoneView.swift; sourceTree = "<group>"; };
-		FA888EDD2939FAEF0035C733 /* MilestoneCategoryCardViewV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneCategoryCardViewV2.swift; sourceTree = "<group>"; };
 		FA888EE3293A06970035C733 /* StimuliView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StimuliView.swift; sourceTree = "<group>"; };
 		FA888EE5293A08DB0035C733 /* ActivityCardLongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCardLongView.swift; sourceTree = "<group>"; };
+		FA888EDD2939FAEF0035C733 /* MilestoneCategoryCardViewReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneCategoryCardViewReport.swift; sourceTree = "<group>"; };
 		FA93412E2935EFFD004975FE /* MilestonePeriodSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestonePeriodSheet.swift; sourceTree = "<group>"; };
 		FA9341302936057F004975FE /* ProfileSwitcherSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSwitcherSheet.swift; sourceTree = "<group>"; };
 		FA996A16292E23D400DF570E /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
@@ -205,7 +215,8 @@
 			isa = PBXGroup;
 			children = (
 				0E2F9A902937396900DDAA28 /* MilestoneCategoryCardViewModel.swift */,
-				FA888EDD2939FAEF0035C733 /* MilestoneCategoryCardViewV2.swift */,
+				FA888EDD2939FAEF0035C733 /* MilestoneCategoryCardViewReport.swift */,
+				0E1C86EA293A14F000195E04 /* MilestoneCategoryCardDashboardView.swift */,
 			);
 			path = MilestoneCategoryCardView;
 			sourceTree = "<group>";
@@ -222,8 +233,10 @@
 		0E46F13D292FAF8A00D54488 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				0E46F13E292FAFE000D54488 /* Alexandria-Light.ttf */,
-				0E46F13F292FAFE000D54488 /* Alexandria-SemiBold.ttf */,
+				0E4151972939B64D00A2A448 /* Alexandria-Light.ttf */,
+				0E1C86E42939B82800195E04 /* Alexandria-Regular.ttf */,
+				0E4151982939B65A00A2A448 /* Alexandria-SemiBold.ttf */,
+				0E1C86E62939DB4000195E04 /* FontType.swift */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -322,6 +335,7 @@
 				0EA7D736292E23D20024DECC /* Onboarding */,
 				FAF8545929349431009C8CA5 /* Album */,
 				FA888EE2293A06700035C733 /* Stimulus */,
+				FA888EDF293A03A80035C733 /* Note */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -330,6 +344,7 @@
 			isa = PBXGroup;
 			children = (
 				FA241A9C2930FBD600CAA09B /* KeyboardResponder.swift */,
+				0E1C86E8293A0F9E00195E04 /* StringManipulation.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -476,6 +491,12 @@
 				FA888EE5293A08DB0035C733 /* ActivityCardLongView.swift */,
 			);
 			path = Stimulus;
+		FA888EDF293A03A80035C733 /* Note */ = {
+			isa = PBXGroup;
+			children = (
+				FA888EE0293A03C40035C733 /* NotesView.swift */,
+			);
+			path = Note;
 			sourceTree = "<group>";
 		};
 		FAB270C0291BBC7600C3E99A /* Badge */ = {
@@ -490,6 +511,7 @@
 			isa = PBXGroup;
 			children = (
 				FAE17339293202110076ABFA /* StimulusDetailView.swift */,
+				0E1C86EC293A439200195E04 /* StimulusDetailViewModel.swift */,
 				FAE1733D2932140F0076ABFA /* StimulusStepView.swift */,
 				FAE1733B29320A7E0076ABFA /* StimulusMaterialView.swift */,
 			);
@@ -566,10 +588,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E46F141292FAFE000D54488 /* Alexandria-SemiBold.ttf in Resources */,
-				0E46F140292FAFE000D54488 /* Alexandria-Light.ttf in Resources */,
 				0E7456F929069B4E00D792E6 /* Preview Assets.xcassets in Resources */,
 				0E8FE4FA2935ADA300DBF715 /* LaunchScreen.storyboard in Resources */,
+				0E1C86E22939B80700195E04 /* Alexandria-Light.ttf in Resources */,
+				0E1C86E32939B80A00195E04 /* Alexandria-SemiBold.ttf in Resources */,
+				0E1C86E52939B82A00195E04 /* Alexandria-Regular.ttf in Resources */,
 				0E7456F629069B4E00D792E6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -589,10 +612,12 @@
 				0E8FE50F29366D9200DBF715 /* BabyMilestoneNote+CoreDataProperties.swift in Sources */,
 				0E8FE4E729349C7D00DBF715 /* GreetingOnboarding.swift in Sources */,
 				FAF854622934B612009C8CA5 /* MilestonePhotoCardView.swift in Sources */,
+				0E1C86EB293A14F000195E04 /* MilestoneCategoryCardDashboardView.swift in Sources */,
 				FA7B02BB2917F60100552541 /* MilestoneProgressCompactView.swift in Sources */,
 				0E8FE4E529349C3F00DBF715 /* TuntunIllustration.swift in Sources */,
 				0EA7D733292CBF720024DECC /* RadarChart.swift in Sources */,
 				0E6F61F9290FD283005C5415 /* OnboardingViewModel.swift in Sources */,
+				0E1C86E72939DB4000195E04 /* FontType.swift in Sources */,
 				FA4513C9292BDD17002ADD1A /* BackgroundView.swift in Sources */,
 				0E0C8BE629390642009ABC42 /* MilestonePeriodSheetViewModel.swift in Sources */,
 				0E0C8BD92937954D009ABC42 /* BabyPhoto+CoreDataProperties.swift in Sources */,
@@ -609,6 +634,7 @@
 				0E2F9A912937396900DDAA28 /* MilestoneCategoryCardViewModel.swift in Sources */,
 				FAB8F3E7291A0570008F7C59 /* Date.swift in Sources */,
 				0E8FE4F82935AB3E00DBF715 /* TuntunLoading.swift in Sources */,
+				FA888EE1293A03C40035C733 /* NotesView.swift in Sources */,
 				FA4513CD292BE44D002ADD1A /* HighlightedStimulusView.swift in Sources */,
 				0E7764FC291A4ABD005792FF /* BadgesScreen.swift in Sources */,
 				0E6F61F7290FC790005C5415 /* ReportScreen.swift in Sources */,
@@ -625,13 +651,14 @@
 				FAE1733A293202110076ABFA /* StimulusDetailView.swift in Sources */,
 				FA13CD6C2914FCDA00616699 /* Color.swift in Sources */,
 				FACDC5DB292F5DE4007B51A4 /* NoteView.swift in Sources */,
+				0E1C86ED293A439200195E04 /* StimulusDetailViewModel.swift in Sources */,
 				0E0C8BE12938EA16009ABC42 /* MaterialData.swift in Sources */,
 				0E7456F429069B4D00D792E6 /* ContentView.swift in Sources */,
 				0E8FE4FD29364D9700DBF715 /* MilestoneData.swift in Sources */,
 				FAF8545C29349463009C8CA5 /* AlbumView.swift in Sources */,
 				0E576EEC290A7AF900341C88 /* CloudKitService.swift in Sources */,
 				FA48EFBC292CD5D0009ED62B /* ActivityCardView.swift in Sources */,
-				FA888EDE2939FAEF0035C733 /* MilestoneCategoryCardViewV2.swift in Sources */,
+				FA888EDE2939FAEF0035C733 /* MilestoneCategoryCardViewReport.swift in Sources */,
 				FA48EFBE292D3BF7009ED62B /* MilestoneCategoryCardView.swift in Sources */,
 				FAF8546029349AC4009C8CA5 /* ProfileAvatarView.swift in Sources */,
 				FA706AD32913C49400AD30A4 /* CardView.swift in Sources */,
@@ -652,6 +679,7 @@
 				FA48EFBA292CC746009ED62B /* ContentHeaderView.swift in Sources */,
 				FA7B02B92917DABA00552541 /* MilestoneProgressFullView.swift in Sources */,
 				0E0C8BE32938EA35009ABC42 /* StimulusData.swift in Sources */,
+				0E1C86E9293A0F9E00195E04 /* StringManipulation.swift in Sources */,
 				FAF854642934B62C009C8CA5 /* PhotoCardView.swift in Sources */,
 				FA4513CB292BE047002ADD1A /* DashboardHeaderView.swift in Sources */,
 				0E6F61EF290FC348005C5415 /* DashboardScreen.swift in Sources */,
@@ -786,7 +814,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "macro-team15.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"macro-team15/Preview Content\"";
 				DEVELOPMENT_TEAM = 474XANH3RF;
 				ENABLE_PREVIEWS = YES;
@@ -824,7 +852,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "macro-team15.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"macro-team15/Preview Content\"";
 				DEVELOPMENT_TEAM = 474XANH3RF;
 				ENABLE_PREVIEWS = YES;

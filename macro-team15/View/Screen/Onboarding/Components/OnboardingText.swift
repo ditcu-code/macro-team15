@@ -12,9 +12,8 @@ struct OnboardingText: View {
     
     var body: some View {
         Text(text)
-            .font(.custom("Alexandria-SemiBold", size: 19))
+            .font(.custom(FontType.semiBold.rawValue, size: 19))
             .foregroundColor(Color.ui.secondary)
-            .bold()
             .padding(10)
     }
 }
