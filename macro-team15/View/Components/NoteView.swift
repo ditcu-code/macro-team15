@@ -18,39 +18,24 @@ struct NoteView: View {
         NavigationLink {
             navigationLink
         } label: {
-            VStack(alignment: .leading) {
-                HStack {
+            HStack(alignment: .top) {
+                VStack(alignment: .leading) {
                     Text(title)
                         .bold()
                         .foregroundColor(Color.ui.secondary)
-                        .frame(maxWidth: UIScreen.main.bounds.size.width - 140)
-                        .lineLimit(nil)
-                        .fixedSize()
-                        .multilineTextAlignment(.leading)
                     
-                    Spacer()
-                    
-                    Image(systemName: "bookmark.fill")
-                        .foregroundColor(Color.ui.primary)
-                        .font(.system(size: 22))
-                        .bold()
-                }
-                .padding(.bottom)
-                
-                HStack() {
-                    Text(description)
-                        .foregroundColor(Color.ui.text)
-                        .frame(maxWidth: UIScreen.main.bounds.size.width - 140)
-                        .lineLimit(nil)
-                        .fixedSize()
-                        .multilineTextAlignment(.leading)
-                    
-                    Spacer()
-                    
-                    Text(date.shortdmYFormat())
+                    Text(date.dmYFormat())
                         .font(.footnote)
                         .foregroundColor(Color.ui.text)
+                    
+                    Text(description)
+                        .foregroundColor(Color.ui.text)
                 }
+                
+                Spacer()
+                
+                Image(systemName: "bookmark.fill")
+                    .foregroundColor(Color.ui.primary)
             }
             .padding()
             .background(
@@ -58,7 +43,7 @@ struct NoteView: View {
                     .foregroundColor(.white)
                     .shadow(radius: 3, x: 1, y: 1)
             )
-            .padding(.horizontal)
+            .padding()
         }
     }
 }

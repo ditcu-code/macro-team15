@@ -27,13 +27,29 @@ class OnboardingViewModel: ObservableObject {
     }
     
     func saveBaby() {
-        let context = PersistenceController.shared.container.viewContext
+        let context = PersistenceController.viewContext
         let baby = Baby(context: context)
         let defaultPhoto = UIImage(named: "DefaultProfilePicture")?.pngData()
-
+        let newId = UUID()
+        
+        baby.id = newId
         baby.name = name
         baby.birthDate = birthDate
         baby.photo = photo ?? defaultPhoto
+        
+        UserDefaults.standard.set(
+            newId.uuidString,
+            forKey: "currentBabyId"
+        )
+        
+        UserDefaults.standard.set(
+            Calendar.current.dateComponents([.month], from: birthDate, to: Date()).month,
+            forKey: "selectedMonth"
+        )
+        
+        if BabyMilestone.getAll().isEmpty {
+            injectAllMilestone(baby: baby)
+        }
         
         PersistenceController.shared.save()
     }
@@ -41,6 +57,19 @@ class OnboardingViewModel: ObservableObject {
     func finalStep() {
         saveBaby()
         UserDefaults.standard.set(true, forKey: "isDoneOnboarding")
+    }
+    
+    func injectAllMilestone(baby: Baby?) {
+        let allMilestones = MilestoneData.getAll()
+        allMilestones.forEach { item in
+            let context = PersistenceController.viewContext
+            let babyMilestone = BabyMilestone(context: context)
+            babyMilestone.baby = baby
+            babyMilestone.id = UUID()
+            babyMilestone.isChecked = false
+            babyMilestone.milestoneID = Int16(item.id)
+        }
+        PersistenceController.shared.save()
     }
     
 }

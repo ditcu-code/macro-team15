@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct DashboardScreen: View {
-    @State private var selectedMonth: Int = 1
     @State private var milestonePeriod: Bool = false
     @State private var profileSwitcher: Bool = false
     
-    @ObservedObject var viewModel = DashboardViewModel()
+    @ObservedObject var vm = DashboardViewModel()
+    @ObservedObject var appData = AppData()
     private var milestoneData: [Milestone] = MilestoneData.getAll()
     
     var body: some View {
-        let babyName = viewModel.babies.first?.name ?? "Aruna"
+        let babyName = vm.currentBaby?.name ?? "Aruna"
         
         NavigationView {
             GeometryReader { geo in
@@ -28,7 +28,7 @@ struct DashboardScreen: View {
                         HighlightedStimulusView(withCTA: true)
                         
                         Divider()
-                            .padding()
+                            .padding(.vertical)
                         
                         ContentHeaderView(title: "Aktivitas", subtitle: "Dirancang untuk mendukung pencapaian \(babyName)", navigationLink: AnyView(Text("Detail")))
                         
@@ -43,16 +43,14 @@ struct DashboardScreen: View {
                             }
                         }
                         
-                        Divider()
-                            .padding()
-                        
                         ContentHeaderView(title: "Milestone", subtitle: "Perkembangan \(babyName) di bulan ini", navigationLink: nil)
+                            .padding(.top)
                         
                         VStack {
                             ForEach(MilestoneCategory.allCases, id: \.self) { category in
                                 let list = milestoneData.filter { item in
                                     item.category == category &&
-                                    item.month == selectedMonth
+                                    item.month == appData.selectedMonth
                                 }
                                 
                                 MilestoneCategoryCardViewV2(category: category, milestone: list, navigationLink: AnyView(MilestoneDetailView()))
@@ -67,24 +65,22 @@ struct DashboardScreen: View {
                         )
                         .padding(.horizontal)
                         
-                        Divider()
-                            .padding()
-                        
                         ContentHeaderView(title: "Catatan", subtitle: "Hal-hal penting mengenai perkembangan \(babyName)", navigationLink: AnyView(Text("Detail")))
+                            .padding(.top)
                         
                         Text("Tidak ada catatan penting")
                             .padding(.vertical, 80)
                     }
                 }
                 
-                .navigationTitle("\(geo.frame(in: .global).minY < 100 ? "Beranda" : "Hi, \(babyName)!")")
+                .navigationTitle("\(geo.frame(in: .global).minY < 100 ? "Progres" : "Hi, \(babyName)!")")
                 .toolbar {
                     // Milestone dropdown
                     ToolbarItem(placement: .navigationBarLeading) {
                         Button {
                             milestonePeriod.toggle()
                         } label: {
-                            Text("Bulan ke-\(selectedMonth)")
+                            Text("Bulan ke-\(appData.selectedMonth)")
                             
                             Image(systemName: "chevron.down")
                                 .bold()
@@ -99,7 +95,7 @@ struct DashboardScreen: View {
                         Button {
                             profileSwitcher.toggle()
                         } label: {
-                            ProfileAvatarViewV2(photo: viewModel.babies.first?.photo!)
+                            ProfileAvatarViewV2(photo: vm.babies.first?.photo!)
                         }
                     }
                 }
@@ -109,7 +105,7 @@ struct DashboardScreen: View {
                 }
                 
                 .sheet(isPresented: $milestonePeriod) {
-                    MilestonePeriodSheet(selectedMonth: $selectedMonth)
+                    MilestonePeriodSheet()
                 }
                 
             }

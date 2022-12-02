@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E0C8BD82937954D009ABC42 /* BabyPhoto+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0C8BD62937954D009ABC42 /* BabyPhoto+CoreDataClass.swift */; };
+		0E0C8BD92937954D009ABC42 /* BabyPhoto+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0C8BD72937954D009ABC42 /* BabyPhoto+CoreDataProperties.swift */; };
+		0E0C8BDC29388C0F009ABC42 /* ProfileSwitcherSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0C8BDB29388C0F009ABC42 /* ProfileSwitcherSheetViewModel.swift */; };
+		0E0C8BE12938EA16009ABC42 /* MaterialData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0C8BE02938EA16009ABC42 /* MaterialData.swift */; };
+		0E0C8BE32938EA35009ABC42 /* StimulusData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0C8BE22938EA35009ABC42 /* StimulusData.swift */; };
+		0E0C8BE629390642009ABC42 /* MilestonePeriodSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0C8BE529390642009ABC42 /* MilestonePeriodSheetViewModel.swift */; };
+		0E2F9A912937396900DDAA28 /* MilestoneCategoryCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2F9A902937396900DDAA28 /* MilestoneCategoryCardViewModel.swift */; };
+		0E2F9A932937487D00DDAA28 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2F9A922937487D00DDAA28 /* AppData.swift */; };
+		0E2F9A962937657F00DDAA28 /* BabyMilestone+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2F9A942937657F00DDAA28 /* BabyMilestone+CoreDataClass.swift */; };
+		0E2F9A972937657F00DDAA28 /* BabyMilestone+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2F9A952937657F00DDAA28 /* BabyMilestone+CoreDataProperties.swift */; };
 		0E46F140292FAFE000D54488 /* Alexandria-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E46F13E292FAFE000D54488 /* Alexandria-Light.ttf */; };
 		0E46F141292FAFE000D54488 /* Alexandria-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E46F13F292FAFE000D54488 /* Alexandria-SemiBold.ttf */; };
 		0E576EEC290A7AF900341C88 /* CloudKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E576EEB290A7AF900341C88 /* CloudKitService.swift */; };
@@ -22,7 +32,6 @@
 		0E7764FC291A4ABD005792FF /* BadgesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7764FB291A4ABD005792FF /* BadgesScreen.swift */; };
 		0E7764FE291BBC86005792FF /* BadgesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7764FD291BBC86005792FF /* BadgesContainer.swift */; };
 		0E8FE4CF2933C41600DBF715 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE4CE2933C41600DBF715 /* ContentViewModel.swift */; };
-		0E8FE4D72933E1ED00DBF715 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE4D62933E1ED00DBF715 /* ViewModel.swift */; };
 		0E8FE4E22933ED1500DBF715 /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE4E12933ED1500DBF715 /* ReportView.swift */; };
 		0E8FE4E529349C3F00DBF715 /* TuntunIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE4E429349C3F00DBF715 /* TuntunIllustration.swift */; };
 		0E8FE4E729349C7D00DBF715 /* GreetingOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE4E629349C7D00DBF715 /* GreetingOnboarding.swift */; };
@@ -33,15 +42,11 @@
 		0E8FE4F62934F19F00DBF715 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE4F52934F19F00DBF715 /* DashboardViewModel.swift */; };
 		0E8FE4F82935AB3E00DBF715 /* TuntunLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE4F72935AB3E00DBF715 /* TuntunLoading.swift */; };
 		0E8FE4FA2935ADA300DBF715 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E8FE4F92935ADA300DBF715 /* LaunchScreen.storyboard */; };
-		0E8FE4FD29364D9700DBF715 /* Milestone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE4FC29364D9700DBF715 /* Milestone.swift */; };
-		0E8FE50A29366D9200DBF715 /* BabyPhoto+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE50229366D9200DBF715 /* BabyPhoto+CoreDataClass.swift */; };
-		0E8FE50B29366D9200DBF715 /* BabyPhoto+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE50329366D9200DBF715 /* BabyPhoto+CoreDataProperties.swift */; };
+		0E8FE4FD29364D9700DBF715 /* MilestoneData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE4FC29364D9700DBF715 /* MilestoneData.swift */; };
 		0E8FE50C29366D9200DBF715 /* Baby+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE50429366D9200DBF715 /* Baby+CoreDataClass.swift */; };
 		0E8FE50D29366D9200DBF715 /* Baby+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE50529366D9200DBF715 /* Baby+CoreDataProperties.swift */; };
 		0E8FE50E29366D9200DBF715 /* BabyMilestoneNote+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE50629366D9200DBF715 /* BabyMilestoneNote+CoreDataClass.swift */; };
 		0E8FE50F29366D9200DBF715 /* BabyMilestoneNote+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE50729366D9200DBF715 /* BabyMilestoneNote+CoreDataProperties.swift */; };
-		0E8FE51029366D9200DBF715 /* BabyMilestone+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE50829366D9200DBF715 /* BabyMilestone+CoreDataClass.swift */; };
-		0E8FE51129366D9200DBF715 /* BabyMilestone+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE50929366D9200DBF715 /* BabyMilestone+CoreDataProperties.swift */; };
 		0E8FE5142936760200DBF715 /* MilestoneCategoryCardViewV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE5132936760200DBF715 /* MilestoneCategoryCardViewV2.swift */; };
 		0E92692B29309AFD0050C375 /* userData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0E92692929309AFD0050C375 /* userData.xcdatamodeld */; };
 		0EA7D733292CBF720024DECC /* RadarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA7D732292CBF720024DECC /* RadarChart.swift */; };
@@ -49,9 +54,6 @@
 		0EDCE4332906A1A50092F759 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDCE4302906A1A50092F759 /* Persistence.swift */; };
 		FA13CD6C2914FCDA00616699 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA13CD6B2914FCDA00616699 /* Color.swift */; };
 		FA241A9D2930FBD600CAA09B /* KeyboardResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA241A9C2930FBD600CAA09B /* KeyboardResponder.swift */; };
-		FA2AEA2B29374EFE00867129 /* MilestoneCategoryCardViewV2Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2AEA2A29374EFE00867129 /* MilestoneCategoryCardViewV2Report.swift */; };
-		FA2AEA2D2937557300867129 /* ReportMilestoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2AEA2C2937557300867129 /* ReportMilestoneView.swift */; };
-		FA2AEA2F293755EA00867129 /* NoReportMilestoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2AEA2E293755EA00867129 /* NoReportMilestoneView.swift */; };
 		FA34BD4D291A3FE8009DF42B /* MilestoneDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34BD4C291A3FE8009DF42B /* MilestoneDetailView.swift */; };
 		FA34BD4F291A5DAC009DF42B /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34BD4E291A5DAC009DF42B /* View.swift */; };
 		FA4513C9292BDD17002ADD1A /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4513C8292BDD17002ADD1A /* BackgroundView.swift */; };
@@ -87,9 +89,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E0C8BD62937954D009ABC42 /* BabyPhoto+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BabyPhoto+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0E0C8BD72937954D009ABC42 /* BabyPhoto+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BabyPhoto+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0E0C8BDB29388C0F009ABC42 /* ProfileSwitcherSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSwitcherSheetViewModel.swift; sourceTree = "<group>"; };
+		0E0C8BE02938EA16009ABC42 /* MaterialData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialData.swift; sourceTree = "<group>"; };
+		0E0C8BE22938EA35009ABC42 /* StimulusData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StimulusData.swift; sourceTree = "<group>"; };
+		0E0C8BE529390642009ABC42 /* MilestonePeriodSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestonePeriodSheetViewModel.swift; sourceTree = "<group>"; };
+		0E2F9A902937396900DDAA28 /* MilestoneCategoryCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneCategoryCardViewModel.swift; sourceTree = "<group>"; };
+		0E2F9A922937487D00DDAA28 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
+		0E2F9A942937657F00DDAA28 /* BabyMilestone+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BabyMilestone+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0E2F9A952937657F00DDAA28 /* BabyMilestone+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BabyMilestone+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0E46F13E292FAFE000D54488 /* Alexandria-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Alexandria-Light.ttf"; sourceTree = "<group>"; };
 		0E46F13F292FAFE000D54488 /* Alexandria-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Alexandria-SemiBold.ttf"; sourceTree = "<group>"; };
-		0E46F142292FB14D00D54488 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		0E46F142292FB14D00D54488 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E576EEB290A7AF900341C88 /* CloudKitService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitService.swift; sourceTree = "<group>"; };
 		0E576EED290A7B2100341C88 /* macro-team15.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "macro-team15.entitlements"; sourceTree = "<group>"; };
 		0E6F61EE290FC348005C5415 /* DashboardScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardScreen.swift; sourceTree = "<group>"; };
@@ -104,7 +116,6 @@
 		0E7764FB291A4ABD005792FF /* BadgesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesScreen.swift; sourceTree = "<group>"; };
 		0E7764FD291BBC86005792FF /* BadgesContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesContainer.swift; sourceTree = "<group>"; };
 		0E8FE4CE2933C41600DBF715 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
-		0E8FE4D62933E1ED00DBF715 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		0E8FE4DF2933E52300DBF715 /* macro-team15.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "macro-team15.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E8FE4E12933ED1500DBF715 /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
 		0E8FE4E429349C3F00DBF715 /* TuntunIllustration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuntunIllustration.swift; sourceTree = "<group>"; };
@@ -116,15 +127,11 @@
 		0E8FE4F52934F19F00DBF715 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		0E8FE4F72935AB3E00DBF715 /* TuntunLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuntunLoading.swift; sourceTree = "<group>"; };
 		0E8FE4F92935ADA300DBF715 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		0E8FE4FC29364D9700DBF715 /* Milestone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Milestone.swift; sourceTree = "<group>"; };
-		0E8FE50229366D9200DBF715 /* BabyPhoto+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BabyPhoto+CoreDataClass.swift"; sourceTree = "<group>"; };
-		0E8FE50329366D9200DBF715 /* BabyPhoto+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BabyPhoto+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0E8FE4FC29364D9700DBF715 /* MilestoneData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneData.swift; sourceTree = "<group>"; };
 		0E8FE50429366D9200DBF715 /* Baby+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Baby+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0E8FE50529366D9200DBF715 /* Baby+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Baby+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0E8FE50629366D9200DBF715 /* BabyMilestoneNote+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BabyMilestoneNote+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0E8FE50729366D9200DBF715 /* BabyMilestoneNote+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BabyMilestoneNote+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		0E8FE50829366D9200DBF715 /* BabyMilestone+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BabyMilestone+CoreDataClass.swift"; sourceTree = "<group>"; };
-		0E8FE50929366D9200DBF715 /* BabyMilestone+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BabyMilestone+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0E8FE5132936760200DBF715 /* MilestoneCategoryCardViewV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneCategoryCardViewV2.swift; sourceTree = "<group>"; };
 		0E92692A29309AFD0050C375 /* userData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = userData.xcdatamodel; sourceTree = "<group>"; };
 		0EA7D732292CBF720024DECC /* RadarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadarChart.swift; sourceTree = "<group>"; };
@@ -132,9 +139,6 @@
 		0EDCE4302906A1A50092F759 /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		FA13CD6B2914FCDA00616699 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		FA241A9C2930FBD600CAA09B /* KeyboardResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardResponder.swift; sourceTree = "<group>"; };
-		FA2AEA2A29374EFE00867129 /* MilestoneCategoryCardViewV2Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneCategoryCardViewV2Report.swift; sourceTree = "<group>"; };
-		FA2AEA2C2937557300867129 /* ReportMilestoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportMilestoneView.swift; sourceTree = "<group>"; };
-		FA2AEA2E293755EA00867129 /* NoReportMilestoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoReportMilestoneView.swift; sourceTree = "<group>"; };
 		FA34BD4C291A3FE8009DF42B /* MilestoneDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneDetailView.swift; sourceTree = "<group>"; };
 		FA34BD4E291A5DAC009DF42B /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		FA4513C8292BDD17002ADD1A /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
@@ -180,6 +184,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E0C8BDA29388BE9009ABC42 /* ProfileSwitcherSheet */ = {
+			isa = PBXGroup;
+			children = (
+				FA9341302936057F004975FE /* ProfileSwitcherSheet.swift */,
+				0E0C8BDB29388C0F009ABC42 /* ProfileSwitcherSheetViewModel.swift */,
+			);
+			path = ProfileSwitcherSheet;
+			sourceTree = "<group>";
+		};
+		0E0C8BDE29389A05009ABC42 /* MilestoneCategoryCardView */ = {
+			isa = PBXGroup;
+			children = (
+				0E8FE5132936760200DBF715 /* MilestoneCategoryCardViewV2.swift */,
+				0E2F9A902937396900DDAA28 /* MilestoneCategoryCardViewModel.swift */,
+			);
+			path = MilestoneCategoryCardView;
+			sourceTree = "<group>";
+		};
+		0E0C8BE42939061E009ABC42 /* MilestonePeriodSheet */ = {
+			isa = PBXGroup;
+			children = (
+				FA93412E2935EFFD004975FE /* MilestonePeriodSheet.swift */,
+				0E0C8BE529390642009ABC42 /* MilestonePeriodSheetViewModel.swift */,
+			);
+			path = MilestonePeriodSheet;
+			sourceTree = "<group>";
+		};
 		0E46F13D292FAF8A00D54488 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				0E576EEB290A7AF900341C88 /* CloudKitService.swift */,
+				0EDCE4302906A1A50092F759 /* Persistence.swift */,
 				0E92692929309AFD0050C375 /* userData.xcdatamodeld */,
 			);
 			path = Service;
@@ -232,17 +264,11 @@
 		0E7456E529069B4C00D792E6 = {
 			isa = PBXGroup;
 			children = (
-				0E8FE4F92935ADA300DBF715 /* LaunchScreen.storyboard */,
-				0E8FE50429366D9200DBF715 /* Baby+CoreDataClass.swift */,
-				0E8FE50529366D9200DBF715 /* Baby+CoreDataProperties.swift */,
-				0E8FE50229366D9200DBF715 /* BabyPhoto+CoreDataClass.swift */,
-				0E8FE50329366D9200DBF715 /* BabyPhoto+CoreDataProperties.swift */,
-				0E8FE50629366D9200DBF715 /* BabyMilestoneNote+CoreDataClass.swift */,
-				0E8FE50729366D9200DBF715 /* BabyMilestoneNote+CoreDataProperties.swift */,
-				0E8FE50829366D9200DBF715 /* BabyMilestone+CoreDataClass.swift */,
-				0E8FE50929366D9200DBF715 /* BabyMilestone+CoreDataProperties.swift */,
 				0E7456F029069B4D00D792E6 /* macro-team15 */,
 				0E8FE4DF2933E52300DBF715 /* macro-team15.app */,
+				0E576EED290A7B2100341C88 /* macro-team15.entitlements */,
+				0E7456F129069B4D00D792E6 /* macro_team15App.swift */,
+				0E46F142292FB14D00D54488 /* Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -253,11 +279,8 @@
 				0E46F142292FB14D00D54488 /* Info.plist */,
 				0E8FE4D42933CD0C00DBF715 /* Utilities */,
 				FA13CD6A2914FCCD00616699 /* Extensions */,
-				0E576EED290A7B2100341C88 /* macro-team15.entitlements */,
-				0E7456F129069B4D00D792E6 /* macro_team15App.swift */,
 				0EDCE4352906A3140092F759 /* Model */,
 				0EDCE4362906A4D60092F759 /* View */,
-				0E8FE4D52933E1E000DBF715 /* ViewModel */,
 				0E576EEA290A7AD400341C88 /* Service */,
 				0E7456F529069B4E00D792E6 /* Assets.xcassets */,
 				0E7456F729069B4E00D792E6 /* Preview Content */,
@@ -286,6 +309,7 @@
 			children = (
 				0E7456F329069B4D00D792E6 /* ContentView.swift */,
 				0E8FE4CE2933C41600DBF715 /* ContentViewModel.swift */,
+				0E8FE4F92935ADA300DBF715 /* LaunchScreen.storyboard */,
 				0E8FE512293675C300DBF715 /* Progress */,
 				0E8FE4E02933ECAB00DBF715 /* Report */,
 				0EA7D736292E23D20024DECC /* Onboarding */,
@@ -302,20 +326,10 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		0E8FE4D52933E1E000DBF715 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				0E8FE4D62933E1ED00DBF715 /* ViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		0E8FE4E02933ECAB00DBF715 /* Report */ = {
 			isa = PBXGroup;
 			children = (
 				0E8FE4E12933ED1500DBF715 /* ReportView.swift */,
-				FA2AEA2C2937557300867129 /* ReportMilestoneView.swift */,
-				FA2AEA2E293755EA00867129 /* NoReportMilestoneView.swift */,
 			);
 			path = Report;
 			sourceTree = "<group>";
@@ -336,7 +350,9 @@
 		0E8FE4FB29364D8600DBF715 /* StaticData */ = {
 			isa = PBXGroup;
 			children = (
-				0E8FE4FC29364D9700DBF715 /* Milestone.swift */,
+				0E8FE4FC29364D9700DBF715 /* MilestoneData.swift */,
+				0E0C8BE02938EA16009ABC42 /* MaterialData.swift */,
+				0E0C8BE22938EA35009ABC42 /* StimulusData.swift */,
 			);
 			path = StaticData;
 			sourceTree = "<group>";
@@ -344,8 +360,7 @@
 		0E8FE512293675C300DBF715 /* Progress */ = {
 			isa = PBXGroup;
 			children = (
-				0E8FE5132936760200DBF715 /* MilestoneCategoryCardViewV2.swift */,
-				FA2AEA2A29374EFE00867129 /* MilestoneCategoryCardViewV2Report.swift */,
+				0E0C8BDE29389A05009ABC42 /* MilestoneCategoryCardView */,
 			);
 			path = Progress;
 			sourceTree = "<group>";
@@ -363,10 +378,11 @@
 		0EDCE4352906A3140092F759 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0EF16AD1293997C6008D1C5A /* CoreData */,
 				0E8FE4FB29364D8600DBF715 /* StaticData */,
 				0E6F61F0290FC40B005C5415 /* Enum.swift */,
-				0EDCE4302906A1A50092F759 /* Persistence.swift */,
 				FAB8F3E4291A0227008F7C59 /* Shapes.swift */,
+				0E2F9A922937487D00DDAA28 /* AppData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -386,6 +402,21 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		0EF16AD1293997C6008D1C5A /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				0E8FE50429366D9200DBF715 /* Baby+CoreDataClass.swift */,
+				0E8FE50529366D9200DBF715 /* Baby+CoreDataProperties.swift */,
+				0E0C8BD62937954D009ABC42 /* BabyPhoto+CoreDataClass.swift */,
+				0E0C8BD72937954D009ABC42 /* BabyPhoto+CoreDataProperties.swift */,
+				0E2F9A942937657F00DDAA28 /* BabyMilestone+CoreDataClass.swift */,
+				0E2F9A952937657F00DDAA28 /* BabyMilestone+CoreDataProperties.swift */,
+				0E8FE50629366D9200DBF715 /* BabyMilestoneNote+CoreDataClass.swift */,
+				0E8FE50729366D9200DBF715 /* BabyMilestoneNote+CoreDataProperties.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		FA13CD6A2914FCCD00616699 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -402,6 +433,8 @@
 		FA706AD12913C46D00AD30A4 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				0E0C8BE42939061E009ABC42 /* MilestonePeriodSheet */,
+				0E0C8BDA29388BE9009ABC42 /* ProfileSwitcherSheet */,
 				0E7764FD291BBC86005792FF /* BadgesContainer.swift */,
 				FA706AD22913C49400AD30A4 /* CardView.swift */,
 				FA7B02B82917DABA00552541 /* MilestoneProgressFullView.swift */,
@@ -414,8 +447,6 @@
 				FA7B7EFF29339488005E8425 /* ProgressShareView.swift */,
 				FAF8545F29349AC4009C8CA5 /* ProfileAvatarView.swift */,
 				0E8FE4F72935AB3E00DBF715 /* TuntunLoading.swift */,
-				FA9341302936057F004975FE /* ProfileSwitcherSheet.swift */,
-				FA93412E2935EFFD004975FE /* MilestonePeriodSheet.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -543,24 +574,27 @@
 				0EA7D733292CBF720024DECC /* RadarChart.swift in Sources */,
 				0E6F61F9290FD283005C5415 /* OnboardingViewModel.swift in Sources */,
 				FA4513C9292BDD17002ADD1A /* BackgroundView.swift in Sources */,
+				0E0C8BE629390642009ABC42 /* MilestonePeriodSheetViewModel.swift in Sources */,
+				0E0C8BD92937954D009ABC42 /* BabyPhoto+CoreDataProperties.swift in Sources */,
 				FA996A17292E23D400DF570E /* Image.swift in Sources */,
 				FACDC5DD292F5ED3007B51A4 /* ButtonStyle.swift in Sources */,
-				0E8FE51129366D9200DBF715 /* BabyMilestone+CoreDataProperties.swift in Sources */,
 				FAF854682934B6CD009C8CA5 /* StimulusPhotoCardView.swift in Sources */,
+				0E2F9A962937657F00DDAA28 /* BabyMilestone+CoreDataClass.swift in Sources */,
 				FAB8F3E5291A0227008F7C59 /* Shapes.swift in Sources */,
 				0E8FE4EC29349CDA00DBF715 /* NameOnboarding.swift in Sources */,
 				0E8FE50C29366D9200DBF715 /* Baby+CoreDataClass.swift in Sources */,
 				0E8FE50D29366D9200DBF715 /* Baby+CoreDataProperties.swift in Sources */,
+				0E2F9A972937657F00DDAA28 /* BabyMilestone+CoreDataProperties.swift in Sources */,
+				0E2F9A912937396900DDAA28 /* MilestoneCategoryCardViewModel.swift in Sources */,
 				FAB8F3E7291A0570008F7C59 /* Date.swift in Sources */,
 				0E8FE4F82935AB3E00DBF715 /* TuntunLoading.swift in Sources */,
 				FA4513CD292BE44D002ADD1A /* HighlightedStimulusView.swift in Sources */,
 				0E7764FC291A4ABD005792FF /* BadgesScreen.swift in Sources */,
 				0E6F61F7290FC790005C5415 /* ReportScreen.swift in Sources */,
-				0E8FE4D72933E1ED00DBF715 /* ViewModel.swift in Sources */,
 				0EA7D738292E24010024DECC /* OnboardingView.swift in Sources */,
 				0E8FE4F229349DFF00DBF715 /* OnboardingText.swift in Sources */,
-				0E8FE51029366D9200DBF715 /* BabyMilestone+CoreDataClass.swift in Sources */,
 				0E6F61F4290FC75B005C5415 /* MilestoneScreen.swift in Sources */,
+				0E0C8BD82937954D009ABC42 /* BabyPhoto+CoreDataClass.swift in Sources */,
 				FAB270C2291BBC8B00C3E99A /* BadgeDetailView.swift in Sources */,
 				0E7764FE291BBC86005792FF /* BadgesContainer.swift in Sources */,
 				FA77F7FA2938A8330054C87D /* ImageCamera.swift in Sources */,
@@ -569,20 +603,17 @@
 				FA7B7F0029339488005E8425 /* ProgressShareView.swift in Sources */,
 				FAE1733A293202110076ABFA /* StimulusDetailView.swift in Sources */,
 				FA13CD6C2914FCDA00616699 /* Color.swift in Sources */,
-				FA2AEA2D2937557300867129 /* ReportMilestoneView.swift in Sources */,
 				FACDC5DB292F5DE4007B51A4 /* NoteView.swift in Sources */,
+				0E0C8BE12938EA16009ABC42 /* MaterialData.swift in Sources */,
 				0E7456F429069B4D00D792E6 /* ContentView.swift in Sources */,
-				0E8FE4FD29364D9700DBF715 /* Milestone.swift in Sources */,
-				FA2AEA2F293755EA00867129 /* NoReportMilestoneView.swift in Sources */,
+				0E8FE4FD29364D9700DBF715 /* MilestoneData.swift in Sources */,
 				FAF8545C29349463009C8CA5 /* AlbumView.swift in Sources */,
 				0E576EEC290A7AF900341C88 /* CloudKitService.swift in Sources */,
 				FA48EFBC292CD5D0009ED62B /* ActivityCardView.swift in Sources */,
 				FA48EFBE292D3BF7009ED62B /* MilestoneCategoryCardView.swift in Sources */,
 				FAF8546029349AC4009C8CA5 /* ProfileAvatarView.swift in Sources */,
-				0E8FE50B29366D9200DBF715 /* BabyPhoto+CoreDataProperties.swift in Sources */,
 				FA706AD32913C49400AD30A4 /* CardView.swift in Sources */,
 				0E7456F229069B4D00D792E6 /* macro_team15App.swift in Sources */,
-				FA2AEA2B29374EFE00867129 /* MilestoneCategoryCardViewV2Report.swift in Sources */,
 				0E6F61F1290FC40B005C5415 /* Enum.swift in Sources */,
 				0E8FE4F62934F19F00DBF715 /* DashboardViewModel.swift in Sources */,
 				FA34BD4D291A3FE8009DF42B /* MilestoneDetailView.swift in Sources */,
@@ -592,17 +623,20 @@
 				FA34BD4F291A5DAC009DF42B /* View.swift in Sources */,
 				FAE1733E2932140F0076ABFA /* StimulusStepView.swift in Sources */,
 				FA9341312936057F004975FE /* ProfileSwitcherSheet.swift in Sources */,
+				0E2F9A932937487D00DDAA28 /* AppData.swift in Sources */,
 				0E8FE4EA29349CC000DBF715 /* DateOnboarding.swift in Sources */,
 				0E8FE50E29366D9200DBF715 /* BabyMilestoneNote+CoreDataClass.swift in Sources */,
 				FA93412F2935EFFD004975FE /* MilestonePeriodSheet.swift in Sources */,
 				FA48EFBA292CC746009ED62B /* ContentHeaderView.swift in Sources */,
 				FA7B02B92917DABA00552541 /* MilestoneProgressFullView.swift in Sources */,
+				0E0C8BE32938EA35009ABC42 /* StimulusData.swift in Sources */,
 				FAF854642934B62C009C8CA5 /* PhotoCardView.swift in Sources */,
 				FA4513CB292BE047002ADD1A /* DashboardHeaderView.swift in Sources */,
 				0E6F61EF290FC348005C5415 /* DashboardScreen.swift in Sources */,
 				0E92692B29309AFD0050C375 /* userData.xcdatamodeld in Sources */,
 				FA996A19292E25F700DF570E /* MissionView.swift in Sources */,
 				FAE1733C29320A7E0076ABFA /* StimulusMaterialView.swift in Sources */,
+				0E0C8BDC29388C0F009ABC42 /* ProfileSwitcherSheetViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -728,14 +762,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "macro-team15/macro-team15.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "macro-team15.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"macro-team15/Preview Content\"";
 				DEVELOPMENT_TEAM = 474XANH3RF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "macro-team15/Info.plist";
+				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Tuntun;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical";
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need the camera permission";
@@ -766,14 +800,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "macro-team15/macro-team15.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "macro-team15.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"macro-team15/Preview Content\"";
 				DEVELOPMENT_TEAM = 474XANH3RF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "macro-team15/Info.plist";
+				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Tuntun;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical";
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need the camera permission";

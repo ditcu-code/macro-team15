@@ -16,9 +16,7 @@ extension Image {
         let defaultPP = Image("DefaultProfilePicture")
         let tuntunOnboarding = Image("TuntunOnboarding")
         let tuntunHead = Image("TuntunHead")
-        let tuntunHeadSad = Image("TuntunHeadSad")
         let tuntunHand = Image("TuntunHand")
-        let tuntunNoNote = Image("TuntunNoNote")
     }
 
 }
