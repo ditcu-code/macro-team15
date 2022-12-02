@@ -11,7 +11,7 @@ struct MilestoneCategoryCardViewV2: View {
     
     let category: MilestoneCategory
     let milestone: [Milestone]
-    let navigationLink: AnyView
+//    let navigationLink: AnyView
     
     //    @ObservedObject var vm: MilestoneCategoryCardViewModel = MilestoneCategoryCardViewModel()
     @State var refreshID: Int = 0
@@ -52,7 +52,7 @@ struct MilestoneCategoryCardViewV2: View {
                 ForEach(milestone, id: \.id) { item in
                     if let babyMiles = BabyMilestone.getSpecificMilestone(with: Int16(item.id)) {
                         NavigationLink {
-                            navigationLink
+                            MilestoneDetailViewV2(milestone: item, cdMilestone: babyMiles)
                         } label: {
                             VStack {
                                 Divider()

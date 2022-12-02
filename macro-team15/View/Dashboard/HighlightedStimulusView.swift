@@ -10,57 +10,8 @@ import SwiftUI
 struct HighlightedStimulusView: View {
     
     let withCTA: Bool
-    
-    var body: some View {
-        VStack {
-            Image.ui.tummyTime
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(maxHeight: 150)
-                .padding(.vertical, 30)
-            
-            VStack {
-                Text("Aktivitas")
-                    .font(.custom(FontType.regular.rawValue, size: 16))
-                    .foregroundColor(Color.ui.text)
-                
-                Divider().padding(.horizontal, 60)
-                
-                Text("Tummy Time")
-                    .font(.custom(FontType.semiBold.rawValue, size: 30))
-                    .padding(.vertical, 3)
-                    .foregroundColor(Color.ui.primary)
-                
-                Text("Aktivitas ini dapat mendukung pencapaian motorik dan kognitif!")
-                    .font(.custom(FontType.light.rawValue, size: 16))
-                    .multilineTextAlignment(.center)
-                    .frame(maxWidth: 300)
-                    .foregroundColor(Color.ui.text)
-            }
-            .padding(.horizontal)
-
-            if withCTA {
-                Button("Lakukan") {
-                    
-                }
-                .buttonStyle(PrimaryButtonStyle(isShort: true))
-                .padding(.horizontal)
-                .padding(.top, 10)
-            }
-        }
-    }
-}
-//
-//struct HighlightedStimulusView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        HighlightedStimulusView(withCTA: true)
-//    }
-//}
-
-struct HighlightedStimulusViewV2: View {
-    
-    let withCTA: Bool
     let stimulus: Stimulus
+    let allStimulus: [Stimulus]
     
     var body: some View {
         VStack {
@@ -90,10 +41,12 @@ struct HighlightedStimulusViewV2: View {
                     .foregroundColor(Color.ui.text)
             }
             .padding(.horizontal)
-
+            
             if withCTA {
-                Button("Lakukan") {
-                    
+                NavigationLink {
+                    StimulusDetailView(stimulus: stimulus, allStimulus: allStimulus)
+                } label: {
+                    Text("Lakukan")
                 }
                 .buttonStyle(PrimaryButtonStyle(isShort: true))
                 .padding(.horizontal)
@@ -102,3 +55,10 @@ struct HighlightedStimulusViewV2: View {
         }
     }
 }
+
+//
+//struct HighlightedStimulusView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        HighlightedStimulusView(withCTA: true)
+//    }
+//}

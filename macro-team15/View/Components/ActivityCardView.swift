@@ -32,7 +32,7 @@ struct ActivityCardView: View {
                         .foregroundColor(Color.ui.secondary)
                         
                     Text(subtitle)
-                        .font(.custom(FontType.light.rawValue, size: 12))
+                        .font(.custom(FontType.light.rawValue, size: 13))
                         .foregroundColor(Color.ui.text)
                 }
                 .multilineTextAlignment(.leading)
@@ -82,7 +82,7 @@ struct ActivityCardViewV2: View {
                         .foregroundColor(Color.ui.secondary)
                         
                     Text("Aktivitas ini dapat mendukung pencapaian \(StringManipulation.categoryStimulus(cat: stimulus.categories))")
-                        .font(.custom(FontType.light.rawValue, size: 12))
+                        .font(.custom(FontType.light.rawValue, size: 13))
                         .foregroundColor(Color.ui.text)
                 }
                 .multilineTextAlignment(.leading)

@@ -23,7 +23,7 @@ struct StimulusDetailView: View {
     
     var body: some View {
         ScrollView {
-            HighlightedStimulusViewV2(withCTA: false, stimulus: stimulus)
+            HighlightedStimulusView(withCTA: false, stimulus: stimulus, allStimulus: allStimulus)
             
             Divider()
                 .padding(.top)
@@ -36,7 +36,6 @@ struct StimulusDetailView: View {
                     HStack {
                         Spacer()
                             .padding(.leading, 10)
-                        
                         
                         ForEach(materials, id: \.self) { item in
                             StimulusMaterialView(material: item)
