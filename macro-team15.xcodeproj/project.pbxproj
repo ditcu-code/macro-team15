@@ -13,12 +13,14 @@
 		0E0C8BE12938EA16009ABC42 /* MaterialData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0C8BE02938EA16009ABC42 /* MaterialData.swift */; };
 		0E0C8BE32938EA35009ABC42 /* StimulusData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0C8BE22938EA35009ABC42 /* StimulusData.swift */; };
 		0E0C8BE629390642009ABC42 /* MilestonePeriodSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0C8BE529390642009ABC42 /* MilestonePeriodSheetViewModel.swift */; };
+		0E1C86E22939B80700195E04 /* Alexandria-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E4151972939B64D00A2A448 /* Alexandria-Light.ttf */; };
+		0E1C86E32939B80A00195E04 /* Alexandria-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E4151982939B65A00A2A448 /* Alexandria-SemiBold.ttf */; };
+		0E1C86E52939B82A00195E04 /* Alexandria-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E1C86E42939B82800195E04 /* Alexandria-Regular.ttf */; };
+		0E1C86E72939DB4000195E04 /* FontType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1C86E62939DB4000195E04 /* FontType.swift */; };
 		0E2F9A912937396900DDAA28 /* MilestoneCategoryCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2F9A902937396900DDAA28 /* MilestoneCategoryCardViewModel.swift */; };
 		0E2F9A932937487D00DDAA28 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2F9A922937487D00DDAA28 /* AppData.swift */; };
 		0E2F9A962937657F00DDAA28 /* BabyMilestone+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2F9A942937657F00DDAA28 /* BabyMilestone+CoreDataClass.swift */; };
 		0E2F9A972937657F00DDAA28 /* BabyMilestone+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2F9A952937657F00DDAA28 /* BabyMilestone+CoreDataProperties.swift */; };
-		0E46F140292FAFE000D54488 /* Alexandria-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E46F13E292FAFE000D54488 /* Alexandria-Light.ttf */; };
-		0E46F141292FAFE000D54488 /* Alexandria-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E46F13F292FAFE000D54488 /* Alexandria-SemiBold.ttf */; };
 		0E576EEC290A7AF900341C88 /* CloudKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E576EEB290A7AF900341C88 /* CloudKitService.swift */; };
 		0E6F61EF290FC348005C5415 /* DashboardScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6F61EE290FC348005C5415 /* DashboardScreen.swift */; };
 		0E6F61F1290FC40B005C5415 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6F61F0290FC40B005C5415 /* Enum.swift */; };
@@ -94,12 +96,14 @@
 		0E0C8BE02938EA16009ABC42 /* MaterialData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialData.swift; sourceTree = "<group>"; };
 		0E0C8BE22938EA35009ABC42 /* StimulusData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StimulusData.swift; sourceTree = "<group>"; };
 		0E0C8BE529390642009ABC42 /* MilestonePeriodSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestonePeriodSheetViewModel.swift; sourceTree = "<group>"; };
+		0E1C86E42939B82800195E04 /* Alexandria-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Alexandria-Regular.ttf"; sourceTree = "<group>"; };
+		0E1C86E62939DB4000195E04 /* FontType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontType.swift; sourceTree = "<group>"; };
 		0E2F9A902937396900DDAA28 /* MilestoneCategoryCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneCategoryCardViewModel.swift; sourceTree = "<group>"; };
 		0E2F9A922937487D00DDAA28 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		0E2F9A942937657F00DDAA28 /* BabyMilestone+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BabyMilestone+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0E2F9A952937657F00DDAA28 /* BabyMilestone+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BabyMilestone+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		0E46F13E292FAFE000D54488 /* Alexandria-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Alexandria-Light.ttf"; sourceTree = "<group>"; };
-		0E46F13F292FAFE000D54488 /* Alexandria-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Alexandria-SemiBold.ttf"; sourceTree = "<group>"; };
+		0E4151972939B64D00A2A448 /* Alexandria-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Alexandria-Light.ttf"; sourceTree = "<group>"; };
+		0E4151982939B65A00A2A448 /* Alexandria-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Alexandria-SemiBold.ttf"; sourceTree = "<group>"; };
 		0E46F142292FB14D00D54488 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E576EEB290A7AF900341C88 /* CloudKitService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitService.swift; sourceTree = "<group>"; };
 		0E576EED290A7B2100341C88 /* macro-team15.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "macro-team15.entitlements"; sourceTree = "<group>"; };
@@ -212,8 +216,10 @@
 		0E46F13D292FAF8A00D54488 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				0E46F13E292FAFE000D54488 /* Alexandria-Light.ttf */,
-				0E46F13F292FAFE000D54488 /* Alexandria-SemiBold.ttf */,
+				0E4151972939B64D00A2A448 /* Alexandria-Light.ttf */,
+				0E1C86E42939B82800195E04 /* Alexandria-Regular.ttf */,
+				0E4151982939B65A00A2A448 /* Alexandria-SemiBold.ttf */,
+				0E1C86E62939DB4000195E04 /* FontType.swift */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -535,10 +541,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E46F141292FAFE000D54488 /* Alexandria-SemiBold.ttf in Resources */,
-				0E46F140292FAFE000D54488 /* Alexandria-Light.ttf in Resources */,
 				0E7456F929069B4E00D792E6 /* Preview Assets.xcassets in Resources */,
 				0E8FE4FA2935ADA300DBF715 /* LaunchScreen.storyboard in Resources */,
+				0E1C86E22939B80700195E04 /* Alexandria-Light.ttf in Resources */,
+				0E1C86E32939B80A00195E04 /* Alexandria-SemiBold.ttf in Resources */,
+				0E1C86E52939B82A00195E04 /* Alexandria-Regular.ttf in Resources */,
 				0E7456F629069B4E00D792E6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -561,6 +568,7 @@
 				0E8FE4E529349C3F00DBF715 /* TuntunIllustration.swift in Sources */,
 				0EA7D733292CBF720024DECC /* RadarChart.swift in Sources */,
 				0E6F61F9290FD283005C5415 /* OnboardingViewModel.swift in Sources */,
+				0E1C86E72939DB4000195E04 /* FontType.swift in Sources */,
 				FA4513C9292BDD17002ADD1A /* BackgroundView.swift in Sources */,
 				0E0C8BE629390642009ABC42 /* MilestonePeriodSheetViewModel.swift in Sources */,
 				0E0C8BD92937954D009ABC42 /* BabyPhoto+CoreDataProperties.swift in Sources */,

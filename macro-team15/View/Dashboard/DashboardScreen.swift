@@ -13,67 +13,66 @@ struct DashboardScreen: View {
     
     @ObservedObject var vm = DashboardViewModel()
     @ObservedObject var appData = AppData()
-    private var milestoneData: [Milestone] = MilestoneData.getAll()
     
     var body: some View {
         let babyName = vm.currentBaby?.name ?? "Aruna"
         
         NavigationView {
             GeometryReader { geo in
-                ZStack {
-                    BackgroundView()
-                        .edgesIgnoringSafeArea(.all)
+                ScrollView {
+                    HighlightedStimulusView(withCTA: true)
                     
-                    ScrollView {
-                        HighlightedStimulusView(withCTA: true)
-                        
-                        Divider()
-                            .padding(.vertical)
-                        
-                        ContentHeaderView(title: "Aktivitas", subtitle: "Dirancang untuk mendukung pencapaian \(babyName)", navigationLink: AnyView(Text("Detail")))
-                        
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack {
-                                Spacer()
-                                    .padding(.leading, 8)
-                                
-                                ForEach(0 ..< 5) { item in
-                                    ActivityCardView(title: "Tummy Time", subtitle: "Aktivitas ini dapat mendukung pencapaian motorik dan kognitif!", navigationLink: AnyView(Text("Detail")))
-                                }
+                    Divider()
+                        .padding(.vertical)
+                    
+                    ContentHeaderView(title: "Aktivitas", subtitle: "Dirancang untuk mendukung pencapaian \(babyName)", navigationLink: AnyView(Text("Detail")))
+                    
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack {
+                            Spacer()
+                                .padding(.leading, 8)
+                            
+                            ForEach(0 ..< 5) { item in
+                                ActivityCardView(title: "Tummy Time", subtitle: "Aktivitas ini dapat mendukung pencapaian motorik dan kognitif!", navigationLink: AnyView(Text("Detail")))
                             }
                         }
-                        
-                        ContentHeaderView(title: "Milestone", subtitle: "Perkembangan \(babyName) di bulan ini", navigationLink: nil)
-                            .padding(.top)
-                        
-                        VStack {
-                            ForEach(MilestoneCategory.allCases, id: \.self) { category in
-                                let list = milestoneData.filter { item in
-                                    item.category == category &&
-                                    item.month == appData.selectedMonth
-                                }
-                                
-                                MilestoneCategoryCardViewV2(category: category, milestone: list, navigationLink: AnyView(MilestoneDetailView()))
-                                if category != MilestoneCategory.allCases.last {
-                                    Divider()
-                                }
-                            }
-                        }
-                        .background(
-                            RoundedRectangle(cornerRadius: 20)
-                                .foregroundColor(.white)
-                        )
-                        .padding(.horizontal)
-                        
-                        ContentHeaderView(title: "Catatan", subtitle: "Hal-hal penting mengenai perkembangan \(babyName)", navigationLink: AnyView(Text("Detail")))
-                            .padding(.top)
-                        
-                        Text("Tidak ada catatan penting")
-                            .padding(.vertical, 80)
                     }
+                    
+                    ContentHeaderView(title: "Milestone", subtitle: "Perkembangan \(babyName) di bulan ini", navigationLink: nil)
+                        .padding(.top)
+                    
+                    VStack {
+                        ForEach(MilestoneCategory.allCases, id: \.self) { category in
+                            let list = vm.milestoneData.filter { item in
+                                item.category == category &&
+                                item.month == appData.selectedMonth
+                            }
+                            
+                            MilestoneCategoryCardViewV2(category: category, milestone: list, navigationLink: AnyView(MilestoneDetailView()))
+                            if category != MilestoneCategory.allCases.last {
+                                Divider()
+                            }
+                        }
+                    }
+                    .background(
+                        RoundedRectangle(cornerRadius: 20)
+                            .foregroundColor(.white)
+                    )
+                    .padding(.horizontal)
+                    
+                    ContentHeaderView(title: "Catatan", subtitle: "Hal-hal penting mengenai perkembangan \(babyName)", navigationLink: AnyView(Text("Detail")))
+                        .padding(.top)
+                    
+                    Text("Tidak ada catatan penting")
+                        .padding(.vertical, 80)
+                }
+                
+                .background(alignment: .center) {
+                    BackgroundView()
                 }
                 
                 .navigationTitle("\(geo.frame(in: .global).minY < 100 ? "Progres" : "Hi, \(babyName)!")")
+                
                 .toolbar {
                     // Milestone dropdown
                     ToolbarItem(placement: .navigationBarLeading) {
@@ -111,11 +110,5 @@ struct DashboardScreen: View {
             }
         }
         
-    }
-}
-
-struct DashboardScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        DashboardScreen()
     }
 }

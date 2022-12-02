@@ -13,37 +13,39 @@ struct HighlightedStimulusView: View {
     
     var body: some View {
         VStack {
-            Image("PlaceholderImage")
+            Image.ui.tummyTime
                 .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(height: 300)
+                .aspectRatio(contentMode: .fit)
+                .frame(maxHeight: 150)
+                .padding(.vertical, 30)
             
             VStack {
                 Text("Aktivitas")
-                    .font(.callout)
-                    .fontWeight(.bold)
-                    .foregroundColor(Color.ui.secondary)
+                    .font(.custom(FontType.regular.rawValue, size: 16))
+                    .foregroundColor(Color.ui.text)
                 
-                Divider()
+                Divider().padding(.horizontal, 60)
                 
                 Text("Tummy Time")
-                    .font(.largeTitle)
-                    .padding(.vertical, 4)
+                    .font(.custom(FontType.semiBold.rawValue, size: 30))
+                    .padding(.vertical, 3)
                     .foregroundColor(Color.ui.primary)
                 
                 Text("Aktivitas ini dapat mendukung pencapaian motorik dan kognitif!")
+                    .font(.custom(FontType.light.rawValue, size: 16))
                     .multilineTextAlignment(.center)
+                    .frame(maxWidth: 300)
+                    .foregroundColor(Color.ui.text)
             }
-            .padding()
-            .offset(CGSize(width: 0, height: -80))
-            .padding(.bottom, -100)
-            
+            .padding(.horizontal)
+
             if withCTA {
                 Button("Lakukan") {
                     
                 }
-                .buttonStyle(PrimaryButtonStyle())
-                .padding([.top, .horizontal])
+                .buttonStyle(PrimaryButtonStyle(isShort: true))
+                .padding(.horizontal)
+                .padding(.top, 10)
             }
         }
     }

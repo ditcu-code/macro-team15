@@ -9,12 +9,14 @@ import SwiftUI
 
 struct PrimaryButtonStyle: ButtonStyle {
     @Environment(\.isEnabled) var isEnabled
+    var isShort: Bool? = false
     
     func makeBody(configuration: Self.Configuration) -> some View {
+        let short = isShort ?? false
         configuration.label
-            .font(.body.bold())
+            .font(.custom(FontType.regular.rawValue, size: 16))
             .foregroundColor(.white)
-            .frame(maxWidth: .infinity, minHeight: 60)
+            .frame(maxWidth: .infinity, minHeight: short ? 48 : 60)
             .background(
                 RoundedRectangle(cornerRadius: 20)
                     .foregroundColor(isEnabled ? Color.ui.primary : Color.ui.primary.opacity(0.2))

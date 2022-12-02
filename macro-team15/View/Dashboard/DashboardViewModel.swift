@@ -13,6 +13,7 @@ class DashboardViewModel: ObservableObject {
     @Published var currentBaby: Baby? = nil
 //    @Published var babyMilestones: [BabyMilestone] = []
     @Published var appData = AppData()
+    @Published var milestoneData: [Milestone] = MilestoneData.getAll()
     
     init () {
         getData()
