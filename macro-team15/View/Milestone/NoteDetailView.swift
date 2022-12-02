@@ -18,56 +18,52 @@ struct NoteDetailView: View {
     @State private var isPresented = false
     
     var body: some View {
-        ZStack {
-            BackgroundView()
-                .ignoresSafeArea()
-            
-            VStack {
-                if !titleOnFocus && !noteOnFocus {
-                    MissionView(missionTitle: "Bisa menggerakkan kepala dari kiri/kanan ke tengah")
-                }
-               
-                ZStack(alignment: .topLeading) {
-                    RoundedRectangle(cornerRadius: 20)
-                        .foregroundColor(.white)
-                        .padding()
-                        .shadow(radius: 1)
-                    
-                    VStack {
-                        TextField("", text: $title)
-                            .focused($titleOnFocus)
-                            .font(.title)
-                            .bold()
-                            .onSubmit {
-                                titleOnFocus = false
-                                noteOnFocus = true
-                            }
-                        
-                        ZStack(alignment: .topLeading) {
-                            TextEditor(text: $note)
-                                .focused($noteOnFocus)
-                                .frame(minHeight: 100)
+        VStack {
+            if !titleOnFocus && !noteOnFocus {
+                MissionView(missionTitle: "Bisa menggerakkan kepala dari kiri/kanan ke tengah")
+            }
+           
+            ZStack(alignment: .topLeading) {
+                RoundedRectangle(cornerRadius: 20)
+                    .foregroundColor(.white)
+                    .padding()
+                    .shadow(radius: 1)
+                
+                VStack {
+                    TextField("", text: $title)
+                        .focused($titleOnFocus)
+                        .font(.title)
+                        .bold()
+                        .onSubmit {
+                            titleOnFocus = false
+                            noteOnFocus = true
                         }
-                        .padding(.horizontal, -4)
+                    
+                    ZStack(alignment: .topLeading) {
+                        TextEditor(text: $note)
+                            .focused($noteOnFocus)
+                            .frame(minHeight: 100)
                     }
-                    .padding(32)
+                    .padding(.horizontal, -4)
                 }
+                .padding(32)
             }
-            .alert(
-                "Apakah Anda ingin menghapus catatan ini?",
-                isPresented: $isPresented
-            ) {
-                Button("Hapus", role: .destructive) {
-                    isPresented.toggle()
-                }
-                Button("Batal", role: .cancel) {
-                    isPresented.toggle()
-                }
-            } message: {
-                Text("Tindakan ini tidak bisa dibatalkan")
-            }
-            .animation(.spring(), value: titleOnFocus || noteOnFocus)
         }
+        .background(BackgroundView())
+        .alert(
+            "Apakah Anda ingin menghapus catatan ini?",
+            isPresented: $isPresented
+        ) {
+            Button("Hapus", role: .destructive) {
+                isPresented.toggle()
+            }
+            Button("Batal", role: .cancel) {
+                isPresented.toggle()
+            }
+        } message: {
+            Text("Tindakan ini tidak bisa dibatalkan")
+        }
+        .animation(.spring(), value: titleOnFocus || noteOnFocus)
         
         .navigationTitle("Catatan")
         .toolbar {
