@@ -101,7 +101,7 @@
 		0E2F9A952937657F00DDAA28 /* BabyMilestone+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BabyMilestone+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0E46F13E292FAFE000D54488 /* Alexandria-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Alexandria-Light.ttf"; sourceTree = "<group>"; };
 		0E46F13F292FAFE000D54488 /* Alexandria-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Alexandria-SemiBold.ttf"; sourceTree = "<group>"; };
-		0E46F142292FB14D00D54488 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		0E46F142292FB14D00D54488 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E576EEB290A7AF900341C88 /* CloudKitService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitService.swift; sourceTree = "<group>"; };
 		0E576EED290A7B2100341C88 /* macro-team15.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "macro-team15.entitlements"; sourceTree = "<group>"; };
 		0E6F61EE290FC348005C5415 /* DashboardScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardScreen.swift; sourceTree = "<group>"; };
@@ -264,28 +264,19 @@
 		0E7456E529069B4C00D792E6 = {
 			isa = PBXGroup;
 			children = (
-				0E8FE4F92935ADA300DBF715 /* LaunchScreen.storyboard */,
-				0E8FE50429366D9200DBF715 /* Baby+CoreDataClass.swift */,
-				0E8FE50529366D9200DBF715 /* Baby+CoreDataProperties.swift */,
-				0E0C8BD62937954D009ABC42 /* BabyPhoto+CoreDataClass.swift */,
-				0E0C8BD72937954D009ABC42 /* BabyPhoto+CoreDataProperties.swift */,
-				0E2F9A942937657F00DDAA28 /* BabyMilestone+CoreDataClass.swift */,
-				0E2F9A952937657F00DDAA28 /* BabyMilestone+CoreDataProperties.swift */,
-				0E8FE50629366D9200DBF715 /* BabyMilestoneNote+CoreDataClass.swift */,
-				0E8FE50729366D9200DBF715 /* BabyMilestoneNote+CoreDataProperties.swift */,
 				0E7456F029069B4D00D792E6 /* macro-team15 */,
 				0E8FE4DF2933E52300DBF715 /* macro-team15.app */,
+				0E576EED290A7B2100341C88 /* macro-team15.entitlements */,
+				0E7456F129069B4D00D792E6 /* macro_team15App.swift */,
+				0E46F142292FB14D00D54488 /* Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
 		0E7456F029069B4D00D792E6 /* macro-team15 */ = {
 			isa = PBXGroup;
 			children = (
-				0E46F142292FB14D00D54488 /* Info.plist */,
 				0E8FE4D42933CD0C00DBF715 /* Utilities */,
 				FA13CD6A2914FCCD00616699 /* Extensions */,
-				0E576EED290A7B2100341C88 /* macro-team15.entitlements */,
-				0E7456F129069B4D00D792E6 /* macro_team15App.swift */,
 				0EDCE4352906A3140092F759 /* Model */,
 				0EDCE4362906A4D60092F759 /* View */,
 				0E8FE4D52933E1E000DBF715 /* ViewModel */,
@@ -317,6 +308,7 @@
 			children = (
 				0E7456F329069B4D00D792E6 /* ContentView.swift */,
 				0E8FE4CE2933C41600DBF715 /* ContentViewModel.swift */,
+				0E8FE4F92935ADA300DBF715 /* LaunchScreen.storyboard */,
 				0E8FE512293675C300DBF715 /* Progress */,
 				0E8FE4E02933ECAB00DBF715 /* Report */,
 				0EA7D736292E23D20024DECC /* Onboarding */,
@@ -393,6 +385,7 @@
 		0EDCE4352906A3140092F759 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0EF16AD1293997C6008D1C5A /* CoreData */,
 				0E8FE4FB29364D8600DBF715 /* StaticData */,
 				0E6F61F0290FC40B005C5415 /* Enum.swift */,
 				FAB8F3E4291A0227008F7C59 /* Shapes.swift */,
@@ -414,6 +407,21 @@
 				0E7764FA291A4A62005792FF /* Badges */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		0EF16AD1293997C6008D1C5A /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				0E8FE50429366D9200DBF715 /* Baby+CoreDataClass.swift */,
+				0E8FE50529366D9200DBF715 /* Baby+CoreDataProperties.swift */,
+				0E0C8BD62937954D009ABC42 /* BabyPhoto+CoreDataClass.swift */,
+				0E0C8BD72937954D009ABC42 /* BabyPhoto+CoreDataProperties.swift */,
+				0E2F9A942937657F00DDAA28 /* BabyMilestone+CoreDataClass.swift */,
+				0E2F9A952937657F00DDAA28 /* BabyMilestone+CoreDataProperties.swift */,
+				0E8FE50629366D9200DBF715 /* BabyMilestoneNote+CoreDataClass.swift */,
+				0E8FE50729366D9200DBF715 /* BabyMilestoneNote+CoreDataProperties.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		FA13CD6A2914FCCD00616699 /* Extensions */ = {

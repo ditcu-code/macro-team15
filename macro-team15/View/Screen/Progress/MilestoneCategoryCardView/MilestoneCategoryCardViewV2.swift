@@ -61,9 +61,7 @@ struct MilestoneCategoryCardViewV2: View {
                                     Button {
                                         babyMiles.isChecked.toggle()
                                         PersistenceController.shared.save()
-                                            
-                                                print(MilestoneData.getMonths())
-                                            
+
                                         refreshID += 1
                                     } label: {
                                         Image(systemName: babyMiles.isChecked ? "checkmark.circle.fill" : "checkmark.circle")
@@ -105,7 +103,7 @@ struct MilestoneCategoryCardViewV2: View {
                     }
                     
                     Capsules(milestone: milestone, color: colorSwitcher()).id(refreshID)
-                }
+                }.animation(.linear, value: refreshID)
                 
                 Spacer()
             }
