@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MilestoneCategoryCardViewV2: View {
+struct MilestoneCategoryCardViewReport: View {
     
     let category: MilestoneCategory
     let milestone: [Milestone]?
@@ -106,10 +106,8 @@ struct MilestoneCategoryCardViewV2: View {
     
 }
 
-struct MilestoneCategoryCardViewV2Report_Previews: PreviewProvider {
+struct MilestoneCategoryCardViewReport_Previews: PreviewProvider {
     static var previews: some View {
-        MilestoneCategoryCardViewV2(category: .motoric, milestone: [Milestone(id: 1, titleEN: "titleEN", title: "title", month: 1, warningMonth: 2, category: .motoric, stimulusID: nil)], navigationLink: AnyView(Text("Nav")))
-        
-        MilestoneCategoryCardViewV2(category: .motoric, milestone: nil, navigationLink: AnyView(Text("Nav")))
+        MilestoneCategoryCardViewReport(category: .motoric, milestone: [Milestone(id: 1, titleEN: "titleEN", title: "title", month: 1, warningMonth: 2, category: .motoric, stimulusID: nil)], navigationLink: AnyView(Text("Nav")))
     }
 }
