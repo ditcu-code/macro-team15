@@ -33,7 +33,8 @@ struct OnboardingView: View {
             }.zIndex(1)
             
             ZStack(alignment: .bottom) {
-                Color.green.opacity(0.1).ignoresSafeArea()
+                BackgroundView()
+                    .edgesIgnoringSafeArea(.all)
                 
                 VStack {
                     if (viewModel.step != 3) {
