@@ -9,10 +9,6 @@ import SwiftUI
 
 struct StimulusDetailView: View {
     var body: some View {
-        ZStack {
-            BackgroundView()
-                .edgesIgnoringSafeArea(.all)
-            
             ScrollView {
                 HighlightedStimulusView(withCTA: false)
 
@@ -72,8 +68,9 @@ struct StimulusDetailView: View {
                     .padding(.vertical)
                 }
             }
+        .background {
+            BackgroundView()
         }
-        
         .navigationTitle(Text("Detail Aktivitas"))
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {

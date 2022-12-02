@@ -38,7 +38,7 @@ struct DashboardScreen: View {
                                     .padding(.leading, 8)
                                 
                                 ForEach(0 ..< 5) { item in
-                                    ActivityCardView(title: "Tummy Time", subtitle: "Aktivitas ini dapat mendukung pencapaian motorik dan kognitif!", navigationLink: AnyView(Text("Detail")))
+                                    ActivityCardView(title: "Tummy Time", subtitle: "Aktivitas ini dapat mendukung pencapaian motorik dan kognitif!", navigationLink: AnyView(StimulusDetailView()))
                                 }
                             }
                         }

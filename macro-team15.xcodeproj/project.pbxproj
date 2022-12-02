@@ -69,6 +69,8 @@
 		FA888ED92939F93F0035C733 /* NoReportMilestoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA888ED82939F93F0035C733 /* NoReportMilestoneView.swift */; };
 		FA888EDB2939F9730035C733 /* ReportMilestoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA888EDA2939F9730035C733 /* ReportMilestoneView.swift */; };
 		FA888EDE2939FAEF0035C733 /* MilestoneCategoryCardViewV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA888EDD2939FAEF0035C733 /* MilestoneCategoryCardViewV2.swift */; };
+		FA888EE4293A06970035C733 /* StimuliView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA888EE3293A06970035C733 /* StimuliView.swift */; };
+		FA888EE6293A08DB0035C733 /* ActivityCardLongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA888EE5293A08DB0035C733 /* ActivityCardLongView.swift */; };
 		FA93412F2935EFFD004975FE /* MilestonePeriodSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93412E2935EFFD004975FE /* MilestonePeriodSheet.swift */; };
 		FA9341312936057F004975FE /* ProfileSwitcherSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9341302936057F004975FE /* ProfileSwitcherSheet.swift */; };
 		FA996A17292E23D400DF570E /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA996A16292E23D400DF570E /* Image.swift */; };
@@ -156,6 +158,8 @@
 		FA888ED82939F93F0035C733 /* NoReportMilestoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoReportMilestoneView.swift; sourceTree = "<group>"; };
 		FA888EDA2939F9730035C733 /* ReportMilestoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportMilestoneView.swift; sourceTree = "<group>"; };
 		FA888EDD2939FAEF0035C733 /* MilestoneCategoryCardViewV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneCategoryCardViewV2.swift; sourceTree = "<group>"; };
+		FA888EE3293A06970035C733 /* StimuliView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StimuliView.swift; sourceTree = "<group>"; };
+		FA888EE5293A08DB0035C733 /* ActivityCardLongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCardLongView.swift; sourceTree = "<group>"; };
 		FA93412E2935EFFD004975FE /* MilestonePeriodSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestonePeriodSheet.swift; sourceTree = "<group>"; };
 		FA9341302936057F004975FE /* ProfileSwitcherSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSwitcherSheet.swift; sourceTree = "<group>"; };
 		FA996A16292E23D400DF570E /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
@@ -280,7 +284,6 @@
 			isa = PBXGroup;
 			children = (
 				FA77F7F82938A81D0054C87D /* Helper */,
-				0E46F142292FB14D00D54488 /* Info.plist */,
 				0E8FE4D42933CD0C00DBF715 /* Utilities */,
 				FA13CD6A2914FCCD00616699 /* Extensions */,
 				0EDCE4352906A3140092F759 /* Model */,
@@ -318,6 +321,7 @@
 				0E8FE4E02933ECAB00DBF715 /* Report */,
 				0EA7D736292E23D20024DECC /* Onboarding */,
 				FAF8545929349431009C8CA5 /* Album */,
+				FA888EE2293A06700035C733 /* Stimulus */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -465,6 +469,15 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		FA888EE2293A06700035C733 /* Stimulus */ = {
+			isa = PBXGroup;
+			children = (
+				FA888EE3293A06970035C733 /* StimuliView.swift */,
+				FA888EE5293A08DB0035C733 /* ActivityCardLongView.swift */,
+			);
+			path = Stimulus;
+			sourceTree = "<group>";
+		};
 		FAB270C0291BBC7600C3E99A /* Badge */ = {
 			isa = PBXGroup;
 			children = (
@@ -600,13 +613,13 @@
 				0E7764FC291A4ABD005792FF /* BadgesScreen.swift in Sources */,
 				0E6F61F7290FC790005C5415 /* ReportScreen.swift in Sources */,
 				0EA7D738292E24010024DECC /* OnboardingView.swift in Sources */,
+				FA888EE6293A08DB0035C733 /* ActivityCardLongView.swift in Sources */,
 				0E8FE4F229349DFF00DBF715 /* OnboardingText.swift in Sources */,
 				0E6F61F4290FC75B005C5415 /* MilestoneScreen.swift in Sources */,
 				0E0C8BD82937954D009ABC42 /* BabyPhoto+CoreDataClass.swift in Sources */,
 				FAB270C2291BBC8B00C3E99A /* BadgeDetailView.swift in Sources */,
 				0E7764FE291BBC86005792FF /* BadgesContainer.swift in Sources */,
 				FA77F7FA2938A8330054C87D /* ImageCamera.swift in Sources */,
-				0E8FE50A29366D9200DBF715 /* BabyPhoto+CoreDataClass.swift in Sources */,
 				0EDCE4332906A1A50092F759 /* Persistence.swift in Sources */,
 				FA7B7F0029339488005E8425 /* ProgressShareView.swift in Sources */,
 				FAE1733A293202110076ABFA /* StimulusDetailView.swift in Sources */,
@@ -631,6 +644,7 @@
 				FA34BD4F291A5DAC009DF42B /* View.swift in Sources */,
 				FAE1733E2932140F0076ABFA /* StimulusStepView.swift in Sources */,
 				FA9341312936057F004975FE /* ProfileSwitcherSheet.swift in Sources */,
+				FA888EE4293A06970035C733 /* StimuliView.swift in Sources */,
 				0E2F9A932937487D00DDAA28 /* AppData.swift in Sources */,
 				0E8FE4EA29349CC000DBF715 /* DateOnboarding.swift in Sources */,
 				0E8FE50E29366D9200DBF715 /* BabyMilestoneNote+CoreDataClass.swift in Sources */,
