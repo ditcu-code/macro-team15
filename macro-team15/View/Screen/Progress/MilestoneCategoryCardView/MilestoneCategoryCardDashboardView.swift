@@ -71,7 +71,9 @@ struct MilestoneCategoryCardViewV2: View {
                                             .id(refreshID)
                                     }.padding(12)
                                     
-                                    Text(item.title).multilineTextAlignment(.leading)
+                                    Text(item.title)
+                                        .font(.custom(FontType.light.rawValue, size: 16))
+                                        .multilineTextAlignment(.leading)
                                     
                                     Spacer()
                                     
@@ -94,13 +96,11 @@ struct MilestoneCategoryCardViewV2: View {
                 VStack(alignment: .leading) {
                     HStack {
                         Text("\(category.rawValue)")
-                            .font(.title3)
-                            .fontWeight(.semibold)
+                            .foregroundColor(Color.ui.text)
                         
                         Text("(1/\(milestone.count))")
-                            .font(.title3)
-                            .fontWeight(.semibold)
-                    }
+                            .foregroundColor(colorSwitcher())
+                    }.font(.custom(FontType.semiBold.rawValue, size: 16))
                     
                     Capsules(milestone: milestone, color: colorSwitcher()).id(refreshID)
                 }.animation(.linear, value: refreshID)
