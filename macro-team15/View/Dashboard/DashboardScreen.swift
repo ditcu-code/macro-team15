@@ -29,7 +29,7 @@ struct DashboardScreen: View {
                     Divider().padding(.vertical)
                     
                     ContentHeaderView(title: "Aktivitas", subtitle: "Dirancang untuk mendukung pencapaian \(babyName)", navigationLink: AnyView(Text("Detail")))
-                    
+
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
                             Spacer()
