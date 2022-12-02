@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DashboardScreen: View {
+    @State private var selectedMonth: Int = 1
     @State private var milestonePeriod: Bool = false
     @State private var profileSwitcher: Bool = false
     
@@ -15,7 +16,7 @@ struct DashboardScreen: View {
     @ObservedObject var appData = AppData()
     
     var body: some View {
-        let babyName = vm.currentBaby?.name ?? "Aruna"
+        let babyName = viewModel.babies.first?.name ?? "Aruna"
         
         NavigationView {
             GeometryReader { geo in
@@ -67,6 +68,59 @@ struct DashboardScreen: View {
                 
                 .background(alignment: .center) {
                     BackgroundView()
+                        .edgesIgnoringSafeArea(.all)
+                    
+                    ScrollView {
+                        HighlightedStimulusView(withCTA: true)
+                        
+                        Divider()
+                            .padding()
+                        
+                        ContentHeaderView(title: "Aktivitas", subtitle: "Dirancang untuk mendukung pencapaian \(babyName)", navigationLink: AnyView(Text("Detail")))
+                        
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack {
+                                Spacer()
+                                    .padding(.leading, 8)
+                                
+                                ForEach(0 ..< 5) { item in
+                                    ActivityCardView(title: "Tummy Time", subtitle: "Aktivitas ini dapat mendukung pencapaian motorik dan kognitif!", navigationLink: AnyView(Text("Detail")))
+                                }
+                            }
+                        }
+                        
+                        Divider()
+                            .padding()
+                        
+                        ContentHeaderView(title: "Milestone", subtitle: "Perkembangan \(babyName) di bulan ini", navigationLink: nil)
+                        
+                        VStack {
+                            ForEach(MilestoneCategory.allCases, id: \.self) { category in
+                                let list = milestoneData.filter { item in
+                                    item.category == category &&
+                                    item.month == selectedMonth
+                                }
+                                
+                                MilestoneCategoryCardViewV2(category: category, milestone: list, navigationLink: AnyView(MilestoneDetailView()))
+                                if category != MilestoneCategory.allCases.last {
+                                    Divider()
+                                }
+                            }
+                        }
+                        .background(
+                            RoundedRectangle(cornerRadius: 20)
+                                .foregroundColor(.white)
+                        )
+                        .padding(.horizontal)
+                        
+                        Divider()
+                            .padding()
+                        
+                        ContentHeaderView(title: "Catatan", subtitle: "Hal-hal penting mengenai perkembangan \(babyName)", navigationLink: AnyView(Text("Detail")))
+                        
+                        Text("Tidak ada catatan penting")
+                            .padding(.vertical, 80)
+                    }
                 }
                 
                 .navigationTitle("\(geo.frame(in: .global).minY < 100 ? "Progres" : "Hi, \(babyName)!")")
@@ -92,7 +146,7 @@ struct DashboardScreen: View {
                         Button {
                             profileSwitcher.toggle()
                         } label: {
-                            ProfileAvatarViewV2(photo: vm.babies.first?.photo!)
+                            ProfileAvatarViewV2(photo: viewModel.babies.first?.photo!)
                         }
                     }
                 }
