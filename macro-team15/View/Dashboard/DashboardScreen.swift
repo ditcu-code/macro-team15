@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct DashboardScreen: View {
+    @State private var selectedMonth: Int = 1
     @State private var milestonePeriod: Bool = false
     @State private var profileSwitcher: Bool = false
     
-    @ObservedObject var vm = DashboardViewModel()
-    @ObservedObject var appData = AppData()
+    @ObservedObject var viewModel = DashboardViewModel()
     private var milestoneData: [Milestone] = MilestoneData.getAll()
     
     var body: some View {
-        let babyName = vm.currentBaby?.name ?? "Aruna"
+        let babyName = viewModel.babies.first?.name ?? "Aruna"
         
         NavigationView {
             GeometryReader { geo in
@@ -28,7 +28,7 @@ struct DashboardScreen: View {
                         HighlightedStimulusView(withCTA: true)
                         
                         Divider()
-                            .padding(.vertical)
+                            .padding()
                         
                         ContentHeaderView(title: "Aktivitas", subtitle: "Dirancang untuk mendukung pencapaian \(babyName)", navigationLink: AnyView(Text("Detail")))
                         
@@ -43,14 +43,16 @@ struct DashboardScreen: View {
                             }
                         }
                         
+                        Divider()
+                            .padding()
+                        
                         ContentHeaderView(title: "Milestone", subtitle: "Perkembangan \(babyName) di bulan ini", navigationLink: nil)
-                            .padding(.top)
                         
                         VStack {
                             ForEach(MilestoneCategory.allCases, id: \.self) { category in
                                 let list = milestoneData.filter { item in
                                     item.category == category &&
-                                    item.month == appData.selectedMonth
+                                    item.month == selectedMonth
                                 }
                                 
                                 MilestoneCategoryCardViewV2(category: category, milestone: list, navigationLink: AnyView(MilestoneDetailView()))
@@ -65,22 +67,24 @@ struct DashboardScreen: View {
                         )
                         .padding(.horizontal)
                         
+                        Divider()
+                            .padding()
+                        
                         ContentHeaderView(title: "Catatan", subtitle: "Hal-hal penting mengenai perkembangan \(babyName)", navigationLink: AnyView(Text("Detail")))
-                            .padding(.top)
                         
                         Text("Tidak ada catatan penting")
                             .padding(.vertical, 80)
                     }
                 }
                 
-                .navigationTitle("\(geo.frame(in: .global).minY < 100 ? "Progres" : "Hi, \(babyName)!")")
+                .navigationTitle("\(geo.frame(in: .global).minY < 100 ? "Beranda" : "Hi, \(babyName)!")")
                 .toolbar {
                     // Milestone dropdown
                     ToolbarItem(placement: .navigationBarLeading) {
                         Button {
                             milestonePeriod.toggle()
                         } label: {
-                            Text("Bulan ke-\(appData.selectedMonth)")
+                            Text("Bulan ke-\(selectedMonth)")
                             
                             Image(systemName: "chevron.down")
                                 .bold()
@@ -95,7 +99,7 @@ struct DashboardScreen: View {
                         Button {
                             profileSwitcher.toggle()
                         } label: {
-                            ProfileAvatarViewV2(photo: vm.babies.first?.photo!)
+                            ProfileAvatarViewV2(photo: viewModel.babies.first?.photo!)
                         }
                     }
                 }
