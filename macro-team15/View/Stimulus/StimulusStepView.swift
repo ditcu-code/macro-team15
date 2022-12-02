@@ -13,10 +13,10 @@ struct StimulusStepView: View {
     let description: String
     
     var body: some View {
-        HStack {
+        HStack(spacing: 15) {
             Text("\(order)")
+                .font(.custom(FontType.semiBold.rawValue, size: 18))
                 .foregroundColor(Color.ui.secondary)
-                .fontWeight(.heavy)
                 .padding(10)
                 .background {
                     Circle()
@@ -24,18 +24,19 @@ struct StimulusStepView: View {
                 }
             
             Text(description)
-                .fontWeight(.medium)
+                .font(.custom(FontType.regular.rawValue, size: 14))
                 .foregroundColor(Color.ui.secondary)
-                .padding(.leading, 4)
+
+            Spacer(minLength: 1)
         }
         .padding()
         .background {
             RoundedRectangle(cornerRadius: 20)
                 .foregroundColor(.white)
-                .shadow(color: .black.opacity(0.2), radius: 8)
+                .shadow(color: .gray.opacity(0.5), radius: 2, x: 0, y: 1)
         }
         .padding(.horizontal)
-        .padding(.vertical, 10)
+        .padding(.bottom, 10)
     }
 }
 

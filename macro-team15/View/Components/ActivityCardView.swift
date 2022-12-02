@@ -61,11 +61,11 @@ struct ActivityCardView_Previews: PreviewProvider {
 struct ActivityCardViewV2: View {
     
     let stimulus: Stimulus
-    let navigationLink: AnyView
+    let allStimulus: [Stimulus]
     
     var body: some View {
         NavigationLink {
-            navigationLink
+            StimulusDetailView(stimulus: stimulus, allStimulus: allStimulus)
         } label: {
             VStack(spacing: 20) {
                 Image.ui.tummyTime
@@ -95,8 +95,8 @@ struct ActivityCardViewV2: View {
                 Color.white
             )
             .cornerRadius(20)
-            .padding(.trailing)
-            .padding(.vertical, 5)
+//            .padding(.trailing)
+            .padding([.vertical, .trailing], 5)
             .shadow(color: .gray.opacity(0.5), radius: 2, x: 0, y: 1)
         }
     }

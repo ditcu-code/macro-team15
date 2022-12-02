@@ -8,70 +8,84 @@
 import SwiftUI
 
 struct StimulusDetailView: View {
+    let stimulus: Stimulus
+    let allStimulus: [Stimulus]
+    
+    @ObservedObject var vm = StimulusDetailViewModel()
+    
+
+    init(stimulus: Stimulus, allStimulus: [Stimulus], vm: StimulusDetailViewModel = StimulusDetailViewModel()) {
+        self.stimulus = stimulus
+        self.allStimulus = allStimulus
+        self.vm = vm
+        self.vm.getMaterial(stimulus: stimulus)
+    }
+    
     var body: some View {
-        ZStack {
-            BackgroundView()
-                .edgesIgnoringSafeArea(.all)
+        ScrollView {
+            HighlightedStimulusViewV2(withCTA: false, stimulus: stimulus)
             
-            ScrollView {
-                HighlightedStimulusView(withCTA: false)
-
-                Divider()
-                    .padding(.top)
-                    .padding(.bottom, 8)
-
+            Divider()
+                .padding(.top)
+                .padding(.bottom, 8)
+            
+            if let materials = vm.materials, materials.count > 0 {
                 ContentHeaderView(title: "Material", subtitle: "Peralatan untuk mendukung aktivitas ini", navigationLink: nil)
-
+                
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
                         Spacer()
                             .padding(.leading, 10)
-
-                        ForEach(0 ..< 5) { item in
-                            StimulusMaterialView()
+                        
+                        
+                        ForEach(materials, id: \.self) { item in
+                            StimulusMaterialView(material: item)
                                 .padding(.trailing, 10)
                         }
                     }
                 }
-                .padding(.top)
-
-                Divider()
-                    .padding(.top)
-                    .padding(.bottom, 12)
-
-                ContentHeaderView(title: "Langkah-langkah", subtitle: "Panduan untuk aktivitas ini", navigationLink: nil)
                 
-                ForEach(1 ..< 5) { item in
-                    StimulusStepView(order: item, description: "Lakukan Tummy Time di tempat yang datar seperti lantai, kasur, atau di atas perut dan pangkuan bunda")
-                }
-
-                Button {
-
-                } label: {
-                    Label("Abadikan momen", systemImage: "camera")
-                }
-                .buttonStyle(PrimaryButtonStyle())
-                .padding()
-
                 Divider()
-
-                Group {
-                    ContentHeaderView(title: "Aktivitas lainnya", subtitle: "Kegiatan untuk mendukung milestone lainnya", navigationLink: nil)
-                        .padding(.top)
-                    
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack {
-                            Spacer()
-                                .padding(.leading, 8)
-
-                            ForEach(0 ..< 5) { item in
-                                ActivityCardView(title: "Tummy Time", subtitle: "Aktivitas ini dapat mendukung pencapaian motorik dan kognitif!", navigationLink: AnyView(Text("Detail")))
-                            }
+                    .padding(.bottom, 12)
+            }
+            
+            
+            ContentHeaderView(title: "Langkah-langkah", subtitle: "Panduan untuk aktivitas ini", navigationLink: nil)
+            
+            
+            ForEach(Array(stimulus.activities.enumerated()), id: \.offset) { index, element in
+                StimulusStepView(order: index + 1, description: element)
+            }
+            
+            Button {
+                
+            } label: {
+                Label("Abadikan momen", systemImage: "camera")
+            }
+            .buttonStyle(PrimaryButtonStyle())
+            .padding()
+            
+            Divider()
+            
+            Group {
+                ContentHeaderView(title: "Aktivitas lainnya", subtitle: "Kegiatan untuk mendukung milestone lainnya", navigationLink: nil)
+                    .padding(.top)
+                
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack {
+                        Spacer()
+                            .padding(.leading, 8)
+                        
+                        ForEach(allStimulus) { item in
+                            ActivityCardViewV2(stimulus: item, allStimulus: allStimulus.filter({$0 != item}))
                         }
                     }
-                    .padding(.vertical)
                 }
             }
+        }
+        .background {
+            BackgroundView()
+                .edgesIgnoringSafeArea(.all)
         }
         
         .navigationTitle(Text("Detail Aktivitas"))
@@ -88,11 +102,11 @@ struct StimulusDetailView: View {
         }
     }
 }
-
-struct StimulusDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            StimulusDetailView()
-        }
-    }
-}
+//
+//struct StimulusDetailView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NavigationView {
+//            StimulusDetailView(stimulus: StimulusData.getAll()[2])
+//        }
+//    }
+//}

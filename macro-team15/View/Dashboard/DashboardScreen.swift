@@ -35,7 +35,7 @@ struct DashboardScreen: View {
                                 .padding(.leading, 8)
                             
                             ForEach(vm.getStimulus().dropFirst()) { item in
-                                ActivityCardViewV2(stimulus: item, navigationLink: AnyView(Text("Detail")))
+                                ActivityCardViewV2(stimulus: item, allStimulus: vm.getStimulus())
                             }
                         }
                     }

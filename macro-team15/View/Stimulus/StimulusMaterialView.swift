@@ -8,24 +8,27 @@
 import SwiftUI
 
 struct StimulusMaterialView: View {
+    var material: ActivityMaterial
+    
     var body: some View {
-        HStack {
-            Image.ui.placeholder
+        HStack(spacing: 20) {
+            Image("bukuBergambar")
                 .resizable()
-                .frame(width: 100, height: 75)
-                .aspectRatio(contentMode: .fill)
+                .aspectRatio(contentMode: .fit)
+                .frame(maxWidth: 75)
             
-            Text("Buku bergambar")
-                .fontWeight(.semibold)
+            Text(material.name)
+                .font(.custom(FontType.semiBold.rawValue, size: 14))
                 .foregroundColor(Color.ui.secondary)
-                .frame(width: 90)
+                .frame(width: 100)
                 .lineLimit(3)
+            
         }
     }
 }
 
 struct StimulusMaterialView_Previews: PreviewProvider {
     static var previews: some View {
-        StimulusMaterialView()
+        StimulusMaterialView(material: MaterialData.getAll()[1])
     }
 }

@@ -81,6 +81,7 @@ struct HighlightedStimulusViewV2: View {
                     .font(.custom(FontType.semiBold.rawValue, size: 30))
                     .padding(.vertical, 3)
                     .foregroundColor(Color.ui.primary)
+                    .multilineTextAlignment(.center)
                 
                 Text("Aktivitas ini dapat mendukung pencapaian \(StringManipulation.categoryStimulus(cat: stimulus.categories))")
                     .font(.custom(FontType.light.rawValue, size: 16))
