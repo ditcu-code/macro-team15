@@ -15,7 +15,7 @@ enum Tabs: String, CaseIterable, Identifiable {
 enum MilestoneCategory: String, CaseIterable {
     case motoric = "Motorik"
     case cognitive = "Kognitif"
-    case social = "Social & Emosional"
+    case social = "Sosial & Emosional"
     case language = "Bahasa"
 }
 
