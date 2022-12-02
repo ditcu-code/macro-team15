@@ -20,6 +20,7 @@ extension Image {
         let tuntunHand = Image("TuntunHand")
         let tummyTime = Image("tummyTime")
         let tuntunNoNote = Image("TuntunNoNote")
+        let milestoneIcon = Image("milestoneIcon")
     }
 
 }

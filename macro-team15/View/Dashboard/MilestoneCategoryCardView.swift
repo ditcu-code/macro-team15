@@ -21,7 +21,7 @@ struct MilestoneCategoryCardView: View {
                 
                 ForEach(0 ..< 5) { item in
                     NavigationLink {
-                        MilestoneDetailView()
+                        MilestoneDetailView(milestone: MilestoneData.getAll()[1])
                     } label: {
                         VStack {
                             Divider()

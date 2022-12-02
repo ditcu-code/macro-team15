@@ -19,6 +19,7 @@
 		0E1C86E72939DB4000195E04 /* FontType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1C86E62939DB4000195E04 /* FontType.swift */; };
 		0E1C86E9293A0F9E00195E04 /* StringManipulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1C86E8293A0F9E00195E04 /* StringManipulation.swift */; };
 		0E1C86EB293A14F000195E04 /* MilestoneCategoryCardDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1C86EA293A14F000195E04 /* MilestoneCategoryCardDashboardView.swift */; };
+		0E1C86ED293A439200195E04 /* StimulusDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1C86EC293A439200195E04 /* StimulusDetailViewModel.swift */; };
 		0E2F9A912937396900DDAA28 /* MilestoneCategoryCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2F9A902937396900DDAA28 /* MilestoneCategoryCardViewModel.swift */; };
 		0E2F9A932937487D00DDAA28 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2F9A922937487D00DDAA28 /* AppData.swift */; };
 		0E2F9A962937657F00DDAA28 /* BabyMilestone+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2F9A942937657F00DDAA28 /* BabyMilestone+CoreDataClass.swift */; };
@@ -105,6 +106,7 @@
 		0E1C86E62939DB4000195E04 /* FontType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontType.swift; sourceTree = "<group>"; };
 		0E1C86E8293A0F9E00195E04 /* StringManipulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringManipulation.swift; sourceTree = "<group>"; };
 		0E1C86EA293A14F000195E04 /* MilestoneCategoryCardDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneCategoryCardDashboardView.swift; sourceTree = "<group>"; };
+		0E1C86EC293A439200195E04 /* StimulusDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StimulusDetailViewModel.swift; sourceTree = "<group>"; };
 		0E2F9A902937396900DDAA28 /* MilestoneCategoryCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneCategoryCardViewModel.swift; sourceTree = "<group>"; };
 		0E2F9A922937487D00DDAA28 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		0E2F9A942937657F00DDAA28 /* BabyMilestone+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BabyMilestone+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -488,6 +490,7 @@
 			isa = PBXGroup;
 			children = (
 				FAE17339293202110076ABFA /* StimulusDetailView.swift */,
+				0E1C86EC293A439200195E04 /* StimulusDetailViewModel.swift */,
 				FAE1733D2932140F0076ABFA /* StimulusStepView.swift */,
 				FAE1733B29320A7E0076ABFA /* StimulusMaterialView.swift */,
 			);
@@ -625,6 +628,7 @@
 				FAE1733A293202110076ABFA /* StimulusDetailView.swift in Sources */,
 				FA13CD6C2914FCDA00616699 /* Color.swift in Sources */,
 				FACDC5DB292F5DE4007B51A4 /* NoteView.swift in Sources */,
+				0E1C86ED293A439200195E04 /* StimulusDetailViewModel.swift in Sources */,
 				0E0C8BE12938EA16009ABC42 /* MaterialData.swift in Sources */,
 				0E7456F429069B4D00D792E6 /* ContentView.swift in Sources */,
 				0E8FE4FD29364D9700DBF715 /* MilestoneData.swift in Sources */,

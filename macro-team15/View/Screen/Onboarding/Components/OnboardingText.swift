@@ -12,7 +12,7 @@ struct OnboardingText: View {
     
     var body: some View {
         Text(text)
-            .font(.custom(FontType.regular.rawValue, size: 19))
+            .font(.custom(FontType.semiBold.rawValue, size: 19))
             .foregroundColor(Color.ui.secondary)
             .padding(10)
     }

@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+import Combine
 
 class DashboardViewModel: ObservableObject {
     @Published var babies: [Baby] = []
@@ -17,8 +18,15 @@ class DashboardViewModel: ObservableObject {
     @Published var milestoneData: [Milestone] = MilestoneData.getAll()
     @Published var stimulusData: [Stimulus] = StimulusData.getAll()
     
+    private var cancellable: AnyCancellable?
+    
     init () {
         getData()
+        cancellable = NotificationCenter.default.publisher(for: NSManagedObjectContext.didSaveObjectsNotification, object: nil)
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { _ in
+                self.getData()
+            })
     }
     
     func getStimulus() -> [Stimulus] {

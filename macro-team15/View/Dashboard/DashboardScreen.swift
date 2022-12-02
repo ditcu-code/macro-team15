@@ -11,6 +11,7 @@ struct DashboardScreen: View {
     @State private var selectedMonth: Int = 1
     @State private var milestonePeriod: Bool = false
     @State private var profileSwitcher: Bool = false
+    @State private var refreshId: Int = 1
     
     @ObservedObject var vm = DashboardViewModel()
     @ObservedObject var appData = AppData()
@@ -22,7 +23,7 @@ struct DashboardScreen: View {
             GeometryReader { geo in
                 ScrollView {
                     if let stimulus = vm.getStimulus().first {
-                        HighlightedStimulusViewV2(withCTA: true, stimulus: stimulus)
+                        HighlightedStimulusView(withCTA: true, stimulus: stimulus, allStimulus: vm.getStimulus())
                     }
 
                     Divider().padding(.vertical)
@@ -35,7 +36,7 @@ struct DashboardScreen: View {
                                 .padding(.leading, 8)
                             
                             ForEach(vm.getStimulus().dropFirst()) { item in
-                                ActivityCardViewV2(stimulus: item, navigationLink: AnyView(Text("Detail")))
+                                ActivityCardViewV2(stimulus: item, allStimulus: vm.getStimulus())
                             }
                         }
                     }
@@ -47,7 +48,7 @@ struct DashboardScreen: View {
                         ForEach(MilestoneCategory.allCases, id: \.self) { category in
                             let listMilestone = vm.milestoneData.filter{$0.category == category && $0.month == appData.selectedMonth}
                             
-                            MilestoneCategoryCardViewV2(category: category, milestone: listMilestone, navigationLink: AnyView(MilestoneDetailView()))
+                            MilestoneCategoryCardViewV2(category: category, milestone: listMilestone).id(refreshId)
                             if category != MilestoneCategory.allCases.last {
                                 Divider()
                             }
@@ -58,6 +59,9 @@ struct DashboardScreen: View {
                             .foregroundColor(.white)
                     )
                     .padding(.horizontal)
+                    .onAppear{
+                        refreshId += 1
+                    }
                     
                     ContentHeaderView(title: "Catatan", subtitle: "Hal-hal penting mengenai perkembangan \(babyName)", navigationLink: AnyView(Text("Detail")))
                         .padding(.top)

@@ -30,10 +30,11 @@ struct OnboardingView: View {
                 }
                 .foregroundColor(Color.ui.primary)
                 .padding()
+                .offset(y: 30)
             }.zIndex(1)
             
             ZStack(alignment: .bottom) {
-                Color.green.opacity(0.1).ignoresSafeArea()
+                BackgroundView()
                 
                 VStack {
                     if (viewModel.step != 3) {

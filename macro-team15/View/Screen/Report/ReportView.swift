@@ -13,6 +13,7 @@ struct ReportView: View {
     @State private var monthVersusPeriod = false
     @State private var month: Int = 1
     @State private var monthVersus: Int = 0
+    @State private var refreshId: Int = 1
     let noteCount = 0
     
     var body: some View {
@@ -146,7 +147,7 @@ struct ReportView: View {
                 VStack {
                     // Motor
                     ForEach(0 ..< 4) { item in
-                        MilestoneCategoryCardViewV2(category: .motoric, milestone: [Milestone(id: 1, titleEN: "titleEN", title: "title", month: 1, warningMonth: 2, category: .motoric, stimulusID: nil)], navigationLink: AnyView(Text("Nav")))
+                        MilestoneCategoryCardViewV2(category: .motoric, milestone: [Milestone(id: 1, titleEN: "titleEN", title: "title", month: 1, warningMonth: 2, category: .motoric, stimulusID: nil)])
 
                         if item != 3 {
                             Divider()

@@ -16,16 +16,15 @@ struct ContentHeaderView: View {
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 10) {
+                
                 Text(title)
-                    .font(.title2)
-                    .fontWeight(.semibold)
-                    .foregroundColor(Color.ui.secondary)
+                    .font(.custom(FontType.semiBold.rawValue, size: 21))
                 
                 Text(subtitle)
-                    .font(.subheadline)
-                    .fontWeight(.light)
-                    .foregroundColor(Color.ui.secondary)
-            }
+                    .font(.custom(FontType.light.rawValue, size: 13))
+                
+            }.foregroundColor(Color.ui.secondary)
+            
             
             Spacer()
             

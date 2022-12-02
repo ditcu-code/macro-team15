@@ -32,7 +32,7 @@ struct ActivityCardView: View {
                         .foregroundColor(Color.ui.secondary)
                         
                     Text(subtitle)
-                        .font(.custom(FontType.light.rawValue, size: 12))
+                        .font(.custom(FontType.light.rawValue, size: 13))
                         .foregroundColor(Color.ui.text)
                 }
                 .multilineTextAlignment(.leading)
@@ -61,11 +61,11 @@ struct ActivityCardView_Previews: PreviewProvider {
 struct ActivityCardViewV2: View {
     
     let stimulus: Stimulus
-    let navigationLink: AnyView
+    let allStimulus: [Stimulus]
     
     var body: some View {
         NavigationLink {
-            navigationLink
+            StimulusDetailView(stimulus: stimulus, allStimulus: allStimulus)
         } label: {
             VStack(spacing: 20) {
                 Image.ui.tummyTime
@@ -82,7 +82,7 @@ struct ActivityCardViewV2: View {
                         .foregroundColor(Color.ui.secondary)
                         
                     Text("Aktivitas ini dapat mendukung pencapaian \(StringManipulation.categoryStimulus(cat: stimulus.categories))")
-                        .font(.custom(FontType.light.rawValue, size: 12))
+                        .font(.custom(FontType.light.rawValue, size: 13))
                         .foregroundColor(Color.ui.text)
                 }
                 .multilineTextAlignment(.leading)
@@ -95,8 +95,8 @@ struct ActivityCardViewV2: View {
                 Color.white
             )
             .cornerRadius(20)
-            .padding(.trailing)
-            .padding(.vertical, 5)
+//            .padding(.trailing)
+            .padding([.vertical, .trailing], 5)
             .shadow(color: .gray.opacity(0.5), radius: 2, x: 0, y: 1)
         }
     }
