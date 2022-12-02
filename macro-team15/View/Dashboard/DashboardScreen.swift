@@ -20,10 +20,11 @@ struct DashboardScreen: View {
         NavigationView {
             GeometryReader { geo in
                 ScrollView {
-                    HighlightedStimulusView(withCTA: true)
-                    
-                    Divider()
-                        .padding(.vertical)
+                    if let stimulus = vm.getStimulus().first {
+                        HighlightedStimulusViewV2(withCTA: true, stimulus: stimulus)
+                    }
+
+                    Divider().padding(.vertical)
                     
                     ContentHeaderView(title: "Aktivitas", subtitle: "Dirancang untuk mendukung pencapaian \(babyName)", navigationLink: AnyView(Text("Detail")))
                     
@@ -32,8 +33,8 @@ struct DashboardScreen: View {
                             Spacer()
                                 .padding(.leading, 8)
                             
-                            ForEach(0 ..< 5) { item in
-                                ActivityCardView(title: "Tummy Time", subtitle: "Aktivitas ini dapat mendukung pencapaian motorik dan kognitif!", navigationLink: AnyView(Text("Detail")))
+                            ForEach(vm.getStimulus().dropFirst()) { item in
+                                ActivityCardViewV2(stimulus: item, navigationLink: AnyView(Text("Detail")))
                             }
                         }
                     }
@@ -43,12 +44,9 @@ struct DashboardScreen: View {
                     
                     VStack {
                         ForEach(MilestoneCategory.allCases, id: \.self) { category in
-                            let list = vm.milestoneData.filter { item in
-                                item.category == category &&
-                                item.month == appData.selectedMonth
-                            }
+                            let listMilestone = vm.milestoneData.filter{$0.category == category && $0.month == appData.selectedMonth}
                             
-                            MilestoneCategoryCardViewV2(category: category, milestone: list, navigationLink: AnyView(MilestoneDetailView()))
+                            MilestoneCategoryCardViewV2(category: category, milestone: listMilestone, navigationLink: AnyView(MilestoneDetailView()))
                             if category != MilestoneCategory.allCases.last {
                                 Divider()
                             }
