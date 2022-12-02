@@ -20,6 +20,8 @@
 		0E1C86E9293A0F9E00195E04 /* StringManipulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1C86E8293A0F9E00195E04 /* StringManipulation.swift */; };
 		0E1C86EB293A14F000195E04 /* MilestoneCategoryCardDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1C86EA293A14F000195E04 /* MilestoneCategoryCardDashboardView.swift */; };
 		0E1C86ED293A439200195E04 /* StimulusDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1C86EC293A439200195E04 /* StimulusDetailViewModel.swift */; };
+		0E1C86F2293A6D1600195E04 /* StimuliView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1C86F0293A6D1600195E04 /* StimuliView.swift */; };
+		0E1C86F3293A6D1600195E04 /* ActivityCardLongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1C86F1293A6D1600195E04 /* ActivityCardLongView.swift */; };
 		0E2F9A912937396900DDAA28 /* MilestoneCategoryCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2F9A902937396900DDAA28 /* MilestoneCategoryCardViewModel.swift */; };
 		0E2F9A932937487D00DDAA28 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2F9A922937487D00DDAA28 /* AppData.swift */; };
 		0E2F9A962937657F00DDAA28 /* BabyMilestone+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2F9A942937657F00DDAA28 /* BabyMilestone+CoreDataClass.swift */; };
@@ -107,6 +109,8 @@
 		0E1C86E8293A0F9E00195E04 /* StringManipulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringManipulation.swift; sourceTree = "<group>"; };
 		0E1C86EA293A14F000195E04 /* MilestoneCategoryCardDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneCategoryCardDashboardView.swift; sourceTree = "<group>"; };
 		0E1C86EC293A439200195E04 /* StimulusDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StimulusDetailViewModel.swift; sourceTree = "<group>"; };
+		0E1C86F0293A6D1600195E04 /* StimuliView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StimuliView.swift; sourceTree = "<group>"; };
+		0E1C86F1293A6D1600195E04 /* ActivityCardLongView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityCardLongView.swift; sourceTree = "<group>"; };
 		0E2F9A902937396900DDAA28 /* MilestoneCategoryCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneCategoryCardViewModel.swift; sourceTree = "<group>"; };
 		0E2F9A922937487D00DDAA28 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		0E2F9A942937657F00DDAA28 /* BabyMilestone+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BabyMilestone+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -482,7 +486,6 @@
 		FA888EDF293A03A80035C733 /* Note */ = {
 			isa = PBXGroup;
 			children = (
-				FA888EE0293A03C40035C733 /* NotesView.swift */,
 			);
 			path = Note;
 			sourceTree = "<group>";
@@ -498,6 +501,8 @@
 		FAE17338293201F40076ABFA /* Stimulus */ = {
 			isa = PBXGroup;
 			children = (
+				0E1C86F1293A6D1600195E04 /* ActivityCardLongView.swift */,
+				0E1C86F0293A6D1600195E04 /* StimuliView.swift */,
 				FAE17339293202110076ABFA /* StimulusDetailView.swift */,
 				0E1C86EC293A439200195E04 /* StimulusDetailViewModel.swift */,
 				FAE1733D2932140F0076ABFA /* StimulusStepView.swift */,
@@ -622,10 +627,10 @@
 				0E2F9A912937396900DDAA28 /* MilestoneCategoryCardViewModel.swift in Sources */,
 				FAB8F3E7291A0570008F7C59 /* Date.swift in Sources */,
 				0E8FE4F82935AB3E00DBF715 /* TuntunLoading.swift in Sources */,
-				FA888EE1293A03C40035C733 /* NotesView.swift in Sources */,
 				FA4513CD292BE44D002ADD1A /* HighlightedStimulusView.swift in Sources */,
 				0E7764FC291A4ABD005792FF /* BadgesScreen.swift in Sources */,
 				0E6F61F7290FC790005C5415 /* ReportScreen.swift in Sources */,
+				0E1C86F3293A6D1600195E04 /* ActivityCardLongView.swift in Sources */,
 				0EA7D738292E24010024DECC /* OnboardingView.swift in Sources */,
 				0E8FE4F229349DFF00DBF715 /* OnboardingText.swift in Sources */,
 				0E6F61F4290FC75B005C5415 /* MilestoneScreen.swift in Sources */,
@@ -645,6 +650,7 @@
 				FAF8545C29349463009C8CA5 /* AlbumView.swift in Sources */,
 				0E576EEC290A7AF900341C88 /* CloudKitService.swift in Sources */,
 				FA48EFBC292CD5D0009ED62B /* ActivityCardView.swift in Sources */,
+				0E1C86F2293A6D1600195E04 /* StimuliView.swift in Sources */,
 				FA888EDE2939FAEF0035C733 /* MilestoneCategoryCardViewReport.swift in Sources */,
 				FA48EFBE292D3BF7009ED62B /* MilestoneCategoryCardView.swift in Sources */,
 				FAF8546029349AC4009C8CA5 /* ProfileAvatarView.swift in Sources */,
