@@ -81,8 +81,6 @@ struct StimulusDetailView: View {
                     }
                 }
             }
-        .background {
-            BackgroundView()
         }
         .background {
             BackgroundView()
