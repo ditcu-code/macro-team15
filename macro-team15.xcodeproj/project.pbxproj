@@ -32,7 +32,6 @@
 		0E7764FC291A4ABD005792FF /* BadgesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7764FB291A4ABD005792FF /* BadgesScreen.swift */; };
 		0E7764FE291BBC86005792FF /* BadgesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7764FD291BBC86005792FF /* BadgesContainer.swift */; };
 		0E8FE4CF2933C41600DBF715 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE4CE2933C41600DBF715 /* ContentViewModel.swift */; };
-		0E8FE4D72933E1ED00DBF715 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE4D62933E1ED00DBF715 /* ViewModel.swift */; };
 		0E8FE4E22933ED1500DBF715 /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE4E12933ED1500DBF715 /* ReportView.swift */; };
 		0E8FE4E529349C3F00DBF715 /* TuntunIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE4E429349C3F00DBF715 /* TuntunIllustration.swift */; };
 		0E8FE4E729349C7D00DBF715 /* GreetingOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE4E629349C7D00DBF715 /* GreetingOnboarding.swift */; };
@@ -116,7 +115,6 @@
 		0E7764FB291A4ABD005792FF /* BadgesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesScreen.swift; sourceTree = "<group>"; };
 		0E7764FD291BBC86005792FF /* BadgesContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesContainer.swift; sourceTree = "<group>"; };
 		0E8FE4CE2933C41600DBF715 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
-		0E8FE4D62933E1ED00DBF715 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		0E8FE4DF2933E52300DBF715 /* macro-team15.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "macro-team15.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E8FE4E12933ED1500DBF715 /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
 		0E8FE4E429349C3F00DBF715 /* TuntunIllustration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuntunIllustration.swift; sourceTree = "<group>"; };
@@ -279,7 +277,6 @@
 				FA13CD6A2914FCCD00616699 /* Extensions */,
 				0EDCE4352906A3140092F759 /* Model */,
 				0EDCE4362906A4D60092F759 /* View */,
-				0E8FE4D52933E1E000DBF715 /* ViewModel */,
 				0E576EEA290A7AD400341C88 /* Service */,
 				0E7456F529069B4E00D792E6 /* Assets.xcassets */,
 				0E7456F729069B4E00D792E6 /* Preview Content */,
@@ -323,14 +320,6 @@
 				FA241A9C2930FBD600CAA09B /* KeyboardResponder.swift */,
 			);
 			path = Utilities;
-			sourceTree = "<group>";
-		};
-		0E8FE4D52933E1E000DBF715 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				0E8FE4D62933E1ED00DBF715 /* ViewModel.swift */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		0E8FE4E02933ECAB00DBF715 /* Report */ = {
@@ -590,7 +579,6 @@
 				FA4513CD292BE44D002ADD1A /* HighlightedStimulusView.swift in Sources */,
 				0E7764FC291A4ABD005792FF /* BadgesScreen.swift in Sources */,
 				0E6F61F7290FC790005C5415 /* ReportScreen.swift in Sources */,
-				0E8FE4D72933E1ED00DBF715 /* ViewModel.swift in Sources */,
 				0EA7D738292E24010024DECC /* OnboardingView.swift in Sources */,
 				0E8FE4F229349DFF00DBF715 /* OnboardingText.swift in Sources */,
 				0E6F61F4290FC75B005C5415 /* MilestoneScreen.swift in Sources */,
