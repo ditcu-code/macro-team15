@@ -11,7 +11,7 @@ struct StimulusMaterialView: View {
     var material: ActivityMaterial
     
     var body: some View {
-        HStack(spacing: 20) {
+        HStack(spacing: 10) {
             Image("bukuBergambar")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
@@ -20,10 +20,11 @@ struct StimulusMaterialView: View {
             Text(material.name)
                 .font(.custom(FontType.semiBold.rawValue, size: 14))
                 .foregroundColor(Color.ui.secondary)
-                .frame(width: 100)
                 .lineLimit(3)
             
         }
+        .padding(.horizontal)
+        .frame(maxWidth: 200)
     }
 }
 
