@@ -8,44 +8,55 @@
 import SwiftUI
 
 struct RadarChart: View {
-    @State var data: [Double]
-    var dataVersus: [Double]?
-    var max: [Double]
+    var data: [Int]
+    var dataVersus: [Int]?
+    var max: [Int]
     let gridColor: Color
     let dataColor: Color
-    @State private var pathProgress = 0.0
+    @Binding var scaleMonth: Double
+    @Binding var scaleVersus: Double
     
     var body: some View {
         ZStack {
+            
             RadarChartGrid(categories: max.count, divisions: 10)
                 .stroke(gridColor.opacity(0.5), lineWidth: 0.2)
-
-            RadarChartPath(data: data, max: max)
+            
+            RadarChartPath(data: data.map{Double($0)}, max: max.map{Double($0)})
                 .fill(dataColor)
-            //                .scaleEffect(pathProgress)
-            //                .animation(.spring(), value: pathProgress)
+                .scaleEffect(scaleMonth)
+                .animation(.spring(), value: scaleMonth)
+            
             if let dataVersus = dataVersus {
-                RadarChartPath(data: dataVersus, max: max)
+                RadarChartPath(data: dataVersus.map{Double($0)}, max: max.map{Double($0)})
                     .fill(dataColor)
+                    .scaleEffect(scaleVersus)
+                    .animation(.spring(), value: scaleVersus)
             }
-        }.rotationEffect(.degrees(45))
-    }
-}
-
-struct RadarChart_Previews: PreviewProvider {
-    
-    static var previews: some View {
-        ZStack {
-            RadarChart(
-                data: [9.0, 14.0, 15.0, 20.0],
-                dataVersus: [10.0, 18.0, 19.0, 23.0],
-                max: [12.0, 20.0, 25.0, 35.0],
-                gridColor: .black,
-                dataColor: .green.opacity(0.3)
-            )
+            
+        }
+        .rotationEffect(.degrees(45))
+        .onAppear {
+            scaleMonth = 1
+            scaleVersus = 1
         }
     }
 }
+
+//struct RadarChart_Previews: PreviewProvider {
+//    
+//    static var previews: some View {
+//        ZStack {
+//            RadarChart(
+//                data: [9, 14, 15, 20],
+//                dataVersus: [10, 18, 19, 23],
+//                max: [12, 20, 25, 35],
+//                gridColor: .black,
+//                dataColor: .green.opacity(0.3)
+//            )
+//        }
+//    }
+//}
 
 
 struct RadarChartGrid: Shape {

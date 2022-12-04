@@ -25,6 +25,7 @@ struct ContentView: View {
 
 struct TabViews: View {
     @State private var selectedTab: Tabs = .home
+    var appData = AppData()
     
     var body: some View {
         TabView(selection: $selectedTab) {
@@ -45,6 +46,8 @@ struct TabViews: View {
 //                    Label("Album", systemImage: "photo.on.rectangle")
 //                }
 //                .tag(Tabs.report)
+        }.onDisappear {
+            AppData.setSelectedMonth(appData.babyAgeMonth)
         }
     }
 }

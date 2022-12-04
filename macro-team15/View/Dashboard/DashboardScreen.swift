@@ -51,6 +51,10 @@ struct DashboardScreen: View {
                         
                         ProgressBar(currentProgress: CGFloat(Double(vm.totalCompletedMilestone)/Double(vm.totalMilestone)))
                             .animation(.spring(), value: vm.totalCompletedMilestone)
+                            .onChange(of: appData.selectedMonth) { newValue in
+                                vm.countCompletedMilestone()
+                                vm.countTotalMilestone()
+                            }
                         
                         Text("\(vm.totalCompletedMilestone) dari \(vm.totalMilestone) perkembangan tercapai")
                             .font(.subheadline)
@@ -63,11 +67,10 @@ struct DashboardScreen: View {
                             
                             let listMilestone = vm.milestoneData.filter{$0.category == category && $0.month == appData.selectedMonth}
                             
-                            MilestoneCategoryCardViewV2(
-                                category: category,
-                                milestone: listMilestone
-                            )
-                            .id(refreshId)
+                            MilestoneCategoryCardDashboardView(category: category, milestone: listMilestone).id(refreshId)
+                            if category != MilestoneCategory.allCases.last {
+                                Divider()
+                            }
                         }
                     }
                     .background(

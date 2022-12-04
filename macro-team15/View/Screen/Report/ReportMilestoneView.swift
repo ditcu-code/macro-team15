@@ -9,13 +9,14 @@ import SwiftUI
 
 struct ReportMilestoneView: View {
     
-    let item: Milestone
+    let milestone: Milestone
+    let babyMilestone: BabyMilestone
     let color: Color
-    let navigationLink: AnyView
+//    let navigationLink: AnyView
     
     var body: some View {
         NavigationLink {
-            navigationLink
+            MilestoneDetailViewV2(milestone: milestone, cdMilestone: babyMilestone)
         } label: {
             VStack {
                 Divider()
@@ -23,7 +24,7 @@ struct ReportMilestoneView: View {
                 HStack {
                     Button {
                     } label: {
-                        Image(systemName: "checkmark.circle.fill")
+                        Image(systemName: babyMilestone.isChecked ? "checkmark.circle.fill" : "checkmark.circle")
                             .resizable()
                             .frame(width: 28, height: 28)
                             .foregroundColor(color)
@@ -31,12 +32,12 @@ struct ReportMilestoneView: View {
                     .padding(12)
                     
                     VStack(alignment: .leading, spacing: 4) {
-                        Text(item.title)
+                        Text(milestone.title)
+                            .font(.custom(FontType.light.rawValue, fixedSize: 14))
                             .multilineTextAlignment(.leading)
                         
-                        Text("Bulan ke-\(item.month)")
-                            .font(.subheadline)
-                            .fontWeight(.semibold)
+                        Text("Bulan ke-\(milestone.month)")
+                            .font(.custom(FontType.semiBold.rawValue, fixedSize: 12))
                             .foregroundColor(Color.ui.secondary)
                     }
                     
@@ -51,8 +52,8 @@ struct ReportMilestoneView: View {
     
 }
 
-struct ReportMilestoneView_Previews: PreviewProvider {
-    static var previews: some View {
-        ReportMilestoneView(item: Milestone(id: 1, titleEN: "titleEN", title: "title", month: 1, warningMonth: 2, category: .motoric, stimulusID: nil), color: Color.ui.motorPrimary, navigationLink: AnyView(Text("Nav")))
-    }
-}
+//struct ReportMilestoneView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ReportMilestoneView(item: Milestone(id: 1, titleEN: "titleEN", title: "title", month: 1, warningMonth: 2, category: .motoric, stimulusID: nil), color: Color.ui.motorPrimary)
+//    }
+//}

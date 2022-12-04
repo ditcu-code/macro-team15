@@ -36,7 +36,6 @@ class DashboardViewModel: ObservableObject {
         getBabies()
         countTotalMilestone()
         countCompletedMilestone()
-        getNotes()
     }
     
     func countTotalMilestone() {
@@ -46,7 +45,7 @@ class DashboardViewModel: ObservableObject {
     }
     
     func countCompletedMilestone() {
-        let count = BabyMilestone.getCompletedMilestone(with: Int16(appData.selectedMonth))?.count
+        let count = BabyMilestone.getCompletedMilestoneByMonth(with: Int16(appData.selectedMonth))?.count
         totalCompletedMilestone = count ?? 0
     }
     
@@ -79,8 +78,6 @@ class DashboardViewModel: ObservableObject {
     
     func getNotes() -> [BabyMilestoneNote] {
         let milestones = BabyMilestone.getNotesByMilestonePeriod(month: Int16(appData.selectedMonth))
-        print(appData.selectedMonth)
-        
         var notes = [BabyMilestoneNote]()
         milestones?.forEach { milestone in
             milestone.notes?.forEach({ note in

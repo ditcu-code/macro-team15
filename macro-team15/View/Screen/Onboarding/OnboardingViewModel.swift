@@ -44,8 +44,18 @@ class OnboardingViewModel: ObservableObject {
         )
         
         UserDefaults.standard.set(
-            selectedMonth,
+            name,
+            forKey: "currentBabyName"
+        )
+        
+        UserDefaults.standard.set(
+            Calendar.current.dateComponents([.month], from: birthDate, to: Date()).month,
             forKey: "selectedMonth"
+        )
+        
+        UserDefaults.standard.set(
+            Calendar.current.dateComponents([.month], from: birthDate, to: Date()).month,
+            forKey: "babyAgeMonth"
         )
         
         if BabyMilestone.getAll().isEmpty {
@@ -68,6 +78,9 @@ class OnboardingViewModel: ObservableObject {
             babyMilestone.baby = baby
             babyMilestone.id = UUID()
             babyMilestone.isChecked = false
+            babyMilestone.category = item.category.rawValue
+            babyMilestone.month = Int16(item.month)
+            babyMilestone.warningMonth = Int16(item.warningMonth)
             babyMilestone.milestoneID = Int16(item.id)
             babyMilestone.month = Int16(selectedMonth)
         }
