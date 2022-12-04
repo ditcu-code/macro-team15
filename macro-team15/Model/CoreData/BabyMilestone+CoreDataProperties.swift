@@ -19,6 +19,7 @@ extension BabyMilestone {
     @NSManaged public var id: UUID?
     @NSManaged public var isChecked: Bool
     @NSManaged public var milestoneID: Int16
+    @NSManaged public var month: Int16
     @NSManaged public var baby: Baby?
     @NSManaged public var notes: NSSet?
     
@@ -68,6 +69,16 @@ extension BabyMilestone : Identifiable {
         request.predicate = NSPredicate(format: "milestoneID == %@", milestoneID.description)
         guard let items = try? context.fetch(request) else { return nil }
         return items.first
+    }
+    
+    static func getCompletedMilestone(with month: Int16?) -> [BabyMilestone]? {
+        let context = PersistenceController.viewContext
+        guard let month = month else { return nil }
+        let request = BabyMilestone.fetchRequest()
+        request.predicate = NSPredicate(format: "month == %@", month.description)
+        request.predicate = NSPredicate(format: "isChecked == true")
+        guard let items = try? context.fetch(request) else { return nil }
+        return items
     }
     
 }

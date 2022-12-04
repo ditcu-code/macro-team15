@@ -12,6 +12,8 @@ import Combine
 class DashboardViewModel: ObservableObject {
     @Published var babies: [Baby] = []
     @Published var currentBaby: Baby? = nil
+    @Published var totalMilestone: Int = 0
+    @Published var totalCompletedMilestone: Int = 0
     @Published var stimuluses: [Stimulus] = []
 //    @Published var babyMilestones: [BabyMilestone] = []
     @Published var appData = AppData()
@@ -29,6 +31,25 @@ class DashboardViewModel: ObservableObject {
             })
     }
     
+    func getData() {
+        setCurrentBabyId()
+        getBabies()
+        countTotalMilestone()
+        countCompletedMilestone()
+//        getBabyMilestones()
+    }
+    
+    func countTotalMilestone() {
+        totalMilestone = milestoneData.filter { item in
+            item.month == appData.selectedMonth
+        }.count
+    }
+    
+    func countCompletedMilestone() {
+        let count = BabyMilestone.getCompletedMilestone(with: Int16(appData.selectedMonth))?.count
+        totalCompletedMilestone = count ?? 0
+    }
+    
     func getStimulus() -> [Stimulus] {
         var stimulus: [Stimulus] = []
         let listStimulusId = milestoneData
@@ -44,12 +65,6 @@ class DashboardViewModel: ObservableObject {
         }
         
         return stimulus
-    }
-    
-    func getData() {
-        setCurrentBabyId()
-        getBabies()
-//        getBabyMilestones()
     }
     
     func setCurrentBabyId() {

@@ -114,7 +114,16 @@ struct MilestoneDetailViewV2: View {
             ContentHeaderView(title: "Catatan", subtitle: "Hal-hal penting mengenai perkembangan Ceroy", navigationLink: nil)
             
             ScrollView {
+                Button {
+                    
+                } label: {
+                    Label("Tambah Catatan", systemImage: "plus.circle").labelStyle(.titleAndIcon)
+                }
+                .buttonStyle(PrimaryButtonStyle(isShort: true))
+                .padding(.horizontal)
+
                 NoteView(title: "Judul catatan", description: "Isi catatan", date: Date(), navigationLink: AnyView(NoteDetailView(title: "", note: "")))
+                    .padding(.vertical)
             }
         }
         .background {

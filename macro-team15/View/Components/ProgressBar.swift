@@ -15,7 +15,7 @@ struct ProgressBar: View {
         ZStack(alignment: .leading) {
             Capsule()
                 .foregroundColor(.black.opacity(0.1))
-                .frame(width: UIScreen.main.bounds.width - 60, height: 16)
+                .frame(width: UIScreen.main.bounds.width - 60, height: 15)
                 .padding(.horizontal)
             
             Capsule()

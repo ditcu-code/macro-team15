@@ -147,7 +147,7 @@ struct ReportView: View {
                 VStack {
                     // Motor
                     ForEach(0 ..< 4) { item in
-                        MilestoneCategoryCardViewV2(category: .motoric, milestone: [Milestone(id: 1, titleEN: "titleEN", title: "title", month: 1, warningMonth: 2, category: .motoric, stimulusID: nil)])
+                        MilestoneCategoryCardViewReport(category: .motoric, milestone: [Milestone(id: 1, titleEN: "titleEN", title: "title", month: 1, warningMonth: 2, category: .motoric, stimulusID: nil)], navigationLink: AnyView(Text("")))
 
                         if item != 3 {
                             Divider()
