@@ -81,4 +81,13 @@ extension BabyMilestone : Identifiable {
         return items
     }
     
+    static func getNotesByMilestonePeriod(month: Int16?) -> [BabyMilestone]? {
+        let context = PersistenceController.viewContext
+        guard let month = month else { return nil }
+        let request = BabyMilestone.fetchRequest()
+        request.predicate = NSPredicate(format: "month == %@", month.description)
+        guard let items = try? context.fetch(request) else { return nil }
+        return items
+    }
+    
 }
