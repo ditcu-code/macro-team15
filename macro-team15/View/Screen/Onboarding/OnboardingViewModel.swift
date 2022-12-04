@@ -71,8 +71,9 @@ class OnboardingViewModel: ObservableObject {
             let babyMilestone = BabyMilestone(context: context)
             babyMilestone.baby = baby
             babyMilestone.id = UUID()
-            babyMilestone.isChecked = false
+            babyMilestone.isChecked = true
             babyMilestone.category = item.category.rawValue
+            babyMilestone.month = Int16(item.month)
             babyMilestone.milestoneID = Int16(item.id)
         }
         PersistenceController.shared.save()

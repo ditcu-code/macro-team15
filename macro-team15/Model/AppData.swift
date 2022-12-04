@@ -10,6 +10,7 @@ import SwiftUI
 
 final class AppData: ObservableObject {
     @AppStorage("currentBabyId") var currentBabyId: String = ""
+    @AppStorage("currentBabyName") var currentBabyName: String = ""
     @AppStorage("selectedMonth") var selectedMonth: Int = 1
     @AppStorage("isDoneOnboarding") var isDoneOnboarding: Bool = false
     

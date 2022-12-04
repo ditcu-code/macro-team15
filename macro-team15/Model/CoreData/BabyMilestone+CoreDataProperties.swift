@@ -15,10 +15,12 @@ extension BabyMilestone {
         return NSFetchRequest<BabyMilestone>(entityName: "BabyMilestone")
     }
     
+    @NSManaged public var category: String?
     @NSManaged public var checkedDate: Date?
     @NSManaged public var id: UUID?
     @NSManaged public var isChecked: Bool
     @NSManaged public var milestoneID: Int16
+    @NSManaged public var month: Int16
     @NSManaged public var baby: Baby?
     @NSManaged public var notes: NSSet?
     
@@ -70,4 +72,14 @@ extension BabyMilestone : Identifiable {
         return items.first
     }
     
+    static func getCompletedMilestoneByCategory(with category: MilestoneCategory?, month: Int? = 0) -> [BabyMilestone]? {
+        let context = PersistenceController.viewContext
+        guard let category = category else { return nil }
+        guard let month = month else { return nil }
+        let request = BabyMilestone.fetchRequest()
+        request.predicate = NSPredicate(format: "category == %@ AND isChecked == true AND month <= \(month)", category.rawValue)
+//        request.predicate = NSPredicate(format: "month <= %@", month.description)
+        guard let items = try? context.fetch(request) else { return nil }
+        return items
+    }
 }
