@@ -26,7 +26,8 @@ struct DashboardScreen: View {
                         HighlightedStimulusView(withCTA: true, stimulus: stimulus, allStimulus: vm.getStimulus())
                     }
 
-                    Divider().padding(.vertical)
+                    Divider()
+                        .padding()
                     
                     ContentHeaderView(title: "Aktivitas", subtitle: "Dirancang untuk mendukung pencapaian \(babyName)", navigationLink: AnyView(Text("Detail")))
                     
@@ -41,17 +42,28 @@ struct DashboardScreen: View {
                         }
                     }
                     
-                    ContentHeaderView(title: "Milestone", subtitle: "Perkembangan \(babyName) di bulan ini", navigationLink: nil)
-                        .padding(.top)
+                    Divider()
+                        .padding()
                     
                     VStack {
+                    
+                        ContentHeaderView(title: "Milestone", subtitle: "Perkembangan \(babyName) di bulan ini", navigationLink: nil)
+                            .padding(.top)
+                        
+                        ProgressBar(currentProgress: 0.3)
+                        
+                        Text("4 dari 15 perkembangan tercapai")
+                            .font(.subheadline)
+                            .foregroundColor(Color.ui.secondary)
+                            .padding(.vertical)
+                        
                         ForEach(MilestoneCategory.allCases, id: \.self) { category in
+                            
+                            Divider()
+                            
                             let listMilestone = vm.milestoneData.filter{$0.category == category && $0.month == appData.selectedMonth}
                             
                             MilestoneCategoryCardViewV2(category: category, milestone: listMilestone).id(refreshId)
-                            if category != MilestoneCategory.allCases.last {
-                                Divider()
-                            }
                         }
                     }
                     .background(
@@ -63,8 +75,10 @@ struct DashboardScreen: View {
                         refreshId += 1
                     }
                     
+                    Divider()
+                        .padding()
+                    
                     ContentHeaderView(title: "Catatan", subtitle: "Hal-hal penting mengenai perkembangan \(babyName)", navigationLink: AnyView(Text("Detail")))
-                        .padding(.top)
                     
                     Text("Tidak ada catatan penting")
                         .padding(.vertical, 80)
