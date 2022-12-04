@@ -11,7 +11,7 @@ struct MilestoneCategoryCardViewV2: View {
     
     let category: MilestoneCategory
     let milestone: [Milestone]
-//    let navigationLink: AnyView
+    //    let navigationLink: AnyView
     
     //    @ObservedObject var vm: MilestoneCategoryCardViewModel = MilestoneCategoryCardViewModel()
     @State var refreshID: Int = 0
@@ -61,8 +61,9 @@ struct MilestoneCategoryCardViewV2: View {
                                     Button {
                                         babyMiles.isChecked.toggle()
                                         PersistenceController.shared.save()
-
-                                        refreshID += 1
+                                        withAnimation {
+                                            refreshID += 1
+                                        }
                                     } label: {
                                         Image(systemName: babyMiles.isChecked ? "checkmark.circle.fill" : "checkmark.circle")
                                             .resizable()
@@ -93,17 +94,7 @@ struct MilestoneCategoryCardViewV2: View {
                     .foregroundColor(colorSwitcher())
                     .frame(maxWidth: 50)
                 
-                VStack(alignment: .leading) {
-                    HStack {
-                        Text("\(category.rawValue)")
-                            .foregroundColor(Color.ui.text)
-                        
-                        Text("(1/\(milestone.count))")
-                            .foregroundColor(colorSwitcher())
-                    }.font(.custom(FontType.semiBold.rawValue, size: 16))
-                    
-                    Capsules(milestone: milestone, color: colorSwitcher()).id(refreshID)
-                }.animation(.linear, value: refreshID)
+                Capsules(milestone: milestone, color: colorSwitcher(), category: category).id(refreshID)
                 
                 Spacer()
             }
@@ -118,6 +109,7 @@ struct MilestoneCategoryCardViewV2: View {
 struct Capsules: View {
     var milestone: [Milestone]
     var color: Color
+    var category: MilestoneCategory
     
     func sortCaps() -> [BabyMilestone] {
         var babyMilestones: [BabyMilestone] = []
@@ -132,11 +124,21 @@ struct Capsules: View {
     }
     
     var body: some View {
-        HStack {
-            ForEach(sortCaps()) { item in
-                Capsule()
-                    .frame(maxWidth: 30)
-                    .foregroundColor(color.opacity(item.isChecked ? 1 : 0.3))
+        VStack(alignment: .leading) {
+            HStack {
+                Text("\(category.rawValue)")
+                    .foregroundColor(Color.ui.text)
+                
+                Text("(\(sortCaps().filter{$0.isChecked}.count)/\(milestone.count))")
+                    .foregroundColor(color)
+            }.font(.custom(FontType.semiBold.rawValue, size: 16))
+            
+            HStack {
+                ForEach(sortCaps()) { item in
+                    Capsule()
+                        .frame(maxWidth: 30)
+                        .foregroundColor(color.opacity(item.isChecked ? 1 : 0.3))
+                }
             }
         }
     }
