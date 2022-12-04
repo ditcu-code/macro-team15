@@ -22,6 +22,29 @@ struct PersistenceController {
         }
         return result
     }()
+    
+    static var notesPreview: PersistenceController = {
+        let result = PersistenceController(inMemory: true)
+        let viewContext = result.container.viewContext
+        
+        for i in 0..<10 {
+            let newNote = BabyMilestoneNote(context: viewContext)
+            newNote.id = UUID()
+            newNote.title = "Catatan \(i)"
+            newNote.body = "Isi catatan \(i)"
+            newNote.isImportant = true
+            newNote.modifiedDate = Date()
+        }
+        
+        do {
+            try viewContext.save()
+        } catch {
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
+        
+        return result
+    }()
 
     let container: NSPersistentContainer
 
