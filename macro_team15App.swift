@@ -13,7 +13,7 @@ struct macro_team15App: App {
     
     var body: some Scene {
         WindowGroup {
-            ProfileEditView(viewModel: OnboardingViewModel())
+            ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .preferredColorScheme(.light)
         }
