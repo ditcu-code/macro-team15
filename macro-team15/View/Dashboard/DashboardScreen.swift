@@ -118,7 +118,8 @@ struct DashboardScreen: View {
                 }
                 
                 .sheet(isPresented: $profileSwitcher) {
-                    ProfileSwitcherSheet()
+//                    ProfileSwitcherSheet()
+                    ProfileEditView(baby: vm.currentBaby!)
                 }
                 
                 .sheet(isPresented: $milestonePeriod) {

@@ -79,6 +79,7 @@
 		FA888EDE2939FAEF0035C733 /* MilestoneCategoryCardViewReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA888EDD2939FAEF0035C733 /* MilestoneCategoryCardViewReport.swift */; };
 		FA93412F2935EFFD004975FE /* MilestonePeriodSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93412E2935EFFD004975FE /* MilestonePeriodSheet.swift */; };
 		FA9341312936057F004975FE /* ProfileSwitcherSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9341302936057F004975FE /* ProfileSwitcherSheet.swift */; };
+		FA9706CC293A450A00D39BB6 /* ProfileEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9706CB293A450A00D39BB6 /* ProfileEditView.swift */; };
 		FA996A17292E23D400DF570E /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA996A16292E23D400DF570E /* Image.swift */; };
 		FA996A19292E25F700DF570E /* MissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA996A18292E25F700DF570E /* MissionView.swift */; };
 		FAB270C2291BBC8B00C3E99A /* BadgeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB270C1291BBC8B00C3E99A /* BadgeDetailView.swift */; };
@@ -174,6 +175,7 @@
 		FA888EDD2939FAEF0035C733 /* MilestoneCategoryCardViewReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneCategoryCardViewReport.swift; sourceTree = "<group>"; };
 		FA93412E2935EFFD004975FE /* MilestonePeriodSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestonePeriodSheet.swift; sourceTree = "<group>"; };
 		FA9341302936057F004975FE /* ProfileSwitcherSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSwitcherSheet.swift; sourceTree = "<group>"; };
+		FA9706CB293A450A00D39BB6 /* ProfileEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditView.swift; sourceTree = "<group>"; };
 		FA996A16292E23D400DF570E /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		FA996A18292E25F700DF570E /* MissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionView.swift; sourceTree = "<group>"; };
 		FAB270C1291BBC8B00C3E99A /* BadgeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeDetailView.swift; sourceTree = "<group>"; };
@@ -337,6 +339,7 @@
 				0EA7D736292E23D20024DECC /* Onboarding */,
 				FAF8545929349431009C8CA5 /* Album */,
 				FA888EDF293A03A80035C733 /* Note */,
+				FA9706CA293A44F900D39BB6 /* Profile */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -486,11 +489,12 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
-		FA888EDF293A03A80035C733 /* Note */ = {
+		FA9706CA293A44F900D39BB6 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				FA9706CB293A450A00D39BB6 /* ProfileEditView.swift */,
 			);
-			path = Note;
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		FAB270C0291BBC7600C3E99A /* Badge */ = {
@@ -676,6 +680,7 @@
 				FA7B02B92917DABA00552541 /* MilestoneProgressFullView.swift in Sources */,
 				0E0C8BE32938EA35009ABC42 /* StimulusData.swift in Sources */,
 				0E1C86E9293A0F9E00195E04 /* StringManipulation.swift in Sources */,
+				FA9706CC293A450A00D39BB6 /* ProfileEditView.swift in Sources */,
 				FAF854642934B62C009C8CA5 /* PhotoCardView.swift in Sources */,
 				FA4513CB292BE047002ADD1A /* DashboardHeaderView.swift in Sources */,
 				0E6F61EF290FC348005C5415 /* DashboardScreen.swift in Sources */,
