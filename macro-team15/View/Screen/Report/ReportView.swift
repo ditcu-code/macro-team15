@@ -147,7 +147,7 @@ struct ReportView: View {
                     HStack(spacing: 20) {
                         Image.ui.tuntunHead.resizable().frame(width: 72, height: 72)
                         VStack(alignment: .leading, spacing: 5) {
-                            Text("Wah, Ceroy berkembang dengan baik!")
+                            Text("Wah, \(vm.appData.currentBabyName) berkembang dengan baik!")
                                 .font(.custom(FontType.semiBold.rawValue, fixedSize: 16))
                                 .foregroundColor(Color.ui.primary)
                             Text("Teruskan perkembangan di bulan selanjutnya")
@@ -167,7 +167,7 @@ struct ReportView: View {
                 VStack {
                     // Motor
                     ForEach(0 ..< 4) { item in
-                        MilestoneCategoryCardViewV2(category: .motoric, milestone: [Milestone(id: 1, titleEN: "titleEN", title: "title", month: 1, warningMonth: 2, category: .motoric, stimulusID: nil)])
+                        MilestoneCategoryCardDashboardView(category: .motoric, milestone: [Milestone(id: 1, titleEN: "titleEN", title: "title", month: 1, warningMonth: 2, category: .motoric, stimulusID: nil)])
                         
                         if item != 3 {
                             Divider()
@@ -183,7 +183,7 @@ struct ReportView: View {
                 Divider()
                     .padding()
                 
-                ContentHeaderView(title: "Catatan", subtitle: "Hal-hal penting mengenai perkembangan Ceroy", navigationLink: AnyView(Text("Catatan")))
+                ContentHeaderView(title: "Catatan", subtitle: "Hal-hal penting mengenai perkembangan \(vm.appData.currentBabyName)", navigationLink: AnyView(Text("Catatan")))
                 
                 VStack(spacing: 20) {
                     if noteCount > 0 {

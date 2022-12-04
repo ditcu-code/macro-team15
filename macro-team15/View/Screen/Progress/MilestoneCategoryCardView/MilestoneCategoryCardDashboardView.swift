@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MilestoneCategoryCardViewV2: View {
+struct MilestoneCategoryCardDashboardView: View {
     
     let category: MilestoneCategory
     let milestone: [Milestone]

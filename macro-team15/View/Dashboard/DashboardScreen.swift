@@ -48,7 +48,7 @@ struct DashboardScreen: View {
                         ForEach(MilestoneCategory.allCases, id: \.self) { category in
                             let listMilestone = vm.milestoneData.filter{$0.category == category && $0.month == appData.selectedMonth}
                             
-                            MilestoneCategoryCardViewV2(category: category, milestone: listMilestone).id(refreshId)
+                            MilestoneCategoryCardDashboardView(category: category, milestone: listMilestone).id(refreshId)
                             if category != MilestoneCategory.allCases.last {
                                 Divider()
                             }
