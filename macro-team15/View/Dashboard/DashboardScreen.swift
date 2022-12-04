@@ -68,9 +68,7 @@ struct DashboardScreen: View {
                             let listMilestone = vm.milestoneData.filter{$0.category == category && $0.month == appData.selectedMonth}
                             
                             MilestoneCategoryCardDashboardView(category: category, milestone: listMilestone).id(refreshId)
-                            if category != MilestoneCategory.allCases.last {
-                                Divider()
-                            }
+
                         }
                     }
                     .background(

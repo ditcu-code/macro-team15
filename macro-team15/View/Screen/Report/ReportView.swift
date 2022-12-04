@@ -176,15 +176,16 @@ struct ReportView: View {
                 Divider()
                     .padding()
                 
-                ContentHeaderView(title: "Catatan", subtitle: "Hal-hal penting mengenai perkembangan \(vm.appData.currentBabyName)", navigationLink: AnyView(Text("Catatan")))
+                ContentHeaderView(title: "Catatan", subtitle: "Hal-hal penting mengenai perkembangan \(vm.appData.currentBabyName)", navigationLink: AnyView(NotesView()))
                 
                 VStack(spacing: 20) {
-                    if noteCount > 0 {
-                        ForEach(0 ..< noteCount) { item in
-                            NoteView(title: "\"Judul Catatan", description: "Isi catatan", date: Date(), navigationLink: AnyView(NoteDetailView(title: "Judul catatan", note: "Isi catatan")))
-                        }
-                    } else {
+                    if vm.getNotes().isEmpty {
                         EmptyView(note: "Belum ada catatan yang ditandai")
+                    } else {
+                        ForEach(vm.getNotes()) { note in
+                            NoteViewV2(milestone: MilestoneData.getAll().filter({ $0.id == note.milestone?.milestoneID ?? 1 }).first!, babyMilestone: note.milestone!, babyNotes: note)
+                                .padding(.bottom)
+                        }
                     }
                 }
                 .padding(.bottom)
