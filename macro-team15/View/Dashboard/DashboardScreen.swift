@@ -51,6 +51,10 @@ struct DashboardScreen: View {
                         
                         ProgressBar(currentProgress: CGFloat(Double(vm.totalCompletedMilestone)/Double(vm.totalMilestone)))
                             .animation(.spring(), value: vm.totalCompletedMilestone)
+                            .onChange(of: appData.selectedMonth) { newValue in
+                                vm.countCompletedMilestone()
+                                vm.countTotalMilestone()
+                            }
                         
                         Text("\(vm.totalCompletedMilestone) dari \(vm.totalMilestone) perkembangan tercapai")
                             .font(.subheadline)

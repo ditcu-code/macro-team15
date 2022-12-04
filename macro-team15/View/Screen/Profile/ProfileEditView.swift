@@ -79,13 +79,9 @@ struct ProfileEditView: View {
                         editedBaby.photo = babyPhoto?.pngData()
                         
                         PersistenceController.shared.save()
-                        print("Baby updated")
                     }
                 }
             }
-        }
-        .onAppear {
-            print(baby)
         }
         
         .sheet(isPresented: $shouldPresentImagePicker) {

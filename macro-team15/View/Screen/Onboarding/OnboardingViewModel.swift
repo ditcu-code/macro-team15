@@ -77,7 +77,7 @@ class OnboardingViewModel: ObservableObject {
             let babyMilestone = BabyMilestone(context: context)
             babyMilestone.baby = baby
             babyMilestone.id = UUID()
-            babyMilestone.isChecked = true
+            babyMilestone.isChecked = false
             babyMilestone.category = item.category.rawValue
             babyMilestone.month = Int16(item.month)
             babyMilestone.warningMonth = Int16(item.warningMonth)
