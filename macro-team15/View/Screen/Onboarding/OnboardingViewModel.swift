@@ -31,6 +31,7 @@ class OnboardingViewModel: ObservableObject {
         let baby = Baby(context: context)
         let defaultPhoto = UIImage(named: "DefaultProfilePicture")?.pngData()
         let newId = UUID()
+        let selectedMonth = Calendar.current.dateComponents([.month], from: birthDate, to: Date()).month ?? 0
         
         baby.id = newId
         baby.name = name
@@ -43,12 +44,12 @@ class OnboardingViewModel: ObservableObject {
         )
         
         UserDefaults.standard.set(
-            Calendar.current.dateComponents([.month], from: birthDate, to: Date()).month,
+            selectedMonth,
             forKey: "selectedMonth"
         )
         
         if BabyMilestone.getAll().isEmpty {
-            injectAllMilestone(baby: baby)
+            injectAllMilestone(baby: baby, selectedMonth: selectedMonth)
         }
         
         PersistenceController.shared.save()
@@ -59,7 +60,7 @@ class OnboardingViewModel: ObservableObject {
         UserDefaults.standard.set(true, forKey: "isDoneOnboarding")
     }
     
-    func injectAllMilestone(baby: Baby?) {
+    func injectAllMilestone(baby: Baby?, selectedMonth: Int) {
         let allMilestones = MilestoneData.getAll()
         allMilestones.forEach { item in
             let context = PersistenceController.viewContext
@@ -68,6 +69,7 @@ class OnboardingViewModel: ObservableObject {
             babyMilestone.id = UUID()
             babyMilestone.isChecked = false
             babyMilestone.milestoneID = Int16(item.id)
+            babyMilestone.month = Int16(selectedMonth)
         }
         PersistenceController.shared.save()
     }

@@ -41,7 +41,7 @@ struct MilestoneDetailView: View {
                 ContentHeaderView(title: "Catatan", subtitle: "Hal-hal penting mengenai perkembangan Ceroy", navigationLink: nil)
                 
                 ScrollView {
-                    NoteView(title: "Judul catatan", description: "Isi catatan", date: Date(), navigationLink: AnyView(NoteDetailView(title: "", note: "")))
+                    //                    NoteView(title: "Judul catatan", description: "Isi catatan", date: Date(), navigationLink: AnyView(NoteDetailView(title: "", note: "")))
                 }
             }
         }
@@ -100,6 +100,9 @@ struct MilestoneDetailViewV2: View {
                                 allStimulus: StimulusData.getAll().filter({$0 != item})
                             )
                         }
+                        if stimulus.isEmpty {
+                            EmptyView(note: "Belum ada aktivitas yang dirancang untuk milestone ini")
+                        }
                     }
                     
                 }
@@ -111,7 +114,24 @@ struct MilestoneDetailViewV2: View {
             ContentHeaderView(title: "Catatan", subtitle: "Hal-hal penting mengenai perkembangan Ceroy", navigationLink: nil)
             
             ScrollView {
-                NoteView(title: "Judul catatan", description: "Isi catatan", date: Date(), navigationLink: AnyView(NoteDetailView(title: "", note: "")))
+                
+                NavigationLink {
+                    NoteDetailViewV2(milestone: milestone, babyMilestone: cdMilestone)
+                } label: {
+                    Label("Tambah Catatan", systemImage: "plus.circle").labelStyle(.titleAndIcon)
+                }
+                .buttonStyle(PrimaryButtonStyle(isShort: true))
+                .padding(.horizontal)
+                .padding(.bottom, 5)
+                
+                let listNotes = cdMilestone.notes
+                
+                if let list = listNotes?.allObjects as? [BabyMilestoneNote] {
+                    ForEach(list) { item in
+                        NoteViewV2(milestone: milestone, babyMilestone: cdMilestone, babyNotes: item)
+                    }
+                }
+
             }
         }
         .background {
@@ -122,9 +142,6 @@ struct MilestoneDetailViewV2: View {
         .navigationTitle(Text("Detail Milestone"))
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
-            //            if let babyMiles = BabyMilestone.getSpecificMilestone(with: Int16(milestone.id)) {
-            
-            
             ToolbarItem {
                 Image(systemName: cdMilestone.isChecked ? "checkmark.circle.fill" : "checkmark.circle")
                     .foregroundColor(Color.ui.primary)
@@ -134,7 +151,6 @@ struct MilestoneDetailViewV2: View {
                         PersistenceController.shared.save()
                     }
             }
-            //            }
         }.id(refreshId)
     }
 }

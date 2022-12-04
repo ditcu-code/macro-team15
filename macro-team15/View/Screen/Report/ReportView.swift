@@ -147,7 +147,7 @@ struct ReportView: View {
                 VStack {
                     // Motor
                     ForEach(0 ..< 4) { item in
-                        MilestoneCategoryCardViewV2(category: .motoric, milestone: [Milestone(id: 1, titleEN: "titleEN", title: "title", month: 1, warningMonth: 2, category: .motoric, stimulusID: nil)])
+                        MilestoneCategoryCardViewReport(category: .motoric, milestone: [Milestone(id: 1, titleEN: "titleEN", title: "title", month: 1, warningMonth: 2, category: .motoric, stimulusID: nil)], navigationLink: AnyView(Text("")))
 
                         if item != 3 {
                             Divider()
@@ -171,18 +171,7 @@ struct ReportView: View {
                             NoteView(title: "\"Judul Catatan", description: "Isi catatan", date: Date(), navigationLink: AnyView(NoteDetailView(title: "Judul catatan", note: "Isi catatan")))
                         }
                     } else {
-                        HStack {
-                            Image.ui.tuntunNoNote
-                                .resizable()
-                                .frame(width: 378/3, height: 438/3)
-                                .padding(.horizontal)
-                            
-                            Text("Belum ada catatan yang ditandai")
-                                .font(.subheadline)
-                                .bold()
-                                .foregroundColor(Color.ui.secondary)
-                        }
-                        .padding(.top)
+                        EmptyView(note: "Belum ada catatan yang ditandai")
                     }
                 }
                 .padding(.bottom)
@@ -207,4 +196,3 @@ struct ReportView_Previews: PreviewProvider {
         ReportView()
     }
 }
-
