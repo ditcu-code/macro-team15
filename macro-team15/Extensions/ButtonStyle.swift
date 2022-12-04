@@ -37,7 +37,8 @@ struct SecondaryButtonStyle: ButtonStyle {
             .font(.body.bold())
             .foregroundColor(Color.ui.secondary)
             .frame(minHeight: 60)
-            .padding(.horizontal)
+            .padding(.horizontal, 24)
+            .padding(.vertical, -8)
             .background(
                 Capsule()
                     .foregroundColor(Color.ui.primary.opacity(0.2))
