@@ -196,24 +196,3 @@ struct ReportView_Previews: PreviewProvider {
         ReportView()
     }
 }
-
-
-struct EmptyView: View {
-    var note: String
-    
-    var body: some View {
-        HStack {
-            Image.ui.tuntunNoNote
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(maxHeight: 125)
-                .padding(.horizontal)
-            
-            Text(note)
-                .font(.custom(FontType.semiBold.rawValue, size: 14))
-                .multilineTextAlignment(.leading)
-                .foregroundColor(Color.ui.secondary)
-        }
-        .padding(.top)
-    }
-}
