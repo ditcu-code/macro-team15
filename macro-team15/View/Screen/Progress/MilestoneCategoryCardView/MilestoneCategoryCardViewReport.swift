@@ -10,38 +10,19 @@ import SwiftUI
 struct MilestoneCategoryCardViewReport: View {
     
     let category: MilestoneCategory
-    let milestone: [Milestone]?
-    let navigationLink: AnyView
+    let babyMilestone: [BabyMilestone]
+    //    let navigationLink: AnyView
     
-    private func colorSwitcher(_ isPrimary: Bool) -> Color {
+    private func colorSwitcher() -> Color {
         switch category {
         case .cognitive:
-            if isPrimary {
-                return Color.ui.cognitivePrimary
-            } else {
-                return Color.ui.cognitiveSecondary
-            }
-            
+            return Color.ui.cognitivePrimary
         case .motoric:
-            if isPrimary {
-                return Color.ui.motorPrimary
-            } else {
-                return Color.ui.motorSecondary
-            }
-            
+            return Color.ui.motorPrimary
         case .social:
-            if isPrimary {
-                return Color.ui.socialPrimary
-            } else {
-                return Color.ui.socialSecondary
-            }
-            
+            return Color.ui.socialPrimary
         case .language:
-            if isPrimary {
-                return Color.ui.languagePrimary
-            } else {
-                return Color.ui.languageSecondary
-            }
+            return Color.ui.languagePrimary
         }
     }
     
@@ -65,17 +46,12 @@ struct MilestoneCategoryCardViewReport: View {
             VStack {
                 Spacer()
                 
-                if let milestone = milestone {
-                    ForEach(milestone.indices) { index in
-                        if index == 0 {
-                            Spacer()
-                                .padding(.top, 12)
-                        }
-                        
-                        ReportMilestoneView(item: milestone[index], color: colorSwitcher(true), navigationLink: navigationLink)
+                if babyMilestone.count > 0 {
+                    ForEach(babyMilestone) { item in
+                        ReportMilestoneView(milestone: MilestoneData.getAll().filter({$0.id == item.milestoneID}).first!, babyMilestone: item, color: colorSwitcher())
                     }
                 } else {
-                    NoReportMilestoneView()
+                    NoReportMilestoneView(category: category)
                 }
             }
             
@@ -83,19 +59,16 @@ struct MilestoneCategoryCardViewReport: View {
             HStack {
                 Image(systemName: iconSwitcher())
                     .font(.title)
-                    .foregroundColor(colorSwitcher(true))
+                    .foregroundColor(colorSwitcher())
                     .frame(maxWidth: 50)
                 
                 VStack(alignment: .leading) {
                     Text("\(category.rawValue)")
-                        .font(.title3)
-                        .fontWeight(.semibold)
-                        .foregroundColor(Color.ui.secondary)
+                        .font(.custom(FontType.semiBold.rawValue, fixedSize: 16))
                     
-                    Text("\(milestone?.count ?? 0) misi")
-                        .fontWeight(.medium)
-                        .foregroundColor(Color.ui.text)
-                }
+                    Text("\(babyMilestone.count) milestone")
+                        .font(.custom(FontType.light.rawValue, fixedSize: 16))
+                }.foregroundColor(Color.ui.text)
                 
                 Spacer()
             }
@@ -105,9 +78,9 @@ struct MilestoneCategoryCardViewReport: View {
     }
     
 }
-
-struct MilestoneCategoryCardViewReport_Previews: PreviewProvider {
-    static var previews: some View {
-        MilestoneCategoryCardViewReport(category: .motoric, milestone: [Milestone(id: 1, titleEN: "titleEN", title: "title", month: 1, warningMonth: 2, category: .motoric, stimulusID: nil)], navigationLink: AnyView(Text("Nav")))
-    }
-}
+//
+//struct MilestoneCategoryCardViewReport_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MilestoneCategoryCardViewReport(category: .motoric, milestone: [Milestone(id: 1, titleEN: "titleEN", title: "title", month: 1, warningMonth: 2, category: .motoric, stimulusID: nil)])
+//    }
+//}

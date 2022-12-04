@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ReportView: View {
-    var name = "Ceroy"
     @State private var refreshId: Int = 1
     
     @ObservedObject var vm = ReportViewModel()
@@ -124,8 +123,9 @@ struct ReportView: View {
                     } label: {
                         VStack(spacing: 4) {
                             HStack {
-                                Text("Bulan ke-\(vm.monthVersus)")
-                                    .font(.custom(FontType.regular.rawValue, fixedSize: 16))
+                                Text(vm.monthVersus == 0 ? "Pilih Bulan" :
+                                        "Bulan ke-\(vm.monthVersus)")
+                                .font(.custom(FontType.regular.rawValue, fixedSize: 16))
                                 
                                 Image(systemName: "chevron.down")
                             }
@@ -144,19 +144,13 @@ struct ReportView: View {
                 ZStack {
                     Color.white.cornerRadius(10).shadow(radius: 2)
                     
-                    HStack(spacing: 20) {
-                        Image.ui.tuntunHead.resizable().frame(width: 72, height: 72)
-                        VStack(alignment: .leading, spacing: 5) {
-                            Text("Wah, \(vm.appData.currentBabyName) berkembang dengan baik!")
-                                .font(.custom(FontType.semiBold.rawValue, fixedSize: 16))
-                                .foregroundColor(Color.ui.primary)
-                            Text("Teruskan perkembangan di bulan selanjutnya")
-                                .foregroundColor(Color.ui.text)
-                                .font(.custom(FontType.light.rawValue, fixedSize: 14))
-                        }
+                    let anyConcern = vm.uncompletedSocial.count + vm.uncompletedLanguage.count + vm.uncompletedMotoric.count + vm.uncompletedCognitive.count
+                    if anyConcern > 0 {
+                        ConcernInfo(isWarning: true, babyName: vm.appData.currentBabyName)
+                    } else {
+                        ConcernInfo(isWarning: false, babyName: vm.appData.currentBabyName)
                     }
-                    .padding(.vertical, 30)
-                    .padding(.horizontal)
+                    
                 }
                 .padding(.horizontal)
                 .padding(.bottom)
@@ -165,14 +159,13 @@ struct ReportView: View {
                 
                 // MARK: Milestone Category Progress
                 VStack {
-                    // Motor
-                    ForEach(0 ..< 4) { item in
-                        MilestoneCategoryCardDashboardView(category: .motoric, milestone: [Milestone(id: 1, titleEN: "titleEN", title: "title", month: 1, warningMonth: 2, category: .motoric, stimulusID: nil)])
-                        
-                        if item != 3 {
-                            Divider()
-                        }
-                    }
+                    MilestoneCategoryCardViewReport(category: .motoric, babyMilestone: vm.uncompletedMotoric)
+                    Divider()
+                    MilestoneCategoryCardViewReport(category: .cognitive, babyMilestone: vm.uncompletedCognitive)
+                    Divider()
+                    MilestoneCategoryCardViewReport(category: .social, babyMilestone: vm.uncompletedSocial)
+                    Divider()
+                    MilestoneCategoryCardViewReport(category: .language, babyMilestone: vm.uncompletedLanguage)
                 }
                 .background(
                     RoundedRectangle(cornerRadius: 20)
@@ -191,6 +184,7 @@ struct ReportView: View {
                             NoteView(title: "\"Judul Catatan", description: "Isi catatan", date: Date(), navigationLink: AnyView(NoteDetailView(title: "Judul catatan", note: "Isi catatan")))
                         }
                     } else {
+                        
                         HStack {
                             Image.ui.tuntunNoNote
                                 .resizable()
@@ -198,8 +192,7 @@ struct ReportView: View {
                                 .padding(.horizontal)
                             
                             Text("Belum ada catatan yang ditandai")
-                                .font(.subheadline)
-                                .bold()
+                                .font(.custom(FontType.semiBold.rawValue, fixedSize: 16))
                                 .foregroundColor(Color.ui.secondary)
                         }
                         .padding(.top)
@@ -238,5 +231,26 @@ struct ReportView: View {
 struct ReportView_Previews: PreviewProvider {
     static var previews: some View {
         ReportView()
+    }
+}
+
+struct ConcernInfo: View {
+    var isWarning: Bool
+    var babyName: String
+    
+    var body: some View {
+        HStack(spacing: 20) {
+            Image.ui.tuntunHead.resizable().frame(width: 72, height: 72)
+            VStack(alignment: .leading, spacing: 5) {
+                Text(isWarning ? "Hmm, sepertinya \(babyName) memiliki beberapa Milestone yang terlewat!" : "Wah, \(babyName) berkembang dengan baik!")
+                    .font(.custom(FontType.semiBold.rawValue, fixedSize: 16))
+                    .foregroundColor(isWarning ? Color.red.opacity(0.7) : Color.ui.primary)
+                Text(isWarning ? "Yuk, ceritakan hal ini pada kunjungan Dokter berikutnya" : "Teruskan perkembangan di bulan selanjutnya")
+                    .foregroundColor(Color.ui.text)
+                    .font(.custom(FontType.light.rawValue, fixedSize: 14))
+            }
+        }
+        .padding(.vertical, 30)
+        .padding(.horizontal)
     }
 }

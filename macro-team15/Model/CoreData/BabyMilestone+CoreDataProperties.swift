@@ -21,6 +21,7 @@ extension BabyMilestone {
     @NSManaged public var isChecked: Bool
     @NSManaged public var milestoneID: Int16
     @NSManaged public var month: Int16
+    @NSManaged public var warningMonth: Int16
     @NSManaged public var baby: Baby?
     @NSManaged public var notes: NSSet?
     
@@ -79,6 +80,16 @@ extension BabyMilestone : Identifiable {
         let request = BabyMilestone.fetchRequest()
         request.predicate = NSPredicate(format: "category == %@ AND isChecked == true AND month <= \(month)", category.rawValue)
 //        request.predicate = NSPredicate(format: "month <= %@", month.description)
+        guard let items = try? context.fetch(request) else { return nil }
+        return items
+    }
+    
+    static func getUncompletedMilestoneByCategory(with category: MilestoneCategory?, warningMonth: Int? = 0) -> [BabyMilestone]? {
+        let context = PersistenceController.viewContext
+        guard let category = category else { return nil }
+        guard let warningMonth = warningMonth else { return nil }
+        let request = BabyMilestone.fetchRequest()
+        request.predicate = NSPredicate(format: "category == %@ AND isChecked == false AND warningMonth <= \(warningMonth)", category.rawValue)
         guard let items = try? context.fetch(request) else { return nil }
         return items
     }

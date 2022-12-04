@@ -15,6 +15,7 @@
         <attribute name="isChecked" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="milestoneID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="month" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="warningMonth" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="baby" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Baby" inverseName="milestones" inverseEntity="Baby"/>
         <relationship name="notes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BabyMilestoneNote" inverseName="milestone" inverseEntity="BabyMilestoneNote"/>
     </entity>

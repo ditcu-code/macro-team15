@@ -52,6 +52,11 @@ class OnboardingViewModel: ObservableObject {
             forKey: "selectedMonth"
         )
         
+        UserDefaults.standard.set(
+            Calendar.current.dateComponents([.month], from: birthDate, to: Date()).month,
+            forKey: "babyAgeMonth"
+        )
+        
         if BabyMilestone.getAll().isEmpty {
             injectAllMilestone(baby: baby)
         }
@@ -74,6 +79,7 @@ class OnboardingViewModel: ObservableObject {
             babyMilestone.isChecked = true
             babyMilestone.category = item.category.rawValue
             babyMilestone.month = Int16(item.month)
+            babyMilestone.warningMonth = Int16(item.warningMonth)
             babyMilestone.milestoneID = Int16(item.id)
         }
         PersistenceController.shared.save()

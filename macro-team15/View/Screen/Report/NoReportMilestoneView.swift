@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct NoReportMilestoneView: View {
+    var category: MilestoneCategory
+    
     var body: some View {
         VStack {
             Divider()
@@ -19,9 +21,8 @@ struct NoReportMilestoneView: View {
                     .frame(width: 75, height: 75)
                     .padding(.horizontal)
                 
-                Text("Semua Milestone Motorik telah tercapai sesuai bulan perkembangan")
-                    .font(.subheadline)
-                    .bold()
+                Text("Semua milestone \(category.rawValue) telah tercapai sesuai bulan perkembangan")
+                    .font(.custom(FontType.semiBold.rawValue, fixedSize: 16))
                     .foregroundColor(Color.ui.secondary)
             }
             .padding(.vertical)
@@ -31,7 +32,7 @@ struct NoReportMilestoneView: View {
 
 struct NoReportMilestoneView_Previews: PreviewProvider {
     static var previews: some View {
-        NoReportMilestoneView()
+        NoReportMilestoneView(category: .language)
             .padding()
     }
 }

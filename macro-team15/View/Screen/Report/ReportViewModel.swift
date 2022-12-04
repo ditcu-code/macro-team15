@@ -37,6 +37,14 @@ class ReportViewModel: ObservableObject {
     @Published var languageVersus: Int = 0
     
     @Published var appData = AppData()
+    @Published var milestoneData: [Milestone] = MilestoneData.getAll()
+    
+    @Published var uncompletedMotoric: [BabyMilestone] = []
+    @Published var uncompletedCognitive: [BabyMilestone] = []
+    @Published var uncompletedSocial: [BabyMilestone] = []
+    @Published var uncompletedLanguage: [BabyMilestone] = []
+    
+    @Published var currentBaby: Baby? = nil
     
     private var cancellable: AnyCancellable?
     
@@ -53,6 +61,7 @@ class ReportViewModel: ObservableObject {
     func getData() {
         getTotal()
         getCount()
+        getUncompletedMilestone()
     }
     
     func getCountMonth() {
@@ -96,4 +105,10 @@ class ReportViewModel: ObservableObject {
         }.count
     }
     
+    func getUncompletedMilestone() {
+        uncompletedMotoric = BabyMilestone.getUncompletedMilestoneByCategory(with: .motoric, warningMonth: appData.babyAgeMonth)!
+        uncompletedCognitive = BabyMilestone.getUncompletedMilestoneByCategory(with: .cognitive, warningMonth: appData.babyAgeMonth)!
+        uncompletedSocial = BabyMilestone.getUncompletedMilestoneByCategory(with: .social, warningMonth: appData.babyAgeMonth)!
+        uncompletedLanguage = BabyMilestone.getUncompletedMilestoneByCategory(with: .language, warningMonth: appData.babyAgeMonth)!
+    }
 }
