@@ -125,7 +125,7 @@ struct NoteDetailViewV2: View {
     var milestone: Milestone
     var babyMilestone: BabyMilestone
     var noteToEdit: BabyMilestoneNote?
-    
+        
     @State private var title: String
     @State private var bodyNote: String
     @State private var isImportant: Bool
@@ -190,6 +190,8 @@ struct NoteDetailViewV2: View {
             isPresented: $isPresented
         ) {
             Button("Hapus", role: .destructive) {
+                deleteNote()
+                
                 isPresented.toggle()
             }
             Button("Batal", role: .cancel) {
@@ -231,30 +233,42 @@ struct NoteDetailViewV2: View {
                             .foregroundColor(Color.ui.primary)
                     }
                 } else {
-                    Menu {
-                        Button {
+                    if noteToEdit != nil {
+                        Menu {
+                            Button {
+                                isImportant.toggle()
+                            } label: {
+                                Label("Penting", systemImage: isImportant ? "bookmark.fill" : "bookmark")
+                            }
                             
+                            Button(role: .destructive) {
+                                isPresented.toggle()
+                            } label: {
+                                Label("Hapus", systemImage: "trash.fill")
+                            }
                         } label: {
-                            Label("Penting", systemImage: "bookmark")
+                            Image(systemName: "ellipsis.circle")
+                                .foregroundColor(Color.ui.primary)
+                        }
+                    } else {
+                        Button {
+                            isImportant.toggle()
+                        } label: {
+                            Label("Penting", systemImage: isImportant ? "bookmark.fill" : "bookmark")
+                                .labelStyle(.iconOnly)
                         }
 
-//                        Button(role: .cancel) {
-//
-//                        } label: {
-//                            Label("Bagikan", systemImage: "square.and.arrow.up")
-//                        }
-                        
-                        Button(role: .destructive) {
-                            isPresented.toggle()
-                        } label: {
-                            Label("Hapus", systemImage: "trash.fill")
-                        }
-                    } label: {
-                        Image(systemName: "ellipsis.circle")
-                            .foregroundColor(Color.ui.primary)
                     }
                 }
             }
+        }
+    }
+    
+    func deleteNote() {
+        if let note = noteToEdit {
+            PersistenceController.viewContext.delete(note)
+            
+            PersistenceController.shared.save()
         }
     }
     
