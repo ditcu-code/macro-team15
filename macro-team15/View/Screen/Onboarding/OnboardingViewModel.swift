@@ -43,6 +43,11 @@ class OnboardingViewModel: ObservableObject {
         )
         
         UserDefaults.standard.set(
+            name,
+            forKey: "currentBabyName"
+        )
+        
+        UserDefaults.standard.set(
             Calendar.current.dateComponents([.month], from: birthDate, to: Date()).month,
             forKey: "selectedMonth"
         )
@@ -67,6 +72,7 @@ class OnboardingViewModel: ObservableObject {
             babyMilestone.baby = baby
             babyMilestone.id = UUID()
             babyMilestone.isChecked = false
+            babyMilestone.category = item.category.rawValue
             babyMilestone.milestoneID = Int16(item.id)
         }
         PersistenceController.shared.save()
