@@ -86,7 +86,14 @@ struct DashboardScreen: View {
                     
                     ContentHeaderView(title: "Catatan", subtitle: "Hal-hal penting mengenai perkembangan \(babyName)", navigationLink: AnyView(NotesView()))
                     
-                    EmptyView(note: "Belum ada catatan yang ditandai")
+                    if vm.getNotes().isEmpty {
+                        EmptyView(note: "Belum ada catatan yang ditandai")
+                    } else {
+                        ForEach(vm.getNotes()) { note in
+                            NoteViewV2(milestone: MilestoneData.getAll().filter({ $0.id == note.milestone?.milestoneID ?? 1 }).first!, babyMilestone: note.milestone!, babyNotes: note)
+                                .padding(.bottom)
+                        }
+                    }
                 }
                 
                 .background(alignment: .center) {
