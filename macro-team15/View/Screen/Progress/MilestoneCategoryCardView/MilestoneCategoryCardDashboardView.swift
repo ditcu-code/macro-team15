@@ -11,9 +11,7 @@ struct MilestoneCategoryCardDashboardView: View {
     
     let category: MilestoneCategory
     let milestone: [Milestone]
-    //    let navigationLink: AnyView
-    
-    //    @ObservedObject var vm: MilestoneCategoryCardViewModel = MilestoneCategoryCardViewModel()
+
     @State var refreshID: Int = 0
     
     private func colorSwitcher() -> Color {
