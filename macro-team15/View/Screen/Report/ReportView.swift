@@ -184,18 +184,7 @@ struct ReportView: View {
                             NoteView(title: "\"Judul Catatan", description: "Isi catatan", date: Date(), navigationLink: AnyView(NoteDetailView(title: "Judul catatan", note: "Isi catatan")))
                         }
                     } else {
-                        
-                        HStack {
-                            Image.ui.tuntunNoNote
-                                .resizable()
-                                .frame(width: 378/3, height: 438/3)
-                                .padding(.horizontal)
-                            
-                            Text("Belum ada catatan yang ditandai")
-                                .font(.custom(FontType.semiBold.rawValue, fixedSize: 16))
-                                .foregroundColor(Color.ui.secondary)
-                        }
-                        .padding(.top)
+                        EmptyView(note: "Belum ada catatan yang ditandai")
                     }
                 }
                 .padding(.bottom)

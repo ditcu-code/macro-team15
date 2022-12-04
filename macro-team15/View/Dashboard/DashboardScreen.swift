@@ -12,7 +12,7 @@ struct DashboardScreen: View {
     @State private var milestonePeriod: Bool = false
     @State private var profileSwitcher: Bool = false
     @State private var refreshId: Int = 1
-    
+
     @ObservedObject var vm = DashboardViewModel()
     @ObservedObject var appData = AppData()
     
@@ -25,7 +25,7 @@ struct DashboardScreen: View {
                     if let stimulus = vm.getStimulus().first {
                         HighlightedStimulusView(withCTA: true, stimulus: stimulus, allStimulus: vm.getStimulus())
                     }
-
+                    
                     Divider().padding(.vertical)
                     
                     ContentHeaderView(title: "Aktivitas", subtitle: "Dirancang untuk mendukung pencapaian \(babyName)", navigationLink: AnyView(Text("Detail")))
@@ -41,11 +41,26 @@ struct DashboardScreen: View {
                         }
                     }
                     
-                    ContentHeaderView(title: "Milestone", subtitle: "Perkembangan \(babyName) di bulan ini", navigationLink: nil)
-                        .padding(.top)
+                    Divider()
+                        .padding()
                     
                     VStack {
+                    
+                        ContentHeaderView(title: "Milestone", subtitle: "Perkembangan \(babyName) di bulan ini", navigationLink: nil)
+                            .padding(.top)
+                        
+                        ProgressBar(currentProgress: CGFloat(Double(vm.totalCompletedMilestone)/Double(vm.totalMilestone)))
+                            .animation(.spring(), value: vm.totalCompletedMilestone)
+                        
+                        Text("\(vm.totalCompletedMilestone) dari \(vm.totalMilestone) perkembangan tercapai")
+                            .font(.subheadline)
+                            .foregroundColor(Color.ui.secondary)
+                            .padding(.vertical)
+                        
                         ForEach(MilestoneCategory.allCases, id: \.self) { category in
+                            
+                            Divider()
+                            
                             let listMilestone = vm.milestoneData.filter{$0.category == category && $0.month == appData.selectedMonth}
                             
                             MilestoneCategoryCardDashboardView(category: category, milestone: listMilestone).id(refreshId)
@@ -60,14 +75,17 @@ struct DashboardScreen: View {
                     )
                     .padding(.horizontal)
                     .onAppear{
-                        refreshId += 1
+                        withAnimation{
+                            refreshId += 1
+                        }
                     }
                     
-                    ContentHeaderView(title: "Catatan", subtitle: "Hal-hal penting mengenai perkembangan \(babyName)", navigationLink: AnyView(Text("Detail")))
-                        .padding(.top)
+                    Divider()
+                        .padding()
                     
-                    Text("Tidak ada catatan penting")
-                        .padding(.vertical, 80)
+                    ContentHeaderView(title: "Catatan", subtitle: "Hal-hal penting mengenai perkembangan \(babyName)", navigationLink: AnyView(NotesView()))
+                    
+                    EmptyView(note: "Belum ada catatan yang ditandai")
                 }
                 
                 .background(alignment: .center) {
@@ -104,7 +122,8 @@ struct DashboardScreen: View {
                 }
                 
                 .sheet(isPresented: $profileSwitcher) {
-                    ProfileSwitcherSheet()
+//                    ProfileSwitcherSheet()
+                    ProfileEditView(baby: vm.currentBaby!)
                 }
                 
                 .sheet(isPresented: $milestonePeriod) {

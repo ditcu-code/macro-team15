@@ -68,3 +68,84 @@ struct NoteView_Previews: PreviewProvider {
         NoteView(title: "Judul Catatan", description: "Isi catatan", date: Date(), navigationLink: AnyView(NoteDetailView(title: "Judul catatan", note: "Isi catatan")))
     }
 }
+
+struct NoteViewV2: View {
+
+    var milestone: Milestone
+    var babyMilestone: BabyMilestone
+    var babyNotes: BabyMilestoneNote
+    
+    @State private var refreshId = 0
+    
+    var body: some View {
+        ZStack(alignment: .topTrailing) {
+            NavigationLink {
+                NoteDetailViewV2(milestone: milestone, babyMilestone: babyMilestone, noteToEdit: babyNotes)
+            } label: {
+                VStack(alignment: .leading) {
+                    HStack {
+                        Text(babyNotes.title ?? "")
+                            .font(.custom(FontType.semiBold.rawValue, fixedSize: 16))
+                            .foregroundColor(Color.ui.secondary)
+                            .frame(maxWidth: UIScreen.main.bounds.size.width - 140)
+                            .lineLimit(nil)
+                            .fixedSize()
+                            .multilineTextAlignment(.leading)
+                        
+                        Spacer()
+                        
+                        Image(systemName: babyNotes.isImportant ? "bookmark.fill" : "bookmark")
+                            .foregroundColor(Color.ui.primary)
+                            .font(.system(size: 22))
+                        .bold()
+                        .id(refreshId)
+                        .padding()
+                        .onTapGesture {
+                            babyNotes.isImportant.toggle()
+                            refreshId += 1
+                            
+                            PersistenceController.shared.save()
+                        }
+                    }
+                    .padding(.bottom)
+                    
+                    HStack() {
+                        Text(babyNotes.body ?? "")
+                            .font(.custom(FontType.light.rawValue, fixedSize: 16))
+                            .foregroundColor(Color.ui.text)
+                            .frame(maxWidth: UIScreen.main.bounds.size.width - 150)
+                            .lineLimit(nil)
+                            .fixedSize()
+                            .multilineTextAlignment(.leading)
+                        
+                        Spacer()
+                        
+                        Text(babyNotes.modifiedDate!.shortdmYFormat())
+                            .font(.custom(FontType.light.rawValue, fixedSize: 12))
+                            .foregroundColor(Color.ui.text)
+                            .padding(.trailing)
+                    }
+                }
+                .padding([.bottom, .leading])
+                .background(
+                    RoundedRectangle(cornerRadius: 20)
+                        .foregroundColor(.white)
+                        .shadow(color: .gray.opacity(0.5), radius: 2, x: 0, y: 1)
+                )
+                .padding(.horizontal)
+                .padding(.bottom, 5)
+            }
+            
+            Rectangle()
+                .frame(width: 50, height: 50)
+                .foregroundColor(.clear)
+                .padding(.trailing, 20)
+                .onTapGesture {
+                    babyNotes.isImportant.toggle()
+                    refreshId += 1
+                    
+                    PersistenceController.shared.save()
+                }
+        }
+    }
+}

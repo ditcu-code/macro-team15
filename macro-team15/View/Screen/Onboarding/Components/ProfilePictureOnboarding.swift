@@ -22,10 +22,13 @@ struct ProfilePictureOnboarding: View {
                 if let photo = viewModel.photo,
                    let uiImage = UIImage(data: photo) {
                     Image(uiImage: uiImage)
+                        .resizable()
                 } else {
                     Image.ui.defaultPP
+                        .resizable()
                 }
             }
+            .scaledToFill()
             .frame(width: 200, height: 200)
             .clipShape(Circle())
             

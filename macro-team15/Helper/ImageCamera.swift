@@ -43,7 +43,7 @@ class ImagePickerViewCoordinator: NSObject, UINavigationControllerDelegate, UIIm
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            self.image = image
+            self.image = image.updateImageOrientionUpSide()
         }
         self.isPresented = false
     }
