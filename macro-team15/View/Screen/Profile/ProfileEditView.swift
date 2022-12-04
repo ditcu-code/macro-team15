@@ -10,7 +10,6 @@ import SwiftUI
 struct ProfileEditView: View {
     
     let baby: Baby
-    @State private var image: UIImage? = UIImage(named: "TuntunHead")
     @State private var shouldPresentImagePicker = false
     @State private var shouldPresentActionScheet = false
     @State private var shouldPresentCamera = false
@@ -18,23 +17,13 @@ struct ProfileEditView: View {
     
     @State private var babyName: String
     @State private var babyDob: Date
-    
-//    init(baby: Baby, image: UIImage? = nil, shouldPresentImagePicker: Bool = false, shouldPresentActionScheet: Bool = false, shouldPresentCamera: Bool = false, isShowingDialog: Bool = false, babyName: String, babyDob: Date) {
-//        self.baby = baby
-//        self.image = image
-//        self.shouldPresentImagePicker = shouldPresentImagePicker
-//        self.shouldPresentActionScheet = shouldPresentActionScheet
-//        self.shouldPresentCamera = shouldPresentCamera
-//        self.isShowingDialog = isShowingDialog
-//
-//        self.babyName = baby.name ?? "Unknown"
-//        self.babyDob = baby.birthDate ?? Date()
-//    }
+    @State private var babyPhoto: UIImage?
     
     init(baby: Baby, babyName: String = "", babyDob: Date = Date()) {
         self.baby = baby
         _babyName = State(initialValue: baby.name ?? "Unknown")
         _babyDob = State(initialValue: baby.birthDate ?? Date())
+        _babyPhoto = State(initialValue: (UIImage(data: baby.photo!)!))
     }
 
     var body: some View {
@@ -42,8 +31,8 @@ struct ProfileEditView: View {
             VStack {
                 // MARK: Profile picture
                 Group {
-                    if let photo = baby.photo,
-                       let uiImage = UIImage(data: photo) {
+                    if let photo = babyPhoto,
+                       let uiImage = photo {
                         Image(uiImage: uiImage)
                     } else {
                         Image.ui.defaultPP
@@ -84,6 +73,7 @@ struct ProfileEditView: View {
                         let editedBaby = baby
                         editedBaby.name = babyName
                         editedBaby.birthDate = babyDob
+                        editedBaby.photo = babyPhoto?.pngData()
                         
                         PersistenceController.shared.save()
                         print("Baby updated")
@@ -96,7 +86,7 @@ struct ProfileEditView: View {
         }
         
         .sheet(isPresented: $shouldPresentImagePicker) {
-            SUImagePickerView(sourceType: self.shouldPresentCamera ? .camera : .photoLibrary, image: self.$image, isPresented: self.$shouldPresentImagePicker)
+            SUImagePickerView(sourceType: self.shouldPresentCamera ? .camera : .photoLibrary, image: self.$babyPhoto, isPresented: self.$shouldPresentImagePicker)
         }
         .sheet(isPresented: $isShowingDialog) {
             DatePicker("", selection: $babyDob, in: ...Date(), displayedComponents: [.date])
@@ -114,18 +104,12 @@ struct ProfileEditView: View {
                 self.shouldPresentCamera = false
             }), ActionSheet.Button.cancel()])
         }
-        .onChange(of: image) { newItem in
+        .onChange(of: babyPhoto) { newItem in
             Task {
-                let dataImage = newItem?.pngData()
-                baby.photo = dataImage
+                let dataImage = newItem
+                babyPhoto = dataImage
             }
         }
     }
     
 }
-
-//struct ProfileView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ProfileEditView(viewModel: .constant(Baby(context: <#T##NSManagedObjectContext#>)))
-//    }
-//}
