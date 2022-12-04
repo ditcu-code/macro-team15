@@ -25,7 +25,7 @@ struct DashboardScreen: View {
                     if let stimulus = vm.getStimulus().first {
                         HighlightedStimulusView(withCTA: true, stimulus: stimulus, allStimulus: vm.getStimulus())
                     }
-
+                    
                     Divider().padding(.vertical)
                     
                     ContentHeaderView(title: "Aktivitas", subtitle: "Dirancang untuk mendukung pencapaian \(babyName)", navigationLink: AnyView(Text("Detail")))
@@ -66,8 +66,7 @@ struct DashboardScreen: View {
                     ContentHeaderView(title: "Catatan", subtitle: "Hal-hal penting mengenai perkembangan \(babyName)", navigationLink: AnyView(Text("Detail")))
                         .padding(.top)
                     
-                    Text("Tidak ada catatan penting")
-                        .padding(.vertical, 80)
+                    EmptyView(note: "Belum ada catatan yang ditandai")
                 }
                 
                 .background(alignment: .center) {

@@ -40,11 +40,11 @@ struct TabViews: View {
                 }
                 .tag(Tabs.milestone)
             
-            AlbumScreen(name: "Aruna")
-                .tabItem {
-                    Label("Album", systemImage: "photo.on.rectangle")
-                }
-                .tag(Tabs.report)
+//            AlbumScreen(name: "Aruna")
+//                .tabItem {
+//                    Label("Album", systemImage: "photo.on.rectangle")
+//                }
+//                .tag(Tabs.report)
         }
     }
 }
