@@ -26,5 +26,12 @@ extension BabyMilestoneNote {
 }
 
 extension BabyMilestoneNote : Identifiable {
-
+    static func getNotesBaby(with babyMilestone: BabyMilestone.ID) -> [BabyMilestoneNote]? {
+        let context = PersistenceController.viewContext
+        guard let babyMilestone = babyMilestone else { return nil }
+        let request = BabyMilestoneNote.fetchRequest()
+        request.predicate = NSPredicate(format: "ANY milestone.ID in %@", babyMilestone.description)
+        guard let items = try? context.fetch(request) else { return nil }
+        return items
+    }
 }

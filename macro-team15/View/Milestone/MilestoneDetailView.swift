@@ -41,7 +41,7 @@ struct MilestoneDetailView: View {
                 ContentHeaderView(title: "Catatan", subtitle: "Hal-hal penting mengenai perkembangan Ceroy", navigationLink: nil)
                 
                 ScrollView {
-                    NoteView(title: "Judul catatan", description: "Isi catatan", date: Date(), navigationLink: AnyView(NoteDetailView(title: "", note: "")))
+                    //                    NoteView(title: "Judul catatan", description: "Isi catatan", date: Date(), navigationLink: AnyView(NoteDetailView(title: "", note: "")))
                 }
             }
         }
@@ -114,16 +114,24 @@ struct MilestoneDetailViewV2: View {
             ContentHeaderView(title: "Catatan", subtitle: "Hal-hal penting mengenai perkembangan Ceroy", navigationLink: nil)
             
             ScrollView {
-                Button {
-                    
+                
+                NavigationLink {
+                    NoteDetailViewV2(milestone: milestone, babyMilestone: cdMilestone)
                 } label: {
                     Label("Tambah Catatan", systemImage: "plus.circle").labelStyle(.titleAndIcon)
                 }
                 .buttonStyle(PrimaryButtonStyle(isShort: true))
                 .padding(.horizontal)
+                .padding(.bottom, 5)
+                
+                let listNotes = cdMilestone.notes
+                
+                if let list = listNotes?.allObjects as? [BabyMilestoneNote] {
+                    ForEach(list) { item in
+                        NoteViewV2(milestone: milestone, babyMilestone: cdMilestone, babyNotes: item)
+                    }
+                }
 
-                NoteView(title: "Judul catatan", description: "Isi catatan", date: Date(), navigationLink: AnyView(NoteDetailView(title: "", note: "")))
-                    .padding(.vertical)
             }
         }
         .background {
