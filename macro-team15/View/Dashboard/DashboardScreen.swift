@@ -84,7 +84,7 @@ struct DashboardScreen: View {
                     Divider()
                         .padding()
                     
-                    ContentHeaderView(title: "Catatan", subtitle: "Hal-hal penting mengenai perkembangan \(babyName)", navigationLink: AnyView(Text("Detail")))
+                    ContentHeaderView(title: "Catatan", subtitle: "Hal-hal penting mengenai perkembangan \(babyName)", navigationLink: AnyView(NotesView()))
                     
                     EmptyView(note: "Belum ada catatan yang ditandai")
                 }
