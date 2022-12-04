@@ -34,10 +34,13 @@ struct ProfileEditView: View {
                     if let photo = babyPhoto,
                        let uiImage = photo {
                         Image(uiImage: uiImage)
+                            .resizable()
                     } else {
                         Image.ui.defaultPP
+                            .resizable()
                     }
                 }
+                .scaledToFill()
                 .frame(width: 200, height: 200)
                 .clipShape(Circle())
                 
