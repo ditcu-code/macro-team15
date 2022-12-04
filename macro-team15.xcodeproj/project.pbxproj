@@ -62,6 +62,7 @@
 		FA13CD6C2914FCDA00616699 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA13CD6B2914FCDA00616699 /* Color.swift */; };
 		FA241A9D2930FBD600CAA09B /* KeyboardResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA241A9C2930FBD600CAA09B /* KeyboardResponder.swift */; };
 		FA3266D2293C52C600BCEF10 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3266D1293C52C600BCEF10 /* ProgressBar.swift */; };
+		FA3266D4293C8B4100BCEF10 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3266D3293C8B4100BCEF10 /* UIImage.swift */; };
 		FA34BD4D291A3FE8009DF42B /* MilestoneDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34BD4C291A3FE8009DF42B /* MilestoneDetailView.swift */; };
 		FA34BD4F291A5DAC009DF42B /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34BD4E291A5DAC009DF42B /* View.swift */; };
 		FA4513C9292BDD17002ADD1A /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4513C8292BDD17002ADD1A /* BackgroundView.swift */; };
@@ -80,6 +81,7 @@
 		FA888EDE2939FAEF0035C733 /* MilestoneCategoryCardViewReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA888EDD2939FAEF0035C733 /* MilestoneCategoryCardViewReport.swift */; };
 		FA93412F2935EFFD004975FE /* MilestonePeriodSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93412E2935EFFD004975FE /* MilestonePeriodSheet.swift */; };
 		FA9341312936057F004975FE /* ProfileSwitcherSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9341302936057F004975FE /* ProfileSwitcherSheet.swift */; };
+		FA9706CC293A450A00D39BB6 /* ProfileEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9706CB293A450A00D39BB6 /* ProfileEditView.swift */; };
 		FA996A17292E23D400DF570E /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA996A16292E23D400DF570E /* Image.swift */; };
 		FA996A19292E25F700DF570E /* MissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA996A18292E25F700DF570E /* MissionView.swift */; };
 		FAB270C2291BBC8B00C3E99A /* BadgeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB270C1291BBC8B00C3E99A /* BadgeDetailView.swift */; };
@@ -158,6 +160,7 @@
 		FA13CD6B2914FCDA00616699 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		FA241A9C2930FBD600CAA09B /* KeyboardResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardResponder.swift; sourceTree = "<group>"; };
 		FA3266D1293C52C600BCEF10 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
+		FA3266D3293C8B4100BCEF10 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		FA34BD4C291A3FE8009DF42B /* MilestoneDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneDetailView.swift; sourceTree = "<group>"; };
 		FA34BD4E291A5DAC009DF42B /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		FA4513C8292BDD17002ADD1A /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
@@ -176,6 +179,7 @@
 		FA888EDD2939FAEF0035C733 /* MilestoneCategoryCardViewReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneCategoryCardViewReport.swift; sourceTree = "<group>"; };
 		FA93412E2935EFFD004975FE /* MilestonePeriodSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestonePeriodSheet.swift; sourceTree = "<group>"; };
 		FA9341302936057F004975FE /* ProfileSwitcherSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSwitcherSheet.swift; sourceTree = "<group>"; };
+		FA9706CB293A450A00D39BB6 /* ProfileEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditView.swift; sourceTree = "<group>"; };
 		FA996A16292E23D400DF570E /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		FA996A18292E25F700DF570E /* MissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionView.swift; sourceTree = "<group>"; };
 		FAB270C1291BBC8B00C3E99A /* BadgeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeDetailView.swift; sourceTree = "<group>"; };
@@ -338,7 +342,7 @@
 				0E8FE4E02933ECAB00DBF715 /* Report */,
 				0EA7D736292E23D20024DECC /* Onboarding */,
 				FAF8545929349431009C8CA5 /* Album */,
-				FA888EDF293A03A80035C733 /* Note */,
+				FA9706CA293A44F900D39BB6 /* Profile */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -454,6 +458,7 @@
 				FAB8F3E6291A0570008F7C59 /* Date.swift */,
 				FA34BD4E291A5DAC009DF42B /* View.swift */,
 				FACDC5DC292F5ED3007B51A4 /* ButtonStyle.swift */,
+				FA3266D3293C8B4100BCEF10 /* UIImage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -489,11 +494,12 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
-		FA888EDF293A03A80035C733 /* Note */ = {
+		FA9706CA293A44F900D39BB6 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				FA9706CB293A450A00D39BB6 /* ProfileEditView.swift */,
 			);
-			path = Note;
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		FAB270C0291BBC7600C3E99A /* Badge */ = {
@@ -609,6 +615,7 @@
 				FA241A9D2930FBD600CAA09B /* KeyboardResponder.swift in Sources */,
 				0E8FE4EE29349D0800DBF715 /* ProfilePictureOnboarding.swift in Sources */,
 				0E8FE50F29366D9200DBF715 /* BabyMilestoneNote+CoreDataProperties.swift in Sources */,
+				FA3266D4293C8B4100BCEF10 /* UIImage.swift in Sources */,
 				FA3266D2293C52C600BCEF10 /* ProgressBar.swift in Sources */,
 				0E8FE4E729349C7D00DBF715 /* GreetingOnboarding.swift in Sources */,
 				FAF854622934B612009C8CA5 /* MilestonePhotoCardView.swift in Sources */,
@@ -680,6 +687,7 @@
 				FA7B02B92917DABA00552541 /* MilestoneProgressFullView.swift in Sources */,
 				0E0C8BE32938EA35009ABC42 /* StimulusData.swift in Sources */,
 				0E1C86E9293A0F9E00195E04 /* StringManipulation.swift in Sources */,
+				FA9706CC293A450A00D39BB6 /* ProfileEditView.swift in Sources */,
 				FAF854642934B62C009C8CA5 /* PhotoCardView.swift in Sources */,
 				FA4513CB292BE047002ADD1A /* DashboardHeaderView.swift in Sources */,
 				0E6F61EF290FC348005C5415 /* DashboardScreen.swift in Sources */,
