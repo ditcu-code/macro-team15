@@ -25,6 +25,10 @@ struct ProfileAvatarViewV2: View {
                 .resizable()
                 .frame(width: 35, height: 35)
                 .clipShape(Circle())
+                .shadow(
+                    color: .gray.opacity(0.3),
+                    radius: 1, x: 0, y: 0
+                )
         } else {
             Image(systemName: "person.circle.fill")
                 .resizable()

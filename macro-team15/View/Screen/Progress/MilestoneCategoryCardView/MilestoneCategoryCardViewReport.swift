@@ -47,7 +47,8 @@ struct MilestoneCategoryCardViewReport: View {
                 Spacer()
                 
                 if babyMilestone.count > 0 {
-                    ForEach(babyMilestone) { item in
+                    let sorted = babyMilestone.sorted(by: {$0.month < $1.month})
+                    ForEach(sorted) { item in
                         ReportMilestoneView(milestone: MilestoneData.getAll().filter({$0.id == item.milestoneID}).first!, babyMilestone: item, color: colorSwitcher())
                     }
                 } else {

@@ -12,6 +12,7 @@ struct ContentHeaderView: View {
     let title: String
     let subtitle: String
     let navigationLink: AnyView?
+    var hideButton: Bool = false
     
     var body: some View {
         HStack {
@@ -28,7 +29,7 @@ struct ContentHeaderView: View {
             
             Spacer()
             
-            if let link = navigationLink {
+            if let link = navigationLink, !hideButton {
                 NavigationLink("Lihat semua") {
                     link
                 }

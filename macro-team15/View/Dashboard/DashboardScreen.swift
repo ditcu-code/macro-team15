@@ -39,7 +39,7 @@ struct DashboardScreen: View {
                             Spacer()
                                 .padding(.leading, 8)
                             
-                            ForEach(vm.getStimulus().dropFirst()) { item in
+                            ForEach(vm.getStimulus().dropFirst().prefix(5)) { item in
                                 ActivityCardViewV2(stimulus: item, allStimulus: vm.getStimulus())
                             }
                         }
@@ -86,20 +86,29 @@ struct DashboardScreen: View {
                     Divider()
                         .padding()
                     
-                    ContentHeaderView(title: "Catatan", subtitle: "Hal-hal penting mengenai perkembangan \(babyName)", navigationLink: AnyView(NotesView()))
                     
-                    if vm.getNotes().isEmpty {
-                        EmptyView(note: "Belum ada catatan yang ditandai")
+                    
+                    ContentHeaderView(
+                        title: "Catatan",
+                        subtitle: "Hal-hal penting mengenai perkembangan \(babyName)",
+                        navigationLink: AnyView(NotesView()),
+                        hideButton: vm.allNotes.count < 5 ? true : false
+                    )
+                    
+                    if vm.allNotes.isEmpty {
+                        EmptyView(note: "Belum ada catatan").padding(.bottom, 30)
                     } else {
-                        ForEach(vm.getNotes()) { note in
+                        ForEach(vm.allNotes.prefix(5)) { note in
                             NoteViewV2(milestone: MilestoneData.getAll().filter({ $0.id == note.milestone?.milestoneID ?? 1 }).first!, babyMilestone: note.milestone!, babyNotes: note)
                                 .padding(.bottom)
                         }
                     }
+//                    NotifTester()
                 }
                 
                 .background(alignment: .center) {
                     BackgroundView()
+                        .edgesIgnoringSafeArea(.all)
                 }
                 
                 .navigationTitle("\(geo.frame(in: .global).minY < 100 ? "Progres" : "Hi, \(babyName)!")")
@@ -139,10 +148,19 @@ struct DashboardScreen: View {
                 }
                 
             }
-        }.onChange(of: vm.appData.selectedMonth) { newValue in
+        }
+        .onChange(of: vm.appData.selectedMonth) { newValue in
             vm.countCompletedMilestone()
             vm.countTotalMilestone()
         }
+        .onAppear {
+            NotificationManager.instance.requestAuthorization()
+            vm.removeNotif()
+            vm.setupNotif()
+        }
+//        .onDisappear{
+//            vm.setupNotif()
+//        }
     }
 }
 

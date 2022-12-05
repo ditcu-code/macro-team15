@@ -13,9 +13,9 @@ class StringManipulation {
         
         cat.forEach { item in
             if item == cat.last && cat.count != 1 {
-                string.append("dan \(item.rawValue.lowercased())")
+                string.append("dan \(item.rawValue.lowercased())!")
             } else {
-                string.append("\(item.rawValue.lowercased()) ")
+                string.append("\(item.rawValue.lowercased())\(cat.count == 1 ? "!" : ",") ")
             }
         }
         return string

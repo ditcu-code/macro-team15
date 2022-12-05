@@ -16,18 +16,18 @@ struct ActivityCardLongView: View {
             StimulusDetailView(stimulus: stimulus, allStimulus: allStimulus)
         } label: {
             HStack(spacing: 28) {
-                Image.ui.tuntunStimulus
+                Image.ui.milestoneIcon
                     .resizable()
+                    .aspectRatio(contentMode: .fit)
                     .frame(width: 343/4, height: 427/4)
                 
                 VStack(alignment: .leading, spacing: 12) {
-                    Text("Gantung mainan dihadapan anak")
-                        .fontWeight(.semibold)
+                    Text(stimulus.activityName)
+                        .font(.custom(FontType.semiBold.rawValue, size: 16))
                         .foregroundColor(Color.ui.secondary)
                     
-                    Text("Aktivitas ini dapat mendukung pencapaian motorik!")
-                        .font(.caption)
-                        .fontWeight(.light)
+                    Text("Aktivitas ini dapat mendukung pencapaian \(StringManipulation.categoryStimulus(cat: stimulus.categories))")
+                        .font(.custom(FontType.light.rawValue, size: 12))
                         .foregroundColor(Color.ui.text)
                 }
                 .multilineTextAlignment(.leading)
