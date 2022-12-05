@@ -13,7 +13,6 @@ struct ProgressShareView: View {
     
     @State var image: UIImage? = nil
     @State var items: [Any] = []
-    @State var sheet = false
     @State var shareable: Photo? = nil
     @State private var shouldPresentImagePicker = false
     @State private var shouldPresentActionScheet = false
@@ -22,22 +21,25 @@ struct ProgressShareView: View {
     
     let title: String
     let category: String
+    
+    private let screenWidth = UIScreen.main.bounds.width
+    private let screenHeight = UIScreen.main.bounds.height
         
     var body: some View {
         VStack(alignment: .leading) {
             ZStack(alignment: .topTrailing) {
                 snapshot
-                
+
                 HStack {
                     Spacer()
-                    
+
                     Capsule()
                         .frame(width: 120, height: 6)
                         .padding(.top, 8)
-                    
+
                     Spacer()
                 }
-                
+
                 Button {
                     dismiss()
                 } label: {
@@ -57,12 +59,12 @@ struct ProgressShareView: View {
                     .fontWeight(.semibold)
                     .foregroundColor(Color.ui.secondary)
                     .padding(.top, 28)
-                
+
                 Text("Kamu sudah bisa bermain kerincingan!")
                     .font(.title2)
                     .foregroundColor(Color.ui.secondary)
                     .padding(.vertical)
-                
+
                 HStack {
                     Button {
                         shouldPresentImagePicker.toggle()
@@ -70,7 +72,7 @@ struct ProgressShareView: View {
                         Label("Abadikan momen ini", systemImage: "camera")
                     }
                     .buttonStyle(PrimaryButtonStyle())
-                    
+
                     if let share = shareable {
                         ShareLink(
                             item: share,
@@ -102,9 +104,6 @@ struct ProgressShareView: View {
             render()
             shareable = Photo(image: Image(uiImage: image!), caption: "Ayo download Tuntun")
         }
-        .sheet(isPresented: $sheet) {
-            ShareSheet(items: items)
-        }
         .sheet(isPresented: $shouldPresentImagePicker) {
             SUImagePickerView(sourceType: self.shouldPresentCamera ? .camera : .photoLibrary, image: self.$photo, isPresented: self.$shouldPresentImagePicker)
         }
@@ -120,50 +119,88 @@ struct ProgressShareView: View {
     }
     
     var snapshot: some View {
-        ZStack(alignment: .bottomLeading) {
-            VStack {
-                Spacer()
+            ZStack {
+                Color.ui.primary.opacity(0.1)
                 
-                Image(uiImage: photo!)
+                HStack {
+                    Image.ui.tuntunIconEye
+                        .resizable()
+                        .frame(width: 230/6, height: 137/6)
+
+                    Text("tun")
+                        .font(.custom(FontType.semiBold.rawValue, size: 14, relativeTo: .body))
+
+                    Text("tun")
+                        .font(.custom(FontType.semiBold.rawValue, size: 14, relativeTo: .body))
+                        .foregroundColor(Color.ui.primary)
+                        .padding(.leading, -8)
+
+                    Spacer()
+                }
+                .position(x: screenWidth * 0.55, y: screenHeight * 0.04)
+                
+                Image.ui.placeholder
                     .resizable()
                     .scaledToFill()
-                    .frame(width: UIScreen.main.bounds.width - 100, height: 120)
+                    .frame(width: screenWidth - 120, height: screenWidth - 120)
                     .clipped()
-                    .padding(.bottom, 10)
-                
-                Text("Membalikan badan dari telentang ke tengkurap")
-                    .font(.caption)
-                    .bold()
-                    .foregroundColor(Color.ui.primary)
-                    .multilineTextAlignment(.center)
-                    .padding(.bottom, 4)
-                
-                Text("12 September 2020")
-                    .font(.caption2)
-                
-                Spacer()
-            }
-            
-            HStack {
-                Image.ui.tuntunIconEye
+
+                Image(systemName: "gearshape.fill")
                     .resizable()
-                    .frame(width: 230/6, height: 137/6)
+                    .frame(width: screenWidth * 0.08, height: screenWidth * 0.08)
+                    .foregroundColor(Color.ui.motorPrimary)
+                    .background {
+                        Circle()
+                            .foregroundColor(.white)
+                            .padding(-(screenWidth) * 0.02)
+                    }
+                    .position(x: screenWidth * 0.6, y: screenHeight * 0.06)
+
+//                Image(systemName: "character.bubble.fill")
+//                    .resizable()
+//                    .frame(width: 40, height: 40)
+//                    .foregroundColor(Color.ui.languagePrimary)
+//                    .background {
+//                        Circle()
+//                            .foregroundColor(.white)
+//                            .padding(-12)
+//                    }
+//                    .offset(CGSize(width: 20, height: -(geo.size.height) + 310))
                 
-                Text("tuntun")
-                    .font(.custom(FontType.semiBold.rawValue, size: 14, relativeTo: .body))
+    //            VStack {
+    //
+    //
+    //                Spacer()
+    //
+    //                Image.ui.placeholder
+    //                    .resizable()
+    //                    .scaledToFill()
+    //                    .frame(width: UIScreen.main.bounds.width - 100, height: 200)
+    //                    .clipped()
+    //                    .padding(.bottom, 10)
+    //
+    //                Text("Membalikan badan dari telentang ke tengkurap")
+    //                    .font(.caption)
+    //                    .bold()
+    //                    .foregroundColor(Color.ui.primary)
+    //                    .multilineTextAlignment(.center)
+    //                    .padding(.bottom, 4)
+    //
+    //                Text("12 September 2020")
+    //                    .font(.caption2)
+    //
+    //                Spacer()
+    //            }
+    //            .padding(.leading, -4)
+    //            .padding(.bottom, 4)
             }
-            .padding(.leading, -4)
-            .padding(.bottom, 4)
-        }
-        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width)
-        .background {
-            Image("BackgroundFill1Image")
-                .resizable()
-        }
+            .frame(width: screenWidth, height: screenWidth)
     }
     
     @MainActor func render() {
         let renderer = ImageRenderer(content: snapshot)
+
+        renderer.scale = 2.5
 
         if let uiImage = renderer.uiImage {
             image = uiImage
@@ -176,19 +213,4 @@ struct ProgressShareView_Previews: PreviewProvider {
     static var previews: some View {
         ProgressShareView(title: "Title", category: "Category")
     }
-}
-
-// MARK: Share sheet
-struct ShareSheet: UIViewControllerRepresentable {
-    
-    var items: [Any]
-    
-    func makeUIViewController(context: Context) -> UIActivityViewController {
-        let controller = UIActivityViewController(activityItems: items, applicationActivities: nil)
-        
-        return controller
-    }
-    
-    func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {}
-    
 }
