@@ -35,7 +35,7 @@ struct ReportView: View {
                                 Text("Motorik")
                                     .font(.custom(FontType.semiBold.rawValue, fixedSize: 16))
                                     .foregroundColor(Color.ui.motorPrimary)
-                                Text("\(vm.motoricCount) / \(vm.motoricTotal)")
+                                Text("\(vm.motoricMonth) / \(vm.motoricTotal)")
                                     .font(.custom(FontType.regular.rawValue, fixedSize: 14))
                                     .foregroundColor(Color.ui.text)
                             }
@@ -47,7 +47,7 @@ struct ReportView: View {
                                 Text("Kognitif")
                                     .font(.custom(FontType.semiBold.rawValue, fixedSize: 16))
                                     .foregroundColor(Color.ui.cognitivePrimary)
-                                Text("\(vm.cognitiveCount) / \(vm.cognitiveTotal)")
+                                Text("\(vm.cognitiveMonth) / \(vm.cognitiveTotal)")
                                     .font(.custom(FontType.regular.rawValue, fixedSize: 14))
                                     .foregroundColor(Color.ui.text)
                             }
@@ -61,7 +61,7 @@ struct ReportView: View {
                                 Text("Sosial & Emosional")
                                     .font(.custom(FontType.semiBold.rawValue, fixedSize: 16))
                                     .foregroundColor(Color.ui.socialPrimary)
-                                Text("\(vm.socialCount) / \(vm.socialTotal)")
+                                Text("\(vm.socialMonth) / \(vm.socialTotal)")
                                     .font(.custom(FontType.regular.rawValue, fixedSize: 14))
                                     .foregroundColor(Color.ui.text)
                             }
@@ -73,7 +73,7 @@ struct ReportView: View {
                                 Text("Bahasa")
                                     .font(.custom(FontType.semiBold.rawValue, fixedSize: 16))
                                     .foregroundColor(Color.ui.languagePrimary)
-                                Text("\(vm.languageCount) / \(vm.languageTotal)")
+                                Text("\(vm.languageMonth) / \(vm.languageTotal)")
                                     .font(.custom(FontType.regular.rawValue, fixedSize: 14))
                                     .foregroundColor(Color.ui.text)
                             }
@@ -94,6 +94,7 @@ struct ReportView: View {
                     .frame(width: UIScreen.main.bounds.width - 50, height: UIScreen.main.bounds.width - 50)
                     .id(refreshId)
                     .onAppear{
+                        vm.getCount()
                         vm.getCountMonth()
                     }
                 }
@@ -202,6 +203,7 @@ struct ReportView: View {
             }
             .onChange(of: vm.month) { newValue in
                 withAnimation(.spring()) {
+                    vm.getCount()
                     vm.getCountMonth()
                     scaleMonth = 0.0
                     refreshId += 1
