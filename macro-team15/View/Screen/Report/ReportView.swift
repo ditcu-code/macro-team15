@@ -192,7 +192,7 @@ struct ReportView: View {
             }
             .navigationTitle("Rapor")
             .background(alignment: .center) {
-                BackgroundView()
+                BackgroundView().edgesIgnoringSafeArea(.all)
             }
             .sheet(isPresented: $vm.monthPeriodSheet) {
                 MilestonePeriodSheetBinding(selectedMonth: $vm.month)
