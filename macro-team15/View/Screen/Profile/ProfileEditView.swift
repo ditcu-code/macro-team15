@@ -15,6 +15,8 @@ struct ProfileEditView: View {
     @State private var shouldPresentCamera = false
     @State private var isShowingDialog = false
     
+    @Environment(\.dismiss) private var dismiss
+    
     @State private var babyName: String
     @State private var babyDob: Date
     @State private var babyPhoto: UIImage?
@@ -28,59 +30,86 @@ struct ProfileEditView: View {
 
     var body: some View {
         NavigationView {
-            VStack {
-                // MARK: Profile picture
-                Group {
-                    if let photo = babyPhoto,
-                       let uiImage = photo {
-                        Image(uiImage: uiImage)
-                            .resizable()
-                    } else {
-                        Image.ui.defaultPP
-                            .resizable()
+            ZStack {
+                Color.ui.primary.opacity(0.1)
+                    .ignoresSafeArea()
+                
+                VStack {
+                    // MARK: Profile picture
+                    Group {
+                        if let photo = babyPhoto,
+                           let uiImage = photo {
+                            Image(uiImage: uiImage)
+                                .resizable()
+                        } else {
+                            Image.ui.defaultPP
+                                .resizable()
+                        }
                     }
-                }
-                .scaledToFill()
-                .frame(width: 200, height: 200)
-                .clipShape(Circle())
-                
-                Button {
-                    shouldPresentActionScheet.toggle()
-                } label: {
-                    Label(baby.photo != nil ? "Ganti Foto" : "Tambah Foto", systemImage: "plus")
-                }
-                .buttonStyle(SmallGreenButtonStyle())
-                .padding()
-                
-                // MARK: Name
-                TextField("Aruna Mazaya", text: $babyName)
-                    .font(.headline)
-                    .textFieldStyle(OvalTextFieldStyle())
-                    .padding(.bottom)
-                
-                // MARK: DOB
-                Button {
-                    isShowingDialog.toggle()
-                } label: {
-                    Text("\(babyDob.dmYFormat())")
-                        .frame(maxWidth: .infinity)
-                        .animation(.linear, value: babyDob)
-                }
-                .buttonStyle(OvalWhiteButtonStyle())
-                .padding(.bottom)
-            }
-            
-            .toolbar {
-                ToolbarItem {
-                    Button("Simpan") {
-                        let editedBaby = baby
-                        editedBaby.name = babyName
-                        editedBaby.birthDate = babyDob
-                        editedBaby.photo = babyPhoto?.pngData()
+                    .scaledToFill()
+                    .frame(width: 200, height: 200)
+                    .clipShape(Circle())
+                    
+                    Button {
+                        shouldPresentActionScheet.toggle()
+                    } label: {
+                        Label("Ganti Foto", systemImage: "plus")
+                    }
+                    .buttonStyle(SmallGreenButtonStyle())
+                    .padding([.top, .horizontal])
+                    .padding(.bottom, 40)
+                                        
+                    // MARK: Name
+                    VStack(alignment: .leading) {
+                        Text("Nama")
+                            .foregroundColor(Color.ui.text)
                         
-                        PersistenceController.shared.save()
+                        TextField("Aruna Mazaya", text: $babyName)
+                            .font(.headline)
+                            .textFieldStyle(OvalTextFieldStyle())
+                        .padding(.bottom)
                     }
+                    .padding(.horizontal)
+                    
+                    // MARK: DOB
+                    VStack(alignment: .leading) {
+                        Text("Tanggal Lahir")
+                            .foregroundColor(Color.ui.text)
+                        
+                        Button {
+                            isShowingDialog.toggle()
+                        } label: {
+                            Text("\(babyDob.dmYFormat())")
+                                .frame(maxWidth: .infinity)
+                                .animation(.linear, value: babyDob)
+                        }
+                        .buttonStyle(OvalWhiteButtonStyle())
+                        .padding(.bottom)
+                    }
+                    .padding(.horizontal)
                 }
+                
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button("Batal") {
+                            dismiss()
+                        }
+                    }
+                    
+                    ToolbarItem {
+                        Button("Simpan") {
+                            let editedBaby = baby
+                            editedBaby.name = babyName
+                            editedBaby.birthDate = babyDob
+                            editedBaby.photo = babyPhoto?.pngData()
+                            
+                            PersistenceController.shared.save()
+                            
+                            dismiss()
+                        }
+                        .bold()
+                    }
+            }
             }
         }
         

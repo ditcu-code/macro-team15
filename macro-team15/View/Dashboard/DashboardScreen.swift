@@ -96,7 +96,6 @@ struct DashboardScreen: View {
                 
                 .background(alignment: .center) {
                     BackgroundView()
-                        .edgesIgnoringSafeArea(.all)
                 }
                 
                 .navigationTitle("\(geo.frame(in: .global).minY < 100 ? "Progres" : "Hi, \(babyName)!")")
@@ -128,7 +127,6 @@ struct DashboardScreen: View {
                 }
                 
                 .sheet(isPresented: $profileSwitcher) {
-                    //                    ProfileSwitcherSheet()
                     ProfileEditView(baby: vm.currentBaby!)
                 }
                 
