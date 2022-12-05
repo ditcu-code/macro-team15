@@ -15,6 +15,10 @@ struct ProgressShareView: View {
     @State var items: [Any] = []
     @State var sheet = false
     @State var shareable: Photo? = nil
+    @State private var shouldPresentImagePicker = false
+    @State private var shouldPresentActionScheet = false
+    @State private var shouldPresentCamera = false
+    @State private var photo: UIImage? = UIImage(named: "milestoneIcon")
     
     let title: String
     let category: String
@@ -61,7 +65,7 @@ struct ProgressShareView: View {
                 
                 HStack {
                     Button {
-                        
+                        shouldPresentImagePicker.toggle()
                     } label: {
                         Label("Abadikan momen ini", systemImage: "camera")
                     }
@@ -94,9 +98,24 @@ struct ProgressShareView: View {
             render()
             shareable = Photo(image: Image(uiImage: image!), caption: "Ayo download Tuntun")
         }
-        
+        .onChange(of: photo) { item in
+            render()
+            shareable = Photo(image: Image(uiImage: image!), caption: "Ayo download Tuntun")
+        }
         .sheet(isPresented: $sheet) {
             ShareSheet(items: items)
+        }
+        .sheet(isPresented: $shouldPresentImagePicker) {
+            SUImagePickerView(sourceType: self.shouldPresentCamera ? .camera : .photoLibrary, image: self.$photo, isPresented: self.$shouldPresentImagePicker)
+        }
+        .actionSheet(isPresented: $shouldPresentActionScheet) { () -> ActionSheet in
+            ActionSheet(title: Text("Choose mode"), message: Text("Please choose your preferred mode to set your profile image"), buttons: [ActionSheet.Button.default(Text("Camera"), action: {
+                self.shouldPresentImagePicker = true
+                self.shouldPresentCamera = true
+            }), ActionSheet.Button.default(Text("Photo Library"), action: {
+                self.shouldPresentImagePicker = true
+                self.shouldPresentCamera = false
+            }), ActionSheet.Button.cancel()])
         }
     }
     
@@ -105,9 +124,9 @@ struct ProgressShareView: View {
             VStack {
                 Spacer()
                 
-                Image.ui.placeholder
+                Image(uiImage: photo!)
                     .resizable()
-                    .aspectRatio(contentMode: .fill)
+                    .scaledToFill()
                     .frame(width: UIScreen.main.bounds.width - 100, height: 120)
                     .clipped()
                     .padding(.bottom, 10)
