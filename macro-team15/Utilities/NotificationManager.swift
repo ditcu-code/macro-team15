@@ -8,8 +8,13 @@
 import Foundation
 import UserNotifications
 
-class NotificationManager {
+enum NotificationType: String, CaseIterable {
+    case monthly = "monthly"
+    case weekly = "weekly"
+}
 
+class NotificationManager {
+    
     static let instance = NotificationManager()
     
     func requestAuthorization () {
@@ -17,41 +22,74 @@ class NotificationManager {
         UNUserNotificationCenter.current().requestAuthorization(options: options) { succes, error in
             if let error = error {
                 print(error)
-            }else {
-                print("Succes Requst")
+            } else {
+                print("Success Requst")
             }
         }
     }
     
-    func scheduleNotification(title:String, subtitle:String, date:Date) {
+    func scheduleNotification(title: String, body: String, date: Date, type: NotificationType) {
         let content = UNMutableNotificationContent()
         content.title = title
-        content.subtitle = subtitle
+        content.body = body
         content.sound = .default
         content.badge = 1
+        content.threadIdentifier = type.rawValue
         
-        //time
-        //let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 7, repeats: false)
-        //date
-        //var dateComponents = DateComponents()
-        //dateComponents.hour = 20
-        //dateComponents.minute = 11
+        let isMonthly = Calendar.current.dateComponents([.day], from: date)
+        let isWeekly = Calendar.current.dateComponents([.hour,.minute,.calendar], from: date)
         
-        //DataPicker
-        let dateComponents = Calendar.current.dateComponents([.hour,.minute,.calendar], from: date)
-        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
-        let request = UNNotificationRequest(identifier: UUID().uuidString,
-                                            content: content,
-                                            trigger: trigger)
+        let trigger = UNCalendarNotificationTrigger(
+            dateMatching: type == .monthly ? isMonthly : isWeekly,
+            repeats: type == .monthly ? true : false
+        )
+        let request = UNNotificationRequest(
+            identifier: UUID().uuidString,
+            content: content,
+            trigger: trigger
+        )
         
         UNUserNotificationCenter.current().add(request)
-        print("Succes")
+        print("Success")
     }
     
+    func setBirthdayNotif(birthDate: Date) {
+        scheduleNotification(
+            title: "Wah! (babyName) sudah 2 Bulan!",
+            body: "Yuk cek perkembangan Milestone (babyName) bulan ini",
+            date: birthDate,
+            type: NotificationType.monthly
+        )
+    }
+    
+    func setWeeklyNotif() {
+        let oneWeekLater = Calendar.current.date(byAdding: .weekOfMonth, value: 1, to: Date()) ?? Date()
+        scheduleNotification(
+            title: "Hey! Tuntun kangen nih!",
+            body: "Yuk lakukan aktivitas bersama (babyName) untuk mendukung pencapaiannya",
+            date: oneWeekLater,
+            type: NotificationType.weekly
+        )
+    }
+    
+//    func checkNotifAvailable(type: NotificationType) -> Bool {
+//        let center = UNUserNotificationCenter.current()
+//        var isAvailable: Bool = false
+//
+//        UNUserNotificationCenter.current().getPendingNotificationRequests(completionHandler: { requests in
+//            let threadsId = requests.map({$0.content.threadIdentifier})
+//
+//            return threadsId.contains(type.rawValue)
+//        })
+//
+//        return isAvailable
+//    }
+//
     //Delete with ID
-    /*func deleteNotification() {
-     UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["32"])
-     
-     }
-     */
+    func removeNotifications() {
+        let center = UNUserNotificationCenter.current()
+        center.removeAllDeliveredNotifications()
+        center.removeAllPendingNotificationRequests()
+    }
+    
 }

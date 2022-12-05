@@ -20,6 +20,7 @@ class DashboardViewModel: ObservableObject {
     @Published var milestoneData: [Milestone] = MilestoneData.getAll()
     @Published var stimulusData: [Stimulus] = StimulusData.getAll()
     
+    var notif = NotificationManager.instance
     private var cancellable: AnyCancellable?
     
     init () {
@@ -86,5 +87,17 @@ class DashboardViewModel: ObservableObject {
         }
         
         return notes
+    }
+    
+    // MARK: Notification
+    func setupNotif() {
+        if let birthDate = currentBaby?.birthDate {
+            notif.setBirthdayNotif(birthDate: birthDate)
+        }
+        notif.setWeeklyNotif()
+    }
+    
+    func removeNotif() {
+        notif.removeNotifications()
     }
 }

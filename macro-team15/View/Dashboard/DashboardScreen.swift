@@ -96,6 +96,8 @@ struct DashboardScreen: View {
                                 .padding(.bottom)
                         }
                     }
+                    NotifTester()
+                    
                 }
                 
                 .background(alignment: .center) {
@@ -144,6 +146,14 @@ struct DashboardScreen: View {
             vm.countCompletedMilestone()
             vm.countTotalMilestone()
         }
+        .onAppear {
+            NotificationManager.instance.requestAuthorization()
+            vm.removeNotif()
+            vm.setupNotif()
+        }
+//        .onDisappear{
+//            vm.setupNotif()
+//        }
     }
 }
 
