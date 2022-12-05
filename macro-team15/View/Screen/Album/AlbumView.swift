@@ -71,7 +71,7 @@ struct AlbumScreen: View {
                 }
             }
             .sheet(isPresented: $selectedPhoto, content: {
-                ProgressShareView(isPresented: $selectedPhoto)
+                ProgressShareView(title: "Abc", category: "Def")
             })
         }
     }

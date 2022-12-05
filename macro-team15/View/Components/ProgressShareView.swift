@@ -9,15 +9,15 @@ import SwiftUI
 
 struct ProgressShareView: View {
     
-    @Binding var isPresented: Bool
+    @Environment (\.dismiss) private var dismiss
     
     @State var image: UIImage? = nil
     @State var items: [Any] = []
     @State var sheet = false
-    
     @State var shareable: Photo? = nil
     
-    @State private var shareId = 0
+    let title: String
+    let category: String
         
     var body: some View {
         VStack(alignment: .leading) {
@@ -35,7 +35,7 @@ struct ProgressShareView: View {
                 }
                 
                 Button {
-                    isPresented.toggle()
+                    dismiss()
                 } label: {
                     Label("Tutup", systemImage: "xmark")
                         .labelStyle(.iconOnly)
@@ -80,7 +80,6 @@ struct ProgressShareView: View {
                                 .font(.title2)
                                 .bold()
                         }
-                        .id(shareId)
                         .foregroundColor(Color.ui.primary)
                         .padding(.horizontal)
                     }
@@ -102,17 +101,53 @@ struct ProgressShareView: View {
     }
     
     var snapshot: some View {
-        Image.ui.placeholder
-            .resizable()
-            .aspectRatio(contentMode: .fill)
-            .frame(width: UIScreen.main.bounds.size.width, height: 350)
+        ZStack(alignment: .bottomLeading) {
+            VStack {
+                Spacer()
+                
+                Image.ui.placeholder
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: UIScreen.main.bounds.width - 100, height: 120)
+                    .clipped()
+                    .padding(.bottom, 10)
+                
+                Text("Membalikan badan dari telentang ke tengkurap")
+                    .font(.caption)
+                    .bold()
+                    .foregroundColor(Color.ui.primary)
+                    .multilineTextAlignment(.center)
+                    .padding(.bottom, 4)
+                
+                Text("12 September 2020")
+                    .font(.caption2)
+                
+                Spacer()
+            }
+            
+            HStack {
+                Image.ui.tuntunIconEye
+                    .resizable()
+                    .frame(width: 230/6, height: 137/6)
+                
+                Text("tuntun")
+                    .font(.custom(FontType.semiBold.rawValue, size: 14, relativeTo: .body))
+            }
+            .padding(.leading, -4)
+            .padding(.bottom, 4)
+        }
+        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width)
+        .background {
+            Image("BackgroundFill1Image")
+                .resizable()
+        }
     }
     
 }
 
 struct ProgressShareView_Previews: PreviewProvider {
     static var previews: some View {
-        ProgressShareView(isPresented: .constant(false))
+        ProgressShareView(title: "Title", category: "Category")
     }
 }
 

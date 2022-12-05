@@ -16,6 +16,8 @@ struct DashboardScreen: View {
     @ObservedObject var vm = DashboardViewModel()
     @ObservedObject var appData = AppData()
     
+    @State private var checkedMilestone: Milestone? = nil
+    
     var body: some View {
         let babyName = vm.babies.first?.name ?? "Aruna"
         
@@ -63,7 +65,7 @@ struct DashboardScreen: View {
                             
                             let listMilestone = vm.milestoneData.filter{$0.category == category && $0.month == appData.selectedMonth}
                             
-                            MilestoneCategoryCardDashboardView(category: category, milestone: listMilestone).id(refreshId)
+                            MilestoneCategoryCardDashboardView(category: category, milestone: listMilestone, checkedMilestone: $checkedMilestone).id(refreshId)
                             
                         }
                     }
@@ -132,6 +134,10 @@ struct DashboardScreen: View {
                 
                 .sheet(isPresented: $milestonePeriod) {
                     MilestonePeriodSheet()
+                }
+                
+                .sheet(item: $checkedMilestone) { milestone in
+                    ProgressShareView(title: milestone.title, category: milestone.category.rawValue)
                 }
                 
             }
