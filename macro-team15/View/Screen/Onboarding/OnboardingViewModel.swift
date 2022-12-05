@@ -15,8 +15,20 @@ class OnboardingViewModel: ObservableObject {
     @Published var birthDate: Date = Date()
     @Published var photo: Data? = nil
     
+    @Published var babies: [Baby] = []
+    
     @Published var step: Int = 0
     @Published var selectedPicture: PhotosPickerItem? = nil
+    
+    
+    init() {
+        getBabies()
+    }
+    
+    func getBabies() {
+        let req = Baby.getAll()
+        babies = req
+    }
     
     func prevStep() {
         step -= 1
@@ -24,6 +36,13 @@ class OnboardingViewModel: ObservableObject {
     
     func nextStep() {
         step += 1
+    }
+    
+    func setAppDatas(_ uuid: UUID, _ name: String, _ selectedMonth: Int) {
+        AppData.setBabyId(uuid.uuidString)
+        AppData.setBabyName(name)
+        AppData.setSelectedMonth(selectedMonth)
+        AppData.setBabyAgeMonth(selectedMonth)
     }
     
     func saveBaby() {
@@ -38,25 +57,7 @@ class OnboardingViewModel: ObservableObject {
         baby.birthDate = birthDate
         baby.photo = photo ?? defaultPhoto
         
-        UserDefaults.standard.set(
-            newId.uuidString,
-            forKey: "currentBabyId"
-        )
-        
-        UserDefaults.standard.set(
-            name,
-            forKey: "currentBabyName"
-        )
-        
-        UserDefaults.standard.set(
-            Calendar.current.dateComponents([.month], from: birthDate, to: Date()).month,
-            forKey: "selectedMonth"
-        )
-        
-        UserDefaults.standard.set(
-            Calendar.current.dateComponents([.month], from: birthDate, to: Date()).month,
-            forKey: "babyAgeMonth"
-        )
+        setAppDatas(newId, name, selectedMonth)
         
         if BabyMilestone.getAll().isEmpty {
             injectAllMilestone(baby: baby, selectedMonth: selectedMonth)
@@ -67,7 +68,7 @@ class OnboardingViewModel: ObservableObject {
     
     func finalStep() {
         saveBaby()
-        UserDefaults.standard.set(true, forKey: "isDoneOnboarding")
+        AppData.setIsDoneOnboarding(true)
     }
     
     func injectAllMilestone(baby: Baby?, selectedMonth: Int) {
