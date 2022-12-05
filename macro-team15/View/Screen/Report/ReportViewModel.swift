@@ -112,15 +112,9 @@ class ReportViewModel: ObservableObject {
         uncompletedLanguage = BabyMilestone.getUncompletedMilestoneByCategory(with: .language, warningMonth: appData.babyAgeMonth)!
     }
     
-    func getNotes() -> [BabyMilestoneNote] {
-        let milestones = BabyMilestone.getNotesByMilestonePeriod(month: Int16(appData.selectedMonth))
-        var notes = [BabyMilestoneNote]()
-        milestones?.forEach { milestone in
-            milestone.notes?.forEach({ note in
-                notes.append(note as! BabyMilestoneNote)
-            })
-        }
-        
-        return notes
+    func getImportantNotes() -> [BabyMilestoneNote] {
+        let milestones = BabyMilestoneNote.getNotesByImportant()
+
+        return milestones ?? []
     }
 }
