@@ -165,7 +165,7 @@ struct ProgressShareView: View {
                             .foregroundColor(.white)
                             .padding(-(screenWidth) * 0.02)
                     }
-                    .position(x: screenWidth * 0.14, y: screenHeight * 0.22)
+                    .position(x: screenWidth * 0.14, y: screenHeight * 0.25)
                 
                 Image.ui.tuntunHead
                     .resizable()
@@ -175,16 +175,16 @@ struct ProgressShareView: View {
                     .foregroundColor(Color.ui.socialPrimary)
                     .position(x: screenWidth * 0.8, y: screenHeight * 0.08)
 
-//                Image(systemName: "character.bubble.fill")
-//                    .resizable()
-//                    .frame(width: 40, height: 40)
-//                    .foregroundColor(Color.ui.languagePrimary)
-//                    .background {
-//                        Circle()
-//                            .foregroundColor(.white)
-//                            .padding(-12)
-//                    }
-//                    .offset(CGSize(width: 20, height: -(geo.size.height) + 310))
+                Image(systemName: "character.bubble.fill")
+                    .resizable()
+                    .frame(width: 40, height: 40)
+                    .foregroundColor(Color.ui.languagePrimary)
+                    .background {
+                        Circle()
+                            .foregroundColor(.white)
+                            .padding(-12)
+                    }
+                    .position(x: screenWidth * 0.85, y: screenHeight * 0.21)
                 
     //            VStack {
     //
