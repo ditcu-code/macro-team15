@@ -22,14 +22,15 @@ struct ReportMilestoneView: View {
                 Divider()
                 
                 HStack {
-                    Button {
-                    } label: {
-                        Image(systemName: babyMilestone.isChecked ? "checkmark.circle.fill" : "checkmark.circle")
-                            .resizable()
-                            .frame(width: 28, height: 28)
-                            .foregroundColor(color)
-                    }
-                    .padding(12)
+                
+//                    Button {
+//                    } label: {
+//                        Image(systemName: babyMilestone.isChecked ? "checkmark.circle.fill" : "checkmark.circle")
+//                            .resizable()
+//                            .frame(width: 28, height: 28)
+//                            .foregroundColor(color)
+//                    }
+//                    .padding(12)
                     
                     VStack(alignment: .leading, spacing: 4) {
                         Text(milestone.title)
