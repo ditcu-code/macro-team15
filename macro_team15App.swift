@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct macro_team15App: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     let persistenceController = PersistenceController.shared
     
     var body: some Scene {

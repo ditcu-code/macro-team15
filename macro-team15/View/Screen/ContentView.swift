@@ -47,7 +47,11 @@ struct TabViews: View {
 //                    Label("Album", systemImage: "photo.on.rectangle")
 //                }
 //                .tag(Tabs.report)
-        }.onDisappear {
+        }
+        .onAppear {
+            NotificationManager.instance.requestAuthorization()
+        }
+        .onDisappear {
             AppData.setSelectedMonth(appData.babyAgeMonth)
         }
     }
