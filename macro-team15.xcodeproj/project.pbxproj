@@ -28,7 +28,6 @@
 		0E2F9A972937657F00DDAA28 /* BabyMilestone+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2F9A952937657F00DDAA28 /* BabyMilestone+CoreDataProperties.swift */; };
 		0E3B1113293C669900404E88 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3B1112293C669900404E88 /* EmptyView.swift */; };
 		0E3B1115293C996100404E88 /* ReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3B1114293C996100404E88 /* ReportViewModel.swift */; };
-		0E5F90BF293DD23B00502640 /* SyncMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5F90BE293DD23B00502640 /* SyncMonitor.swift */; };
 		0E6F61EF290FC348005C5415 /* DashboardScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6F61EE290FC348005C5415 /* DashboardScreen.swift */; };
 		0E6F61F1290FC40B005C5415 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6F61F0290FC40B005C5415 /* Enum.swift */; };
 		0E6F61F4290FC75B005C5415 /* MilestoneScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6F61F3290FC75B005C5415 /* MilestoneScreen.swift */; };
@@ -127,7 +126,6 @@
 		0E4151982939B65A00A2A448 /* Alexandria-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Alexandria-SemiBold.ttf"; sourceTree = "<group>"; };
 		0E46F142292FB14D00D54488 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E576EED290A7B2100341C88 /* macro-team15.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "macro-team15.entitlements"; sourceTree = "<group>"; };
-		0E5F90BE293DD23B00502640 /* SyncMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncMonitor.swift; sourceTree = "<group>"; };
 		0E6F61EE290FC348005C5415 /* DashboardScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardScreen.swift; sourceTree = "<group>"; };
 		0E6F61F0290FC40B005C5415 /* Enum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		0E6F61F3290FC75B005C5415 /* MilestoneScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneScreen.swift; sourceTree = "<group>"; };
@@ -257,7 +255,6 @@
 			isa = PBXGroup;
 			children = (
 				0EDCE4302906A1A50092F759 /* Persistence.swift */,
-				0E5F90BE293DD23B00502640 /* SyncMonitor.swift */,
 				0E92692929309AFD0050C375 /* userData.xcdatamodeld */,
 			);
 			path = Service;
@@ -664,7 +661,6 @@
 				0E8FE4F229349DFF00DBF715 /* OnboardingText.swift in Sources */,
 				0E6F61F4290FC75B005C5415 /* MilestoneScreen.swift in Sources */,
 				0E0C8BD82937954D009ABC42 /* BabyPhoto+CoreDataClass.swift in Sources */,
-				0E5F90BF293DD23B00502640 /* SyncMonitor.swift in Sources */,
 				FAB270C2291BBC8B00C3E99A /* BadgeDetailView.swift in Sources */,
 				0E3B1113293C669900404E88 /* EmptyView.swift in Sources */,
 				0E7764FE291BBC86005792FF /* BadgesContainer.swift in Sources */,
