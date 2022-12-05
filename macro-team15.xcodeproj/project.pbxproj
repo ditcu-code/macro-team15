@@ -77,6 +77,7 @@
 		FA77F7FA2938A8330054C87D /* ImageCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA77F7F92938A8330054C87D /* ImageCamera.swift */; };
 		FA7B02B92917DABA00552541 /* MilestoneProgressFullView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7B02B82917DABA00552541 /* MilestoneProgressFullView.swift */; };
 		FA7B02BB2917F60100552541 /* MilestoneProgressCompactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7B02BA2917F60100552541 /* MilestoneProgressCompactView.swift */; };
+		FA7B72B2293DC8CE00500404 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7B72B1293DC8CE00500404 /* Photo.swift */; };
 		FA7B7F0029339488005E8425 /* ProgressShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7B7EFF29339488005E8425 /* ProgressShareView.swift */; };
 		FA888ED92939F93F0035C733 /* NoReportMilestoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA888ED82939F93F0035C733 /* NoReportMilestoneView.swift */; };
 		FA888EDB2939F9730035C733 /* ReportMilestoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA888EDA2939F9730035C733 /* ReportMilestoneView.swift */; };
@@ -177,6 +178,7 @@
 		FA77F7F92938A8330054C87D /* ImageCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCamera.swift; sourceTree = "<group>"; };
 		FA7B02B82917DABA00552541 /* MilestoneProgressFullView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneProgressFullView.swift; sourceTree = "<group>"; };
 		FA7B02BA2917F60100552541 /* MilestoneProgressCompactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneProgressCompactView.swift; sourceTree = "<group>"; };
+		FA7B72B1293DC8CE00500404 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		FA7B7EFF29339488005E8425 /* ProgressShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressShareView.swift; sourceTree = "<group>"; };
 		FA888ED82939F93F0035C733 /* NoReportMilestoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoReportMilestoneView.swift; sourceTree = "<group>"; };
 		FA888EDA2939F9730035C733 /* ReportMilestoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportMilestoneView.swift; sourceTree = "<group>"; };
@@ -421,6 +423,7 @@
 				0E6F61F0290FC40B005C5415 /* Enum.swift */,
 				FAB8F3E4291A0227008F7C59 /* Shapes.swift */,
 				0E2F9A922937487D00DDAA28 /* AppData.swift */,
+				FA7B72B1293DC8CE00500404 /* Photo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -696,6 +699,7 @@
 				FAE1733E2932140F0076ABFA /* StimulusStepView.swift in Sources */,
 				FA9341312936057F004975FE /* ProfileSwitcherSheet.swift in Sources */,
 				0E2F9A932937487D00DDAA28 /* AppData.swift in Sources */,
+				FA7B72B2293DC8CE00500404 /* Photo.swift in Sources */,
 				0E8FE4EA29349CC000DBF715 /* DateOnboarding.swift in Sources */,
 				0E8FE50E29366D9200DBF715 /* BabyMilestoneNote+CoreDataClass.swift in Sources */,
 				FA93412F2935EFFD004975FE /* MilestonePeriodSheet.swift in Sources */,

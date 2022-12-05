@@ -14,6 +14,10 @@ struct ProgressShareView: View {
     @State var image: UIImage? = nil
     @State var items: [Any] = []
     @State var sheet = false
+    
+    @State var shareable: Photo? = nil
+    
+    @State private var shareId = 0
         
     var body: some View {
         VStack(alignment: .leading) {
@@ -62,29 +66,34 @@ struct ProgressShareView: View {
                         Label("Abadikan momen ini", systemImage: "camera")
                     }
                     .buttonStyle(PrimaryButtonStyle())
-
-                    Button {
-                        items.removeAll()
-                        
-                        let image = snapshot.asImage
-                        items.append("Ayo download Panda")
-                        items.append(image)
-                        
-                        sheet.toggle()
-                    } label: {
-                        Label("Bagikan", systemImage: "square.and.arrow.up")
-                            .labelStyle(.iconOnly)
-                            .font(.title2)
-                            .bold()
+                    
+                    if let share = shareable {
+                        ShareLink(
+                            item: share,
+                            preview: SharePreview(
+                                share.caption,
+                                image: share.image
+                            )
+                        ) {
+                            Label("Bagikan", systemImage: "square.and.arrow.up")
+                                .labelStyle(.iconOnly)
+                                .font(.title2)
+                                .bold()
+                        }
+                        .id(shareId)
+                        .foregroundColor(Color.ui.primary)
+                        .padding(.horizontal)
                     }
-                    .foregroundColor(Color.ui.primary)
-                    .padding(.horizontal)
                 }
                 .padding(.top, 60)
             }
             .padding(.horizontal, 40)
             
             Spacer()
+        }
+        .onAppear {
+            let image = snapshot.asImage
+            shareable = Photo(image: Image(uiImage: image), caption: "Ayo download Tuntun")
         }
         
         .sheet(isPresented: $sheet) {
