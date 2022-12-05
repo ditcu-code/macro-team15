@@ -154,7 +154,7 @@ struct ProgressShareView: View {
                             .foregroundColor(.white)
                             .padding(-(screenWidth) * 0.02)
                     }
-                    .position(x: screenWidth * 0.6, y: screenHeight * 0.06)
+                    .position(x: screenWidth * 0.57, y: screenHeight * 0.06)
                 
                 Image(systemName: "heart.fill")
                     .resizable()
@@ -166,6 +166,14 @@ struct ProgressShareView: View {
                             .padding(-(screenWidth) * 0.02)
                     }
                     .position(x: screenWidth * 0.14, y: screenHeight * 0.22)
+                
+                Image.ui.tuntunHead
+                    .resizable()
+                    .frame(width: screenWidth * 0.3, height: screenWidth * 0.3)
+                    .rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))
+                    .rotationEffect(.degrees(10))
+                    .foregroundColor(Color.ui.socialPrimary)
+                    .position(x: screenWidth * 0.8, y: screenHeight * 0.08)
 
 //                Image(systemName: "character.bubble.fill")
 //                    .resizable()
