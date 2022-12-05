@@ -11,15 +11,16 @@ struct ContentView: View {
     @ObservedObject var vm = ContentViewModel()
     
     var body: some View {
-        if (vm.appData.isDoneOnboarding || !vm.babies.isEmpty) {
-            if (vm.babies.count > 0) {
-                TabViews()
-            } else {
-                TuntunLoading()
-            }
-        } else {
-            OnboardingView()
-        }
+//        if (vm.appData.isDoneOnboarding || !vm.babies.isEmpty) {
+//            if (vm.babies.count > 0) {
+//                TabViews()
+//            } else {
+//                TuntunLoading()
+//            }
+//        } else {
+//            OnboardingView()
+//        }
+        AlbumScreen(name: "Ceroy")
     }
 }
 
