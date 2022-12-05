@@ -96,8 +96,7 @@ struct DashboardScreen: View {
                                 .padding(.bottom)
                         }
                     }
-                    NotifTester()
-                    
+//                    NotifTester()
                 }
                 
                 .background(alignment: .center) {
