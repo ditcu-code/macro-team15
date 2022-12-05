@@ -77,6 +77,8 @@ struct MilestoneDetailViewV2: View {
     
     var milestone: Milestone
     var cdMilestone: BabyMilestone
+    
+    @State private var isChecked = false
     @State var refreshId: Int = 0
     @Environment(\.presentationMode) var presentationMode
     
@@ -147,10 +149,21 @@ struct MilestoneDetailViewV2: View {
                     .foregroundColor(Color.ui.primary)
                     .onTapGesture {
                         cdMilestone.isChecked.toggle()
-                        refreshId += 1
                         PersistenceController.shared.save()
+                        
+                        withAnimation {
+                            refreshId += 1
+                        }
+                        
+                        isChecked = cdMilestone.isChecked
                     }
             }
         }.id(refreshId)
+        
+        
+        .sheet(isPresented: $isChecked) {
+            ProgressShareView(title: milestone.title)
+                .presentationDetents([.height(600)])
+        }
     }
 }
