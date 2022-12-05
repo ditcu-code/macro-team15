@@ -20,15 +20,16 @@ struct GreetingOnboarding: View {
                 .offset(x: viewModel.step == 0 ? 0 : -UIScreen.main.bounds.height)
                 .opacity(counter > 2 ? 1 : 0)
         }
-        .animation(.linear, value: counter)
         .padding(.bottom, 5)
         .onReceive(timer) { time in
-            if counter == 6 {
+            if counter == 7 {
                 timer.upstream.connect().cancel()
             } else {
                 print("The time is now \(time)")
             }
-            counter += 1
+            withAnimation(.easeInOut(duration: 1)) {
+                counter += 1
+            }
         }
         Button("Mulai") {
             let babies = Baby.getAll()
@@ -44,8 +45,7 @@ struct GreetingOnboarding: View {
             }
         }
         .buttonStyle(PrimaryButtonStyle())
-        .disabled(counter > 5 ? false : true)
-        .opacity(counter > 5 ? 1 : 0)
-        
+        .disabled(counter > 6 ? false : true)
+        .opacity(counter > 6 ? 1 : 0)
     }
 }
