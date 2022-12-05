@@ -68,23 +68,23 @@ struct MilestoneCategoryCardView: View {
                             .fontWeight(.semibold)
                     }
                     
-                    ZStack(alignment: .leading) {
-                        HStack {
-                            ForEach(0 ..< allProgress) { item in
-                                Capsule()
-                                    .frame(width: 32)
-                                    .foregroundColor(color.opacity(0.3))
-                            }
-                        }
-                        
-                        HStack {
-                            ForEach(0 ..< currentProgress) { item in
-                                Capsule()
-                                    .frame(width: 32)
-                                    .foregroundColor(color)
-                            }
-                        }
-                    }
+//                    ZStack(alignment: .leading) {
+//                        HStack {
+//                            ForEach(0 ..< allProgress) { item in
+//                                Capsule()
+//                                    .frame(width: 32)
+//                                    .foregroundColor(color.opacity(0.3))
+//                            }
+//                        }
+//                        
+//                        HStack {
+//                            ForEach(0 ..< currentProgress) { item in
+//                                Capsule()
+//                                    .frame(width: 32)
+//                                    .foregroundColor(color)
+//                            }
+//                        }
+//                    }
                 }
                 
                 Spacer()
