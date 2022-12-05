@@ -144,7 +144,7 @@ struct ProgressShareView: View {
                     .scaledToFill()
                     .frame(width: screenWidth - 120, height: screenWidth - 120)
                     .clipped()
-                    .offset(CGSize(width: 0, height: -(screenHeight) * 0.04))
+                    .offset(CGSize(width: 0, height: -(screenHeight) * 0.05))
                 
                 Image(systemName: "gearshape.fill")
                     .resizable()
@@ -196,40 +196,25 @@ struct ProgressShareView: View {
                             .foregroundColor(.white)
                             .padding(-12)
                     }
-                    .position(x: screenWidth * 0.85, y: screenHeight * 0.41)
+                    .position(x: screenWidth * 0.85, y: screenHeight * 0.39)
                 
                 Text("Berbicara dengan nada seolah berbicara dengan bahasa yang benar tapa menggunakan kata yang bisa dimengerti")
                     .font(.custom(FontType.semiBold.rawValue, size: 18))
+                    .multilineTextAlignment(.center)
                     .foregroundColor(Color.ui.primary)
                     .frame(maxWidth: screenWidth * 0.8)
-                    .position(x: screenWidth * 0.45, y: screenHeight * 0.48)
+                    .position(x: screenWidth * 0.5, y: screenHeight * 0.465)
                 
-    //            VStack {
-    //
-    //
-    //                Spacer()
-    //
-    //                Image.ui.placeholder
-    //                    .resizable()
-    //                    .scaledToFill()
-    //                    .frame(width: UIScreen.main.bounds.width - 100, height: 200)
-    //                    .clipped()
-    //                    .padding(.bottom, 10)
-    //
-    //                Text("Membalikan badan dari telentang ke tengkurap")
-    //                    .font(.caption)
-    //                    .bold()
-    //                    .foregroundColor(Color.ui.primary)
-    //                    .multilineTextAlignment(.center)
-    //                    .padding(.bottom, 4)
-    //
-    //                Text("12 September 2020")
-    //                    .font(.caption2)
-    //
-    //                Spacer()
-    //            }
-    //            .padding(.leading, -4)
-    //            .padding(.bottom, 4)
+                HStack {
+                    Text("\(Date().dmYFormat())")
+                        .font(.custom(FontType.regular.rawValue, size: 15))
+                        .foregroundColor(Color.ui.text)
+                        .frame(maxWidth: screenWidth * 0.8)
+                        .position(x: screenWidth * 0.5, y: screenHeight * 0.54)
+                    
+                    Spacer()
+                }
+                .frame(maxWidth: .infinity)
             }
             .frame(width: screenWidth, height: screenWidth * 1.25)
     }
