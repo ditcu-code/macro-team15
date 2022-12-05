@@ -48,22 +48,10 @@ struct DashboardScreen: View {
                         
                         ContentHeaderView(title: "Milestone", subtitle: "Perkembangan \(babyName) di bulan ini", navigationLink: nil)
                             .padding(.top)
-                            .onAppear{
-                                withAnimation {
-                                    vm.countCompletedMilestone()
-                                    vm.countTotalMilestone()
-                                }
-                            }
                         
                         ProgressBar(currentProgress: CGFloat(Double(vm.totalCompletedMilestone)/Double(vm.totalMilestone)))
                             .animation(.spring(), value: vm.totalCompletedMilestone)
-                            .onChange(of: appData.selectedMonth) { newValue in
-                                withAnimation {
-                                    vm.countCompletedMilestone()
-                                    vm.countTotalMilestone()
-                                }
-                            }
-                        
+
                         Text("\(vm.totalCompletedMilestone) dari \(vm.totalMilestone) perkembangan tercapai")
                             .font(.subheadline)
                             .foregroundColor(Color.ui.secondary)
@@ -85,10 +73,11 @@ struct DashboardScreen: View {
                     )
                     .padding(.horizontal)
                     .onAppear{
-                        withAnimation{
+                        withAnimation(.spring()) {
                             refreshId += 1
                         }
                     }
+                    
                     
                     Divider()
                         .padding()
@@ -148,6 +137,9 @@ struct DashboardScreen: View {
                 }
                 
             }
+        }.onChange(of: vm.appData.selectedMonth) { newValue in
+            vm.countCompletedMilestone()
+            vm.countTotalMilestone()
         }
         
     }

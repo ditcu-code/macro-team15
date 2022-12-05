@@ -77,7 +77,7 @@ extension BabyMilestone : Identifiable {
         let context = PersistenceController.viewContext
         guard let month = month else { return nil }
         let request = BabyMilestone.fetchRequest()
-        request.predicate = NSPredicate(format: "month == %@ AND isChecked == true", month.description)
+        request.predicate = NSPredicate(format: "month == %i AND isChecked == true", month)
         guard let items = try? context.fetch(request) else { return nil }
         return items
     }

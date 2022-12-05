@@ -82,7 +82,6 @@ class OnboardingViewModel: ObservableObject {
             babyMilestone.month = Int16(item.month)
             babyMilestone.warningMonth = Int16(item.warningMonth)
             babyMilestone.milestoneID = Int16(item.id)
-            babyMilestone.month = Int16(selectedMonth)
         }
         PersistenceController.shared.save()
     }

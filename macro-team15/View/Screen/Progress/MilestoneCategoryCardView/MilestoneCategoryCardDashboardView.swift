@@ -13,6 +13,7 @@ struct MilestoneCategoryCardDashboardView: View {
     let milestone: [Milestone]
 
     @State var refreshID: Int = 0
+    @State var isOpen: Bool = false
     
     private func colorSwitcher() -> Color {
         switch category {
@@ -43,7 +44,7 @@ struct MilestoneCategoryCardDashboardView: View {
     
     var body: some View {
         
-        DisclosureGroup {
+        DisclosureGroup(isExpanded: $isOpen) {
             VStack {
                 Spacer()
                 
