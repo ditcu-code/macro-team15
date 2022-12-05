@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct ActivityCardLongView: View {
-    
-    let navigationLink: AnyView
+    var stimulus: Stimulus
+    var allStimulus: [Stimulus]
     
     var body: some View {
         NavigationLink {
-            navigationLink
+            StimulusDetailView(stimulus: stimulus, allStimulus: allStimulus)
         } label: {
             HStack(spacing: 28) {
                 Image.ui.tuntunStimulus

@@ -28,7 +28,11 @@ struct DashboardScreen: View {
                     
                     Divider().padding(.vertical)
                     
-                    ContentHeaderView(title: "Aktivitas", subtitle: "Dirancang untuk mendukung pencapaian \(babyName)", navigationLink: AnyView(Text("Detail")))
+                    ContentHeaderView(
+                        title: "Aktivitas",
+                        subtitle: "Dirancang untuk mendukung pencapaian \(babyName)",
+                        navigationLink: AnyView(StimuliView())
+                    )
                     
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
@@ -51,7 +55,7 @@ struct DashboardScreen: View {
                         
                         ProgressBar(currentProgress: CGFloat(Double(vm.totalCompletedMilestone)/Double(vm.totalMilestone)))
                             .animation(.spring(), value: vm.totalCompletedMilestone)
-
+                        
                         Text("\(vm.totalCompletedMilestone) dari \(vm.totalMilestone) perkembangan tercapai")
                             .font(.subheadline)
                             .foregroundColor(Color.ui.secondary)

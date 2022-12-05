@@ -8,18 +8,18 @@
 import SwiftUI
 
 struct StimuliView: View {
+    var allStimulus: [Stimulus] = StimulusData.getAll()
+    
     var body: some View {
         ScrollView {
-            Spacer()
-                .padding(.top)
+            Spacer().padding(.top)
 
-            ForEach(0 ..< 8) { item in
-                ActivityCardLongView(navigationLink: AnyView(Text("")))
-                    .padding(.bottom)
+            ForEach(allStimulus) { item in
+                ActivityCardLongView(stimulus: item, allStimulus: allStimulus)
+                    .padding(.bottom, 10)
             }
         }
         .background(BackgroundView())
-
         .navigationTitle(Text("Stimulus"))
     }
 }
@@ -27,8 +27,7 @@ struct StimuliView: View {
 struct StimuliView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            StimuliView()
-            
+            StimuliView(allStimulus: StimulusData.getAll())
             .navigationBarTitleDisplayMode(.inline)
         }
     }
