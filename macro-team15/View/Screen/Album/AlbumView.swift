@@ -71,7 +71,8 @@ struct AlbumScreen: View {
                 }
             }
             .sheet(isPresented: $selectedPhoto, content: {
-                ProgressShareView(title: "Abc", category: "Def")
+                ProgressShareView(title: "Abc")
+                    .presentationDetents([.height(600)])
             })
         }
     }

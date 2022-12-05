@@ -137,7 +137,7 @@ struct DashboardScreen: View {
                 }
                 
                 .sheet(item: $checkedMilestone) { milestone in
-                    ProgressShareView(title: milestone.title, category: milestone.category.rawValue)
+                    ProgressShareView(title: milestone.title)
                 }
                 
             }

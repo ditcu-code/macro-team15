@@ -20,7 +20,6 @@ struct ProgressShareView: View {
     @State private var photo: UIImage? = UIImage(named: "milestoneIcon")
     
     let title: String
-    let category: String
     
     private let screenWidth = UIScreen.main.bounds.width
     private let screenHeight = UIScreen.main.bounds.height
@@ -54,17 +53,8 @@ struct ProgressShareView: View {
             }
             
             Group {
-                Text("Bagus sekali, Ceroy!")
-                    .font(.title)
-                    .fontWeight(.semibold)
-                    .foregroundColor(Color.ui.secondary)
-                    .padding(.top, 28)
-
-                Text("Kamu sudah bisa bermain kerincingan!")
-                    .font(.title2)
-                    .foregroundColor(Color.ui.secondary)
-                    .padding(.vertical)
-
+                Spacer()
+                
                 HStack {
                     Button {
                         shouldPresentImagePicker.toggle()
@@ -90,11 +80,8 @@ struct ProgressShareView: View {
                         .padding(.horizontal)
                     }
                 }
-                .padding(.top, 60)
             }
             .padding(.horizontal, 40)
-            
-            Spacer()
         }
         .onAppear {
             render()
@@ -120,7 +107,7 @@ struct ProgressShareView: View {
     
     var snapshot: some View {
             ZStack {
-                Color.ui.primary.opacity(0.1)
+                Color.white
                 
                 HStack {
                     Image.ui.tuntunIconEye
@@ -139,7 +126,7 @@ struct ProgressShareView: View {
                 }
                 .position(x: screenWidth * 0.55, y: screenHeight * 0.04)
                 
-                Image.ui.placeholder
+                Image(uiImage: photo!)
                     .resizable()
                     .scaledToFill()
                     .frame(width: screenWidth - 120, height: screenWidth - 120)
@@ -233,6 +220,6 @@ struct ProgressShareView: View {
 
 struct ProgressShareView_Previews: PreviewProvider {
     static var previews: some View {
-        ProgressShareView(title: "Title", category: "Category")
+        ProgressShareView(title: "Title")
     }
 }
