@@ -9,22 +9,43 @@ import SwiftUI
 
 struct GreetingOnboarding: View {
     @ObservedObject var viewModel: OnboardingViewModel
+    @ObservedObject var appData = AppData()
+    @State private var counter = 0
+    
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
         HStack {
             OnboardingText(text: "Hi Ayah Bunda!\nAku Tuntun, yang akan menemani perjalanan Ayah Bunda dan bayi di 1000 hari pertamanya!")
                 .offset(x: viewModel.step == 0 ? 0 : -UIScreen.main.bounds.height)
-        }.padding(.bottom, 5)
-        Button("Selanjutnya") {
+                .opacity(counter > 2 ? 1 : 0)
+        }
+        .animation(.linear, value: counter)
+        .padding(.bottom, 5)
+        .onReceive(timer) { time in
+            if counter == 6 {
+                timer.upstream.connect().cancel()
+            } else {
+                print("The time is now \(time)")
+            }
+            counter += 1
+        }
+        Button("Mulai") {
             let babies = Baby.getAll()
-            print(babies)
-            print(AppData().isDoneOnboarding)
             if babies.isEmpty {
                 viewModel.nextStep()
             } else {
-                UserDefaults.standard.set(true, forKey: "isDoneOnboarding")
+                if let baby = babies.first {
+                    let selectedMonth = Calendar.current.dateComponents([.month], from: baby.birthDate!, to: Date()).month ?? 0
+                    viewModel.setAppDatas(baby.id!, baby.name!, selectedMonth)
+                    AppData.setIsDoneOnboarding(true)
+                    AppData.setUserHasInstalled(true)
+                }
             }
-        }.buttonStyle(PrimaryButtonStyle())
+        }
+        .buttonStyle(PrimaryButtonStyle())
+        .disabled(counter > 5 ? false : true)
+        .opacity(counter > 5 ? 1 : 0)
         
     }
 }

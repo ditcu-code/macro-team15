@@ -20,24 +20,24 @@ final class AppData: ObservableObject {
         UserDefaults.standard.set(id, forKey: AppStorageEnum.babyId.rawValue)
     }
     
-    static func setBabyName(_ month: Int) {
-        UserDefaults.standard.set(month, forKey: AppStorageEnum.babyId.rawValue)
+    static func setBabyName(_ name: String) {
+        UserDefaults.standard.set(name, forKey: AppStorageEnum.babyName.rawValue)
     }
     
     static func setSelectedMonth(_ month: Int) {
-        UserDefaults.standard.set(month, forKey: AppStorageEnum.babyId.rawValue)
+        UserDefaults.standard.set(month, forKey: AppStorageEnum.selectedMonth.rawValue)
     }
     
     static func setBabyAgeMonth(_ month: Int) {
-        UserDefaults.standard.set(month, forKey: AppStorageEnum.babyId.rawValue)
+        UserDefaults.standard.set(month, forKey: AppStorageEnum.babyAgeMonth.rawValue)
     }
     
     static func setIsDoneOnboarding(_ done: Bool) {
-        UserDefaults.standard.set(done, forKey: AppStorageEnum.babyId.rawValue)
+        UserDefaults.standard.set(done, forKey: AppStorageEnum.doneOnboarding.rawValue)
     }
     
-    static func setUsrHasInstalled(_ done: Bool) {
-        UserDefaults.standard.set(done, forKey: AppStorageEnum.babyId.rawValue)
+    static func setUserHasInstalled(_ done: Bool) {
+        UserDefaults.standard.set(done, forKey: AppStorageEnum.userHasInstalled.rawValue)
     }
     
 }

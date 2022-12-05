@@ -15,7 +15,7 @@ class DashboardViewModel: ObservableObject {
     @Published var totalMilestone: Int = 0
     @Published var totalCompletedMilestone: Int = 0
     @Published var stimuluses: [Stimulus] = []
-//    @Published var babyMilestones: [BabyMilestone] = []
+    
     @Published var appData = AppData()
     @Published var milestoneData: [Milestone] = MilestoneData.getAll()
     @Published var stimulusData: [Stimulus] = StimulusData.getAll()
@@ -32,7 +32,7 @@ class DashboardViewModel: ObservableObject {
     }
     
     func getData() {
-        setCurrentBabyId()
+        setCurrentBaby()
         getBabies()
         countTotalMilestone()
         countCompletedMilestone()
@@ -66,7 +66,7 @@ class DashboardViewModel: ObservableObject {
         return stimulus
     }
     
-    func setCurrentBabyId() {
+    func setCurrentBaby() {
         let baby = Baby.getSpecificBaby(with: UUID(uuidString: appData.currentBabyId))
         currentBaby = baby
     }

@@ -9,10 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var vm = ContentViewModel()
+    @ObservedObject var appData = AppData()
     
     var body: some View {
-        if (vm.appData.isDoneOnboarding || !vm.babies.isEmpty) {
-            if (vm.babies.count > 0) {
+        if (appData.isDoneOnboarding || !vm.babies.isEmpty) {
+            if (vm.babies.count > 0 || appData.userHasInstalled) {
                 TabViews()
             } else {
                 TuntunLoading()

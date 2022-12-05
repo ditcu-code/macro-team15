@@ -11,7 +11,6 @@ import CoreData
 
 class ContentViewModel: ObservableObject {
     @Published var babies: [Baby] = []
-    @Published var appData = AppData()
     
     private var cancellable: AnyCancellable?
     

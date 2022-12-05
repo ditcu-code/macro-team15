@@ -139,6 +139,25 @@ struct DashboardScreen: View {
             vm.countCompletedMilestone()
             vm.countTotalMilestone()
         }
+        .onAppear{
+            if appData.currentBabyId.isEmpty, let baby = vm.babies.first {
+                
+                UserDefaults.standard.set(baby.id!.description, forKey: "currentBabyId")
+//                AppData.setSelectedMonth(<#T##Int#>)
+                vm.setCurrentBaby()
+                print( "birthdate" ,vm.currentBaby?.birthDate)
+                
+                if appData.selectedMonth == 0 {
+                    let babyAge = Calendar.current.dateComponents([.month], from: baby.birthDate!, to: Date()).month!
+                    print(babyAge)
+//                    AppData.setSelectedMonth()
+                }
+            }
+            print("something", appData.selectedMonth)
+            print("something2", appData.babyAgeMonth)
+            print("something3", vm.currentBaby?.birthDate)
+        }
         
     }
 }
+
