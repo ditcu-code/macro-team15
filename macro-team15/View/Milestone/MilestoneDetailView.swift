@@ -79,6 +79,7 @@ struct MilestoneDetailViewV2: View {
     var cdMilestone: BabyMilestone
     @State var refreshId: Int = 0
     @Environment(\.presentationMode) var presentationMode
+    var babyName = AppData().currentBabyName
     
     var body: some View {
         ScrollView {
@@ -86,7 +87,7 @@ struct MilestoneDetailViewV2: View {
             
             Divider().padding([.horizontal, .bottom])
             
-            ContentHeaderView(title: "Aktivitas", subtitle: "Dirancang untuk mendukung pencapaian si kecil", navigationLink: AnyView(Text("Abc")))
+            ContentHeaderView(title: "Aktivitas", subtitle: "Dirancang untuk mendukung pencapaian \(babyName)", navigationLink: AnyView(Text("Abc")))
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
@@ -111,7 +112,7 @@ struct MilestoneDetailViewV2: View {
             Divider()
                 .padding(.top)
             
-            ContentHeaderView(title: "Catatan", subtitle: "Hal-hal penting mengenai perkembangan Ceroy", navigationLink: nil)
+            ContentHeaderView(title: "Catatan", subtitle: "Hal-hal penting mengenai perkembangan \(babyName)", navigationLink: nil)
             
             ScrollView {
                 
