@@ -82,19 +82,27 @@ struct MilestoneDetailViewV2: View {
     var babyName = AppData().currentBabyName
     
     var body: some View {
+        let stimuluses = StimulusData.getAll()
+        
         ScrollView {
             MissionView(missionTitle: milestone.title)
             
             Divider().padding([.horizontal, .bottom])
             
-            ContentHeaderView(title: "Aktivitas", subtitle: "Dirancang untuk mendukung pencapaian \(babyName)", navigationLink: AnyView(Text("Abc")))
+            
+            ContentHeaderView(
+                title: "Aktivitas",
+                subtitle: "Dirancang untuk mendukung pencapaian \(babyName)",
+                navigationLink: AnyView(StimuliView(allStimulus: stimuluses.filter({$0.id == milestone.id}))),
+                hideButton: stimuluses.count > 5 ? true : false
+            )
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
                     Spacer()
                         .padding(.leading, 8)
                     
-                    if let stimulus = StimulusData.getAll().filter({$0.id == milestone.id}) {
+                    if let stimulus = stimuluses.filter({$0.id == milestone.id}) {
                         ForEach(stimulus) { item in
                             ActivityCardViewV2(
                                 stimulus: item,
@@ -132,7 +140,7 @@ struct MilestoneDetailViewV2: View {
                         NoteViewV2(milestone: milestone, babyMilestone: cdMilestone, babyNotes: item)
                     }
                 }
-
+                
             }
         }
         .background {
