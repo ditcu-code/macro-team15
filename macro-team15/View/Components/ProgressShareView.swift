@@ -185,7 +185,7 @@ struct ProgressShareView: View {
                     }
                     .position(x: screenWidth * 0.85, y: screenHeight * 0.39)
                 
-                Text("Berbicara dengan nada seolah berbicara dengan bahasa yang benar tapa menggunakan kata yang bisa dimengerti")
+                Text(title)
                     .font(.custom(FontType.semiBold.rawValue, size: 18))
                     .multilineTextAlignment(.center)
                     .foregroundColor(Color.ui.primary)
