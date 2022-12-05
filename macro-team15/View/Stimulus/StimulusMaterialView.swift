@@ -18,9 +18,8 @@ struct StimulusMaterialView: View {
                 .frame(maxWidth: 75)
             
             Text(material.name)
-                .font(.custom(FontType.semiBold.rawValue, size: 14))
+                .font(.custom(FontType.semiBold.rawValue, size: 12, relativeTo: .caption))
                 .foregroundColor(Color.ui.secondary)
-                .lineLimit(3)
             
         }
         .padding(.horizontal)

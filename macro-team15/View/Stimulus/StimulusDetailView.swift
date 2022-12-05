@@ -33,10 +33,12 @@ struct StimulusDetailView: View {
                 ContentHeaderView(title: "Material", subtitle: "Peralatan untuk mendukung aktivitas ini", navigationLink: nil)
                 
                 ScrollView(.horizontal, showsIndicators: false) {
+                    HStack {
                         ForEach(materials, id: \.self) { item in
-                            StimulusMaterialView(material: item)
+                                StimulusMaterialView(material: item)
                         }
-                }.frame(maxHeight: 60)
+                    }
+                }
                 
                 Divider()
                     .padding(.bottom, 12)
