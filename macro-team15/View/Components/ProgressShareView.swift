@@ -144,6 +144,7 @@ struct ProgressShareView: View {
                     .scaledToFill()
                     .frame(width: screenWidth - 120, height: screenWidth - 120)
                     .clipped()
+                    .offset(CGSize(width: 0, height: -(screenHeight) * 0.04))
                 
                 Image(systemName: "gearshape.fill")
                     .resizable()
@@ -154,7 +155,7 @@ struct ProgressShareView: View {
                             .foregroundColor(.white)
                             .padding(-(screenWidth) * 0.02)
                     }
-                    .position(x: screenWidth * 0.57, y: screenHeight * 0.06)
+                    .position(x: screenWidth * 0.57, y: screenHeight * 0.08)
                 
                 Image(systemName: "heart.fill")
                     .resizable()
@@ -165,7 +166,7 @@ struct ProgressShareView: View {
                             .foregroundColor(.white)
                             .padding(-(screenWidth) * 0.02)
                     }
-                    .position(x: screenWidth * 0.14, y: screenHeight * 0.25)
+                    .position(x: screenWidth * 0.14, y: screenHeight * 0.27)
                 
                 Image.ui.tuntunHead
                     .resizable()
@@ -173,18 +174,35 @@ struct ProgressShareView: View {
                     .rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))
                     .rotationEffect(.degrees(10))
                     .foregroundColor(Color.ui.socialPrimary)
-                    .position(x: screenWidth * 0.8, y: screenHeight * 0.08)
-
+                    .position(x: screenWidth * 0.8, y: screenHeight * 0.1)
+                
                 Image(systemName: "character.bubble.fill")
                     .resizable()
-                    .frame(width: 40, height: 40)
+                    .frame(width: screenWidth * 0.09, height: screenWidth * 0.08)
                     .foregroundColor(Color.ui.languagePrimary)
                     .background {
                         Circle()
                             .foregroundColor(.white)
                             .padding(-12)
                     }
-                    .position(x: screenWidth * 0.85, y: screenHeight * 0.21)
+                    .position(x: screenWidth * 0.85, y: screenHeight * 0.23)
+                
+                Image(systemName: "puzzlepiece.fill")
+                    .resizable()
+                    .frame(width: screenWidth * 0.12, height: screenWidth * 0.08)
+                    .foregroundColor(Color.ui.cognitivePrimary)
+                    .background {
+                        Circle()
+                            .foregroundColor(.white)
+                            .padding(-12)
+                    }
+                    .position(x: screenWidth * 0.85, y: screenHeight * 0.41)
+                
+                Text("Berbicara dengan nada seolah berbicara dengan bahasa yang benar tapa menggunakan kata yang bisa dimengerti")
+                    .font(.custom(FontType.semiBold.rawValue, size: 18))
+                    .foregroundColor(Color.ui.primary)
+                    .frame(maxWidth: screenWidth * 0.8)
+                    .position(x: screenWidth * 0.45, y: screenHeight * 0.48)
                 
     //            VStack {
     //
@@ -213,7 +231,7 @@ struct ProgressShareView: View {
     //            .padding(.leading, -4)
     //            .padding(.bottom, 4)
             }
-            .frame(width: screenWidth, height: screenWidth)
+            .frame(width: screenWidth, height: screenWidth * 1.25)
     }
     
     @MainActor func render() {
