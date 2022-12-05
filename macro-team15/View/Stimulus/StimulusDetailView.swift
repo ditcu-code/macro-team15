@@ -12,7 +12,7 @@ struct StimulusDetailView: View {
     let allStimulus: [Stimulus]
     
     @ObservedObject var vm = StimulusDetailViewModel()
-    
+    @State private var showShareSheet = false
 
     init(stimulus: Stimulus, allStimulus: [Stimulus], vm: StimulusDetailViewModel = StimulusDetailViewModel()) {
         self.stimulus = stimulus
@@ -53,7 +53,7 @@ struct StimulusDetailView: View {
             }
             
             Button {
-                
+                showShareSheet.toggle()
             } label: {
                 Label("Abadikan momen", systemImage: "camera")
             }
@@ -82,13 +82,17 @@ struct StimulusDetailView: View {
             BackgroundView()
                 .edgesIgnoringSafeArea(.all)
         }
+        .sheet(isPresented: $showShareSheet) {
+            ProgressShareView(title: stimulus.activityName)
+                .presentationDetents([.height(600)])
+        }
         
         .navigationTitle(Text("Detail Aktivitas"))
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem {
                 Button {
-                    
+                    showShareSheet.toggle()
                 } label: {
                     Image(systemName: "square.and.arrow.up")
                         .foregroundColor(Color.ui.primary)

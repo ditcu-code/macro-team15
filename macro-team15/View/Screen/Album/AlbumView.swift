@@ -20,50 +20,48 @@ struct AlbumScreen: View {
     
     var body: some View {
         NavigationView {
-            ZStack(alignment: .top) {
-                BackgroundView()
-                    .ignoresSafeArea()
-                
-                VStack {
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 10)
-                            .frame(height: 46)
-                            .foregroundColor(Color.ui.segmentedControlBackground)
-                        
-                        HStack {
-                            CustomSegmentedControlView(selectedTab: $selectedTab)
-                        }
-                        .padding(.horizontal, 3)
-                    }
-                    .padding(.horizontal)
+            VStack {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 10)
+                        .frame(height: 46)
+                        .foregroundColor(Color.ui.segmentedControlBackground)
                     
-                    ScrollView {
-                        LazyVGrid(columns: layout, spacing: 20) {
-                            if selectedTab == 0 {
-                                ForEach(0..<2) { i in
-                                    Button {
-                                        selectedPhoto.toggle()
-                                    } label: {
-                                        MilestonePhotoCardView()
-                                            .padding(.vertical)
-                                            .padding(i % 2 == 0 ? .leading : .trailing)
-                                    }
+                    HStack {
+                        CustomSegmentedControlView(selectedTab: $selectedTab)
+                    }
+                    .padding(.horizontal, 3)
+                }
+                .padding(.horizontal)
+                
+                ScrollView {
+                    LazyVGrid(columns: layout, spacing: 20) {
+                        if selectedTab == 0 {
+                            ForEach(0..<2) { i in
+                                Button {
+                                    selectedPhoto.toggle()
+                                } label: {
+                                    MilestonePhotoCardView()
+                                        .padding(.vertical)
+                                        .padding(i % 2 == 0 ? .leading : .trailing)
                                 }
-                            } else {
-                                ForEach(0..<2) { i in
-                                    Button {
-                                        selectedPhoto.toggle()
-                                    } label: {
-                                        StimulusPhotoCardView()
-                                            .padding(.vertical)
-                                            .padding(i % 2 == 0 ? .leading : .trailing)
-                                    }
+                            }
+                        } else {
+                            ForEach(0..<2) { i in
+                                Button {
+                                    selectedPhoto.toggle()
+                                } label: {
+                                    StimulusPhotoCardView()
+                                        .padding(.vertical)
+                                        .padding(i % 2 == 0 ? .leading : .trailing)
                                 }
                             }
                         }
-                        .animation(Animation.spring(), value: 2)
                     }
+                    .animation(Animation.spring(), value: 2)
                 }
+            }
+            .background {
+                BackgroundView()
             }
             
             .navigationTitle(Text("Album Ceroy!"))
@@ -73,7 +71,8 @@ struct AlbumScreen: View {
                 }
             }
             .sheet(isPresented: $selectedPhoto, content: {
-                ProgressShareView(isPresented: $selectedPhoto)
+                ProgressShareView(title: "Abc")
+                    .presentationDetents([.height(600)])
             })
         }
     }

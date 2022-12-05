@@ -77,23 +77,34 @@ struct MilestoneDetailViewV2: View {
     
     var milestone: Milestone
     var cdMilestone: BabyMilestone
+    
+    @State private var isChecked = false
     @State var refreshId: Int = 0
     @Environment(\.presentationMode) var presentationMode
+    var babyName = AppData().currentBabyName
     
     var body: some View {
+        let stimuluses = StimulusData.getAll()
+        
         ScrollView {
             MissionView(missionTitle: milestone.title)
             
             Divider().padding([.horizontal, .bottom])
             
-            ContentHeaderView(title: "Aktivitas", subtitle: "Dirancang untuk mendukung pencapaian si kecil", navigationLink: AnyView(Text("Abc")))
+            
+            ContentHeaderView(
+                title: "Aktivitas",
+                subtitle: "Dirancang untuk mendukung pencapaian \(babyName)",
+                navigationLink: AnyView(StimuliView(allStimulus: stimuluses.filter({$0.id == milestone.id}))),
+                hideButton: stimuluses.count > 5 ? true : false
+            )
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
                     Spacer()
                         .padding(.leading, 8)
                     
-                    if let stimulus = StimulusData.getAll().filter({$0.id == milestone.id}) {
+                    if let stimulus = stimuluses.filter({$0.id == milestone.id}) {
                         ForEach(stimulus) { item in
                             ActivityCardViewV2(
                                 stimulus: item,
@@ -111,7 +122,7 @@ struct MilestoneDetailViewV2: View {
             Divider()
                 .padding(.top)
             
-            ContentHeaderView(title: "Catatan", subtitle: "Hal-hal penting mengenai perkembangan Ceroy", navigationLink: nil)
+            ContentHeaderView(title: "Catatan", subtitle: "Hal-hal penting mengenai perkembangan \(babyName)", navigationLink: nil)
             
             ScrollView {
                 
@@ -131,7 +142,7 @@ struct MilestoneDetailViewV2: View {
                         NoteViewV2(milestone: milestone, babyMilestone: cdMilestone, babyNotes: item)
                     }
                 }
-
+                
             }
         }
         .background {
@@ -147,10 +158,21 @@ struct MilestoneDetailViewV2: View {
                     .foregroundColor(Color.ui.primary)
                     .onTapGesture {
                         cdMilestone.isChecked.toggle()
-                        refreshId += 1
                         PersistenceController.shared.save()
+                        
+                        withAnimation {
+                            refreshId += 1
+                        }
+                        
+                        isChecked = cdMilestone.isChecked
                     }
             }
         }.id(refreshId)
+        
+        
+        .sheet(isPresented: $isChecked) {
+            ProgressShareView(title: milestone.title)
+                .presentationDetents([.height(600)])
+        }
     }
 }

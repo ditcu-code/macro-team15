@@ -15,6 +15,8 @@ struct MilestoneCategoryCardDashboardView: View {
     @State var refreshID: Int = 0
     @State var isOpen: Bool = false
     
+    @Binding var checkedMilestone: Milestone?
+    
     private func colorSwitcher() -> Color {
         switch category {
         case .cognitive:
@@ -62,6 +64,10 @@ struct MilestoneCategoryCardDashboardView: View {
                                         PersistenceController.shared.save()
                                         withAnimation {
                                             refreshID += 1
+                                        }
+                                        
+                                        if babyMiles.isChecked == true {
+                                            checkedMilestone = item
                                         }
                                     } label: {
                                         Image(systemName: babyMiles.isChecked ? "checkmark.circle.fill" : "checkmark.circle")

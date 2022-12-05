@@ -20,6 +20,9 @@ class DashboardViewModel: ObservableObject {
     @Published var milestoneData: [Milestone] = MilestoneData.getAll()
     @Published var stimulusData: [Stimulus] = StimulusData.getAll()
     
+    @Published var allNotes: [BabyMilestoneNote] = []
+    
+    var notif = NotificationManager.instance
     private var cancellable: AnyCancellable?
     
     init () {
@@ -36,6 +39,7 @@ class DashboardViewModel: ObservableObject {
         getBabies()
         countTotalMilestone()
         countCompletedMilestone()
+        getNotes()
     }
     
     func countTotalMilestone() {
@@ -76,7 +80,7 @@ class DashboardViewModel: ObservableObject {
         babies = req
     }
     
-    func getNotes() -> [BabyMilestoneNote] {
+    func getNotes() {
         let milestones = BabyMilestone.getNotesByMilestonePeriod(month: Int16(appData.selectedMonth))
         var notes = [BabyMilestoneNote]()
         milestones?.forEach { milestone in
@@ -84,7 +88,18 @@ class DashboardViewModel: ObservableObject {
                 notes.append(note as! BabyMilestoneNote)
             })
         }
-        
-        return notes
+        allNotes = notes
+    }
+    
+    // MARK: Notification
+    func setupNotif() {
+        if let birthDate = currentBaby?.birthDate {
+            notif.setBirthdayNotif(birthDate: birthDate)
+        }
+        notif.setWeeklyNotif()
+    }
+    
+    func removeNotif() {
+        notif.removeNotifications()
     }
 }

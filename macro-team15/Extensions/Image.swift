@@ -22,6 +22,7 @@ extension Image {
         let tuntunNoNote = Image("TuntunNoNote")
         let milestoneIcon = Image("milestoneIcon")
         let tuntunStimulus = Image("TuntunStimulus")
+        let tuntunIconEye = Image("tuntunIconEye")
     }
 
 }
