@@ -20,6 +20,8 @@ class DashboardViewModel: ObservableObject {
     @Published var milestoneData: [Milestone] = MilestoneData.getAll()
     @Published var stimulusData: [Stimulus] = StimulusData.getAll()
     
+    @Published var allNotes: [BabyMilestoneNote] = []
+    
     var notif = NotificationManager.instance
     private var cancellable: AnyCancellable?
     
@@ -37,6 +39,7 @@ class DashboardViewModel: ObservableObject {
         getBabies()
         countTotalMilestone()
         countCompletedMilestone()
+        getNotes()
     }
     
     func countTotalMilestone() {
@@ -85,7 +88,7 @@ class DashboardViewModel: ObservableObject {
                 notes.append(note as! BabyMilestoneNote)
             })
         }
-        
+        allNotes = notes
         return notes
     }
     

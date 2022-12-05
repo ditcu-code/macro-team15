@@ -177,7 +177,12 @@ struct ReportView: View {
                 Divider()
                     .padding()
                 
-                ContentHeaderView(title: "Catatan Penting", subtitle: "Hal-hal penting mengenai perkembangan \(vm.appData.currentBabyName) yang ditandai", navigationLink: AnyView(NotesView()))
+                ContentHeaderView(
+                    title: "Catatan Penting",
+                    subtitle: "Hal-hal penting mengenai perkembangan \(vm.appData.currentBabyName) yang ditandai",
+                    navigationLink: AnyView(NotesView()),
+                    hideButton: vm.getImportantNotes().count < 5 ? true : false
+                )
                 
                 VStack(spacing: 20) {
                     if vm.getImportantNotes().isEmpty {
