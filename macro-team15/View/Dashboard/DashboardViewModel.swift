@@ -80,7 +80,7 @@ class DashboardViewModel: ObservableObject {
         babies = req
     }
     
-    func getNotes() -> [BabyMilestoneNote] {
+    func getNotes() {
         let milestones = BabyMilestone.getNotesByMilestonePeriod(month: Int16(appData.selectedMonth))
         var notes = [BabyMilestoneNote]()
         milestones?.forEach { milestone in
@@ -89,7 +89,6 @@ class DashboardViewModel: ObservableObject {
             })
         }
         allNotes = notes
-        return notes
     }
     
     // MARK: Notification

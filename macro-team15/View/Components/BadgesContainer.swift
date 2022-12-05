@@ -35,31 +35,31 @@ struct BadgesContainer: View {
                 
             }
             .padding(.horizontal)
-            
-            LazyVGrid(columns: gridItemLayout, spacing: 20) {
-                let badgesCount: Int = showSeeAll ? 3 : 6
-                ForEach(0 ..< badgesCount) { item in
-                    
-                    VStack {
-                        Hexagon()
-                            .frame(width: 100, height: 100)
-                            .foregroundColor(Color.ui.background)
-                            .rotationEffect(Angle(degrees: 90))
-                        
-                        Text("Reward #\(item+1)")
-                            .font(.subheadline)
-                            .bold()
-                        
-                        Text(Date().dmYFormat())
-                            .font(.subheadline)
-                    }
-                }
-            }
-            .padding(.vertical, 40)
-            .padding(.horizontal, 25)
-            .background(RoundedRectangle(cornerRadius: 20)
-                .stroke(Color.ui.background, lineWidth: 4)
-                .padding(.horizontal))
+   
+//            LazyVGrid(columns: gridItemLayout, spacing: 20) {
+//                let badgesCount: Int = showSeeAll ? 3 : 6
+//                ForEach(0 ..< badgesCount) { item in
+//
+//                    VStack {
+//                        Hexagon()
+//                            .frame(width: 100, height: 100)
+//                            .foregroundColor(Color.ui.background)
+//                            .rotationEffect(Angle(degrees: 90))
+//
+//                        Text("Reward #\(item+1)")
+//                            .font(.subheadline)
+//                            .bold()
+//
+//                        Text(Date().dmYFormat())
+//                            .font(.subheadline)
+//                    }
+//                }
+//            }
+//            .padding(.vertical, 40)
+//            .padding(.horizontal, 25)
+//            .background(RoundedRectangle(cornerRadius: 20)
+//                .stroke(Color.ui.background, lineWidth: 4)
+//                .padding(.horizontal))
         }
     }
 }
