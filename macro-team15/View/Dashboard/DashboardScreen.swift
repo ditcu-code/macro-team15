@@ -89,7 +89,7 @@ struct DashboardScreen: View {
                     ContentHeaderView(title: "Catatan", subtitle: "Hal-hal penting mengenai perkembangan \(babyName)", navigationLink: AnyView(NotesView()))
                     
                     if vm.getNotes().isEmpty {
-                        EmptyView(note: "Belum ada catatan yang ditandai")
+                        EmptyView(note: "Belum ada catatan")
                     } else {
                         ForEach(vm.getNotes()) { note in
                             NoteViewV2(milestone: MilestoneData.getAll().filter({ $0.id == note.milestone?.milestoneID ?? 1 }).first!, babyMilestone: note.milestone!, babyNotes: note)
@@ -139,7 +139,8 @@ struct DashboardScreen: View {
                 }
                 
             }
-        }.onChange(of: vm.appData.selectedMonth) { newValue in
+        }
+        .onChange(of: vm.appData.selectedMonth) { newValue in
             vm.countCompletedMilestone()
             vm.countTotalMilestone()
         }
