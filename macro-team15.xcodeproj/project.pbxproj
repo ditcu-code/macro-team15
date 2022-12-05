@@ -28,7 +28,6 @@
 		0E2F9A972937657F00DDAA28 /* BabyMilestone+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2F9A952937657F00DDAA28 /* BabyMilestone+CoreDataProperties.swift */; };
 		0E3B1113293C669900404E88 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3B1112293C669900404E88 /* EmptyView.swift */; };
 		0E3B1115293C996100404E88 /* ReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3B1114293C996100404E88 /* ReportViewModel.swift */; };
-		0E576EEC290A7AF900341C88 /* CloudKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E576EEB290A7AF900341C88 /* CloudKitService.swift */; };
 		0E6F61EF290FC348005C5415 /* DashboardScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6F61EE290FC348005C5415 /* DashboardScreen.swift */; };
 		0E6F61F1290FC40B005C5415 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6F61F0290FC40B005C5415 /* Enum.swift */; };
 		0E6F61F4290FC75B005C5415 /* MilestoneScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6F61F3290FC75B005C5415 /* MilestoneScreen.swift */; };
@@ -126,7 +125,6 @@
 		0E4151972939B64D00A2A448 /* Alexandria-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Alexandria-Light.ttf"; sourceTree = "<group>"; };
 		0E4151982939B65A00A2A448 /* Alexandria-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Alexandria-SemiBold.ttf"; sourceTree = "<group>"; };
 		0E46F142292FB14D00D54488 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0E576EEB290A7AF900341C88 /* CloudKitService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitService.swift; sourceTree = "<group>"; };
 		0E576EED290A7B2100341C88 /* macro-team15.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "macro-team15.entitlements"; sourceTree = "<group>"; };
 		0E6F61EE290FC348005C5415 /* DashboardScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardScreen.swift; sourceTree = "<group>"; };
 		0E6F61F0290FC40B005C5415 /* Enum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
@@ -256,7 +254,6 @@
 		0E576EEA290A7AD400341C88 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				0E576EEB290A7AF900341C88 /* CloudKitService.swift */,
 				0EDCE4302906A1A50092F759 /* Persistence.swift */,
 				0E92692929309AFD0050C375 /* userData.xcdatamodeld */,
 			);
@@ -678,7 +675,6 @@
 				0E7456F429069B4D00D792E6 /* ContentView.swift in Sources */,
 				0E8FE4FD29364D9700DBF715 /* MilestoneData.swift in Sources */,
 				FAF8545C29349463009C8CA5 /* AlbumView.swift in Sources */,
-				0E576EEC290A7AF900341C88 /* CloudKitService.swift in Sources */,
 				FA48EFBC292CD5D0009ED62B /* ActivityCardView.swift in Sources */,
 				0E1C86F2293A6D1600195E04 /* StimuliView.swift in Sources */,
 				FA888EDE2939FAEF0035C733 /* MilestoneCategoryCardViewReport.swift in Sources */,

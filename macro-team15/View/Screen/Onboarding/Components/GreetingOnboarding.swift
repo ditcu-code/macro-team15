@@ -16,7 +16,14 @@ struct GreetingOnboarding: View {
                 .offset(x: viewModel.step == 0 ? 0 : -UIScreen.main.bounds.height)
         }.padding(.bottom, 5)
         Button("Selanjutnya") {
-            viewModel.nextStep()
+            let babies = Baby.getAll()
+            print(babies)
+            print(AppData().isDoneOnboarding)
+            if babies.isEmpty {
+                viewModel.nextStep()
+            } else {
+                UserDefaults.standard.set(true, forKey: "isDoneOnboarding")
+            }
         }.buttonStyle(PrimaryButtonStyle())
         
     }

@@ -15,8 +15,20 @@ class OnboardingViewModel: ObservableObject {
     @Published var birthDate: Date = Date()
     @Published var photo: Data? = nil
     
+    @Published var babies: [Baby] = []
+    
     @Published var step: Int = 0
     @Published var selectedPicture: PhotosPickerItem? = nil
+    
+    
+    init() {
+        getBabies()
+    }
+    
+    func getBabies() {
+        let req = Baby.getAll()
+        babies = req
+    }
     
     func prevStep() {
         step -= 1
