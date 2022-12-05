@@ -12,7 +12,7 @@ struct DashboardScreen: View {
     @State private var milestonePeriod: Bool = false
     @State private var profileSwitcher: Bool = false
     @State private var refreshId: Int = 1
-
+    
     @ObservedObject var vm = DashboardViewModel()
     @ObservedObject var appData = AppData()
     
@@ -45,15 +45,23 @@ struct DashboardScreen: View {
                         .padding()
                     
                     VStack {
-                    
+                        
                         ContentHeaderView(title: "Milestone", subtitle: "Perkembangan \(babyName) di bulan ini", navigationLink: nil)
                             .padding(.top)
+                            .onAppear{
+                                withAnimation {
+                                    vm.countCompletedMilestone()
+                                    vm.countTotalMilestone()
+                                }
+                            }
                         
                         ProgressBar(currentProgress: CGFloat(Double(vm.totalCompletedMilestone)/Double(vm.totalMilestone)))
                             .animation(.spring(), value: vm.totalCompletedMilestone)
                             .onChange(of: appData.selectedMonth) { newValue in
-                                vm.countCompletedMilestone()
-                                vm.countTotalMilestone()
+                                withAnimation {
+                                    vm.countCompletedMilestone()
+                                    vm.countTotalMilestone()
+                                }
                             }
                         
                         Text("\(vm.totalCompletedMilestone) dari \(vm.totalMilestone) perkembangan tercapai")
@@ -68,7 +76,7 @@ struct DashboardScreen: View {
                             let listMilestone = vm.milestoneData.filter{$0.category == category && $0.month == appData.selectedMonth}
                             
                             MilestoneCategoryCardDashboardView(category: category, milestone: listMilestone).id(refreshId)
-
+                            
                         }
                     }
                     .background(
@@ -131,7 +139,7 @@ struct DashboardScreen: View {
                 }
                 
                 .sheet(isPresented: $profileSwitcher) {
-//                    ProfileSwitcherSheet()
+                    //                    ProfileSwitcherSheet()
                     ProfileEditView(baby: vm.currentBaby!)
                 }
                 
