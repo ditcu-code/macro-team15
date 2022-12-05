@@ -138,6 +138,7 @@ struct DashboardScreen: View {
                 
                 .sheet(item: $checkedMilestone) { milestone in
                     ProgressShareView(title: milestone.title)
+                        .presentationDetents([.height(600)])
                 }
                 
             }

@@ -66,7 +66,9 @@ struct MilestoneCategoryCardDashboardView: View {
                                             refreshID += 1
                                         }
                                         
-                                        checkedMilestone = item
+                                        if babyMiles.isChecked == true {
+                                            checkedMilestone = item
+                                        }
                                     } label: {
                                         Image(systemName: babyMiles.isChecked ? "checkmark.circle.fill" : "checkmark.circle")
                                             .resizable()
