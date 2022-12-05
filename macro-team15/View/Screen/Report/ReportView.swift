@@ -179,10 +179,10 @@ struct ReportView: View {
                 ContentHeaderView(title: "Catatan", subtitle: "Hal-hal penting mengenai perkembangan \(vm.appData.currentBabyName)", navigationLink: AnyView(NotesView()))
                 
                 VStack(spacing: 20) {
-                    if vm.getNotes().isEmpty {
+                    if vm.getImportantNotes().isEmpty {
                         EmptyView(note: "Belum ada catatan yang ditandai")
                     } else {
-                        ForEach(vm.getNotes()) { note in
+                        ForEach(vm.getImportantNotes()) { note in
                             NoteViewV2(milestone: MilestoneData.getAll().filter({ $0.id == note.milestone?.milestoneID ?? 1 }).first!, babyMilestone: note.milestone!, babyNotes: note)
                                 .padding(.bottom)
                         }

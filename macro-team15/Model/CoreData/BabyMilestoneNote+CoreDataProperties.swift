@@ -34,4 +34,12 @@ extension BabyMilestoneNote : Identifiable {
         guard let items = try? context.fetch(request) else { return nil }
         return items
     }
+    
+    static func getNotesByImportant() -> [BabyMilestoneNote]? {
+        let context = PersistenceController.viewContext
+        let request = BabyMilestoneNote.fetchRequest()
+        request.predicate = NSPredicate(format: "isImportant == true")
+        guard let items = try? context.fetch(request) else { return nil }
+        return items
+    }
 }
