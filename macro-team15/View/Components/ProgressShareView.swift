@@ -91,8 +91,8 @@ struct ProgressShareView: View {
             Spacer()
         }
         .onAppear {
-            let image = snapshot.asImage
-            shareable = Photo(image: Image(uiImage: image), caption: "Ayo download Tuntun")
+            render()
+            shareable = Photo(image: Image(uiImage: image!), caption: "Ayo download Tuntun")
         }
         
         .sheet(isPresented: $sheet) {
@@ -140,6 +140,14 @@ struct ProgressShareView: View {
         .background {
             Image("BackgroundFill1Image")
                 .resizable()
+        }
+    }
+    
+    @MainActor func render() {
+        let renderer = ImageRenderer(content: snapshot)
+
+        if let uiImage = renderer.uiImage {
+            image = uiImage
         }
     }
     
