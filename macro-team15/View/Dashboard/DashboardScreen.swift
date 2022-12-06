@@ -12,11 +12,10 @@ struct DashboardScreen: View {
     @State private var milestonePeriod: Bool = false
     @State private var profileSwitcher: Bool = false
     @State private var refreshId: Int = 1
+    @State private var checkedMilestone: Milestone? = nil
     
     @ObservedObject var vm = DashboardViewModel()
     @ObservedObject var appData = AppData()
-    
-    @State private var checkedMilestone: Milestone? = nil
     
     var body: some View {
         let babyName = vm.babies.first?.name ?? "Aruna"
@@ -165,9 +164,6 @@ struct DashboardScreen: View {
             vm.removeNotif()
             vm.setupNotif()
         }
-//        .onDisappear{
-//            vm.setupNotif()
-//        }
     }
 }
 
