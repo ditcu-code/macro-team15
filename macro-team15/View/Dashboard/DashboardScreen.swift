@@ -164,8 +164,6 @@ struct DashboardScreen: View {
             vm.removeNotif()
             vm.setupNotif()
         }
-        
-        .navigationViewStyle(.stack)
     }
 }
 

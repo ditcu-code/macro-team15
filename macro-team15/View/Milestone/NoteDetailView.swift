@@ -179,10 +179,19 @@ struct NoteDetailViewV2: View {
                         Spacer()
                         
                         if isImportant {
-                            Image(systemName: "bookmark.fill")
-                                .foregroundColor(Color.ui.primary)
-                                .font(.system(size: 22))
-                            .bold()
+                            Button {
+                                isImportant = false
+                                
+                                if let note = noteToEdit {
+                                    note.isImportant = self.isImportant
+                                    PersistenceController.shared.save()
+                                }
+                            } label: {
+                                Image(systemName: "bookmark.fill")
+                                    .foregroundColor(Color.ui.primary)
+                                    .font(.system(size: 22))
+                                    .bold()
+                            }
                             .padding(.bottom, 4)
                         }
                     }
@@ -197,9 +206,6 @@ struct NoteDetailViewV2: View {
                 }
                 .padding(32)
             }
-        }
-        .onAppear {
-            print(noteToEdit as? BabyMilestoneNote)
         }
         .background(BackgroundView())
         .alert(
