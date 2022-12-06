@@ -48,7 +48,7 @@ class MilestoneData {
             Milestone(
                 id:3,
                 titleEN: "Hands fisted near face",
-                title: "Bisa menggepal tengan dekat muka",
+                title: "Bisa mengepal tangan dekat muka",
                 month: 1,
                 warningMonth: 2,
                 category: .motoric,
@@ -93,7 +93,7 @@ class MilestoneData {
             Milestone(
                 id:8,
                 titleEN: "Cries out of distress",
-                title: "Mengangis saat resah",
+                title: "Menangis saat resah",
                 month: 1,
                 warningMonth: 2,
                 category: .social,
@@ -101,7 +101,7 @@ class MilestoneData {
             ),
             Milestone(
                 id:9,
-                titleEN: "Startles to voice/ sound",
+                titleEN: "Startles to voice/sound",
                 title: "Bereaksi terkejut terhadap suara",
                 month: 1,
                 warningMonth: 2,
