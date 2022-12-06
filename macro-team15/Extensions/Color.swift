@@ -13,6 +13,10 @@ extension Color {
     
     struct UI {
         let background = Color("BackgroundColor")
+        let segmentedControlBackground = Color("SegmentedControlBackgroundColor")
+        
+        let primary = Color("PrimaryColor")
+        let secondary = Color("SecondaryColor")
         
         let disabledText = Color("TextDisabledColor")
         let text = Color("TextColor")
