@@ -23,22 +23,22 @@ struct ProgressShareView: View {
     
     private let screenWidth = UIScreen.main.bounds.width
     private let screenHeight = UIScreen.main.bounds.height
-        
+    
     var body: some View {
         VStack(alignment: .leading) {
             ZStack(alignment: .topTrailing) {
                 snapshot
-
+                
                 HStack {
                     Spacer()
-
+                    
                     Capsule()
                         .frame(width: 120, height: 6)
                         .padding(.top, 8)
-
+                    
                     Spacer()
                 }
-
+                
                 Button {
                     dismiss()
                 } label: {
@@ -62,7 +62,7 @@ struct ProgressShareView: View {
                         Label("Abadikan momen ini", systemImage: "camera")
                     }
                     .buttonStyle(PrimaryButtonStyle())
-
+                    
                     if let share = shareable {
                         ShareLink(
                             item: share,
@@ -78,6 +78,19 @@ struct ProgressShareView: View {
                         }
                         .foregroundColor(Color.ui.primary)
                         .padding(.horizontal)
+                        
+                        Button {
+                            if let sticker = image {
+                                InstagramManager.shareToInstagramStories(uiImage: sticker)
+                            }
+                        } label: {
+                            
+                            Image("instagram")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 22)
+                        }
+                        
                     }
                 }
             }
@@ -106,111 +119,111 @@ struct ProgressShareView: View {
     }
     
     var snapshot: some View {
-            ZStack {
-                Color.white
-                
-                HStack {
-                    Image.ui.tuntunIconEye
-                        .resizable()
-                        .frame(width: 230/6, height: 137/6)
-
-                    Text("tun")
-                        .font(.custom(FontType.semiBold.rawValue, size: 14, relativeTo: .body))
-
-                    Text("tun")
-                        .font(.custom(FontType.semiBold.rawValue, size: 14, relativeTo: .body))
-                        .foregroundColor(Color.ui.primary)
-                        .padding(.leading, -8)
-
-                    Spacer()
-                }
-                .position(x: screenWidth * 0.55, y: screenHeight * 0.04)
-                
-                Image(uiImage: photo!)
+        ZStack {
+            Color.white
+            
+            HStack {
+                Image.ui.tuntunIconEye
                     .resizable()
-                    .scaledToFill()
-                    .frame(width: screenWidth - 120, height: screenWidth - 120)
-                    .clipped()
-                    .offset(CGSize(width: 0, height: -(screenHeight) * 0.05))
+                    .frame(width: 230/6, height: 137/6)
                 
-                Image(systemName: "gearshape.fill")
-                    .resizable()
-                    .frame(width: screenWidth * 0.08, height: screenWidth * 0.08)
-                    .foregroundColor(Color.ui.motorPrimary)
-                    .background {
-                        Circle()
-                            .foregroundColor(.white)
-                            .padding(-(screenWidth) * 0.02)
-                    }
-                    .position(x: screenWidth * 0.57, y: screenHeight * 0.08)
+                Text("tun")
+                    .font(.custom(FontType.semiBold.rawValue, size: 14, relativeTo: .body))
                 
-                Image(systemName: "heart.fill")
-                    .resizable()
-                    .frame(width: screenWidth * 0.09, height: screenWidth * 0.08)
-                    .foregroundColor(Color.ui.socialPrimary)
-                    .background {
-                        Circle()
-                            .foregroundColor(.white)
-                            .padding(-(screenWidth) * 0.02)
-                    }
-                    .position(x: screenWidth * 0.14, y: screenHeight * 0.27)
-                
-                Image.ui.tuntunHead
-                    .resizable()
-                    .frame(width: screenWidth * 0.3, height: screenWidth * 0.3)
-                    .rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))
-                    .rotationEffect(.degrees(10))
-                    .foregroundColor(Color.ui.socialPrimary)
-                    .position(x: screenWidth * 0.8, y: screenHeight * 0.1)
-                
-                Image(systemName: "character.bubble.fill")
-                    .resizable()
-                    .frame(width: screenWidth * 0.09, height: screenWidth * 0.08)
-                    .foregroundColor(Color.ui.languagePrimary)
-                    .background {
-                        Circle()
-                            .foregroundColor(.white)
-                            .padding(-12)
-                    }
-                    .position(x: screenWidth * 0.85, y: screenHeight * 0.23)
-                
-                Image(systemName: "puzzlepiece.fill")
-                    .resizable()
-                    .frame(width: screenWidth * 0.12, height: screenWidth * 0.08)
-                    .foregroundColor(Color.ui.cognitivePrimary)
-                    .background {
-                        Circle()
-                            .foregroundColor(.white)
-                            .padding(-12)
-                    }
-                    .position(x: screenWidth * 0.85, y: screenHeight * 0.39)
-                
-                Text(title)
-                    .font(.custom(FontType.semiBold.rawValue, size: 18))
-                    .multilineTextAlignment(.center)
+                Text("tun")
+                    .font(.custom(FontType.semiBold.rawValue, size: 14, relativeTo: .body))
                     .foregroundColor(Color.ui.primary)
-                    .frame(maxWidth: screenWidth * 0.8)
-                    .position(x: screenWidth * 0.5, y: screenHeight * 0.465)
+                    .padding(.leading, -8)
                 
-                HStack {
-                    Text("\(Date().dmYFormat())")
-                        .font(.custom(FontType.regular.rawValue, size: 15))
-                        .foregroundColor(Color.ui.text)
-                        .frame(maxWidth: screenWidth * 0.8)
-                        .position(x: screenWidth * 0.5, y: screenHeight * 0.54)
-                    
-                    Spacer()
-                }
-                .frame(maxWidth: .infinity)
+                Spacer()
             }
-            .frame(width: screenWidth, height: screenWidth * 1.25)
+            .position(x: screenWidth * 0.55, y: screenHeight * 0.04)
+            
+            Image(uiImage: photo!)
+                .resizable()
+                .scaledToFill()
+                .frame(width: screenWidth - 120, height: screenWidth - 120)
+                .clipped()
+                .offset(CGSize(width: 0, height: -(screenHeight) * 0.05))
+            
+            Image(systemName: "gearshape.fill")
+                .resizable()
+                .frame(width: screenWidth * 0.08, height: screenWidth * 0.08)
+                .foregroundColor(Color.ui.motorPrimary)
+                .background {
+                    Circle()
+                        .foregroundColor(.white)
+                        .padding(-(screenWidth) * 0.02)
+                }
+                .position(x: screenWidth * 0.57, y: screenHeight * 0.08)
+            
+            Image(systemName: "heart.fill")
+                .resizable()
+                .frame(width: screenWidth * 0.09, height: screenWidth * 0.08)
+                .foregroundColor(Color.ui.socialPrimary)
+                .background {
+                    Circle()
+                        .foregroundColor(.white)
+                        .padding(-(screenWidth) * 0.02)
+                }
+                .position(x: screenWidth * 0.14, y: screenHeight * 0.27)
+            
+            Image.ui.tuntunHead
+                .resizable()
+                .frame(width: screenWidth * 0.3, height: screenWidth * 0.3)
+                .rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))
+                .rotationEffect(.degrees(10))
+                .foregroundColor(Color.ui.socialPrimary)
+                .position(x: screenWidth * 0.8, y: screenHeight * 0.1)
+            
+            Image(systemName: "character.bubble.fill")
+                .resizable()
+                .frame(width: screenWidth * 0.09, height: screenWidth * 0.08)
+                .foregroundColor(Color.ui.languagePrimary)
+                .background {
+                    Circle()
+                        .foregroundColor(.white)
+                        .padding(-12)
+                }
+                .position(x: screenWidth * 0.85, y: screenHeight * 0.23)
+            
+            Image(systemName: "puzzlepiece.fill")
+                .resizable()
+                .frame(width: screenWidth * 0.12, height: screenWidth * 0.08)
+                .foregroundColor(Color.ui.cognitivePrimary)
+                .background {
+                    Circle()
+                        .foregroundColor(.white)
+                        .padding(-12)
+                }
+                .position(x: screenWidth * 0.85, y: screenHeight * 0.39)
+            
+            Text(title)
+                .font(.custom(FontType.semiBold.rawValue, size: 18))
+                .multilineTextAlignment(.center)
+                .foregroundColor(Color.ui.primary)
+                .frame(maxWidth: screenWidth * 0.8)
+                .position(x: screenWidth * 0.5, y: screenHeight * 0.465)
+            
+            HStack {
+                Text("\(Date().dmYFormat())")
+                    .font(.custom(FontType.regular.rawValue, size: 15))
+                    .foregroundColor(Color.ui.text)
+                    .frame(maxWidth: screenWidth * 0.8)
+                    .position(x: screenWidth * 0.5, y: screenHeight * 0.54)
+                
+                Spacer()
+            }
+            .frame(maxWidth: .infinity)
+        }
+        .frame(width: screenWidth, height: screenWidth * 1.25)
     }
     
     @MainActor func render() {
         let renderer = ImageRenderer(content: snapshot)
-
+        
         renderer.scale = 2.5
-
+        
         if let uiImage = renderer.uiImage {
             image = uiImage
         }

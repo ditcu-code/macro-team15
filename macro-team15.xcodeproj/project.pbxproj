@@ -31,6 +31,7 @@
 		0E5F90C1293E257800502640 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5F90C0293E257800502640 /* NotificationManager.swift */; };
 		0E5F90C3293E260F00502640 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5F90C2293E260F00502640 /* AppDelegate.swift */; };
 		0E5F90C5293E354C00502640 /* NotifTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5F90C4293E354C00502640 /* NotifTester.swift */; };
+		0E5F90C7293EE70400502640 /* InstagramManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5F90C6293EE70400502640 /* InstagramManager.swift */; };
 		0E6F61EF290FC348005C5415 /* DashboardScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6F61EE290FC348005C5415 /* DashboardScreen.swift */; };
 		0E6F61F1290FC40B005C5415 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6F61F0290FC40B005C5415 /* Enum.swift */; };
 		0E6F61F4290FC75B005C5415 /* MilestoneScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6F61F3290FC75B005C5415 /* MilestoneScreen.swift */; };
@@ -129,6 +130,7 @@
 		0E5F90C0293E257800502640 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		0E5F90C2293E260F00502640 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E5F90C4293E354C00502640 /* NotifTester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifTester.swift; sourceTree = "<group>"; };
+		0E5F90C6293EE70400502640 /* InstagramManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramManager.swift; sourceTree = "<group>"; };
 		0E6F61EE290FC348005C5415 /* DashboardScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardScreen.swift; sourceTree = "<group>"; };
 		0E6F61F0290FC40B005C5415 /* Enum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		0E6F61F3290FC75B005C5415 /* MilestoneScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneScreen.swift; sourceTree = "<group>"; };
@@ -339,6 +341,7 @@
 				0E5F90C0293E257800502640 /* NotificationManager.swift */,
 				0E5F90C2293E260F00502640 /* AppDelegate.swift */,
 				0E5F90C4293E354C00502640 /* NotifTester.swift */,
+				0E5F90C6293EE70400502640 /* InstagramManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -622,6 +625,7 @@
 				0E6F61F9290FD283005C5415 /* OnboardingViewModel.swift in Sources */,
 				0E1C86E72939DB4000195E04 /* FontType.swift in Sources */,
 				FA4513C9292BDD17002ADD1A /* BackgroundView.swift in Sources */,
+				0E5F90C7293EE70400502640 /* InstagramManager.swift in Sources */,
 				0E0C8BE629390642009ABC42 /* MilestonePeriodSheetViewModel.swift in Sources */,
 				0E0C8BD92937954D009ABC42 /* BabyPhoto+CoreDataProperties.swift in Sources */,
 				FA996A17292E23D400DF570E /* Image.swift in Sources */,
