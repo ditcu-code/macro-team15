@@ -11,11 +11,11 @@ struct NoteDetailView: View {
     
     @State var title: String
     @State var note: String
+    @State private var isPresented = false
     
     @FocusState private var titleOnFocus: Bool
     @FocusState private var noteOnFocus: Bool
     
-    @State private var isPresented = false
     
     var body: some View {
         VStack {
@@ -142,11 +142,12 @@ struct NoteDetailViewV2: View {
         if let note = noteToEdit {
             _title = State(initialValue: note.title!)
             _bodyNote = State(initialValue: note.body!)
+            _isImportant = State(initialValue: note.isImportant)
         } else {
             self.title = title
             self.bodyNote = note
+            self.isImportant = isImportant
         }
-        self.isImportant = isImportant
         self.titleOnFocus = titleOnFocus
         self.noteOnFocus = noteOnFocus
         self.isPresented = isPresented
@@ -165,14 +166,36 @@ struct NoteDetailViewV2: View {
                     .shadow(radius: 1)
                 
                 VStack {
-                    TextField("", text: $title)
-                        .focused($titleOnFocus)
-                        .font(.title)
-                        .bold()
-                        .onSubmit {
-                            titleOnFocus = false
-                            noteOnFocus = true
+                    HStack(alignment: .top) {
+                        TextField("", text: $title)
+                            .focused($titleOnFocus)
+                            .font(.title)
+                            .bold()
+                            .onSubmit {
+                                titleOnFocus = false
+                                noteOnFocus = true
                         }
+                        
+                        Spacer()
+                        
+                        if isImportant {
+                            Button {
+                                isImportant = false
+                                
+                                if let note = noteToEdit {
+                                    note.isImportant = self.isImportant
+                                    PersistenceController.shared.save()
+                                }
+                            } label: {
+                                Image(systemName: "bookmark.fill")
+                                    .foregroundColor(Color.ui.primary)
+                                    .font(.system(size: 22))
+                                    .bold()
+                            }
+                            .padding(.bottom, 4)
+                        }
+                    }
+                    .animation(.spring(), value: 5)
                     
                     ZStack(alignment: .topLeading) {
                         TextEditor(text: $bodyNote)
@@ -237,6 +260,11 @@ struct NoteDetailViewV2: View {
                         Menu {
                             Button {
                                 isImportant.toggle()
+                                
+                                if let note = noteToEdit {
+                                    note.isImportant = self.isImportant
+                                    PersistenceController.shared.save()
+                                }
                             } label: {
                                 Label("Penting", systemImage: isImportant ? "bookmark.fill" : "bookmark")
                             }

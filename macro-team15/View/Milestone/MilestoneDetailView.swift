@@ -11,11 +11,12 @@ struct MilestoneDetailView: View {
     
     var milestone: Milestone
     var cdMilestone: BabyMilestone
+    var babyName = AppData().currentBabyName
     
     @State private var isChecked = false
     @State var refreshId: Int = 0
+    
     @Environment(\.presentationMode) var presentationMode
-    var babyName = AppData().currentBabyName
     
     func filterStimulus() -> [Stimulus] {
         let stimuluses = StimulusData.getAll()

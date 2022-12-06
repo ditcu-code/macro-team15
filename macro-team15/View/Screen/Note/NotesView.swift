@@ -13,6 +13,8 @@ struct NotesView: View {
     @FetchRequest(entity: BabyMilestoneNote.entity(), sortDescriptors: [])
     private var notes: FetchedResults<BabyMilestoneNote>
     
+    @State var id: Bool = false
+    
     var body: some View {
         ScrollView {
             Spacer()
