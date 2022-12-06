@@ -53,7 +53,7 @@ struct MilestoneCategoryCardDashboardView: View {
                 ForEach(milestone, id: \.id) { item in
                     if let babyMiles = BabyMilestone.getSpecificMilestone(with: Int16(item.id)) {
                         NavigationLink {
-                            MilestoneDetailViewV2(milestone: item, cdMilestone: babyMiles)
+                            MilestoneDetailView(milestone: item, cdMilestone: babyMiles)
                         } label: {
                             VStack {
                                 Divider()

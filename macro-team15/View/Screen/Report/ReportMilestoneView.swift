@@ -16,7 +16,7 @@ struct ReportMilestoneView: View {
     
     var body: some View {
         NavigationLink {
-            MilestoneDetailViewV2(milestone: milestone, cdMilestone: babyMilestone)
+            MilestoneDetailView(milestone: milestone, cdMilestone: babyMilestone)
         } label: {
             VStack {
                 Divider()
