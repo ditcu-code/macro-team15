@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct DashboardScreen: View {
+struct ProgressView: View {
     @State private var selectedMonth: Int = 1
     @State private var milestonePeriod: Bool = false
     @State private var profileSwitcher: Bool = false
     @State private var refreshId: Int = 1
     @State private var checkedMilestone: Milestone? = nil
     
-    @ObservedObject var vm = DashboardViewModel()
+    @ObservedObject var vm = ProgressViewModel()
     @ObservedObject var appData = AppData()
     
     var body: some View {

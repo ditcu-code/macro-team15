@@ -30,7 +30,7 @@ struct TabViews: View {
     
     var body: some View {
         TabView(selection: $selectedTab) {
-            DashboardScreen()
+            ProgressView()
                 .tabItem {
                     Label("Progres", systemImage: "rectangle.stack.fill")
                 }

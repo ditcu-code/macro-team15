@@ -32,9 +32,8 @@
 		0E5F90C3293E260F00502640 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5F90C2293E260F00502640 /* AppDelegate.swift */; };
 		0E5F90C5293E354C00502640 /* NotifTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5F90C4293E354C00502640 /* NotifTester.swift */; };
 		0E5F90C7293EE70400502640 /* InstagramManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5F90C6293EE70400502640 /* InstagramManager.swift */; };
-		0E6F61EF290FC348005C5415 /* DashboardScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6F61EE290FC348005C5415 /* DashboardScreen.swift */; };
+		0E6F61EF290FC348005C5415 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6F61EE290FC348005C5415 /* ProgressView.swift */; };
 		0E6F61F1290FC40B005C5415 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6F61F0290FC40B005C5415 /* Enum.swift */; };
-		0E6F61F4290FC75B005C5415 /* MilestoneScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6F61F3290FC75B005C5415 /* MilestoneScreen.swift */; };
 		0E6F61F9290FD283005C5415 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6F61F8290FD283005C5415 /* OnboardingViewModel.swift */; };
 		0E7456F229069B4D00D792E6 /* macro_team15App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7456F129069B4D00D792E6 /* macro_team15App.swift */; };
 		0E7456F429069B4D00D792E6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7456F329069B4D00D792E6 /* ContentView.swift */; };
@@ -48,7 +47,7 @@
 		0E8FE4EC29349CDA00DBF715 /* NameOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE4EB29349CDA00DBF715 /* NameOnboarding.swift */; };
 		0E8FE4EE29349D0800DBF715 /* ProfilePictureOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE4ED29349D0800DBF715 /* ProfilePictureOnboarding.swift */; };
 		0E8FE4F229349DFF00DBF715 /* OnboardingText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE4F129349DFF00DBF715 /* OnboardingText.swift */; };
-		0E8FE4F62934F19F00DBF715 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE4F52934F19F00DBF715 /* DashboardViewModel.swift */; };
+		0E8FE4F62934F19F00DBF715 /* ProgressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE4F52934F19F00DBF715 /* ProgressViewModel.swift */; };
 		0E8FE4F82935AB3E00DBF715 /* TuntunLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE4F72935AB3E00DBF715 /* TuntunLoading.swift */; };
 		0E8FE4FA2935ADA300DBF715 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E8FE4F92935ADA300DBF715 /* LaunchScreen.storyboard */; };
 		0E8FE4FD29364D9700DBF715 /* MilestoneData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FE4FC29364D9700DBF715 /* MilestoneData.swift */; };
@@ -68,14 +67,10 @@
 		FA34BD4D291A3FE8009DF42B /* MilestoneDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34BD4C291A3FE8009DF42B /* MilestoneDetailView.swift */; };
 		FA34BD4F291A5DAC009DF42B /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34BD4E291A5DAC009DF42B /* View.swift */; };
 		FA4513C9292BDD17002ADD1A /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4513C8292BDD17002ADD1A /* BackgroundView.swift */; };
-		FA4513CB292BE047002ADD1A /* DashboardHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4513CA292BE047002ADD1A /* DashboardHeaderView.swift */; };
 		FA4513CD292BE44D002ADD1A /* HighlightedStimulusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4513CC292BE44D002ADD1A /* HighlightedStimulusView.swift */; };
 		FA48EFBA292CC746009ED62B /* ContentHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA48EFB9292CC746009ED62B /* ContentHeaderView.swift */; };
 		FA48EFBC292CD5D0009ED62B /* ActivityCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA48EFBB292CD5D0009ED62B /* ActivityCardView.swift */; };
-		FA706AD32913C49400AD30A4 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA706AD22913C49400AD30A4 /* CardView.swift */; };
 		FA77F7FA2938A8330054C87D /* ImageCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA77F7F92938A8330054C87D /* ImageCamera.swift */; };
-		FA7B02B92917DABA00552541 /* MilestoneProgressFullView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7B02B82917DABA00552541 /* MilestoneProgressFullView.swift */; };
-		FA7B02BB2917F60100552541 /* MilestoneProgressCompactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7B02BA2917F60100552541 /* MilestoneProgressCompactView.swift */; };
 		FA7B72B2293DC8CE00500404 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7B72B1293DC8CE00500404 /* Photo.swift */; };
 		FA7B7F0029339488005E8425 /* ProgressShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7B7EFF29339488005E8425 /* ProgressShareView.swift */; };
 		FA888ED92939F93F0035C733 /* NoReportMilestoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA888ED82939F93F0035C733 /* NoReportMilestoneView.swift */; };
@@ -86,8 +81,6 @@
 		FA9706CC293A450A00D39BB6 /* ProfileEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9706CB293A450A00D39BB6 /* ProfileEditView.swift */; };
 		FA996A17292E23D400DF570E /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA996A16292E23D400DF570E /* Image.swift */; };
 		FA996A19292E25F700DF570E /* MissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA996A18292E25F700DF570E /* MissionView.swift */; };
-		FAB270C2291BBC8B00C3E99A /* BadgeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB270C1291BBC8B00C3E99A /* BadgeDetailView.swift */; };
-		FAB8F3E5291A0227008F7C59 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB8F3E4291A0227008F7C59 /* Shapes.swift */; };
 		FAB8F3E7291A0570008F7C59 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB8F3E6291A0570008F7C59 /* Date.swift */; };
 		FACDC5DB292F5DE4007B51A4 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACDC5DA292F5DE4007B51A4 /* NoteView.swift */; };
 		FACDC5DD292F5ED3007B51A4 /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACDC5DC292F5ED3007B51A4 /* ButtonStyle.swift */; };
@@ -131,9 +124,8 @@
 		0E5F90C2293E260F00502640 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E5F90C4293E354C00502640 /* NotifTester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifTester.swift; sourceTree = "<group>"; };
 		0E5F90C6293EE70400502640 /* InstagramManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramManager.swift; sourceTree = "<group>"; };
-		0E6F61EE290FC348005C5415 /* DashboardScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardScreen.swift; sourceTree = "<group>"; };
+		0E6F61EE290FC348005C5415 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		0E6F61F0290FC40B005C5415 /* Enum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
-		0E6F61F3290FC75B005C5415 /* MilestoneScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneScreen.swift; sourceTree = "<group>"; };
 		0E6F61F8290FD283005C5415 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		0E7456F129069B4D00D792E6 /* macro_team15App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = macro_team15App.swift; sourceTree = "<group>"; };
 		0E7456F329069B4D00D792E6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -148,7 +140,7 @@
 		0E8FE4EB29349CDA00DBF715 /* NameOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameOnboarding.swift; sourceTree = "<group>"; };
 		0E8FE4ED29349D0800DBF715 /* ProfilePictureOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePictureOnboarding.swift; sourceTree = "<group>"; };
 		0E8FE4F129349DFF00DBF715 /* OnboardingText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingText.swift; sourceTree = "<group>"; };
-		0E8FE4F52934F19F00DBF715 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		0E8FE4F52934F19F00DBF715 /* ProgressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewModel.swift; sourceTree = "<group>"; };
 		0E8FE4F72935AB3E00DBF715 /* TuntunLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuntunLoading.swift; sourceTree = "<group>"; };
 		0E8FE4F92935ADA300DBF715 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E8FE4FC29364D9700DBF715 /* MilestoneData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneData.swift; sourceTree = "<group>"; };
@@ -168,14 +160,10 @@
 		FA34BD4C291A3FE8009DF42B /* MilestoneDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneDetailView.swift; sourceTree = "<group>"; };
 		FA34BD4E291A5DAC009DF42B /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		FA4513C8292BDD17002ADD1A /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
-		FA4513CA292BE047002ADD1A /* DashboardHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardHeaderView.swift; sourceTree = "<group>"; };
 		FA4513CC292BE44D002ADD1A /* HighlightedStimulusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightedStimulusView.swift; sourceTree = "<group>"; };
 		FA48EFB9292CC746009ED62B /* ContentHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentHeaderView.swift; sourceTree = "<group>"; };
 		FA48EFBB292CD5D0009ED62B /* ActivityCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCardView.swift; sourceTree = "<group>"; };
-		FA706AD22913C49400AD30A4 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		FA77F7F92938A8330054C87D /* ImageCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCamera.swift; sourceTree = "<group>"; };
-		FA7B02B82917DABA00552541 /* MilestoneProgressFullView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneProgressFullView.swift; sourceTree = "<group>"; };
-		FA7B02BA2917F60100552541 /* MilestoneProgressCompactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneProgressCompactView.swift; sourceTree = "<group>"; };
 		FA7B72B1293DC8CE00500404 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		FA7B7EFF29339488005E8425 /* ProgressShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressShareView.swift; sourceTree = "<group>"; };
 		FA888ED82939F93F0035C733 /* NoReportMilestoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoReportMilestoneView.swift; sourceTree = "<group>"; };
@@ -186,8 +174,6 @@
 		FA9706CB293A450A00D39BB6 /* ProfileEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditView.swift; sourceTree = "<group>"; };
 		FA996A16292E23D400DF570E /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		FA996A18292E25F700DF570E /* MissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionView.swift; sourceTree = "<group>"; };
-		FAB270C1291BBC8B00C3E99A /* BadgeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeDetailView.swift; sourceTree = "<group>"; };
-		FAB8F3E4291A0227008F7C59 /* Shapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
 		FAB8F3E6291A0570008F7C59 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		FACDC5DA292F5DE4007B51A4 /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
 		FACDC5DC292F5ED3007B51A4 /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
@@ -262,23 +248,11 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
-		0E6F61ED290FC338005C5415 /* Dashboard */ = {
-			isa = PBXGroup;
-			children = (
-				0E6F61EE290FC348005C5415 /* DashboardScreen.swift */,
-				0E8FE4F52934F19F00DBF715 /* DashboardViewModel.swift */,
-				FA4513CC292BE44D002ADD1A /* HighlightedStimulusView.swift */,
-				FA4513CA292BE047002ADD1A /* DashboardHeaderView.swift */,
-			);
-			path = Dashboard;
-			sourceTree = "<group>";
-		};
 		0E6F61F2290FC74B005C5415 /* Milestone */ = {
 			isa = PBXGroup;
 			children = (
-				0E6F61F3290FC75B005C5415 /* MilestoneScreen.swift */,
 				FA34BD4C291A3FE8009DF42B /* MilestoneDetailView.swift */,
-				FAF49536292FA3AE00D396E1 /* NoteDetailView.swift */,
+				0EFF9D8C293F81EA006B5954 /* Components */,
 			);
 			path = Milestone;
 			sourceTree = "<group>";
@@ -288,23 +262,19 @@
 			children = (
 				0E7456F029069B4D00D792E6 /* macro-team15 */,
 				0E8FE4DF2933E52300DBF715 /* macro-team15.app */,
-				0E576EED290A7B2100341C88 /* macro-team15.entitlements */,
 				0E7456F129069B4D00D792E6 /* macro_team15App.swift */,
-				0E46F142292FB14D00D54488 /* Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
 		0E7456F029069B4D00D792E6 /* macro-team15 */ = {
 			isa = PBXGroup;
 			children = (
-				FA77F7F82938A81D0054C87D /* Helper */,
 				0E8FE4D42933CD0C00DBF715 /* Utilities */,
 				FA13CD6A2914FCCD00616699 /* Extensions */,
 				0EDCE4352906A3140092F759 /* Model */,
 				0EDCE4362906A4D60092F759 /* View */,
 				0E576EEA290A7AD400341C88 /* Service */,
-				0E7456F529069B4E00D792E6 /* Assets.xcassets */,
-				0E7456F729069B4E00D792E6 /* Preview Content */,
+				0EFF9D8E293F841B006B5954 /* Resources */,
 			);
 			path = "macro-team15";
 			sourceTree = "<group>";
@@ -320,14 +290,16 @@
 		0E8FE4C52933A32900DBF715 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
-				FA3266D8293CD4DA00BCEF10 /* Note */,
 				0E7456F329069B4D00D792E6 /* ContentView.swift */,
 				0E8FE4CE2933C41600DBF715 /* ContentViewModel.swift */,
 				0E8FE4F92935ADA300DBF715 /* LaunchScreen.storyboard */,
 				0E8FE512293675C300DBF715 /* Progress */,
 				0E8FE4E02933ECAB00DBF715 /* Report */,
-				0EA7D736292E23D20024DECC /* Onboarding */,
 				FAF8545929349431009C8CA5 /* Album */,
+				FA3266D8293CD4DA00BCEF10 /* Note */,
+				0EA7D736292E23D20024DECC /* Onboarding */,
+				FAE17338293201F40076ABFA /* Stimulus */,
+				0E6F61F2290FC74B005C5415 /* Milestone */,
 				FA9706CA293A44F900D39BB6 /* Profile */,
 			);
 			path = Screen;
@@ -336,11 +308,12 @@
 		0E8FE4D42933CD0C00DBF715 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				FA77F7F92938A8330054C87D /* ImageCamera.swift */,
+				FA7B72B1293DC8CE00500404 /* Photo.swift */,
 				FA241A9C2930FBD600CAA09B /* KeyboardResponder.swift */,
 				0E1C86E8293A0F9E00195E04 /* StringManipulation.swift */,
 				0E5F90C0293E257800502640 /* NotificationManager.swift */,
 				0E5F90C2293E260F00502640 /* AppDelegate.swift */,
-				0E5F90C4293E354C00502640 /* NotifTester.swift */,
 				0E5F90C6293EE70400502640 /* InstagramManager.swift */,
 			);
 			path = Utilities;
@@ -349,11 +322,9 @@
 		0E8FE4E02933ECAB00DBF715 /* Report */ = {
 			isa = PBXGroup;
 			children = (
-				0EA7D732292CBF720024DECC /* RadarChart.swift */,
 				0E8FE4E12933ED1500DBF715 /* ReportView.swift */,
 				0E3B1114293C996100404E88 /* ReportViewModel.swift */,
-				FA888ED82939F93F0035C733 /* NoReportMilestoneView.swift */,
-				FA888EDA2939F9730035C733 /* ReportMilestoneView.swift */,
+				0EFF9D84293F7E5B006B5954 /* Components */,
 			);
 			path = Report;
 			sourceTree = "<group>";
@@ -384,7 +355,9 @@
 		0E8FE512293675C300DBF715 /* Progress */ = {
 			isa = PBXGroup;
 			children = (
-				0E0C8BDE29389A05009ABC42 /* MilestoneCategoryCardView */,
+				0E6F61EE290FC348005C5415 /* ProgressView.swift */,
+				0E8FE4F52934F19F00DBF715 /* ProgressViewModel.swift */,
+				0EFF9D83293F7E40006B5954 /* Components */,
 			);
 			path = Progress;
 			sourceTree = "<group>";
@@ -392,9 +365,9 @@
 		0EA7D736292E23D20024DECC /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				0E8FE4E329349C2600DBF715 /* Components */,
 				0EA7D737292E24010024DECC /* OnboardingView.swift */,
 				0E6F61F8290FD283005C5415 /* OnboardingViewModel.swift */,
+				0E8FE4E329349C2600DBF715 /* Components */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -405,9 +378,7 @@
 				0EF16AD1293997C6008D1C5A /* CoreData */,
 				0E8FE4FB29364D8600DBF715 /* StaticData */,
 				0E6F61F0290FC40B005C5415 /* Enum.swift */,
-				FAB8F3E4291A0227008F7C59 /* Shapes.swift */,
 				0E2F9A922937487D00DDAA28 /* AppData.swift */,
-				FA7B72B1293DC8CE00500404 /* Photo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -416,11 +387,7 @@
 			isa = PBXGroup;
 			children = (
 				0E8FE4C52933A32900DBF715 /* Screen */,
-				FAE17338293201F40076ABFA /* Stimulus */,
-				FAB270C0291BBC7600C3E99A /* Badge */,
 				FA706AD12913C46D00AD30A4 /* Components */,
-				0E6F61ED290FC338005C5415 /* Dashboard */,
-				0E6F61F2290FC74B005C5415 /* Milestone */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -440,6 +407,115 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		0EFF9D83293F7E40006B5954 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				FA4513CC292BE44D002ADD1A /* HighlightedStimulusView.swift */,
+				0E0C8BDE29389A05009ABC42 /* MilestoneCategoryCardView */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		0EFF9D84293F7E5B006B5954 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				0EA7D732292CBF720024DECC /* RadarChart.swift */,
+				FA888EDA2939F9730035C733 /* ReportMilestoneView.swift */,
+				FA888ED82939F93F0035C733 /* NoReportMilestoneView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		0EFF9D85293F7E90006B5954 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				FAF854652934B654009C8CA5 /* CustomSegmentedControlView.swift */,
+				FAF854612934B612009C8CA5 /* MilestonePhotoCardView.swift */,
+				FAF854632934B62C009C8CA5 /* PhotoCardView.swift */,
+				FAF854672934B6CD009C8CA5 /* StimulusPhotoCardView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		0EFF9D87293F7F4E006B5954 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				0E1C86F1293A6D1600195E04 /* ActivityCardLongView.swift */,
+				FA48EFBB292CD5D0009ED62B /* ActivityCardView.swift */,
+				FAE1733B29320A7E0076ABFA /* StimulusMaterialView.swift */,
+				FAE1733D2932140F0076ABFA /* StimulusStepView.swift */,
+				0EFF9D88293F7F7D006B5954 /* StimulusDetail */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		0EFF9D88293F7F7D006B5954 /* StimulusDetail */ = {
+			isa = PBXGroup;
+			children = (
+				FAE17339293202110076ABFA /* StimulusDetailView.swift */,
+				0E1C86EC293A439200195E04 /* StimulusDetailViewModel.swift */,
+			);
+			path = StimulusDetail;
+			sourceTree = "<group>";
+		};
+		0EFF9D89293F80F9006B5954 /* Atoms */ = {
+			isa = PBXGroup;
+			children = (
+				FACDC5DC292F5ED3007B51A4 /* ButtonStyle.swift */,
+				FA4513C8292BDD17002ADD1A /* BackgroundView.swift */,
+				0E8FE4F72935AB3E00DBF715 /* TuntunLoading.swift */,
+				FA3266D1293C52C600BCEF10 /* ProgressBar.swift */,
+			);
+			path = Atoms;
+			sourceTree = "<group>";
+		};
+		0EFF9D8A293F8129006B5954 /* Molecules */ = {
+			isa = PBXGroup;
+			children = (
+				0E3B1112293C669900404E88 /* EmptyView.swift */,
+				FA48EFB9292CC746009ED62B /* ContentHeaderView.swift */,
+			);
+			path = Molecules;
+			sourceTree = "<group>";
+		};
+		0EFF9D8B293F81B8006B5954 /* Organisms */ = {
+			isa = PBXGroup;
+			children = (
+				0E5F90C4293E354C00502640 /* NotifTester.swift */,
+				FA7B7EFF29339488005E8425 /* ProgressShareView.swift */,
+			);
+			path = Organisms;
+			sourceTree = "<group>";
+		};
+		0EFF9D8C293F81EA006B5954 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				FA996A18292E25F700DF570E /* MissionView.swift */,
+				0E0C8BE42939061E009ABC42 /* MilestonePeriodSheet */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		0EFF9D8D293F8213006B5954 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				FAF8545F29349AC4009C8CA5 /* ProfileAvatarView.swift */,
+				0E0C8BDA29388BE9009ABC42 /* ProfileSwitcherSheet */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		0EFF9D8E293F841B006B5954 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0E46F142292FB14D00D54488 /* Info.plist */,
+				0E576EED290A7B2100341C88 /* macro-team15.entitlements */,
+				0E7456F529069B4E00D792E6 /* Assets.xcassets */,
+				0E7456F729069B4E00D792E6 /* Preview Content */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		FA13CD6A2914FCCD00616699 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -448,7 +524,6 @@
 				FA996A16292E23D400DF570E /* Image.swift */,
 				FAB8F3E6291A0570008F7C59 /* Date.swift */,
 				FA34BD4E291A5DAC009DF42B /* View.swift */,
-				FACDC5DC292F5ED3007B51A4 /* ButtonStyle.swift */,
 				FA3266D3293C8B4100BCEF10 /* UIImage.swift */,
 			);
 			path = Extensions;
@@ -458,6 +533,8 @@
 			isa = PBXGroup;
 			children = (
 				FA3266D9293CD4FA00BCEF10 /* NotesView.swift */,
+				FAF49536292FA3AE00D396E1 /* NoteDetailView.swift */,
+				FACDC5DA292F5DE4007B51A4 /* NoteView.swift */,
 			);
 			path = Note;
 			sourceTree = "<group>";
@@ -465,70 +542,37 @@
 		FA706AD12913C46D00AD30A4 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				0E0C8BE42939061E009ABC42 /* MilestonePeriodSheet */,
-				0E0C8BDA29388BE9009ABC42 /* ProfileSwitcherSheet */,
-				FA706AD22913C49400AD30A4 /* CardView.swift */,
-				FA7B02B82917DABA00552541 /* MilestoneProgressFullView.swift */,
-				FA7B02BA2917F60100552541 /* MilestoneProgressCompactView.swift */,
-				FA4513C8292BDD17002ADD1A /* BackgroundView.swift */,
-				FA48EFB9292CC746009ED62B /* ContentHeaderView.swift */,
-				FA48EFBB292CD5D0009ED62B /* ActivityCardView.swift */,
-				FA996A18292E25F700DF570E /* MissionView.swift */,
-				FACDC5DA292F5DE4007B51A4 /* NoteView.swift */,
-				FA7B7EFF29339488005E8425 /* ProgressShareView.swift */,
-				FAF8545F29349AC4009C8CA5 /* ProfileAvatarView.swift */,
-				0E8FE4F72935AB3E00DBF715 /* TuntunLoading.swift */,
-				FA3266D1293C52C600BCEF10 /* ProgressBar.swift */,
-				0E3B1112293C669900404E88 /* EmptyView.swift */,
+				0EFF9D89293F80F9006B5954 /* Atoms */,
+				0EFF9D8A293F8129006B5954 /* Molecules */,
+				0EFF9D8B293F81B8006B5954 /* Organisms */,
 			);
 			path = Components;
-			sourceTree = "<group>";
-		};
-		FA77F7F82938A81D0054C87D /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-				FA77F7F92938A8330054C87D /* ImageCamera.swift */,
-			);
-			path = Helper;
 			sourceTree = "<group>";
 		};
 		FA9706CA293A44F900D39BB6 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
 				FA9706CB293A450A00D39BB6 /* ProfileEditView.swift */,
+				0EFF9D8D293F8213006B5954 /* Components */,
 			);
 			path = Profile;
-			sourceTree = "<group>";
-		};
-		FAB270C0291BBC7600C3E99A /* Badge */ = {
-			isa = PBXGroup;
-			children = (
-				FAB270C1291BBC8B00C3E99A /* BadgeDetailView.swift */,
-			);
-			path = Badge;
 			sourceTree = "<group>";
 		};
 		FAE17338293201F40076ABFA /* Stimulus */ = {
 			isa = PBXGroup;
 			children = (
-				0E1C86F1293A6D1600195E04 /* ActivityCardLongView.swift */,
 				0E1C86F0293A6D1600195E04 /* StimuliView.swift */,
-				FAE17339293202110076ABFA /* StimulusDetailView.swift */,
-				0E1C86EC293A439200195E04 /* StimulusDetailViewModel.swift */,
-				FAE1733D2932140F0076ABFA /* StimulusStepView.swift */,
-				FAE1733B29320A7E0076ABFA /* StimulusMaterialView.swift */,
+				0EFF9D87293F7F4E006B5954 /* Components */,
 			);
-			path = Stimulus;
+			name = Stimulus;
+			path = ../Stimulus;
 			sourceTree = "<group>";
 		};
 		FAF8545929349431009C8CA5 /* Album */ = {
 			isa = PBXGroup;
 			children = (
 				FAF8545B29349463009C8CA5 /* AlbumView.swift */,
-				FAF854652934B654009C8CA5 /* CustomSegmentedControlView.swift */,
-				FAF854612934B612009C8CA5 /* MilestonePhotoCardView.swift */,
-				FAF854632934B62C009C8CA5 /* PhotoCardView.swift */,
-				FAF854672934B6CD009C8CA5 /* StimulusPhotoCardView.swift */,
+				0EFF9D85293F7E90006B5954 /* Components */,
 			);
 			path = Album;
 			sourceTree = "<group>";
@@ -619,7 +663,6 @@
 				FAF854622934B612009C8CA5 /* MilestonePhotoCardView.swift in Sources */,
 				0E1C86EB293A14F000195E04 /* MilestoneCategoryCardDashboardView.swift in Sources */,
 				0E5F90C5293E354C00502640 /* NotifTester.swift in Sources */,
-				FA7B02BB2917F60100552541 /* MilestoneProgressCompactView.swift in Sources */,
 				0E8FE4E529349C3F00DBF715 /* TuntunIllustration.swift in Sources */,
 				0EA7D733292CBF720024DECC /* RadarChart.swift in Sources */,
 				0E6F61F9290FD283005C5415 /* OnboardingViewModel.swift in Sources */,
@@ -633,7 +676,6 @@
 				FAF854682934B6CD009C8CA5 /* StimulusPhotoCardView.swift in Sources */,
 				0E2F9A962937657F00DDAA28 /* BabyMilestone+CoreDataClass.swift in Sources */,
 				FA888ED92939F93F0035C733 /* NoReportMilestoneView.swift in Sources */,
-				FAB8F3E5291A0227008F7C59 /* Shapes.swift in Sources */,
 				0E3B1115293C996100404E88 /* ReportViewModel.swift in Sources */,
 				0E8FE4EC29349CDA00DBF715 /* NameOnboarding.swift in Sources */,
 				0E8FE50C29366D9200DBF715 /* Baby+CoreDataClass.swift in Sources */,
@@ -647,9 +689,7 @@
 				0E1C86F3293A6D1600195E04 /* ActivityCardLongView.swift in Sources */,
 				0EA7D738292E24010024DECC /* OnboardingView.swift in Sources */,
 				0E8FE4F229349DFF00DBF715 /* OnboardingText.swift in Sources */,
-				0E6F61F4290FC75B005C5415 /* MilestoneScreen.swift in Sources */,
 				0E0C8BD82937954D009ABC42 /* BabyPhoto+CoreDataClass.swift in Sources */,
-				FAB270C2291BBC8B00C3E99A /* BadgeDetailView.swift in Sources */,
 				0E3B1113293C669900404E88 /* EmptyView.swift in Sources */,
 				FA77F7FA2938A8330054C87D /* ImageCamera.swift in Sources */,
 				0EDCE4332906A1A50092F759 /* Persistence.swift in Sources */,
@@ -666,11 +706,10 @@
 				0E1C86F2293A6D1600195E04 /* StimuliView.swift in Sources */,
 				FA888EDE2939FAEF0035C733 /* MilestoneCategoryCardViewReport.swift in Sources */,
 				FAF8546029349AC4009C8CA5 /* ProfileAvatarView.swift in Sources */,
-				FA706AD32913C49400AD30A4 /* CardView.swift in Sources */,
 				0E7456F229069B4D00D792E6 /* macro_team15App.swift in Sources */,
 				FA3266DA293CD4FA00BCEF10 /* NotesView.swift in Sources */,
 				0E6F61F1290FC40B005C5415 /* Enum.swift in Sources */,
-				0E8FE4F62934F19F00DBF715 /* DashboardViewModel.swift in Sources */,
+				0E8FE4F62934F19F00DBF715 /* ProgressViewModel.swift in Sources */,
 				FA34BD4D291A3FE8009DF42B /* MilestoneDetailView.swift in Sources */,
 				FAF854662934B654009C8CA5 /* CustomSegmentedControlView.swift in Sources */,
 				0E8FE4CF2933C41600DBF715 /* ContentViewModel.swift in Sources */,
@@ -684,13 +723,11 @@
 				0E8FE50E29366D9200DBF715 /* BabyMilestoneNote+CoreDataClass.swift in Sources */,
 				FA93412F2935EFFD004975FE /* MilestonePeriodSheet.swift in Sources */,
 				FA48EFBA292CC746009ED62B /* ContentHeaderView.swift in Sources */,
-				FA7B02B92917DABA00552541 /* MilestoneProgressFullView.swift in Sources */,
 				0E0C8BE32938EA35009ABC42 /* StimulusData.swift in Sources */,
 				0E1C86E9293A0F9E00195E04 /* StringManipulation.swift in Sources */,
 				FA9706CC293A450A00D39BB6 /* ProfileEditView.swift in Sources */,
 				FAF854642934B62C009C8CA5 /* PhotoCardView.swift in Sources */,
-				FA4513CB292BE047002ADD1A /* DashboardHeaderView.swift in Sources */,
-				0E6F61EF290FC348005C5415 /* DashboardScreen.swift in Sources */,
+				0E6F61EF290FC348005C5415 /* ProgressView.swift in Sources */,
 				0E92692B29309AFD0050C375 /* userData.xcdatamodeld in Sources */,
 				FA996A19292E25F700DF570E /* MissionView.swift in Sources */,
 				FAE1733C29320A7E0076ABFA /* StimulusMaterialView.swift in Sources */,
@@ -820,14 +857,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "macro-team15.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "macro-team15/Resources/macro-team15.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 7;
-				DEVELOPMENT_ASSET_PATHS = "\"macro-team15/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "macro-team15/Resources/Preview\\ Content";
 				DEVELOPMENT_TEAM = 474XANH3RF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_FILE = "macro-team15/Resources/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Tuntun;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical";
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need the camera permission";
@@ -858,14 +895,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "macro-team15.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "macro-team15/Resources/macro-team15.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 7;
-				DEVELOPMENT_ASSET_PATHS = "\"macro-team15/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "macro-team15/Resources/Preview\\ Content";
 				DEVELOPMENT_TEAM = 474XANH3RF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_FILE = "macro-team15/Resources/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Tuntun;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical";
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need the camera permission";

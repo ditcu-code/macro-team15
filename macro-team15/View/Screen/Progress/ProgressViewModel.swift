@@ -9,7 +9,7 @@ import Foundation
 import CoreData
 import Combine
 
-class DashboardViewModel: ObservableObject {
+class ProgressViewModel: ObservableObject {
     @Published var babies: [Baby] = []
     @Published var currentBaby: Baby? = nil
     @Published var totalMilestone: Int = 0
