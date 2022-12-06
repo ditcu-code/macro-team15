@@ -142,11 +142,12 @@ struct NoteDetailViewV2: View {
         if let note = noteToEdit {
             _title = State(initialValue: note.title!)
             _bodyNote = State(initialValue: note.body!)
+            _isImportant = State(initialValue: note.isImportant)
         } else {
             self.title = title
             self.bodyNote = note
+            self.isImportant = isImportant
         }
-        self.isImportant = isImportant
         self.titleOnFocus = titleOnFocus
         self.noteOnFocus = noteOnFocus
         self.isPresented = isPresented
@@ -196,6 +197,9 @@ struct NoteDetailViewV2: View {
                 }
                 .padding(32)
             }
+        }
+        .onAppear {
+            print(noteToEdit as? BabyMilestoneNote)
         }
         .background(BackgroundView())
         .alert(
@@ -252,7 +256,7 @@ struct NoteDetailViewV2: View {
                                 isImportant.toggle()
                                 
                                 if let note = noteToEdit {
-                                    note.isImportant = isImportant
+                                    note.isImportant = self.isImportant
                                     PersistenceController.shared.save()
                                 }
                             } label: {
