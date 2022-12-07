@@ -13,40 +13,12 @@ struct MilestoneCategoryCardDashboardView: View {
     let milestone: [Milestone]
 
     @State var refreshID: Int = 0
-    @State var isOpen: Bool = false
-    
     @Binding var checkedMilestone: Milestone?
-    
-    private func colorSwitcher() -> Color {
-        switch category {
-        case .cognitive:
-            return Color.ui.cognitivePrimary
-        case .motoric:
-            return Color.ui.motorPrimary
-        case .social:
-            return Color.ui.socialPrimary
-        case .language:
-            return Color.ui.languagePrimary
-        }
-    }
-    
-    private func iconSwitcher() -> String {
-        switch category {
-        case .cognitive:
-            return "puzzlepiece.fill"
-        case .motoric:
-            return "gearshape.fill"
-        case .social:
-            return "heart.fill"
-        case .language:
-            return "character.bubble.fill"
-            
-        }
-    }
-    
+
     var body: some View {
         
-        DisclosureGroup(isExpanded: $isOpen) {
+        DisclosureGroup {
+            
             VStack {
                 Spacer()
                 
@@ -73,7 +45,7 @@ struct MilestoneCategoryCardDashboardView: View {
                                         Image(systemName: babyMiles.isChecked ? "checkmark.circle.fill" : "checkmark.circle")
                                             .resizable()
                                             .frame(width: 28, height: 28)
-                                            .foregroundColor(colorSwitcher())
+                                            .foregroundColor(CategoryCustomization.colorSwitcher(category))
                                             .id(refreshID)
                                     }.padding(12)
                                     
@@ -83,7 +55,7 @@ struct MilestoneCategoryCardDashboardView: View {
                                     
                                     Spacer()
                                     
-                                    Image(systemName: "chevron.right").foregroundColor(colorSwitcher())
+                                    Image(systemName: "chevron.right").foregroundColor(CategoryCustomization.colorSwitcher(category))
                                 }
                             }
                         }
@@ -94,12 +66,12 @@ struct MilestoneCategoryCardDashboardView: View {
         } label: {
             
             HStack {
-                Image(systemName: iconSwitcher())
+                Image(systemName: CategoryCustomization.iconSwitcher(category))
                     .font(.title)
-                    .foregroundColor(colorSwitcher())
+                    .foregroundColor(CategoryCustomization.colorSwitcher(category))
                     .frame(maxWidth: 50)
                 
-                Capsules(milestone: milestone, color: colorSwitcher(), category: category).id(refreshID)
+                Capsules(milestone: milestone, color: CategoryCustomization.colorSwitcher(category), category: category).id(refreshID)
                 
                 Spacer()
             }

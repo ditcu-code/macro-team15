@@ -11,34 +11,6 @@ struct MilestoneCategoryCardViewReport: View {
     
     let category: MilestoneCategory
     let babyMilestone: [BabyMilestone]
-    //    let navigationLink: AnyView
-    
-    private func colorSwitcher() -> Color {
-        switch category {
-        case .cognitive:
-            return Color.ui.cognitivePrimary
-        case .motoric:
-            return Color.ui.motorPrimary
-        case .social:
-            return Color.ui.socialPrimary
-        case .language:
-            return Color.ui.languagePrimary
-        }
-    }
-    
-    private func iconSwitcher() -> String {
-        switch category {
-        case .cognitive:
-            return "puzzlepiece.fill"
-        case .motoric:
-            return "gearshape.fill"
-        case .social:
-            return "heart.fill"
-        case .language:
-            return "character.bubble.fill"
-            
-        }
-    }
     
     var body: some View {
         
@@ -49,7 +21,11 @@ struct MilestoneCategoryCardViewReport: View {
                 if babyMilestone.count > 0 {
                     let sorted = babyMilestone.sorted(by: {$0.month < $1.month})
                     ForEach(sorted) { item in
-                        ReportMilestoneView(milestone: MilestoneData.getAll().filter({$0.id == item.milestoneID}).first!, babyMilestone: item, color: colorSwitcher())
+                        ReportMilestoneView(
+                            milestone: MilestoneData.getAll().filter({$0.id == item.milestoneID}).first!,
+                            babyMilestone: item,
+                            color: CategoryCustomization.colorSwitcher(category)
+                        )
                     }
                 } else {
                     NoReportMilestoneView(category: category)
@@ -58,9 +34,9 @@ struct MilestoneCategoryCardViewReport: View {
             
         } label: {
             HStack {
-                Image(systemName: iconSwitcher())
+                Image(systemName: CategoryCustomization.iconSwitcher(category))
                     .font(.title)
-                    .foregroundColor(colorSwitcher())
+                    .foregroundColor(CategoryCustomization.colorSwitcher(category))
                     .frame(maxWidth: 50)
                 
                 VStack(alignment: .leading) {
@@ -79,9 +55,3 @@ struct MilestoneCategoryCardViewReport: View {
     }
     
 }
-//
-//struct MilestoneCategoryCardViewReport_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MilestoneCategoryCardViewReport(category: .motoric, milestone: [Milestone(id: 1, titleEN: "titleEN", title: "title", month: 1, warningMonth: 2, category: .motoric, stimulusID: nil)])
-//    }
-//}
