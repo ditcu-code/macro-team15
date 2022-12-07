@@ -53,20 +53,20 @@ class NotificationManager {
         print("Success")
     }
     
-    func setBirthdayNotif(birthDate: Date) {
+    func setBirthdayNotif(birthDate: Date, babyAge: Int, babyName: String) {
         scheduleNotification(
-            title: "Wah! (babyName) sudah 2 Bulan!",
-            body: "Yuk cek perkembangan Milestone (babyName) bulan ini",
+            title: "Wah! \(babyName) sudah 2 Bulan!",
+            body: "Yuk cek perkembangan Milestone \(babyName) bulan ini",
             date: birthDate,
             type: NotificationType.monthly
         )
     }
     
-    func setWeeklyNotif() {
+    func setWeeklyNotif(babyName: String) {
         let oneWeekLater = Calendar.current.date(byAdding: .weekOfMonth, value: 1, to: Date()) ?? Date()
         scheduleNotification(
             title: "Hey! Tuntun kangen nih!",
-            body: "Yuk lakukan aktivitas bersama (babyName) untuk mendukung pencapaiannya",
+            body: "Yuk lakukan aktivitas bersama \(babyName) untuk mendukung pencapaiannya",
             date: oneWeekLater,
             type: NotificationType.weekly
         )
