@@ -50,7 +50,6 @@ class NotificationManager {
         )
         
         UNUserNotificationCenter.current().add(request)
-        print("Success")
     }
     
     func setBirthdayNotif(birthDate: Date, babyAge: Int, babyName: String) {
