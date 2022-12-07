@@ -62,7 +62,7 @@ struct ProfilePictureOnboarding: View {
             }), ActionSheet.Button.default(Text("Galeri"), action: {
                 self.shouldPresentImagePicker = true
                 self.shouldPresentCamera = false
-            }), ActionSheet.Button.cancel()])
+            }), ActionSheet.Button.cancel(Text("Batal"))])
         }
         .onChange(of: image) { newItem in
             Task {
