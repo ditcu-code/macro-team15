@@ -91,6 +91,10 @@ class ProgressViewModel: ObservableObject {
         allNotes = notes
     }
     
+    func resetSelectedMonth() {
+        AppData.setSelectedMonth(appData.babyAgeMonth)
+    }
+    
     // MARK: Notification
     func setupNotif() {
         if let birthDate = currentBaby?.birthDate {
