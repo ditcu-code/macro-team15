@@ -124,13 +124,13 @@ struct ProfileEditView: View {
 
         }
         .actionSheet(isPresented: $shouldPresentActionScheet) { () -> ActionSheet in
-            ActionSheet(title: Text("Choose mode"), message: Text("Please choose your preferred mode to set your profile image"), buttons: [ActionSheet.Button.default(Text("Camera"), action: {
+            ActionSheet(title: Text("Pilih mode"), message: Text("Silakan pilih mode untuk mengatur foto profil"), buttons: [ActionSheet.Button.default(Text("Kamera"), action: {
                 self.shouldPresentImagePicker = true
                 self.shouldPresentCamera = true
-            }), ActionSheet.Button.default(Text("Photo Library"), action: {
+            }), ActionSheet.Button.default(Text("Galeri"), action: {
                 self.shouldPresentImagePicker = true
                 self.shouldPresentCamera = false
-            }), ActionSheet.Button.cancel()])
+            }), ActionSheet.Button.cancel(Text("Batal"))])
         }
         .onChange(of: babyPhoto) { newItem in
             Task {

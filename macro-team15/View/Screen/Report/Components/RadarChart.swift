@@ -17,21 +17,35 @@ struct RadarChart: View {
     @Binding var scaleVersus: Double
     
     var body: some View {
+        let shape1 = RadarChartPath(data: data.map{Double($0)}, max: max.map{Double($0)})
         ZStack {
             
             RadarChartGrid(categories: max.count, divisions: 10)
                 .stroke(gridColor.opacity(0.5), lineWidth: 0.2)
             
-            RadarChartPath(data: data.map{Double($0)}, max: max.map{Double($0)})
-                .fill(dataColor)
-                .scaleEffect(scaleMonth)
-                .animation(.spring(), value: scaleMonth)
-            
-            if let dataVersus = dataVersus {
-                RadarChartPath(data: dataVersus.map{Double($0)}, max: max.map{Double($0)})
+            ZStack {
+                shape1
                     .fill(dataColor)
-                    .scaleEffect(scaleVersus)
-                    .animation(.spring(), value: scaleVersus)
+                    .scaleEffect(scaleMonth)
+                    .animation(.spring(), value: scaleMonth)
+                shape1
+                    .trim(from: 0, to: scaleMonth)
+                    .stroke(dataColor, lineWidth: 2)
+                    .animation(.easeIn(duration: 0.5), value: scaleMonth)
+            }
+            if let dataVersus = dataVersus {
+                let shape2 = RadarChartPath(data: dataVersus.map{Double($0)}, max: max.map{Double($0)})
+                
+                ZStack {
+                    shape2
+                        .fill(Color.ui.secondary.opacity(0.4))
+                        .scaleEffect(scaleVersus)
+                        .animation(.spring(), value: scaleVersus)
+                    shape2
+                        .trim(from: 0, to: scaleVersus)
+                        .stroke(Color.ui.secondary.opacity(0.4), lineWidth: 2)
+                        .animation(.easeIn(duration: 0.5), value: scaleVersus)
+                }.zIndex(scaleMonth < scaleVersus ? 10 : 0)
             }
             
         }

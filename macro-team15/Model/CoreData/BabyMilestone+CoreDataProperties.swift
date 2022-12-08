@@ -82,6 +82,16 @@ extension BabyMilestone : Identifiable {
         return items
     }
     
+    static func getMilestoneByCategory(with category: MilestoneCategory?, month: Int? = 0) -> [BabyMilestone]? {
+        let context = PersistenceController.viewContext
+        guard let category = category else { return nil }
+        guard let month = month else { return nil }
+        let request = BabyMilestone.fetchRequest()
+        request.predicate = NSPredicate(format: "category == %@ AND month <= \(month)", category.rawValue)
+        guard let items = try? context.fetch(request) else { return nil }
+        return items
+    }
+    
     static func getCompletedMilestoneByCategory(with category: MilestoneCategory?, month: Int? = 0) -> [BabyMilestone]? {
         let context = PersistenceController.viewContext
         guard let category = category else { return nil }

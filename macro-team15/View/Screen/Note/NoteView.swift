@@ -106,6 +106,9 @@ struct NoteViewV2: View {
                             
                             PersistenceController.shared.save()
                         }
+                        .onAppear {
+                            refreshId += 1
+                        }
                     }
                     .padding(.bottom)
                     

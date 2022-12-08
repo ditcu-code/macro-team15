@@ -49,7 +49,7 @@ class ReportViewModel: ObservableObject {
     private var cancellable: AnyCancellable?
     
     init() {
-        month = appData.selectedMonth
+        month = appData.babyAgeMonth
         getData()
         cancellable = NotificationCenter.default.publisher(for: NSManagedObjectContext.didSaveObjectsNotification, object: nil)
             .receive(on: DispatchQueue.main)
@@ -86,23 +86,11 @@ class ReportViewModel: ObservableObject {
     }
     
     func getTotal() {
-        let milestones = MilestoneData.getAll()
-        
-        motoricTotal = milestones.filter { item in
-            item.category == .motoric
-        }.count
-        
-        cognitiveTotal = milestones.filter { item in
-            item.category == .cognitive
-        }.count
-        
-        socialTotal = milestones.filter { item in
-            item.category == .social
-        }.count
-        
-        languageTotal = milestones.filter { item in
-            item.category == .language
-        }.count
+        let whichBigger = month > monthVersus ? month : monthVersus
+        motoricTotal = BabyMilestone.getMilestoneByCategory(with: .motoric, month: whichBigger)?.count ?? 0
+        cognitiveTotal = BabyMilestone.getMilestoneByCategory(with: .cognitive, month: whichBigger)?.count  ?? 0
+        socialTotal = BabyMilestone.getMilestoneByCategory(with: .social, month: whichBigger)?.count ?? 0
+        languageTotal = BabyMilestone.getMilestoneByCategory(with: .language, month: whichBigger)?.count ?? 0
     }
     
     func getUncompletedMilestone() {

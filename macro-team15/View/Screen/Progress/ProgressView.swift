@@ -24,7 +24,11 @@ struct ProgressView: View {
             GeometryReader { geo in
                 ScrollView {
                     if let stimulus = vm.getStimulus().first {
-                        HighlightedStimulusView(withCTA: true, stimulus: stimulus, allStimulus: vm.getStimulus())
+                        HighlightedStimulusView(
+                            withCTA: true,
+                            stimulus: stimulus,
+                            allStimulus: vm.getStimulus()
+                        )
                     }
                     
                     Divider().padding(.vertical)
@@ -68,7 +72,11 @@ struct ProgressView: View {
                             
                             let listMilestone = vm.milestoneData.filter{$0.category == category && $0.month == appData.selectedMonth}
                             
-                            MilestoneCategoryCardDashboardView(category: category, milestone: listMilestone, checkedMilestone: $checkedMilestone).id(refreshId)
+                            MilestoneCategoryCardDashboardView(
+                                category: category,
+                                milestone: listMilestone,
+                                checkedMilestone: $checkedMilestone
+                            ).id(refreshId)
                             
                         }
                     }
@@ -87,8 +95,6 @@ struct ProgressView: View {
                     Divider()
                         .padding()
                     
-                    
-                    
                     ContentHeaderView(
                         title: "Catatan",
                         subtitle: "Hal-hal penting mengenai perkembangan \(babyName)",
@@ -100,11 +106,13 @@ struct ProgressView: View {
                         EmptyView(note: "Belum ada catatan").padding(.bottom, 30)
                     } else {
                         ForEach(vm.allNotes.prefix(5)) { note in
-                            NoteViewV2(milestone: MilestoneData.getAll().filter({ $0.id == note.milestone?.milestoneID ?? 1 }).first!, babyMilestone: note.milestone!, babyNotes: note)
-                                .padding(.bottom)
+                            NoteViewV2(
+                                milestone: MilestoneData.getAll().filter({ $0.id == note.milestone?.milestoneID ?? 1 }).first!,
+                                babyMilestone: note.milestone!,
+                                babyNotes: note
+                            ).padding(.bottom)
                         }
                     }
-//                    NotifTester()
                 }
                 
                 .background(alignment: .center) {
@@ -161,6 +169,7 @@ struct ProgressView: View {
         }
         .onAppear {
             NotificationManager.instance.requestAuthorization()
+            vm.resetSelectedMonth()
             vm.removeNotif()
             vm.setupNotif()
         }
