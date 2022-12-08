@@ -102,19 +102,6 @@ struct ProgressView: View {
                         hideButton: vm.allNotes.count < 5 ? true : false
                     )
                     
-                    if vm.allNotes.isEmpty {
-                        EmptyView(note: "Belum ada catatan").padding(.bottom, 30)
-                    } else {
-                        ForEach(vm.allNotes.prefix(5)) { note in
-                            NoteViewV2(
-                                milestone: MilestoneData.getAll().filter({ $0.id == note.milestone?.milestoneID ?? 1 }).first!,
-                                babyMilestone: note.milestone!,
-                                babyNotes: note
-                            )
-                            .padding(.bottom)
-                        }
-                    }
-                    
                     Group {
                         if vm.allNotes.isEmpty {
                             EmptyView(note: "Belum ada catatan").padding(.bottom, 30)
