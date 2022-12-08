@@ -110,8 +110,7 @@ struct ProgressView: View {
                                 milestone: MilestoneData.getAll().filter({ $0.id == note.milestone?.milestoneID ?? 1 }).first!,
                                 babyMilestone: note.milestone!,
                                 babyNotes: note
-                            )
-                                .padding(.bottom)
+                            ).padding(.bottom)
                         }
                     }
                 }
