@@ -229,7 +229,8 @@ struct NoteDetailViewV2: View {
         .toolbar {
             ToolbarItem {
                 if titleOnFocus || noteOnFocus {
-                    Button {
+                    Button("Selesai") {
+                        
                         titleOnFocus = false
                         noteOnFocus = false
                         
@@ -251,10 +252,8 @@ struct NoteDetailViewV2: View {
 
                         PersistenceController.shared.save()
                         
-                    } label: {
-                        Text("Done")
-                            .foregroundColor(Color.ui.primary)
                     }
+                    .disabled(title != "" || bodyNote != "" ? false : true)
                 } else {
                     if noteToEdit != nil {
                         Menu {
