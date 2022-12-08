@@ -9,16 +9,15 @@ import SwiftUI
 
 struct BackgroundView: View {
     var body: some View {
-        ZStack(alignment: .bottom) {
-            Image("BackgroundFill1Image")
-            Image("BackgroundFill2Image")
-        }
+        Image("BackgroundImage")
+            .resizable()
+            .scaledToFill()
+            .ignoresSafeArea()
     }
 }
 
 struct BackgroundView_Previews: PreviewProvider {
     static var previews: some View {
         BackgroundView()
-            .edgesIgnoringSafeArea(.all)
     }
 }
