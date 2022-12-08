@@ -49,7 +49,7 @@ class ReportViewModel: ObservableObject {
     private var cancellable: AnyCancellable?
     
     init() {
-        month = appData.selectedMonth
+        month = appData.babyAgeMonth
         getData()
         cancellable = NotificationCenter.default.publisher(for: NSManagedObjectContext.didSaveObjectsNotification, object: nil)
             .receive(on: DispatchQueue.main)
