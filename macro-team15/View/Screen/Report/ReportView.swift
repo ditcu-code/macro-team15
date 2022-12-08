@@ -18,6 +18,12 @@ struct ReportView: View {
     let noteCount = 0
     
     var body: some View {
+//        let isMonthBigger = vm.month > vm.monthVersus
+//        let motoricTotal = isMonthBigger ? vm.motoricTotal : vm.motoricVersus
+//        let cognitiveTotal = isMonthBigger ? vm.cognitiveTotal : vm.cognitiveVersus
+//        let socialTotal = isMonthBigger ? vm.socialTotal : vm.socialVersus
+//        let languageTotal = isMonthBigger ? vm.languageTotal : vm.languageVersus
+        
         NavigationView {
             ScrollView {
                 // MARK: Milestone Progress Header
@@ -87,7 +93,7 @@ struct ReportView: View {
                         dataVersus: vm.monthVersus != 0 ? [vm.motoricVersus, vm.socialVersus, vm.cognitiveVersus, vm.languageVersus] : [],
                         max: [vm.motoricTotal, vm.socialTotal, vm.cognitiveTotal, vm.languageTotal],
                         gridColor: .black,
-                        dataColor: Color.ui.primary.opacity(0.5),
+                        dataColor: Color.ui.primary.opacity(0.4),
                         scaleMonth: $scaleMonth,
                         scaleVersus: $scaleVersus
                     )
@@ -208,6 +214,7 @@ struct ReportView: View {
             }
             .onChange(of: vm.month) { newValue in
                 withAnimation(.spring()) {
+                    vm.getTotal()
                     vm.getCount()
                     vm.getCountMonth()
                     scaleMonth = 0.0
@@ -216,6 +223,7 @@ struct ReportView: View {
             }
             .onChange(of: vm.monthVersus) { newValue in
                 withAnimation(.spring()) {
+                    vm.getTotal()
                     vm.getCountVersus()
                     scaleVersus = 0.0
                     refreshId += 1

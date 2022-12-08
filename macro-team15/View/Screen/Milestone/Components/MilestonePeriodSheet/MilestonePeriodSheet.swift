@@ -124,6 +124,7 @@ struct MilestonePeriodSheetBinding: View {
                 ScrollView {
                     ForEach(vm.months, id: \.self) { item in
                         let isSameMonth = selectedMonth == item
+                        let isDisabled = item > vm.appData.babyAgeMonth
                         Button {
                             selectedMonth = item
                             dismiss()
@@ -132,7 +133,7 @@ struct MilestonePeriodSheetBinding: View {
                                 Text("Bulan ke-\(item)")
                                     .font(.headline)
                                     .fontWeight(.semibold)
-                                    .foregroundColor(Color.ui.secondary)
+                                    .foregroundColor(isDisabled ? Color.ui.secondary.opacity(0.5) : Color.ui.secondary)
                                 
                                 Spacer()
                                 
@@ -146,6 +147,7 @@ struct MilestonePeriodSheetBinding: View {
                         .background {
                             Color.ui.primary.opacity(isSameMonth ? 0.1 : 0)
                         }
+                        .disabled(isDisabled)
                         .onAppear{
                             if isSameMonth {
                                 withAnimation {
