@@ -299,9 +299,9 @@
 				0E8FE4E02933ECAB00DBF715 /* Report */,
 				FAF8545929349431009C8CA5 /* Album */,
 				FA3266D8293CD4DA00BCEF10 /* Note */,
-				FAE17338293201F40076ABFA /* Stimulus */,
 				0EA7D736292E23D20024DECC /* Onboarding */,
 				0E6F61F2290FC74B005C5415 /* Milestone */,
+				FAE17338293201F40076ABFA /* Stimulus */,
 				FA9706CA293A44F900D39BB6 /* Profile */,
 			);
 			path = Screen;
@@ -568,7 +568,7 @@
 				0EFF9D87293F7F4E006B5954 /* Components */,
 			);
 			name = Stimulus;
-			path = Progress/Stimulus;
+			path = Profile/Stimulus;
 			sourceTree = "<group>";
 		};
 		FAF8545929349431009C8CA5 /* Album */ = {
