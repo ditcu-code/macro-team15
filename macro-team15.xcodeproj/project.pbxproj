@@ -230,6 +230,15 @@
 			path = MilestonePeriodSheet;
 			sourceTree = "<group>";
 		};
+		0E371616294402C800CBE1F0 /* Stimuli */ = {
+			isa = PBXGroup;
+			children = (
+				0E1C86F0293A6D1600195E04 /* StimuliView.swift */,
+				0EFF9D87293F7F4E006B5954 /* Components */,
+			);
+			path = Stimuli;
+			sourceTree = "<group>";
+		};
 		0E46F13D292FAF8A00D54488 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -297,11 +306,11 @@
 				0E8FE4F92935ADA300DBF715 /* LaunchScreen.storyboard */,
 				0E8FE512293675C300DBF715 /* Progress */,
 				0E8FE4E02933ECAB00DBF715 /* Report */,
+				0E371616294402C800CBE1F0 /* Stimuli */,
 				FAF8545929349431009C8CA5 /* Album */,
 				FA3266D8293CD4DA00BCEF10 /* Note */,
 				0EA7D736292E23D20024DECC /* Onboarding */,
 				0E6F61F2290FC74B005C5415 /* Milestone */,
-				FAE17338293201F40076ABFA /* Stimulus */,
 				FA9706CA293A44F900D39BB6 /* Profile */,
 			);
 			path = Screen;
@@ -559,16 +568,6 @@
 				0EFF9D8D293F8213006B5954 /* Components */,
 			);
 			path = Profile;
-			sourceTree = "<group>";
-		};
-		FAE17338293201F40076ABFA /* Stimulus */ = {
-			isa = PBXGroup;
-			children = (
-				0E1C86F0293A6D1600195E04 /* StimuliView.swift */,
-				0EFF9D87293F7F4E006B5954 /* Components */,
-			);
-			name = Stimulus;
-			path = Profile/Stimulus;
 			sourceTree = "<group>";
 		};
 		FAF8545929349431009C8CA5 /* Album */ = {
